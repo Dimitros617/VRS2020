@@ -25,12 +25,13 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6258162b-d77b-4387-b311-ce67487a53e9" name="Default Changelist" comment="First Commit">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="6258162b-d77b-4387-b311-ce67487a53e9" name="Default Changelist" comment="Založení calculatoru a root cest na home">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/Test" beforeDir="false" afterPath="$PROJECT_DIR$/public/Test" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
     </list>
-    <list id="ee11485e-be3d-4401-963f-6d84bd64f0f9" name="Revert &quot;First Commit&quot;" comment="Revert &quot;First Commit&quot;&#10;&#10;This reverts commit 7389926d" />
+    <list id="ee11485e-be3d-4401-963f-6d84bd64f0f9" name="Revert &quot;First Commit&quot;" comment="Revert &quot;First Commit&quot;&#10;&#10;This reverts commit 7389926d">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,6 +51,26 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/.idea/workspace.xml">
+      <ranges>
+        <range start1="27" end1="29" start2="27" end2="32" changelist="6258162b-d77b-4387-b311-ce67487a53e9" />
+        <range start1="30" end1="31" start2="33" end2="33" changelist="6258162b-d77b-4387-b311-ce67487a53e9" />
+        <range start1="32" end1="33" start2="34" end2="34" changelist="6258162b-d77b-4387-b311-ce67487a53e9" />
+        <range start1="52" end1="52" start2="53" end2="73" changelist="6258162b-d77b-4387-b311-ce67487a53e9" />
+        <range start1="178" end1="179" start2="199" end2="200" changelist="6258162b-d77b-4387-b311-ce67487a53e9" />
+        <range start1="184" end1="184" start2="205" end2="210" changelist="6258162b-d77b-4387-b311-ce67487a53e9" />
+        <range start1="207" end1="207" start2="233" end2="235" changelist="6258162b-d77b-4387-b311-ce67487a53e9" />
+        <range start1="222" end1="223" start2="250" end2="272" changelist="6258162b-d77b-4387-b311-ce67487a53e9" />
+        <range start1="239" end1="240" start2="288" end2="289" changelist="ee11485e-be3d-4401-963f-6d84bd64f0f9" />
+        <range start1="255" end1="256" start2="304" end2="308" changelist="6258162b-d77b-4387-b311-ce67487a53e9" />
+        <range start1="270" end1="271" start2="322" end2="323" changelist="ee11485e-be3d-4401-963f-6d84bd64f0f9" />
+        <range start1="273" end1="273" start2="325" end2="326" changelist="ee11485e-be3d-4401-963f-6d84bd64f0f9" />
+        <range start1="310" end1="310" start2="363" end2="367" changelist="ee11485e-be3d-4401-963f-6d84bd64f0f9" />
+        <range start1="315" end1="315" start2="372" end2="377" changelist="6258162b-d77b-4387-b311-ce67487a53e9" />
+      </ranges>
+    </file>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -176,11 +197,16 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Xamp\htdocs\VRS\resources\views" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -205,6 +231,8 @@
       <workItem from="1603025804298" duration="365000" />
       <workItem from="1603026180495" duration="1427000" />
       <workItem from="1603027617664" duration="435000" />
+      <workItem from="1603355773328" duration="4287000" />
+      <workItem from="1603372997296" duration="2754000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1602874504350</created>
@@ -220,7 +248,28 @@
       <option name="project" value="LOCAL" />
       <updated>1602874521866</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Uprava larevelu a založení interního projektu">
+      <created>1603118702147</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603118702147</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Založení calculatoru a root cest na home">
+      <created>1603126798033</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1603126798033</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Meeting 22.10.2020">
+      <created>1603374492121</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1603374492121</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,7 +302,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Commit" />
     <MESSAGE value="Revert &quot;First Commit&quot;&#10;&#10;This reverts commit 7389926d" />
-    <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;First Commit&quot;&#10;&#10;This reverts commit 7389926d" />
+    <MESSAGE value="Uprava larevelu a založení interního projektu" />
+    <MESSAGE value="Založení calculatoru a root cest na home" />
+    <MESSAGE value="Meeting 22.10.2020" />
+    <option name="LAST_COMMIT_MESSAGE" value="Meeting 22.10.2020" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602874479430">
@@ -313,6 +365,11 @@
     </state>
     <state x="548" y="203" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1602873516966" />
     <state x="548" y="203" key="SettingsEditor/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603025836008" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1603374494785">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1603126800900" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/-1920.412.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603374494785" />
     <state x="770" y="254" key="VcsDiffUtil.ChangesDialog" timestamp="1603118011078">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
