@@ -17,7 +17,7 @@ Route::get('/', function () {    return view('welcome');});
 
 Route::get('home', function () {    return view('home');});
 
-Route::get('main', 'App\Http\Controllers\ControllerUsing@main');
+Route::get('main', 'App\Http\Controllers\ControllerUsing@main'); //cesta ke classe, ve které je metoda s view
 
 
 //Route::get('calculator', function () {    return view('calculator');});
