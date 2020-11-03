@@ -21,9 +21,9 @@
 <body class="antialiased">
 <header>
     <img id='logo' alt="Logo VRS" src="https://media.discordapp.net/attachments/760875058561810520/768835407671590942/unknown.png">
-    <div>Jméno přihlášeného</div>
-    <div>Výpůjček: </div>
-    <div>Čeká na schválení: </div>
+    <div>{{ $fullname }} </div> <!-- Jméno, co se bere v ControllerUsing funkci, která bere z databáze -->
+    <div>Výpůjček: {{ $vypujcky_pocet }}</div>
+    <div>Čeká na schválení: {{ $schvaleni_pocet }}</div>
 </header>
 <section>
     @yield('obsah')
