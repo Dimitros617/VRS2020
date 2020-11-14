@@ -26,8 +26,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6258162b-d77b-4387-b311-ce67487a53e9" name="Default Changelist" comment="Založení calculatoru a root cest na home">
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_13_151918_create_items.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_13_155334_create_kategorie.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_14_004204_createpermition.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VRS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VRS.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_14_004658_createuzivatele.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" beforeDir="false" />
     </list>
     <list id="ee11485e-be3d-4401-963f-6d84bd64f0f9" name="Revert &quot;First Commit&quot;" comment="Revert &quot;First Commit&quot;&#10;&#10;This reverts commit 7389926d" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +46,7 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
-      <phar pharPath="D:\Xamp\ComposerSetup\composer.phar" interpreterId="2a3fc094-7c43-401e-b1e4-29066a26f310" />
+      <phar pharPath="C:\composer\composer.phar" interpreterId="827eaa5c-1684-40b1-88e4-3f755202715e" />
     </execution>
   </component>
   <component name="Git.Settings">
@@ -92,7 +100,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/console" />
       <path value="$PROJECT_DIR$/vendor/symfony/finder" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
-      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
       <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation" />
@@ -161,6 +168,7 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/complexity" />
       <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
       <path value="$PROJECT_DIR$/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iyF5qs0lSbGXT3k5VutWjZW3Xp" />
@@ -211,6 +219,9 @@
       <workItem from="1603027617664" duration="435000" />
       <workItem from="1603355773328" duration="4287000" />
       <workItem from="1603372997296" duration="7816000" />
+      <workItem from="1603983608693" duration="3037000" />
+      <workItem from="1605182101546" duration="14000" />
+      <workItem from="1605279885962" duration="10308000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1602874504350</created>
@@ -254,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603380044695</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Založení calculatoru a root cest na home">
+      <created>1603985362845</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1603985362845</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,16 +306,17 @@
     <MESSAGE value="First Commit" />
     <MESSAGE value="Revert &quot;First Commit&quot;&#10;&#10;This reverts commit 7389926d" />
     <MESSAGE value="Uprava larevelu a založení interního projektu" />
-    <MESSAGE value="Založení calculatoru a root cest na home" />
     <MESSAGE value="Meeting 22.10.2020" />
     <MESSAGE value="Meeting 22.10.2020 repaire" />
-    <option name="LAST_COMMIT_MESSAGE" value="Meeting 22.10.2020 repaire" />
+    <MESSAGE value="Založení calculatoru a root cest na home" />
+    <option name="LAST_COMMIT_MESSAGE" value="Založení calculatoru a root cest na home" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="627" y="213" key="#CLI_Interpreters" timestamp="1603380691628">
+    <state x="627" y="213" key="#CLI_Interpreters" timestamp="1603983713848">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="627" y="213" key="#CLI_Interpreters/-1920.412.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603380691628" />
+    <state x="627" y="213" key="#CLI_Interpreters/0.0.1920.1040/-1920.1.1920.1040/1920.1.1920.1040@0.0.1920.1040" timestamp="1603983713848" />
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602874479430">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -315,10 +334,11 @@
     </state>
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/-1920.0.1920.1040/0.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1603119273628" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/-1920.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1602874170613" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1602874105120">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1603983693228">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1602874105120" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.1.1920.1040/1920.1.1920.1040@0.0.1920.1040" timestamp="1603983693228" />
     <state x="784" y="440" key="Github.CreateGistDialog" timestamp="1602873951671">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -355,17 +375,19 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="443" key="NewPhpFileDialog/-1920.0.1920.1040/0.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1603120322167" />
-    <state x="548" y="203" key="SettingsEditor" timestamp="1603381324045">
+    <state x="548" y="203" key="SettingsEditor" timestamp="1603983723586">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="548" y="203" key="SettingsEditor/-1920.412.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603381324045" />
     <state x="548" y="203" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1602873516966" />
+    <state x="548" y="203" key="SettingsEditor/0.0.1920.1040/-1920.1.1920.1040/1920.1.1920.1040@0.0.1920.1040" timestamp="1603983723586" />
     <state x="548" y="203" key="SettingsEditor/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603025836008" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1603380049382">
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1603985538959">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="240" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1603126800900" />
     <state x="552" y="240" key="Vcs.Push.Dialog.v2/-1920.412.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603380049382" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.1.1920.1040/1920.1.1920.1040@0.0.1920.1040" timestamp="1603985538959" />
     <state x="770" y="254" key="VcsDiffUtil.ChangesDialog" timestamp="1603118011078">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
