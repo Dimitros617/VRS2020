@@ -25,17 +25,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6258162b-d77b-4387-b311-ce67487a53e9" name="Default Changelist" comment="Založení calculatoru a root cest na home">
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_13_151918_create_items.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_13_155334_create_kategorie.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_14_004204_createpermition.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/VRS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VRS.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="6258162b-d77b-4387-b311-ce67487a53e9" name="Default Changelist" comment="databaze (ver. 1.0)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_14_004658_createuzivatele.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_14_004658_createuzivatele.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_14_004658_createuzivatele.php" afterDir="false" />
     </list>
     <list id="ee11485e-be3d-4401-963f-6d84bd64f0f9" name="Revert &quot;First Commit&quot;" comment="Revert &quot;First Commit&quot;&#10;&#10;This reverts commit 7389926d" />
     <option name="SHOW_DIALOG" value="false" />
@@ -221,7 +213,8 @@
       <workItem from="1603372997296" duration="7816000" />
       <workItem from="1603983608693" duration="3037000" />
       <workItem from="1605182101546" duration="14000" />
-      <workItem from="1605279885962" duration="10308000" />
+      <workItem from="1605279885962" duration="10413000" />
+      <workItem from="1605795941670" duration="1496000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1602874504350</created>
@@ -272,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603985362845</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="databaze (ver. 1.0)">
+      <created>1605321508821</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1605321508821</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,7 +309,8 @@
     <MESSAGE value="Meeting 22.10.2020" />
     <MESSAGE value="Meeting 22.10.2020 repaire" />
     <MESSAGE value="Založení calculatoru a root cest na home" />
-    <option name="LAST_COMMIT_MESSAGE" value="Založení calculatoru a root cest na home" />
+    <MESSAGE value="databaze (ver. 1.0)" />
+    <option name="LAST_COMMIT_MESSAGE" value="databaze (ver. 1.0)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="627" y="213" key="#CLI_Interpreters" timestamp="1603983713848">
@@ -382,12 +383,12 @@
     <state x="548" y="203" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1602873516966" />
     <state x="548" y="203" key="SettingsEditor/0.0.1920.1040/-1920.1.1920.1040/1920.1.1920.1040@0.0.1920.1040" timestamp="1603983723586" />
     <state x="548" y="203" key="SettingsEditor/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603025836008" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1603985538959">
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1605321515661">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="240" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1603126800900" />
     <state x="552" y="240" key="Vcs.Push.Dialog.v2/-1920.412.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603380049382" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.1.1920.1040/1920.1.1920.1040@0.0.1920.1040" timestamp="1603985538959" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.1.1920.1040/1920.1.1920.1040@0.0.1920.1040" timestamp="1605321515661" />
     <state x="770" y="254" key="VcsDiffUtil.ChangesDialog" timestamp="1603118011078">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
