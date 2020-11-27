@@ -5,11 +5,20 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-              AHOJS
-            </div>
+
+    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8">
+
+        <div class="container">
+            @foreach($kategories as $kategory)
+
+                <div class="row bg-dark">
+                    <div class="col-sm-6">{{$kategory['nazev']}}</div>
+                    <div class="col-sm-4">{{$kategory['nazev']}}</div>
+                </div>
+            @endforeach
+
         </div>
     </div>
+
+
 </x-app-layout>

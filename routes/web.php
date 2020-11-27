@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControllerUsing;
+use App\Http\Controllers\KategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,14 +23,11 @@ Route::get('/', function () {    return view('welcome');});
 Route::get('main',[ControllerUsing::class,'main']);
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/borrowing', function () {
-    return view('borrowing');
-});
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/borrows', function () {
     return view('my_borrows');
 });
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/borrowing', [KategoryController::class,'show']);
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
