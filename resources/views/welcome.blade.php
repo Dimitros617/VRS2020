@@ -31,10 +31,11 @@
                 </div>
             @endif
 
-                <div class="logo_box max-w-12xl mx-auto sm:px-6 lg:px-8">
+                <div class="logo_box ">
+                    <a href="/dashboard">
                     <div id="logo_max_size">
-
                     </div>
+                    </a>
 
                     <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
                         Build v{{ Illuminate\Foundation\Application::VERSION }}

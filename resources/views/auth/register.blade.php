@@ -1,7 +1,10 @@
 <x-guest-layout>
     <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+        <x-slot name="logo" >
+            <div style="transform: scale(2); margin-bottom: 25px">
+                {{--            <x-jet-authentication-card-logo />--}}
+                <x-jet-application-logo class="block h-9 w-auto " />
+            </div>
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
@@ -11,7 +14,17 @@
 
             <div>
                 <x-jet-label for="name" value="{{ __('Jméno') }}" />
-                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="given-name" />
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="name" value="{{ __('Příjmení') }}" />
+                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="lastname" :value="old('lastname')" required autofocus autocomplete="family-name" />
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="name" value="{{ __('Telefon') }}" />
+                <x-jet-input id="name" class="block mt-1 w-full" type="tel" name="phone" placeholder="+420 111 222 333"  :value="old('phone')" required autofocus autocomplete="phone" />
             </div>
 
             <div class="mt-4">

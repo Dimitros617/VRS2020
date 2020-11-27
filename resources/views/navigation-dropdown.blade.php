@@ -1,21 +1,25 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 shadow-lg p-3 mb-5">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
+
+
+        <div class="flex justify-between h-40">
             <div class="flex">
+
+
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-jet-application-mark class="block h-9 w-auto" />
+                    <a class="ml-20" style="transform: scale(2);" href="{{ route('dashboard') }}">
+                        <x-jet-application-logo class="block h-9 w-auto" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-jet-nav-link>
-                </div>
+{{--                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">--}}
+{{--                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">--}}
+{{--                        {{ __('Hlavní strana') }}--}}
+{{--                    </x-jet-nav-link>--}}
+{{--                </div>--}}
             </div>
 
             <!-- Settings Dropdown -->
@@ -23,11 +27,11 @@
                 <x-jet-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                            <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out">
+                            <button class="flex text-lg border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out">
                                 <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                             </button>
                         @else
-                            <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                            <button class="flex items-center text-lg font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
                                 <div>{{ Auth::user()->name }}</div>
 
                                 <div class="ml-1">
@@ -41,13 +45,23 @@
 
                     <x-slot name="content">
                         <!-- Account Management -->
-                        <div class="block px-4 py-2 text-xs text-gray-400">
-                            {{ __('Manage Account') }}
-                        </div>
+{{--                        <div class="block px-4 py-2 text-xs text-gray-400">--}}
+{{--                            {{ __('Možnosti') }}--}}
+{{--                        </div>--}}
 
                         <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                            {{ __('Profile') }}
+                            {{ __('Nastavení') }}
                         </x-jet-dropdown-link>
+
+{{--                        Přidané položkdy do menu a pozor musí se upravit 2x i pro mobilní verzi níže--}}
+                        <x-jet-dropdown-link href="/borrowing">
+                            {{ __('Nová výpůjčka') }}
+                        </x-jet-dropdown-link>
+
+                        <x-jet-dropdown-link href="/borrows">
+                            {{ __('Moje výpůjčky') }}
+                        </x-jet-dropdown-link>
+
 
                         @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                             <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
@@ -59,18 +73,18 @@
 
                         <!-- Team Management -->
                         @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
-                            <div class="block px-4 py-2 text-xs text-gray-400">
-                                {{ __('Manage Team') }}
-                            </div>
+{{--                            <div class="block px-4 py-2 text-xs text-gray-400">--}}
+{{--                                {{ __('Manage Team') }}--}}
+{{--                            </div>--}}
 
                             <!-- Team Settings -->
                             <x-jet-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
-                                {{ __('Team Settings') }}
+                                {{ __('Nastavit roly') }}
                             </x-jet-dropdown-link>
 
                             @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
                                 <x-jet-dropdown-link href="{{ route('teams.create') }}">
-                                    {{ __('Create New Team') }}
+                                    {{ __('Vytvořit novou roly') }}
                                 </x-jet-dropdown-link>
                             @endcan
 
@@ -78,7 +92,7 @@
 
                             <!-- Team Switcher -->
                             <div class="block px-4 py-2 text-xs text-gray-400">
-                                {{ __('Switch Teams') }}
+                                {{ __('Změnit roly') }}
                             </div>
 
                             @foreach (Auth::user()->allTeams() as $team)
@@ -95,7 +109,7 @@
                             <x-jet-dropdown-link href="{{ route('logout') }}"
                                                 onclick="event.preventDefault();
                                                             this.closest('form').submit();">
-                                {{ __('Logout') }}
+                                {{ __('Odhlásit se') }}
                             </x-jet-dropdown-link>
                         </form>
                     </x-slot>
@@ -118,7 +132,7 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+                {{ __('Hlavní strana') }}
             </x-jet-responsive-nav-link>
         </div>
 
@@ -138,7 +152,16 @@
             <div class="mt-3 space-y-1">
                 <!-- Account Management -->
                 <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
-                    {{ __('Profile') }}
+                    {{ __('Nastavení') }}
+                </x-jet-responsive-nav-link>
+
+{{--                Přidané položkdy do menu a pozor musí se upravit 2x i pro mobilní verzi níže--}}
+                <x-jet-responsive-nav-link href="/borrowing">
+                    {{ __('Nová výpůjčka') }}
+                </x-jet-responsive-nav-link>
+
+                <x-jet-responsive-nav-link href="/borrows">
+                    {{ __('Moje výpůjčky') }}
                 </x-jet-responsive-nav-link>
 
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
@@ -154,7 +177,7 @@
                     <x-jet-responsive-nav-link href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                        {{ __('Logout') }}
+                        {{ __('Odhlásit se') }}
                     </x-jet-responsive-nav-link>
                 </form>
 
@@ -162,24 +185,24 @@
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="border-t border-gray-200"></div>
 
-                    <div class="block px-4 py-2 text-xs text-gray-400">
-                        {{ __('Manage Team') }}
-                    </div>
+{{--                    <div class="block px-4 py-2 text-xs text-gray-400">--}}
+{{--                        {{ __('Manage Team') }}--}}
+{{--                    </div>--}}
 
                     <!-- Team Settings -->
                     <x-jet-responsive-nav-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}" :active="request()->routeIs('teams.show')">
-                        {{ __('Team Settings') }}
+                        {{ __('Nastavení role') }}
                     </x-jet-responsive-nav-link>
 
                     <x-jet-responsive-nav-link href="{{ route('teams.create') }}" :active="request()->routeIs('teams.create')">
-                        {{ __('Create New Team') }}
+                        {{ __('Vytvořit novou roly') }}
                     </x-jet-responsive-nav-link>
 
                     <div class="border-t border-gray-200"></div>
 
                     <!-- Team Switcher -->
                     <div class="block px-4 py-2 text-xs text-gray-400">
-                        {{ __('Switch Teams') }}
+                        {{ __('Změnit roly') }}
                     </div>
 
                     @foreach (Auth::user()->allTeams() as $team)

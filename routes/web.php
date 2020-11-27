@@ -22,6 +22,15 @@ Route::get('/', function () {    return view('welcome');});
 Route::get('main',[ControllerUsing::class,'main']);
 
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/borrowing', function () {
+    return view('borrowing');
+});
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/borrows', function () {
+    return view('my_borrows');
+});
+
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
