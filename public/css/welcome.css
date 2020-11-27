@@ -1,0 +1,25 @@
+body {
+    font-family: 'Nunito';
+    background-color: white;
+    background-image: url(../Img/white_background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+div#logo_max_size {
+    background-image: url(../Img/logo_big_transparent_space_plus.png);
+    width: 55vw;
+    height: 25vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+
+.logo_box{
+    background: #ffffff99;
+    border-radius: 19px;
+    box-shadow: 1px 3px 8px 10px #f1f1f1;
+}
