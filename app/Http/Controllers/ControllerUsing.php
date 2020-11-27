@@ -12,10 +12,13 @@ class ControllerUsing extends Controller
         $vypujcky_pocet_d = 'Zatím 0';
         $schvaleni_pocet_d = 'Zatím 0';
 
+        echo "<script>console.log('Debug Objects: asdasdasdasdasdasdasdasd' );</script>";
         return view( 'main')->with(['fullname' => $jmenoDatabaze,
             'vypujcky_pocet' => $vypujcky_pocet_d, 'schvaleni_pocet' => $schvaleni_pocet_d]);
 
     }
+
+
 }
 
 //classa s metodami na zobrazování stran přes controllery
