@@ -13,6 +13,7 @@ use App\Http\Controllers\ControllerUsing;
 | contains the "web" middleware group. Now create something great!
 |php
 */
+App::setLocale('cs');
 
 Route::get('/', function () {    return view('welcome');});
 
