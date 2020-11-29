@@ -14,8 +14,9 @@
 
 
 {{--                    <div class="col-sm-6">{{$kategory['nazev']}}</div>--}}
-                    <a href="{{$kategory['nazev']}}" class="list-group-item list-group-item-action">{{$kategory['nazev']}}</a>
-    <br>
+                    <a href="{{url()->current().'/'.$kategory['nazev']}}" class="list-group-item list-group-item-action">{{$kategory['nazev']}}</a>
+{{--                    (str_replace(' ','_',$kategory['nazev']))  pokud chceme nahradit mezery podrtrřítkem --}}
+                    <br>
                     @php(url()->current())
             @endforeach
             </div>

@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Kategories;
+use App\Models\kategories;
+use Illuminate\Support\Facades\Log;
 
 class KategoryController extends Controller
 {
@@ -12,18 +13,18 @@ class KategoryController extends Controller
     function show(){
         echo "<script>console.log('Debug Objects: KategoryController' );</script>";
 
-        $data = Kategories::all();
-        echo url()->current();
+        $data = kategories::all();
+//        echo url()->current();
         return view('borrowing', ['kategories'=>$data]);
     }
 
-    function showKategory(Kategories $nazev){
+    function showKategory(kategories $nazev){
 
-        $category_name = Products::findOrFail($nazev);
+        Log::info('This is some useful information.');
 
-        echo "<script>console.log('Debug Objects: ' + $category_name );</script>"; die();
+//        echo "<script>console.log('Debug Objects: ' +  );</script>"; die();
 
-        echo $nazev;
+        return $nazev;
 
     }
 }

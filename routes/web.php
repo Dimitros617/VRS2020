@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControllerUsing;
 use App\Http\Controllers\KategoryController;
-
+use App\Models\kategories;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,7 +30,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/borrows', function () {
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/borrowing', [KategoryController::class,'show']);
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/borrowing/{nazev}', [KategoryController::class,'showKategory']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/borrowing/{nazev:nazev}', [KategoryController::class,'showKategory']);
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
