@@ -79,12 +79,12 @@
 
                             <!-- Team Settings -->
                             <x-jet-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
-                                {{ __('Nastavit roly') }}
+                                {{ __('Nastavit roli') }}
                             </x-jet-dropdown-link>
 
                             @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
                                 <x-jet-dropdown-link href="{{ route('teams.create') }}">
-                                    {{ __('Vytvořit novou roly') }}
+                                    {{ __('Vytvořit novou roli') }}
                                 </x-jet-dropdown-link>
                             @endcan
 
@@ -92,7 +92,7 @@
 
                             <!-- Team Switcher -->
                             <div class="block px-4 py-2 text-xs text-gray-400">
-                                {{ __('Změnit roly') }}
+                                {{ __('Změnit roli') }}
                             </div>
 
                             @foreach (Auth::user()->allTeams() as $team)
@@ -195,14 +195,14 @@
                     </x-jet-responsive-nav-link>
 
                     <x-jet-responsive-nav-link href="{{ route('teams.create') }}" :active="request()->routeIs('teams.create')">
-                        {{ __('Vytvořit novou roly') }}
+                        {{ __('Vytvořit novou roli') }}
                     </x-jet-responsive-nav-link>
 
                     <div class="border-t border-gray-200"></div>
 
                     <!-- Team Switcher -->
                     <div class="block px-4 py-2 text-xs text-gray-400">
-                        {{ __('Změnit roly') }}
+                        {{ __('Změnit roli') }}
                     </div>
 
                     @foreach (Auth::user()->allTeams() as $team)
