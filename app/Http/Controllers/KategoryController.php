@@ -13,6 +13,17 @@ class KategoryController extends Controller
         echo "<script>console.log('Debug Objects: KategoryController' );</script>";
 
         $data = Kategories::all();
+        echo url()->current();
         return view('borrowing', ['kategories'=>$data]);
+    }
+
+    function showKategory(Kategories $nazev){
+
+        $category_name = Products::findOrFail($nazev);
+
+        echo "<script>console.log('Debug Objects: ' + $category_name );</script>"; die();
+
+        echo $nazev;
+
     }
 }
