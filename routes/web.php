@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControllerUsing;
 use App\Http\Controllers\KategoryController;
+use App\Http\Controllers\DashboardController;
 use App\Models\kategories;
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/categories', [KategoryCon
 Route::middleware(['auth:sanctum', 'verified'])->get('/categories/{nazev:nazev}', [KategoryController::class,'showKategory']);
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [DashboardController::class,'show']) ->name('dashboard');
