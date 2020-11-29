@@ -54,7 +54,7 @@
                         </x-jet-dropdown-link>
 
 {{--                        Přidané položkdy do menu a pozor musí se upravit 2x i pro mobilní verzi níže--}}
-                        <x-jet-dropdown-link href="/borrowing">
+                        <x-jet-dropdown-link href="/categories">
                             {{ __('Nová výpůjčka') }}
                         </x-jet-dropdown-link>
 
@@ -156,7 +156,7 @@
                 </x-jet-responsive-nav-link>
 
 {{--                Přidané položkdy do menu a pozor musí se upravit 2x i pro mobilní verzi níže--}}
-                <x-jet-responsive-nav-link href="/borrowing">
+                <x-jet-responsive-nav-link href="/categories">
                     {{ __('Nová výpůjčka') }}
                 </x-jet-responsive-nav-link>
 

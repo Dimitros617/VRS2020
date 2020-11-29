@@ -10,11 +10,11 @@
 
         <div class="container">
             <div class="list-group">
-            @foreach($kategories as $kategory)
+            @foreach($categories as $category)
 
 
 {{--                    <div class="col-sm-6">{{$kategory['nazev']}}</div>--}}
-                    <a href="{{url()->current().'/'.$kategory['nazev']}}" class="list-group-item list-group-item-action">{{$kategory['nazev']}}</a>
+                    <a href="{{url()->current().'/'.$category['nazev']}}" class="list-group-item list-group-item-action">{{$category['nazev']}}</a>
 {{--                    (str_replace(' ','_',$kategory['nazev']))  pokud chceme nahradit mezery podrtrřítkem --}}
                     <br>
                     @php(url()->current())

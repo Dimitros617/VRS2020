@@ -28,9 +28,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/borrows', function () {
 });
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/borrowing', [KategoryController::class,'show']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/categories', [KategoryController::class,'show']);
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/borrowing/{nazev:nazev}', [KategoryController::class,'showKategory']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/categories/{nazev:nazev}', [KategoryController::class,'showKategory']);
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

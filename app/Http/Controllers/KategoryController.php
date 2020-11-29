@@ -11,20 +11,19 @@ class KategoryController extends Controller
 {
     //
     function show(){
+
         echo "<script>console.log('Debug Objects: KategoryController' );</script>";
+        Log::info('KategoryControler:show');
 
         $data = kategories::all();
-//        echo url()->current();
-        return view('borrowing', ['kategories'=>$data]);
+        return view('categories', ['categories'=>$data]);
     }
 
     function showKategory(kategories $nazev){
 
-        Log::info('This is some useful information.');
+        Log::info('KategoryControler:showKategory');
 
-//        echo "<script>console.log('Debug Objects: ' +  );</script>"; die();
-
-        return $nazev;
+        return view('category', ['category'=>$nazev]);
 
     }
 }
