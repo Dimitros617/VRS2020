@@ -11,7 +11,7 @@ class CreateItems extends Migration
         Schema::create('itemy', function (Blueprint $table) {
 
             $table->id();
-            $table->integer('kategorie');
+            $table->unsignedBigInteger('kategorie');
             $table->string('nazev',90);
             $table->string('poznamka',180)->default('');
             $table->string('umisteni',90);
@@ -19,6 +19,8 @@ class CreateItems extends Migration
             $table->string('inventarni_cislo',40);
             $table->integer('evidencni_cislo');
             $table->string('odpovedna_osoba',60);
+
+            $table->foreign('kategorie')->references('id')->on('kategorie');
 
         });
     }

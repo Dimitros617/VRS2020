@@ -17,7 +17,10 @@ class CreateUzivatele extends Migration
             $table->integer('telefon');
             $table->string('email',40);
             $table->tinyInteger('verify')->default('0');
-            $table->integer('permition');
+            $table->unsignedBigInteger('permition');
+
+            $table->foreign('permition')->references('id')->on('permition');
+
 
         });
     }
