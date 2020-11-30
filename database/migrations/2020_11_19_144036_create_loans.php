@@ -12,11 +12,14 @@ class CreateVypujcky extends Migration
         Schema::create('vypujcky', function (Blueprint $table) {
 
             $table->id();
-            $table->integer('uzivatel');
-            $table->integer('item');
+            $table->unsignedBigInteger('uzivatel');
+            $table->unsignedBigInteger('item');
             $table->timestamp('vypujceno_od')->useCurrent();
             $table->timestamp('vypujceno_do')->useCurrent();
             $table->tinyInteger('stav')->default('1');
+
+            $table->foreign('uzivatel')->references('id')->on('users');
+            $table->foreign('item')->references('id')->on('itemy');
 
 
 
