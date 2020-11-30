@@ -1,25 +1,42 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Nová vypůjčka') }}
-        </h2>
-    </x-slot>
+
+    <x-slot name="header"></x-slot>
 
 
     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8">
 
         <div class="container">
-            <div class="list-group">
-            @foreach($categories as $category)
+
+            @if(sizeof($categories) != 0)
+                <div class="list-group pt-4 pb-4">
+                    @foreach($categories as $category)
 
 
-{{--                    <div class="col-sm-6">{{$kategory['nazev']}}</div>--}}
-                    <a href="{{url()->current().'/'.$category['nazev']}}" class="list-group-item list-group-item-action">{{$category['nazev']}}</a>
-{{--                    (str_replace(' ','_',$kategory['nazev']))  pokud chceme nahradit mezery podrtrřítkem --}}
-                    <br>
-                    @php(url()->current())
-            @endforeach
-            </div>
+                        <a href="{{url()->current().'/'.$category['nazev']}}"
+                           class="list-group-item list-group-item-action">
+
+                            <div class="display-4">
+                                {{$category['nazev']}}
+                            </div>
+
+                            <div class="">
+                                {{$category['popis']}}
+                            </div>
+
+                            <div class="badge badge-primary badge-pill">
+                                99
+                            </div>
+
+
+                        </a>
+                        {{--                    (str_replace(' ','_',$kategory['nazev']))  pokud chceme nahradit mezery podrtrřítkem --}}
+
+                    @endforeach
+                </div>
+            @else
+                <div class="display-4 pt-4 pb-4">Nebyly nalezeny žádné kategorie</div>
+            @endif
+
         </div>
     </div>
 

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use phpDocumentor\Reflection\Types\This;
 
-class kategories extends Model
+class categories extends Model
 {
     use HasFactory;
 

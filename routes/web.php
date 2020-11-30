@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControllerUsing;
-use App\Http\Controllers\KategoryController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
-use App\Models\kategories;
+use App\Models\categories;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,9 +29,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/borrows', function () {
 });
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/categories', [KategoryController::class,'show']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/categories', [CategoryController::class,'show']);
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/categories/{nazev:nazev}', [KategoryController::class,'showKategory']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/categories/{nazev:nazev}', [CategoryController::class,'showKategory']);
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [DashboardController::class,'show']) ->name('dashboard');
