@@ -17,7 +17,7 @@ class CreateVypujcky extends Migration
             $table->timestamp('vypujceno_do')->useCurrent();
             $table->tinyInteger('stav')->default('1');
 
-            $table->foreign('uzivatel')->references('id')->on('uzivatele');
+            $table->foreign('uzivatel')->references('id')->on('users');
             $table->foreign('item')->references('id')->on('itemy');
 
 
