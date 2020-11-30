@@ -12,6 +12,9 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap-grid.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap-reboot.css">
 
         @livewireStyles
 
