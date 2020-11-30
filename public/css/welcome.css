@@ -1,0 +1,42 @@
+body {
+    font-family: 'Nunito';
+    background-color: white;
+    background-image: url(../Img/white_background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+
+}
+
+div#logo_max_size {
+    background-image: url(../Img/logo_big.svg);
+    width: 55vw;
+    height: 25vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition-duration: 1s;
+
+}
+
+div#logo_max_size:hover {
+
+    transform: scale(1.05);
+}
+
+div#logo_max_size:active {
+    transform: scale(0.8);
+}
+
+
+.logo_box{
+    background: #ffffff99;
+    box-shadow: 1px 3px 8px 10px #f1f1f1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
