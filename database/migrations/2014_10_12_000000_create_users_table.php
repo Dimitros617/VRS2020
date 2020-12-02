@@ -16,15 +16,16 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('jmeno_uzivatele',40);
-            $table->string('prijmeni_uzivatele',40);
-            $table->string('heslo',40);
-            $table->integer('telefon');
-            $table->string('email',40);
-            $table->tinyInteger('verify')->default('0');
-            $table->unsignedBigInteger('permition');
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken();
+            $table->foreignId('current_team_id')->nullable();
+            $table->text('profile_photo_path')->nullable();
+            $table->timestamps();
 
-            $table->foreign('permition')->references('id')->on('permition');
+            //$table->foreign('permition')->references('id')->on('permition');
         });
     }
 

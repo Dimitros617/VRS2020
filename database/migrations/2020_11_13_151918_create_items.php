@@ -21,7 +21,7 @@ class CreateItems extends Migration
             $table->integer('evidencni_cislo');
             $table->string('odpovedna_osoba',60);
 
-            $table->foreign('kategorie')->references('id')->on('kategorie');
+            //$table->foreign('kategorie')->references('id')->on('kategorie');
 
         });
     }
