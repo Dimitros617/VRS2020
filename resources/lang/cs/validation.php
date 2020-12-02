@@ -92,7 +92,7 @@ return [
     'not_in'               => 'Zvolená hodnota pro :attribute je neplatná.',
     'not_regex'            => ':attribute musí být regulární výraz.',
     'numeric'              => ':attribute musí být číslo.',
-    'password'             => 'The password is incorrect.',
+    'password'             => 'heslo není správné.',
     'present'              => ':attribute musí být vyplněno.',
     'regex'                => ':attribute nemá správný formát.',
     'required'             => ':attribute musí být vyplněno.',
@@ -147,6 +147,6 @@ return [
 
     'attributes' => [
         'password' => 'heslo',
-        'current_password' => 'stávající heslo',
+        'current_password' => 'aktuální heslo',
     ],
 ];
