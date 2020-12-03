@@ -8,10 +8,10 @@ class CreateCategories extends Migration
 {
     public function up()
     {
-        Schema::create('kategorie', function (Blueprint $table) {
+        Schema::create('category', function (Blueprint $table) {
             $table->id();
-            $table->string('nazev',90);
-            $table->text('popis');
+            $table->string('name',90);
+            $table->text('description');
 
         });
     }

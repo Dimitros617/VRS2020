@@ -12,11 +12,11 @@ class CreatePermition extends Migration
         Schema::create('permition', function (Blueprint $table) {
 
             $table->id();
-            $table->string('nazev',40);
-            $table->tinyInteger('moznost_vypujcky',)->default('0');
-            $table->tinyInteger('novy_uzivatele',)->default('0');
-            $table->tinyInteger('overeni_vraceni',)->default('0');
-            $table->tinyInteger('uprava_itemu',)->default('0');
+            $table->string('name',40);
+            $table->tinyInteger('possibility_renting',)->default('0');
+            $table->tinyInteger('new_user',)->default('0');
+            $table->tinyInteger('return_verification',)->default('0');
+            $table->tinyInteger('edit_item',)->default('0');
 
 
 

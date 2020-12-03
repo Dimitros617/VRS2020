@@ -17,15 +17,19 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('surname');
+            $table->string('phone');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->text('profile_photo_path')->nullable();
+            $table->string('verify');
+            $table->unsignedBigInteger('permition');
             $table->timestamps();
 
-            //$table->foreign('permition')->references('id')->on('permition');
+            $table->foreign('permition')->references('id')->on('permition');
         });
     }
 
