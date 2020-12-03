@@ -29,149 +29,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee11485e-be3d-4401-963f-6d84bd64f0f9" name="Revert &quot;First Commit&quot;" comment="Revert &quot;First Commit&quot;&#10;&#10;This reverts commit 7389926d">
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap/css/bootstrap-grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap/css/bootstrap.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap/js/bootstrap.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap/js/bootstrap.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/dragonmantank/cron-expression/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/dragonmantank/cron-expression/.github/FUNDING.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/dragonmantank/cron-expression/src/Cron/DayOfWeekField.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dragonmantank/cron-expression/src/Cron/DayOfWeekField.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/dragonmantank/cron-expression/src/Cron/FieldFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dragonmantank/cron-expression/src/Cron/FieldFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/dragonmantank/cron-expression/src/Cron/FieldFactoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dragonmantank/cron-expression/src/Cron/FieldFactoryInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/dragonmantank/cron-expression/src/Cron/MonthField.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dragonmantank/cron-expression/src/Cron/MonthField.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/dragonmantank/cron-expression/tests/Cron/AbstractFieldTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/dragonmantank/cron-expression/tests/Cron/CronExpressionTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/dragonmantank/cron-expression/tests/Cron/DayOfMonthFieldTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/dragonmantank/cron-expression/tests/Cron/DayOfWeekFieldTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/dragonmantank/cron-expression/tests/Cron/FieldFactoryTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/dragonmantank/cron-expression/tests/Cron/HoursFieldTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/dragonmantank/cron-expression/tests/Cron/MinutesFieldTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/dragonmantank/cron-expression/tests/Cron/MonthFieldTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Broadcasting/Broadcasters/Broadcaster.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Broadcasting/Broadcasters/Broadcaster.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Broadcasting/Broadcasters/PusherBroadcaster.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Broadcasting/Broadcasters/PusherBroadcaster.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Broadcasting/Broadcasters/RedisBroadcaster.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Broadcasting/Broadcasters/RedisBroadcaster.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Collections/Arr.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Collections/Arr.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Collections/Collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Collections/Collection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Collections/LazyCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Collections/LazyCollection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Console/Concerns/InteractsWithIO.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Console/Concerns/InteractsWithIO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/DetectsLostConnections.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/DetectsLostConnections.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/QueriesRelationships.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/QueriesRelationships.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/BelongsToMany.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/BelongsToMany.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/MorphToMany.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/MorphToMany.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Application.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Application.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Providers/ArtisanServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Providers/ArtisanServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/InteractsWithTime.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/InteractsWithTime.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Wormhole.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Wormhole.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/Markdown.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/Markdown.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Route.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Route.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/RouteAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/RouteAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/RouteSignatureParameters.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/RouteSignatureParameters.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/App.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/App.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Password.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Password.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Lang/es_MX.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Lang/es_MX.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Lang/oc.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Lang/oc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/phar-io/version/src/Version.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phar-io/version/src/Version.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Exception/Xdebug3NotEnabledException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Exception/Xdebug3NotEnabledException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Version.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Version.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/console/Application.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/console/Application.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/console/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/console/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/console/Command/ListCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/console/Command/ListCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/console/Descriptor/MarkdownDescriptor.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/console/Descriptor/MarkdownDescriptor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/console/Descriptor/XmlDescriptor.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/console/Descriptor/XmlDescriptor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/console/Formatter/OutputFormatter.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/console/Formatter/OutputFormatter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/console/Formatter/OutputFormatterStyle.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/console/Formatter/OutputFormatterStyle.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/console/Helper/ProgressBar.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/console/Helper/ProgressBar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/console/Helper/QuestionHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/console/Helper/QuestionHelper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/console/Helper/SymfonyQuestionHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/console/Helper/SymfonyQuestionHelper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/console/Helper/Table.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/console/Helper/Table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/console/Input/ArgvInput.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/console/Input/ArgvInput.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/console/Output/ConsoleOutput.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/console/Output/ConsoleOutput.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/console/Question/ChoiceQuestion.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/console/Question/ChoiceQuestion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/console/Question/Question.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/console/Question/Question.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/console/SingleCommandApplication.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/console/SingleCommandApplication.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/console/Style/SymfonyStyle.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/console/Style/SymfonyStyle.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/console/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/console/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/css-selector/Parser/Parser.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/css-selector/Parser/Parser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/event-dispatcher/Debug/TraceableEventDispatcher.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/event-dispatcher/Debug/TraceableEventDispatcher.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/finder/Finder.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/finder/Finder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/http-foundation/BinaryFileResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/http-foundation/BinaryFileResponse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/http-foundation/Cookie.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/http-foundation/Cookie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/http-foundation/InputBag.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/http-foundation/InputBag.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/http-foundation/IpUtils.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/http-foundation/IpUtils.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/http-foundation/Request.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/http-foundation/Request.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/http-foundation/RequestMatcher.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/http-foundation/RequestMatcher.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/http-foundation/ServerBag.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/http-foundation/ServerBag.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/Controller/ControllerResolver.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/Controller/ControllerResolver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/ControllerMetadata/ArgumentMetadata.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/ControllerMetadata/ArgumentMetadata.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/ControllerMetadata/ArgumentMetadataFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/ControllerMetadata/ArgumentMetadataFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/DataCollector/DumpDataCollector.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/DataCollector/DumpDataCollector.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/DataCollector/RequestDataCollector.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/DataCollector/RequestDataCollector.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/EventListener/AbstractSessionListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/EventListener/AbstractSessionListener.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/Fragment/FragmentHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/Fragment/FragmentHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/HttpCache/Store.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/HttpCache/Store.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/KernelEvents.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/KernelEvents.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/KernelInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/KernelInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/mime/Address.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/mime/Address.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/mime/Encoder/IdnAddressEncoder.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/mime/Encoder/IdnAddressEncoder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/mime/Header/Headers.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/mime/Header/Headers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/mime/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/mime/Message.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/mime/MimeTypes.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/mime/MimeTypes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/mime/Part/Multipart/FormDataPart.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/mime/Part/Multipart/FormDataPart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/mime/Part/TextPart.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/mime/Part/TextPart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/mime/Resources/bin/update_mime_types.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/mime/Resources/bin/update_mime_types.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/mime/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/mime/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/process/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/process/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/process/Process.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/process/Process.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/routing/Annotation/Route.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/routing/Annotation/Route.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/routing/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/routing/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/routing/Matcher/CompiledUrlMatcher.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/routing/Matcher/CompiledUrlMatcher.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/routing/Matcher/Dumper/CompiledUrlMatcherTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/routing/Matcher/Dumper/CompiledUrlMatcherTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/routing/Matcher/Dumper/StaticPrefixCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/routing/Matcher/Dumper/StaticPrefixCollection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/routing/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/routing/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/string/AbstractUnicodeString.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/string/AbstractUnicodeString.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/string/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/string/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/string/Slugger/AsciiSlugger.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/string/Slugger/AsciiSlugger.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/translation/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/translation/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/translation/DependencyInjection/TranslatorPathsPass.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/translation/DependencyInjection/TranslatorPathsPass.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/translation/Loader/MoFileLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/translation/Loader/MoFileLoader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/translation/Translator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/translation/Translator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/translation/Util/XliffUtils.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/translation/Util/XliffUtils.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/translation/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/translation/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/ReflectionCaster.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/ReflectionCaster.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Cloner/AbstractCloner.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/var-dumper/Cloner/AbstractCloner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Dumper/CliDumper.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/var-dumper/Dumper/CliDumper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/VarDumper.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/var-dumper/VarDumper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/Fortify/CreateNewUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/Fortify/CreateNewUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2016_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2016_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_19_144036_create_loans.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,10 +71,11 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="database" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="PhpDebugGeneral" show_user_defined_constants="false" />
@@ -386,7 +251,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/profile" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -442,6 +307,8 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.localhost:80" />
+        <item itemvalue="JavaScript Debug.localhost:8000" />
         <item itemvalue="JavaScript Debug.localhost:8000" />
         <item itemvalue="JavaScript Debug.localhost:80" />
       </list>
@@ -453,7 +320,6 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6258162b-d77b-4387-b311-ce67487a53e9" name="Default Changelist" comment="" />
       <created>1602871744991</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -481,6 +347,9 @@
       <workItem from="1606474393571" duration="27674000" />
       <workItem from="1606516035260" duration="687000" />
       <workItem from="1606647175659" duration="13090000" />
+      <workItem from="1606775629275" duration="1827000" />
+      <workItem from="1606823513927" duration="1794000" />
+      <workItem from="1607013485098" duration="3878000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1602874504350</created>
@@ -580,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606659433868</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Dočasná oprava migrate databáze">
+      <created>1606777358799</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1606777358799</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -597,7 +473,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -625,7 +501,8 @@
     <MESSAGE value="Edit dashboardu, upravena registrace, přidány stránky nová výpůjčka a seznam vůpůjček" />
     <MESSAGE value="Načítání dat z kategorie, problém v borrowing.blade.php" />
     <MESSAGE value="Snaha o dynmické URL nfunguje zase" />
-    <option name="LAST_COMMIT_MESSAGE" value="Snaha o dynmické URL nfunguje zase" />
+    <MESSAGE value="Dočasná oprava migrate databáze" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dočasná oprava migrate databáze" />
   </component>
   <component name="WindowStateProjectService">
     <state x="627" y="213" key="#CLI_Interpreters" timestamp="1603983713848">
@@ -677,11 +554,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="499" y="86" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1602874770222" />
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1603119273628">
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1606776227507">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/-1920.0.1920.1040/0.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1603119273628" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/-1920.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1602874170613" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606776227507" />
     <state x="-1180" y="275" key="FileChooserDialogImpl" timestamp="1606396364794">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
@@ -705,7 +583,7 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="839" y="225" key="Github.UntrackedFilesDialog/0.0.1920.1040/-1920.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1602873742563" />
-    <state width="1877" height="242" key="GridCell.Tab.0.bottom" timestamp="1606513823476">
+    <state width="1877" height="242" key="GridCell.Tab.0.bottom" timestamp="1606775557131">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="42" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1606489680823" />
@@ -713,8 +591,8 @@
     <state width="1877" height="259" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/1920.285.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1606402463904" />
     <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606141403270" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1602874170276" />
-    <state width="1877" height="242" key="GridCell.Tab.0.bottom/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606513823476" />
-    <state width="1877" height="242" key="GridCell.Tab.0.center" timestamp="1606513823476">
+    <state width="1877" height="242" key="GridCell.Tab.0.bottom/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606775557131" />
+    <state width="1877" height="242" key="GridCell.Tab.0.center" timestamp="1606775557131">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="42" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1606489680823" />
@@ -722,8 +600,8 @@
     <state width="1877" height="259" key="GridCell.Tab.0.center/-1920.0.1920.1040/1920.285.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1606402463904" />
     <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606141403270" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1602874170276" />
-    <state width="1877" height="242" key="GridCell.Tab.0.center/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606513823476" />
-    <state width="1877" height="242" key="GridCell.Tab.0.left" timestamp="1606513823475">
+    <state width="1877" height="242" key="GridCell.Tab.0.center/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606775557131" />
+    <state width="1877" height="242" key="GridCell.Tab.0.left" timestamp="1606775557131">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="42" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1606489680823" />
@@ -731,8 +609,8 @@
     <state width="1877" height="259" key="GridCell.Tab.0.left/-1920.0.1920.1040/1920.285.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1606402463904" />
     <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606141403270" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1602874170276" />
-    <state width="1877" height="242" key="GridCell.Tab.0.left/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606513823475" />
-    <state width="1877" height="242" key="GridCell.Tab.0.right" timestamp="1606513823476">
+    <state width="1877" height="242" key="GridCell.Tab.0.left/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606775557131" />
+    <state width="1877" height="242" key="GridCell.Tab.0.right" timestamp="1606775557131">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="42" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1606489680823" />
@@ -740,71 +618,76 @@
     <state width="1877" height="259" key="GridCell.Tab.0.right/-1920.0.1920.1040/1920.285.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1606402463904" />
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606141403270" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1602874170276" />
-    <state width="1877" height="242" key="GridCell.Tab.0.right/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606513823476" />
-    <state width="1877" height="242" key="GridCell.Tab.1.bottom" timestamp="1606513823476">
+    <state width="1877" height="242" key="GridCell.Tab.0.right/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606775557131" />
+    <state width="1877" height="242" key="GridCell.Tab.1.bottom" timestamp="1606775557132">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="42" key="GridCell.Tab.1.bottom/-1920.0.1920.1040/0.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1606489680824" />
     <state width="1877" height="264" key="GridCell.Tab.1.bottom/-1920.0.1920.1040/1920.285.1536.824/0.0.1920.1040@-1920.0.1920.1040" timestamp="1606403794980" />
     <state width="1877" height="259" key="GridCell.Tab.1.bottom/-1920.0.1920.1040/1920.285.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1606402463788" />
-    <state width="1877" height="242" key="GridCell.Tab.1.bottom/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606513823476" />
-    <state width="1877" height="242" key="GridCell.Tab.1.center" timestamp="1606513823476">
+    <state width="1877" height="242" key="GridCell.Tab.1.bottom/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606775557132" />
+    <state width="1877" height="242" key="GridCell.Tab.1.center" timestamp="1606775557132">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="42" key="GridCell.Tab.1.center/-1920.0.1920.1040/0.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1606489680823" />
     <state width="1877" height="264" key="GridCell.Tab.1.center/-1920.0.1920.1040/1920.285.1536.824/0.0.1920.1040@-1920.0.1920.1040" timestamp="1606403794980" />
     <state width="1877" height="259" key="GridCell.Tab.1.center/-1920.0.1920.1040/1920.285.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1606402463788" />
-    <state width="1877" height="242" key="GridCell.Tab.1.center/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606513823476" />
-    <state width="1877" height="242" key="GridCell.Tab.1.left" timestamp="1606513823476">
+    <state width="1877" height="242" key="GridCell.Tab.1.center/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606775557132" />
+    <state width="1877" height="242" key="GridCell.Tab.1.left" timestamp="1606775557131">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="42" key="GridCell.Tab.1.left/-1920.0.1920.1040/0.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1606489680823" />
     <state width="1877" height="264" key="GridCell.Tab.1.left/-1920.0.1920.1040/1920.285.1536.824/0.0.1920.1040@-1920.0.1920.1040" timestamp="1606403794980" />
     <state width="1877" height="259" key="GridCell.Tab.1.left/-1920.0.1920.1040/1920.285.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1606402463788" />
-    <state width="1877" height="242" key="GridCell.Tab.1.left/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606513823476" />
-    <state width="1877" height="242" key="GridCell.Tab.1.right" timestamp="1606513823476">
+    <state width="1877" height="242" key="GridCell.Tab.1.left/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606775557131" />
+    <state width="1877" height="242" key="GridCell.Tab.1.right" timestamp="1606775557132">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="42" key="GridCell.Tab.1.right/-1920.0.1920.1040/0.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1606489680823" />
     <state width="1877" height="264" key="GridCell.Tab.1.right/-1920.0.1920.1040/1920.285.1536.824/0.0.1920.1040@-1920.0.1920.1040" timestamp="1606403794980" />
     <state width="1877" height="259" key="GridCell.Tab.1.right/-1920.0.1920.1040/1920.285.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1606402463788" />
-    <state width="1877" height="242" key="GridCell.Tab.1.right/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606513823476" />
-    <state width="1877" height="242" key="GridCell.Tab.2.bottom" timestamp="1606513823477">
+    <state width="1877" height="242" key="GridCell.Tab.1.right/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606775557132" />
+    <state width="1877" height="242" key="GridCell.Tab.2.bottom" timestamp="1606775557132">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="42" key="GridCell.Tab.2.bottom/-1920.0.1920.1040/0.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1606489680824" />
     <state width="1877" height="264" key="GridCell.Tab.2.bottom/-1920.0.1920.1040/1920.285.1536.824/0.0.1920.1040@-1920.0.1920.1040" timestamp="1606403794980" />
     <state width="1877" height="259" key="GridCell.Tab.2.bottom/-1920.0.1920.1040/1920.285.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1606402463789" />
-    <state width="1877" height="242" key="GridCell.Tab.2.bottom/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606513823477" />
-    <state width="1877" height="242" key="GridCell.Tab.2.center" timestamp="1606513823476">
+    <state width="1877" height="242" key="GridCell.Tab.2.bottom/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606775557132" />
+    <state width="1877" height="242" key="GridCell.Tab.2.center" timestamp="1606775557132">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="42" key="GridCell.Tab.2.center/-1920.0.1920.1040/0.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1606489680824" />
     <state width="1877" height="264" key="GridCell.Tab.2.center/-1920.0.1920.1040/1920.285.1536.824/0.0.1920.1040@-1920.0.1920.1040" timestamp="1606403794980" />
     <state width="1877" height="259" key="GridCell.Tab.2.center/-1920.0.1920.1040/1920.285.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1606402463788" />
-    <state width="1877" height="242" key="GridCell.Tab.2.center/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606513823476" />
-    <state width="1877" height="242" key="GridCell.Tab.2.left" timestamp="1606513823476">
+    <state width="1877" height="242" key="GridCell.Tab.2.center/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606775557132" />
+    <state width="1877" height="242" key="GridCell.Tab.2.left" timestamp="1606775557132">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="42" key="GridCell.Tab.2.left/-1920.0.1920.1040/0.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1606489680824" />
     <state width="1877" height="264" key="GridCell.Tab.2.left/-1920.0.1920.1040/1920.285.1536.824/0.0.1920.1040@-1920.0.1920.1040" timestamp="1606403794980" />
     <state width="1877" height="259" key="GridCell.Tab.2.left/-1920.0.1920.1040/1920.285.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1606402463788" />
-    <state width="1877" height="242" key="GridCell.Tab.2.left/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606513823476" />
-    <state width="1877" height="242" key="GridCell.Tab.2.right" timestamp="1606513823476">
+    <state width="1877" height="242" key="GridCell.Tab.2.left/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606775557132" />
+    <state width="1877" height="242" key="GridCell.Tab.2.right" timestamp="1606775557132">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="42" key="GridCell.Tab.2.right/-1920.0.1920.1040/0.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1606489680824" />
     <state width="1877" height="264" key="GridCell.Tab.2.right/-1920.0.1920.1040/1920.285.1536.824/0.0.1920.1040@-1920.0.1920.1040" timestamp="1606403794980" />
     <state width="1877" height="259" key="GridCell.Tab.2.right/-1920.0.1920.1040/1920.285.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1606402463789" />
-    <state width="1877" height="242" key="GridCell.Tab.2.right/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606513823476" />
+    <state width="1877" height="242" key="GridCell.Tab.2.right/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606775557132" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1606391194827">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/-1920.0.1920.1040/0.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1606391194827" />
-    <state x="184" y="86" key="MergeDialog" timestamp="1602874421178">
+    <state x="184" y="86" key="MergeDialog" timestamp="1606777386042">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="184" y="86" key="MergeDialog/0.0.1920.1040/-1920.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1602874421178" />
+    <state x="184" y="86" key="MergeDialog/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606777386042" />
+    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1606777386055">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="598" y="281" key="MultipleFileMergeDialog/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606777386055" />
     <state x="794" y="443" key="NewPhpFileDialog" timestamp="1603120322167">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -814,31 +697,41 @@
     </state>
     <state x="743" y="361" width="434" height="652" key="PhpMappingAdvancedResolveDialog/-1920.0.1920.1040/0.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1606486457804" />
     <state x="-1177" y="361" key="PhpMappingAdvancedResolveDialog/-1920.0.1920.1040/1920.285.1536.824/0.0.1920.1040@-1920.0.1920.1040" timestamp="1606403760190" />
-    <state x="548" y="145" key="SettingsEditor" timestamp="1606391693346">
+    <state x="740" y="222" key="RollbackChangesDialog" timestamp="1606774817071">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="548" y="145" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1606391693346" />
+    <state x="740" y="222" key="RollbackChangesDialog/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606774817071" />
+    <state x="548" y="145" key="SettingsEditor" timestamp="1607013815897">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="548" y="145" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1607013815897" />
     <state x="548" y="203" key="SettingsEditor/-1920.412.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603381324045" />
     <state x="438" y="115" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1606137773080" />
     <state x="548" y="203" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1602873516966" />
     <state x="548" y="203" key="SettingsEditor/0.0.1920.1040/-1920.1.1920.1040/1920.1.1920.1040@0.0.1920.1040" timestamp="1603983723586" />
     <state x="548" y="203" key="SettingsEditor/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603025836008" />
-    <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog" timestamp="1606474059167">
+    <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog" timestamp="1606773410227">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/-1920.0.1920.1040/0.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1606474059167" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1606659437366">
+    <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606773410227" />
+    <state x="765" y="413" key="VCS.ChangelistChooser" timestamp="1606777456433">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="413" key="VCS.ChangelistChooser/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606777456433" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1606777400522">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="240" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1606494523959" />
     <state x="552" y="240" key="Vcs.Push.Dialog.v2/-1920.412.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603380049382" />
     <state x="442" y="190" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606141370177" />
     <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.1.1920.1040/1920.1.1920.1040@0.0.1920.1040" timestamp="1605321515661" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606659437366" />
-    <state x="770" y="254" key="VcsDiffUtil.ChangesDialog" timestamp="1603118011078">
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606777400522" />
+    <state x="770" y="254" key="VcsDiffUtil.ChangesDialog" timestamp="1606775835558">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="770" y="254" key="VcsDiffUtil.ChangesDialog/-1920.0.1920.1040/0.0.1920.1040/1920.285.1536.824@0.0.1920.1040" timestamp="1603118011078" />
+    <state x="770" y="254" key="VcsDiffUtil.ChangesDialog/1920.285.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606775835558" />
     <state x="832" y="364" key="cloudConfig.SelfSettingsDialog" timestamp="1602874576748">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -885,11 +778,6 @@
           <url>file://$PROJECT_DIR$/app/Http/Controllers/ControllerUsing.php</url>
           <line>10</line>
           <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/auth/register.blade.php</url>
-          <line>23</line>
-          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
