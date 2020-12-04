@@ -1,15 +1,15 @@
 <x-jet-action-section>
     <x-slot name="title">
-        {{ __('Relace v prohlížečích') }}
+        {{ __('Aktivita na jiných zařízeních') }}
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Spravujte své aktivní relace v ostatních prohlížečích či na jiných zařízení, případně se z nich odhlašte.') }}
+        {{ __('Sledujte svá přihlášení v jiných prohlížečích či na jiných zařízeních, případně se z nich odhlašte.') }}
     </x-slot>
 
     <x-slot name="content">
         <div class="max-w-xl text-sm text-gray-600">
-            {{ __('Pokud je to nutné, zde se můžete odhlásit ze všech ostatních zařízení či prohlížečů, kde jste zůstali přihlášeni. Některé z těchto relací jsou vypsány níže, tento seznam však nemusí být kompletní. Pokud máte pocit, že byl Váš účet ohrožen, zároveň byste měli aktualizovat i své heslo.') }}
+            {{ __('Pokud je to nutné, zde se můžete odhlásit ze všech zařízení či prohlížečů, kde jste zůstali přihlášeni. Některé z těchto relací jsou vypsány níže, tento seznam však nemusí být kompletní. Pokud máte pocit, že byl Váš účet ohrožen, zároveň byste měli změnit i své heslo.') }}
         </div>
 
         @if (count($this->sessions) > 0)
@@ -53,7 +53,7 @@
 
         <div class="flex items-center mt-5">
             <x-jet-button wire:click="confirmLogout" wire:loading.attr="disabled">
-                {{ __('Odhlásit z ostatních relací') }}
+                {{ __('Odhlásit všude') }}
             </x-jet-button>
 
             <x-jet-action-message class="ml-3" on="loggedOut">
@@ -64,11 +64,11 @@
         <!-- Logout Other Devices Confirmation Modal -->
         <x-jet-dialog-modal wire:model="confirmingLogout">
             <x-slot name="title">
-                {{ __('Odhlásit z ostatních relací') }}
+                {{ __('Odhlásit všude') }}
             </x-slot>
 
             <x-slot name="content">
-                {{ __('Prosím, zadejte své heslo jako potvrzení, že chcete odhlásit z jiných relací v prohlížečích na všech Vašich zařízení.') }}
+                {{ __('Prosím, zadejte své heslo jako potvrzení, že chcete odhlásit na všech zařízeních.') }}
 
                 <div class="mt-4" x-data="{}" x-on:confirming-logout-other-browser-sessions.window="setTimeout(() => $refs.password.focus(), 250)">
                     <x-jet-input type="password" class="mt-1 block w-3/4" placeholder="{{ __('Heslo') }}"

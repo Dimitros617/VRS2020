@@ -3,12 +3,12 @@
         <x-slot name="logo">
             <div style="transform: scale(2); margin-bottom: 25px">
                 {{--            <x-jet-authentication-card-logo />--}}
-                <x-jet-application-logo class="block h-9 w-auto " />
+                <a href="/"><x-jet-application-logo class="block h-9 w-auto " /></a>
             </div>
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your passwordíček? No kurde. Just do it, emailík address and we will smith ti pošle na reset passwordíčku ty kreténíčku. Ale stejně jsi dylina, tak si zvol nový passwordíček 12345678') }}
+            {{ __('Forgot your passwordíček? No kurde. Just do it, emailík address and we will smith ti pošle na reset passwordíčku. Ale stejně jsi dylina, tak si zvol nový passwordíček 12345678') }}
         </div>
 
         @if (session('status'))
@@ -23,8 +23,8 @@
             @csrf
 
             <div class="block">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                <!-- <x-jet-label for="email" value="{{ __('E-mail') }}" /> -->
+                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" placeholder="E-mail" :value="old('email')" required autofocus />
             </div>
 
             <div class="flex items-center justify-end mt-4">

@@ -1,6 +1,6 @@
 <x-jet-action-section>
     <x-slot name="title">
-        {{ __('Dvoufázové ověření/ Two Factor Authentication') }}
+        {{ __('Dvoufázové ověření') }}
     </x-slot>
 
     <x-slot name="description">

@@ -50,7 +50,7 @@
 {{--                        </div>--}}
 
                         <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                            {{ __('Nastavení') }}
+                            {{ __('Uživatelská nastavení') }}
                         </x-jet-dropdown-link>
 
 {{--                        Přidané položkdy do menu a pozor musí se upravit 2x i pro mobilní verzi níže--}}

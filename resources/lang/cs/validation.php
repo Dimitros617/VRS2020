@@ -146,7 +146,11 @@ return [
     */
 
     'attributes' => [
-        'password' => 'heslo',
-        'current_password' => 'aktuální heslo',
+        'password' => 'Heslo',
+        'current_password' => 'Aktuální heslo',
+        'surname' => 'Příjmení',
+        'name' => 'Jméno',
+        'phone' => 'Telefon',
+        'email' => 'E-mail',
     ],
 ];
