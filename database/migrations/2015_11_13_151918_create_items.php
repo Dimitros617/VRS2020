@@ -12,7 +12,7 @@ class CreateItems extends Migration
         Schema::create('items', function (Blueprint $table) {
 
             $table->id();
-            $table->unsignedBigInteger('category');
+            $table->unsignedBigInteger('categories');
             $table->string('name',90);
             $table->string('note',180)->default('');
             $table->string('place',90);
@@ -21,7 +21,7 @@ class CreateItems extends Migration
             $table->integer('registration_number');
             $table->string('authorized_person',60);
 
-            $table->foreign('category')->references('id')->on('category');
+            $table->foreign('categories')->references('id')->on('categories');
 
         });
     }
