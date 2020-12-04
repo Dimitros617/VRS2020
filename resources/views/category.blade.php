@@ -10,9 +10,9 @@
 
         <div class="container">
 
-            <h1>{{$category['nazev']}}</h1>
+            <h1>{{$category['name']}}</h1>
             <br>
-            <p>{{$category['popis']}}</p>
+            <p>{{$category['description']}}</p>
 
         </div>
     </div>

@@ -1,4 +1,4 @@
-@props(['title' => __('Potvrďte heslo'), 'content' => __('Pro Vaši bezpečnost, prosím, zadejte své heslo, než budete pokračovat.'), 'button' => __('Potvrdit')])
+@props(['title' => __('Confirm Password'), 'content' => __('For your security, please confirm your password to continue.'), 'button' => __('Confirm')])
 
 @php
     $confirmableId = md5($attributes->wire('then'));
@@ -24,7 +24,7 @@
         {{ $content }}
 
         <div class="mt-4" x-data="{}" x-on:confirming-password.window="setTimeout(() => $refs.confirmable_password.focus(), 250)">
-            <x-jet-input type="password" class="mt-1 block w-3/4" placeholder="{{ __('Heslo') }}"
+            <x-jet-input type="password" class="mt-1 block w-3/4" placeholder="{{ __('Password') }}"
                         x-ref="confirmable_password"
                         wire:model.defer="confirmablePassword"
                         wire:keydown.enter="confirmPassword" />
@@ -35,7 +35,7 @@
 
     <x-slot name="footer">
         <x-jet-secondary-button wire:click="stopConfirmingPassword" wire:loading.attr="disabled">
-            {{ __('Nyní ne') }}
+            {{ __('Nevermind') }}
         </x-jet-secondary-button>
 
         <x-jet-button class="ml-2" wire:click="confirmPassword" wire:loading.attr="disabled">

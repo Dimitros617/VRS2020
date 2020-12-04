@@ -16,15 +16,15 @@ class CategoryController extends Controller
         Log::info('CategoryControler:show');
 
         //$data = categories::all();
-        $data = categories::orderBy('nazev', 'asc')->get(); //načtení dat z databáze a setřízení podle abecedy
+        $data = categories::orderBy('name', 'asc')->get(); //načtení dat z databáze a setřízení podle abecedy
         return view('categories', ['categories'=>$data]);
     }
 
-    function showKategory(categories $nazev){
+    function showKategory(categories $name){
 
         Log::info('CategoryControler:showKategory');
 
-        return view('category', ['category'=>$nazev]);
+        return view('category', ['category'=>$name]);
 
     }
 }

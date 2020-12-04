@@ -12,15 +12,15 @@
                     @foreach($categories as $category)
 
 
-                        <a href="{{url()->current().'/'.$category['nazev']}}"
+                        <a href="{{url()->current().'/'.$category['name']}}"
                            class="list-group-item list-group-item-action">
 
                             <div class="display-4">
-                                {{$category['nazev']}}
+                                {{$category['name']}}
                             </div>
 
                             <div class="">
-                                {{$category['popis']}}
+                                {{$category['description']}}
                             </div>
 
                             <div class="badge badge-primary badge-pill">
