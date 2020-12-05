@@ -17,9 +17,6 @@ class CreateItems extends Migration
             $table->string('note',180)->default('');
             $table->string('place',90);
             $table->tinyInteger('availability')->default('0');
-            $table->string('inventory_number',40);
-            $table->integer('registration_number');
-            $table->string('authorized_person',60);
 
             $table->foreign('categories')->references('id')->on('categories');
 
