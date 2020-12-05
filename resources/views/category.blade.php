@@ -43,7 +43,29 @@
 
                                     <input type="text" class="d-none" name="itemId" value="{{$item->id}}">
 
-                                    <div class="dateReservation">
+                                    @php
+                                        $text = "";
+                                    @endphp
+                                    @foreach($loans as $loan)
+
+
+                                        @if($loan->item == $item->id)
+                                            @php
+
+                                                   $current = strtotime($loan->rent_from);
+                                                   $date2 = strtotime($loan->rent_to);
+                                                   $stepVal = '+1 day';
+                                                   while( $current <= $date2 ) {
+                                                      $text .= date('d-m-Y', $current) . "/";
+                                                      $current = strtotime($stepVal, $current);
+                                                   }
+
+                                            @endphp
+                                        @else
+                                        @endif
+                                    @endforeach
+
+                                    <div class="dateReservation" data="{{$text}}">
                                         <div class="reserveFromDiv">
                                             <label>Od:</label>
                                             <input class="date reserveFrom border" type="text" class="reserveFrom"
@@ -64,8 +86,7 @@
                                     <br>
                                     <input class="btn btn-primary" type="submit" value="Uložit">
                                 </form>
-                        {{--                    (str_replace(' ','_',$kategory['nazev']))  pokud chceme nahradit mezery podrtrřítkem --}}
-
+                                <hr>
                         @endforeach
 
             </div>

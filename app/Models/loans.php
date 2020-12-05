@@ -9,5 +9,5 @@ class loans extends Model
 {
     use HasFactory;
 
-    public $timestamps = FALSE;
+    public $timestamps = false;
 }

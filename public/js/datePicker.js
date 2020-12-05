@@ -1,4 +1,4 @@
-var disableddates = ["05-12-2020", "12-12-2020"];
+var disableddates = [];
 
 function changeFrom(input) {
 
@@ -53,6 +53,7 @@ function showDate(input) {
         min = "today";
     }
 
+    disableddates = input.parentElement.parentElement.getAttribute("data").split("/")
     $("input").datepicker({
         beforeShowDay: DisableSpecificDates,
         dateFormat: "dd-mm-yy",
@@ -61,7 +62,6 @@ function showDate(input) {
 }
 
 function DisableSpecificDates(date) {
-    let a = date;
     var string = jQuery.datepicker.formatDate('dd-mm-yy', date);
     return [disableddates.indexOf(string) == -1];
 }

@@ -32,20 +32,23 @@ class CategoryController extends Controller
     {
 
         Log::info('CategoryControler:showKategory');
-        $data = DB::table('items')->where('categories', $name['id'])->get();
-        return view('category', ['category' => $name, 'items' => $data]);
+        $dataItems = DB::table('items')->where('categories', $name['id'])->get();
+        $dataLoans = DB::table('loans')->join('items', 'loans.item', '=', 'items.id')->where('categories', $name['id'])->select('loans.item', 'loans.rent_from', 'loans.rent_to')->get();
+//        return $dataLoans;
+        return view('category', ['category' => $name, 'items' => $dataItems, 'loans' => $dataLoans]);
 
     }
 
     function saveCategory(Request $request)
     {
-        Log::info('CategoryControler:saveKategory');
+        Log::info('CategoryControler:saveCategory');
 
         $borrow = new loans;
         $borrow->user = Auth::id();
         $borrow->item = $request->itemId;
         $borrow->rent_from = $request->rent_from;
         $borrow->rent_to = $request->rent_to;
+        $borrow->save();
         return redirect()->back();
     }
 }
