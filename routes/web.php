@@ -32,6 +32,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/borrows', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/categories', [CategoryController::class,'show']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/categories/{name:name}', [CategoryController::class,'showKategory']);
+Route::post('/saveCategoryData', [CategoryController::class,'saveCategory']);
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [DashboardController::class,'show']) ->name('dashboard');
