@@ -12,7 +12,7 @@ class PermitionSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+  //  public function run()
     {
         DB::table('permition')->insert([
             'id' => 1,
