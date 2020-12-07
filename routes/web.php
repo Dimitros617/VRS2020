@@ -38,7 +38,7 @@ Route::post('/saveItemLoansData', [CategoryController::class,'saveItemLoans']);
 Route::post('/saveItemData', [CategoryController::class,'saveItem']);
 Route::post('/saveCategoryData', [CategoryController::class,'saveCategory']);
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/users', [ListUsersController::class,'show']);
-
+Route::middleware(['auth:sanctum', 'verified'])->get('/users', [ListUsersController::class,'showAllUsers']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/users/{id:id}', [ListUsersController::class,'showUser']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [DashboardController::class,'show']) ->name('dashboard');

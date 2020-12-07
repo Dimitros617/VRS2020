@@ -15,19 +15,24 @@ use App\Models\items;
 
 class ListUsersController extends Controller
 {
-    function show()
+    function showAllUsers()
     {
-        $data = ListUsers::orderBy('surname', 'asc')->get(); //načtení dat z databáze a setřízení podle abecedy
+
+        $data = DB::table('users')->join('permition', 'users.permition', '=', 'permition.id')->select('users.id as userId','users.name as userName', 'users.surname as userSurname', 'users.phone as userPhone', 'users.email as userEmail', 'permition.id as permitionId', 'permition.name as permitionName')->get();
+        //return $permition;
         return view('users', ['users' => $data]);
 
+
     }
 
-    function showListUsers()
+    function showUser(User $id)
     {
-        /*$dataItems = DB::table('items')->where('categories', $name['id'])->get();
-        $dataLoans = DB::table('loans')->join('items', 'loans.item', '=', 'items.id')->where('categories', $name['id'])->select('loans.item', 'loans.rent_from', 'loans.rent_to')->get();
-//        return $dataLoans;
-        return view('category', ['category' => $name, 'items' => $dataItems, 'loans' => $dataLoans]);*/
+        //return $id;
+        $data = DB::table('users')->join('permition', 'users.permition', '=', 'permition.id')->where('users.id', $id['id'])->select('users.id as userId','users.name as userName', 'users.surname as userSurname', 'users.phone as userPhone', 'users.email as userEmail', 'permition.id as permitionId', 'permition.name as permitionName')->get();
+        $dataPermition = DB::table('permition')->select('permition.name as permitionName', 'permition.id as permitionId')->get();
+        //return $dataPermition;
+        return view('singleUser',['user' => $data, 'permitions' => $dataPermition]);
     }
+
 
 }

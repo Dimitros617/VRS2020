@@ -14,15 +14,21 @@
             @if(sizeof($users) != 0)
                 <div class="list-group pt-4 pb-4">
 
-                    @foreach($users as $users)
+                    @foreach($users as $user)
+                        <a href="{{url()->current().'/'.$user -> userId}}" class="list-group-item list-group-item-action">
                             <div class="display-4">
-                                {{$users['surname']}}
-                                {{$users['name']}}
+                                {{$user -> userSurname}}
+                                {{$user -> userName}}
+                            </div>
+                            <div>
+                                {{$user -> permitionName}}
                             </div>
 
                             <div class="">
-                                <p>Telefon: {{$users['phone']}}, e-mail: {{$users['email']}} </p>
+                                <p>E-mail: {{$user -> userEmail}} </p>
                             </div>
+
+                        </a>
                     @endforeach
                 </div>
             @else
