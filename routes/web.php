@@ -36,7 +36,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/categories', [CategoryCon
 Route::middleware(['auth:sanctum', 'verified'])->get('/categories/{name:name}', [CategoryController::class,'showKategory']);
 Route::post('/saveCategoryData', [CategoryController::class,'saveCategory']);
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/users', [ListUsersController::class,'show']);
-
+Route::middleware(['auth:sanctum', 'verified'])->get('/users', [ListUsersController::class,'showAllUsers']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/users/{id:id}', [ListUsersController::class,'showUser']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [DashboardController::class,'show']) ->name('dashboard');
