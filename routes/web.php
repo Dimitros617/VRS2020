@@ -33,7 +33,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/borrows', function () {
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/categories', [CategoryController::class,'showCategories']);
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/categories/{name:name}', [CategoryController::class,'showItem']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/categories/{name:name}', [CategoryController::class,'showItem']) ->name('item');
+Route::post('/saveItemLoansData', [CategoryController::class,'saveItemLoans']);
+Route::post('/saveItemData', [CategoryController::class,'saveItem']);
 Route::post('/saveCategoryData', [CategoryController::class,'saveCategory']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/users', [ListUsersController::class,'show']);

@@ -11,11 +11,14 @@ use App\Models\User;
 use App\Models\items;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
+use phpDocumentor\Reflection\Types\True_;
 use function PHPUnit\Framework\returnArgument;
 
 
 class CategoryController extends Controller
 {
+
+
     //
     function showCategories()
     {
@@ -31,17 +34,20 @@ class CategoryController extends Controller
     function showItem(categories $name)
     {
 
+//        echo "<script>console.log('Debug Objects: ' + $name->id + ' ' + $name->name + ' ' + $name->description);</script>";
         Log::info('CategoryControler:showItem');
+
         $dataItems = DB::table('items')->where('categories', $name['id'])->get();
         $dataLoans = DB::table('loans')->join('items', 'loans.item', '=', 'items.id')->where('categories', $name['id'])->select('loans.item', 'loans.rent_from', 'loans.rent_to')->get();
-//        return $dataLoans;
-        return view('category', ['category' => $name, 'items' => $dataItems, 'loans' => $dataLoans]);
+        $permition = DB::table('users')->join('permition', 'users.permition', '=', 'permition.id')->where('users.id', Auth::id())->select('permition.edit_item')->get();
+        return view('category', ['category' => $name, 'items' => $dataItems, 'loans' => $dataLoans, 'permition' => $permition]);
 
     }
 
-    function saveCategory(Request $request)
+
+    function saveItemLoans(Request $request)
     {
-        Log::info('CategoryControler:saveCategory');
+        Log::info('CategoryControler:saveItemLoans');
 
         $borrow = new loans;
         $borrow->user = Auth::id();
@@ -55,6 +61,39 @@ class CategoryController extends Controller
         } else {
             return back()->withInput(array('saveCheck' => '0'));
         }
+
+    }
+
+    function saveItem(Request $request)
+    {
+        Log::info('CategoryControler:saveItem');
+
+        $item = items::find($request->itemId);
+        $item->name = $request->name;
+        $item->note = $request->note;
+        $item->place = $request->place;
+        $item->inventory_number = $request->inventory_number;
+        $item->availability = $request->availability;
+        $check = $item->save();
+
+        if ($check) {
+            return back()->withInput(array('saveCheck' => '1'));
+        } else {
+            return back()->withInput(array('saveCheck' => '0'));
+        }
+
+    }
+
+    function saveCategory(Request $request)
+    {
+        Log::info('CategoryControler:saveCategory');
+
+        $category = categories::find($request->categoryId);
+        $category->name = $request->categoryName;
+        $category->description = $request->categoryDescription;
+        $category->save();
+
+        return redirect('categories/'.$request->categoryName);
 
     }
 }

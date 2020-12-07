@@ -1,5 +1,9 @@
 var disableddates = [];
 
+function showButton(ele){
+    ele.parentElement.getElementsByClassName("btn")[0].removeAttribute("hidden");
+}
+
 function changeFrom(input) {
 
 
@@ -54,7 +58,7 @@ function showDate(input) {
     }
 
     disableddates = input.parentElement.parentElement.getAttribute("data").split("/")
-    $("input").datepicker({
+    $(".date").datepicker({
         beforeShowDay: DisableSpecificDates,
         dateFormat: "dd-mm-yy",
         minDate: "min"

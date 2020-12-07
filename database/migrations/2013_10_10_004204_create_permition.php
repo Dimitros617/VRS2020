@@ -17,6 +17,7 @@ class CreatePermition extends Migration
             $table->tinyInteger('new_user',)->default('0');
             $table->tinyInteger('return_verification',)->default('0');
             $table->tinyInteger('edit_item',)->default('0');
+            $table->tinyInteger('edit_permitions',)->default('0');
 
 
 
