@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControllerUsing;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ListUsersController;
 use App\Models\categories;
+use App\Models\ListUsers;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,6 +35,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/categories', [CategoryCon
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/categories/{name:name}', [CategoryController::class,'showItem']);
 Route::post('/saveCategoryData', [CategoryController::class,'saveCategory']);
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/users', [ListUsersController::class,'show']);
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [DashboardController::class,'show']) ->name('dashboard');
