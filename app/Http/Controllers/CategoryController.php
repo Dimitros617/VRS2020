@@ -17,7 +17,7 @@ use function PHPUnit\Framework\returnArgument;
 class CategoryController extends Controller
 {
     //
-    function show()
+    function showCategories()
     {
 
         echo "<script>console.log('Debug Objects: CategoryController' );</script>";
@@ -28,10 +28,10 @@ class CategoryController extends Controller
         return view('categories', ['categories' => $data]);
     }
 
-    function showKategory(categories $name)
+    function showItem(categories $name)
     {
 
-        Log::info('CategoryControler:showKategory');
+        Log::info('CategoryControler:showItem');
         $dataItems = DB::table('items')->where('categories', $name['id'])->get();
         $dataLoans = DB::table('loans')->join('items', 'loans.item', '=', 'items.id')->where('categories', $name['id'])->select('loans.item', 'loans.rent_from', 'loans.rent_to')->get();
 //        return $dataLoans;
@@ -48,7 +48,13 @@ class CategoryController extends Controller
         $borrow->item = $request->itemId;
         $borrow->rent_from = $request->rent_from;
         $borrow->rent_to = $request->rent_to;
-        $borrow->save();
-        return redirect()->back();
+        $check = $borrow->save();
+
+        if ($check) {
+            return back()->withInput(array('saveCheck' => '1'));
+        } else {
+            return back()->withInput(array('saveCheck' => '0'));
+        }
+
     }
 }
