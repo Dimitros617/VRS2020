@@ -31,9 +31,12 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/borrows', function () {
 });
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/categories', [CategoryController::class,'showCategories']);
+Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting'])->get('/categories', [CategoryController::class,'showCategories']);
+Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting'])->get('/categories/{name:name}', [CategoryController::class,'showItem']) ->name('item');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/categories/{name:name}', [CategoryController::class,'showItem']) ->name('item');
+Route::middleware(['auth:sanctum', 'verified', 'permition:new_user'])->get('/users', [ListUsersController::class,'showAllUsers']);
+Route::middleware(['auth:sanctum', 'verified', 'permition:new_user'])->get('/users/{id:id}', [ListUsersController::class,'showUser']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [DashboardController::class,'show']) ->name('dashboard');
 
 Route::post('/item/{id:id}/saveItemLoansData', [CategoryController::class,'saveItemLoans']);
 Route::post('/item/{id:id}/saveItemData', [CategoryController::class,'saveItem']);
@@ -47,8 +50,3 @@ Route::post('/item/{id:id}/changeItemAvailability', [CategoryController::class,'
 
 Route::post('/item/addNewItem', [CategoryController::class,'addNewItem']);
 Route::post('/categories/addNewCategory', [CategoryController::class,'addNewCategory']);
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/users', [ListUsersController::class,'showAllUsers']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/users/{id:id}', [ListUsersController::class,'showUser']);
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [DashboardController::class,'show']) ->name('dashboard');
