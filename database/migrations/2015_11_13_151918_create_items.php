@@ -13,10 +13,11 @@ class CreateItems extends Migration
 
             $table->id();
             $table->unsignedBigInteger('categories');
-            $table->string('name',90);
+            $table->string('name',90)->default('');
             $table->string('note',180)->default('');
-            $table->string('place',90);
-            $table->tinyInteger('availability')->default('0');
+            $table->string('place',90)->default('');
+            $table->tinyInteger('availability')->default('1');
+            $table->string('inventory_number',90)->default('');
 
             $table->foreign('categories')->references('id')->on('categories');
 

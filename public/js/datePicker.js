@@ -1,6 +1,25 @@
 var disableddates = [];
 
-function showButton(ele){
+function hoverChange(ele) {
+
+
+    if (ele.getAttribute('bool') == 1)
+        ele.value = "Změnit na NE";
+    else
+        ele.value = "Změnit na ANO";
+}
+
+function hoverChangeEnd(ele) {
+
+    if (ele.getAttribute('bool') == 1)
+        ele.value = "Viditelné: ANO";
+    else
+        ele.value = "Viditelné: NE";
+
+}
+
+
+function showButton(ele) {
     ele.parentElement.getElementsByClassName("btn")[0].removeAttribute("hidden");
 }
 
@@ -70,6 +89,6 @@ function DisableSpecificDates(date) {
     return [disableddates.indexOf(string) == -1];
 }
 
-setTimeout(function() {
+setTimeout(function () {
     $('#autoHide').fadeOut('fast');
 }, 5000); // <-- čas v millisekundách

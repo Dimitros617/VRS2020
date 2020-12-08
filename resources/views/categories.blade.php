@@ -34,6 +34,18 @@
                         {{--                    (str_replace(' ','_',$kategory['nazev']))  pokud chceme nahradit mezery podrtrřítkem --}}
 
                     @endforeach
+                        @if( $permition[0]->edit_item == 1)
+                            <div class="item">
+                                <form action="{{'/categories/addNewCategory'}}" method="POST" class="addNewCategory">
+                                    @csrf
+                                    <button type="submit" class="btn btn-light w-100 text-center align-middle mb-2">
+                                        Přidat novou kategorii
+                                        <h1>&#43;</h1>
+                                    </button>
+
+                                </form>
+                            </div>
+                        @endif
                 </div>
             @else
                 <div class="display-4 pt-4 pb-4">Nebyly nalezeny žádné kategorie</div>

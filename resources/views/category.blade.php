@@ -12,7 +12,7 @@
             @if(old('saveCheck'))
                 @if(old('saveCheck') == 1)
                     <div id="autoHide" class="alert-success">
-                        Uloženo
+                        Změna proběhla úspěšně
                         @else
                             <div id="autoHide" class="alert-danger">
                                 Ups... Došlo k chybě při ukládání
@@ -49,13 +49,17 @@
                                 @foreach($items as $item)
 
                                     {{--                Pokud má item nastaveno availability na 1 zoobrazí se, pokud ne z nemožní se sním práce pro uživatel--}}
-                                    <div class="item">
-                                    @if($item->availability  == 1)
+
+                                    @if($item->availability  == 1 )
                                             <div class="item" >
                                     @else
-                                            <div class="item" hidden>
+                                        @if($permition[0]->edit_item == 1)
+                                                        <div class="item bg-light ">
+                                                @else
+                                                        <div class="item" hidden>
                                             @endif
-                                            <form action="{{'/saveItemData'}}" method="POST" class="item">
+                                    @endif
+                                            <form action="{{'/item/' . $item->id . '/saveItemData'}}" method="POST" class="item">
                                                 @csrf
                                                 <input class="name" value="{{$item->name}}" name="name"
                                                        @if( $permition[0]->edit_item != 1) disabled @endif
@@ -110,7 +114,7 @@
                                                 @else
                                                 @endif
                                             @endforeach
-                                            <form action="{{'/saveItemLoansData'}}" method="POST" class="item">
+                                            <form action="{{'/item/' . $item->id . '/saveItemLoansData'}}" method="POST" class="item">
                                                 @csrf
                                                 <input type="text" class="d-none" name="itemId"
                                                        value="{{$item->id}}">
@@ -139,12 +143,61 @@
 
                                                 <br>
                                                 <input class="btn btn-primary" type="submit" value="Vypůjčit">
+
+
+
                                             </form>
+
+                                                @if( $permition[0]->edit_item == 1)
+                                                    <form action="{{'/item/' . $item->id . '/removeItem'}}" method="POST" class="itemRemove">
+                                                        @csrf
+                                                        <input type="text" class="d-none" name="itemId" value="{{$item->id}}">
+                                                        <input class="btn btn-danger" type="submit" value="Smazat">
+                                                    </form>
+                                                @endif
+
+                                                @if( $permition[0]->edit_item == 1)
+                                                    <form action="{{'/item/' . $item->id . '/activeLoans'}}" method="POST" class="activeLoans">
+                                                         @csrf
+                                                         <input type="text" class="d-none" name="itemId" value="{{$item->id}}">
+                                                         <input class="btn btn-warning" type="submit" value="Aktuální závazky">
+                                                    </form>
+                                                @endif
+
+                                                @if( $permition[0]->edit_item == 1)
+                                                    <form action="{{'/item/' . $item->id . '/changeItemAvailability'}}" method="POST" class="changeItemAvailability">
+                                                         @csrf
+                                                        <input type="text" class="d-none" name="itemId" value="{{$item->id}}">
+                                                        <input type="text" class="d-none" name="availability" value="{{$item->availability}}">
+                                                        @if($item->availability  == 1 )
+                                                            <input class="btn btn-success" type="submit" bool="1" value="Viditelné: ANO" onmouseover="hoverChange(this)" onmouseleave="hoverChangeEnd(this)">
+                                                        @else
+                                                            <input class="btn btn-danger" type="submit" bool="0" value="Viditelné: NE" onmouseover="hoverChange(this)" onmouseleave="hoverChangeEnd(this)">
+                                                        @endif
+                                                    </form>
+                                                @endif
+
                                             <hr>
                                         </div>
                                         @endforeach
 
-                            </div>
+
+                                                                @if( $permition[0]->edit_item == 1)
+                                                                    <div class="item">
+                                                                    <form action="{{'/item/addNewItem'}}" method="POST" class="addNewItem">
+                                                                        @csrf
+                                                                        <input type="text" class="d-none" name="category" value="{{$category->id}}">
+
+                                                                        <button type="submit" class="btn btn-light w-100 text-center align-middle mb-2">
+                                                                            Přidat novou položku
+                                                                            <h1>&#43;</h1>
+                                                                        </button>
+
+                                                                    </form>
+                                                                    </div>
+                                                                @endif
+
+
                     </div>
 
 
