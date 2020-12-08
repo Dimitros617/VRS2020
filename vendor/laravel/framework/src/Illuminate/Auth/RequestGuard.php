@@ -5,7 +5,10 @@ namespace Illuminate\Auth;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\UserProvider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Traits\Macroable;
+use App\Models\User;
 
 class RequestGuard implements Guard
 {
@@ -52,6 +55,23 @@ class RequestGuard implements Guard
         // every call to this method because that would be tremendously slow.
         if (! is_null($this->user)) {
             return $this->user;
+        }
+
+        return $this->user = call_user_func(
+            $this->callback, $this->request, $this->getProvider()
+        );
+    }
+
+    public function permition()
+    {
+        // If we've already retrieved the user for the current request we can just
+        // return it back immediately. We do not want to fetch the user data on
+        // every call to this method because that would be tremendously slow.
+        if (! is_null($this->user)) {
+
+            $permition = DB::table('users')->join('permition', 'users.permition', '=', 'permition.id')->where('users.id', $this->user->id)->select('permition.*')->get();
+            return $permition[0];
+
         }
 
         return $this->user = call_user_func(
