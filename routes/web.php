@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ItemsController;
+use App\Http\Controllers\LoansController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControllerUsing;
 use App\Http\Controllers\CategoryController;
@@ -26,9 +28,7 @@ Route::get('/', function () {    return view('welcome');});
 Route::get('main',[ControllerUsing::class,'main']);
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/borrows', function () {
-    return view('my_borrows');
-});
+Route::middleware(['auth:sanctum', 'verified'])->get('/loans',[CategoryController::class,'showCategories']);
 
 
 Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting'])->get('/categories', [CategoryController::class,'showCategories']);
@@ -38,15 +38,21 @@ Route::middleware(['auth:sanctum', 'verified', 'permition:new_user'])->get('/use
 Route::middleware(['auth:sanctum', 'verified', 'permition:new_user'])->get('/users/{id:id}', [ListUsersController::class,'showUser']);
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [DashboardController::class,'show']) ->name('dashboard');
 
-Route::post('/item/{id:id}/saveItemLoansData', [CategoryController::class,'saveItemLoans']);
-Route::post('/item/{id:id}/saveItemData', [CategoryController::class,'saveItem']);
+
 Route::post('/saveCategoryData', [CategoryController::class,'saveCategory']);
-
-Route::post('/item/{id:id}/removeItem', [CategoryController::class,'removeItem']);
-Route::post('/item/{id:id}/removeItemHard', [CategoryController::class,'removeItemHard']);
-
-Route::post('/item/{id:id}/activeLoans', [CategoryController::class,'showItemStatus']);
-Route::post('/item/{id:id}/changeItemAvailability', [CategoryController::class,'changeItemAvailability']);
-
-Route::post('/item/addNewItem', [CategoryController::class,'addNewItem']);
 Route::post('/categories/addNewCategory', [CategoryController::class,'addNewCategory']);
+
+Route::post('/item/addNewItem', [ItemsController::class,'addNewItem']);
+Route::post('/item/{id:id}/saveItemData', [ItemsController::class,'saveItem']);
+Route::post('/item/{id:id}/changeItemAvailability', [ItemsController::class,'changeItemAvailability']);
+Route::post('/item/{id:id}/removeItem', [ItemsController::class,'removeItem']);
+Route::post('/item/{id:id}/removeItemHard', [ItemsController::class,'removeItemHard']);
+
+
+Route::post('/item/{id:id}/activeLoans', [LoansController::class,'showItemLoans']);
+Route::post('/item/{id:id}/saveItemLoansData', [LoansController::class,'saveItemLoans']);
+
+
+
+
+
