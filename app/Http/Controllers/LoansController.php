@@ -21,7 +21,7 @@ class LoansController extends Controller
 
         Log::info('LoansController:show');
 
-        $data = DB::table('loans')->Join('items', 'loans.item', '=', 'items.id')->Join('categories', 'items.categories', '=', 'categories.id')->orderBy('categories.name', 'asc')->orderBy('items.id', 'asc')->select('categories.id as categoryId', 'categories.name as categoryName',  'items.id as itemId', 'items.name as itemName', 'items.note', 'items.place' ,'items.inventory_number' , 'loans.rent_from', 'loans.rent_to')->where('loans.user', Auth::user()->id)->get();
+        $data = DB::table('loans')->Join('items', 'loans.item', '=', 'items.id')->Join('categories', 'items.categories', '=', 'categories.id')->orderBy('categories.name', 'asc')->orderBy('items.id', 'asc')->select('categories.id as categoryId', 'categories.name as categoryName',  'items.id as itemId', 'items.name as itemName', 'items.note', 'items.place' ,'items.inventory_number' , 'loans.id', 'loans.rent_from', 'loans.rent_to', 'loans.status')->where('loans.user', Auth::user()->id)->get();
 
         return view('loans', ['loans' => $data]);
 
@@ -58,4 +58,40 @@ class LoansController extends Controller
         return view('item-status', ['item' => $item, 'users' => $users]);
 
     }
+
+    function itemLoansReturn(Request $request){
+
+
+        if(Auth::permition()->return_verification == 1){
+
+            $check = DB::table('loans')->where('id', $request->loanId)->delete();
+        }
+        else
+        {
+            $loan = loans::find($request->loanId);
+            $loan->status = $loan->status == 1 ? 2 : 1;
+            $check = $loan->save();
+
+        }
+
+        if ($check) {
+            return back()->withInput(array('saveCheck' => '1'));
+        } else {
+            return back()->withInput(array('saveCheck' => '0'));
+        }
+
+    }
+
+    function showCategoryLoans(Request $request)
+    {
+        Log::info('CategoryControler:removeCategory');
+
+        $data = DB::table('items')->leftJoin('loans', 'items.id', '=', 'loans.item')->leftJoin('Users', 'loans.user', '=', 'Users.id')->Join('categories', 'items.categories', '=', 'categories.id')->orderBy('categories.name', 'asc')->orderBy('items.id', 'asc')->select('Users.id as userId', 'Users.name', 'Users.surname','categories.id as categoryId', 'categories.name as categoryName',  'items.id as itemId', 'items.name as itemName' , 'loans.id', 'loans.rent_from', 'loans.rent_to')->where('categories.id', $request->id)->get();
+
+//        return count($data);
+        return view('category-status', ['categories' => $data]);
+
+    }
+
+
 }

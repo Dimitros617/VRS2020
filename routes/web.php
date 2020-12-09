@@ -38,6 +38,8 @@ Route::middleware(['auth:sanctum', 'verified', 'permition:new_user'])->get('/use
 
 Route::post('/saveCategoryData', [CategoryController::class,'saveCategory']);
 Route::post('/categories/addNewCategory', [CategoryController::class,'addNewCategory']);
+Route::post('/categories/{id:id}/removeCategory', [CategoryController::class,'removeCategory']);
+Route::post('/categories/{id:id}/removeCategoryHard', [CategoryController::class,'removeCategoryHard']);
 
 Route::post('/item/addNewItem', [ItemsController::class,'addNewItem']);
 Route::post('/item/{id:id}/saveItemData', [ItemsController::class,'saveItem']);
@@ -47,7 +49,9 @@ Route::post('/item/{id:id}/removeItemHard', [ItemsController::class,'removeItemH
 
 
 Route::post('/item/{id:id}/activeLoans', [LoansController::class,'showItemLoans']);
+Route::post('/categories/{id:id}/activeLoans', [LoansController::class,'showCategoryLoans']);
 Route::post('/item/{id:id}/saveItemLoansData', [LoansController::class,'saveItemLoans']);
+Route::post('/loans/{id:id}/return', [LoansController::class,'itemLoansReturn']);
 
 
 

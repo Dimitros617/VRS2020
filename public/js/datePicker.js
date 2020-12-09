@@ -89,6 +89,4 @@ function DisableSpecificDates(date) {
     return [disableddates.indexOf(string) == -1];
 }
 
-setTimeout(function () {
-    $('#autoHide').fadeOut('fast');
-}, 5000); // <-- čas v millisekundách
+

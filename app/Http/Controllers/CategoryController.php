@@ -26,7 +26,7 @@ class CategoryController extends Controller
         echo "<script>console.log('Debug Objects: CategoryController' );</script>";
         Log::info('CategoryControler:show');
 
-        $data = DB::table('categories')->leftJoin('items', 'categories.id', '=', 'items.categories')->select('categories.name', 'categories.description', 'items.availability', DB::raw('COUNT(items.categories) as count'))->groupByRaw('categories.name, categories.description, items.availability')->get();
+        $data = DB::table('categories')->leftJoin('items', 'categories.id', '=', 'items.categories')->select('categories.id','categories.name', 'categories.description', 'items.availability', DB::raw('COUNT(items.categories) as count'))->groupByRaw('categories.name, categories.description, items.availability, categories.id')->get();
         $permition = DB::table('users')->join('permition', 'users.permition', '=', 'permition.id')->where('users.id', Auth::id())->select('permition.edit_item', 'permition.possibility_renting')->get();
 
         return view('categories', ['categories' => $data, 'permition' => $permition]);
@@ -66,16 +66,6 @@ class CategoryController extends Controller
 
 
 
-
-
-
-
-
-
-
-
-
-
     function addNewCategory(Request $request)
     {
         Log::info('CategoryControler:addNewCategory');
@@ -91,4 +81,44 @@ class CategoryController extends Controller
         }
 
     }
+
+    function removeCategory(Request $request)
+    {
+        Log::info('CategoryControler:removeCategory');
+
+        $data = DB::table('items')->leftJoin('loans', 'items.id', '=', 'loans.item')->leftJoin('Users', 'loans.user', '=', 'Users.id')->Join('categories', 'items.categories', '=', 'categories.id')->orderBy('categories.name', 'asc')->orderBy('items.id', 'asc')->select('Users.id as userId', 'Users.name', 'Users.surname','categories.id as categoryId', 'categories.name as categoryName',  'items.id as itemId', 'items.name as itemName' , 'loans.id', 'loans.rent_from', 'loans.rent_to')->where('categories.id', $request->id)->get();
+
+        if(count($data) == 0){
+            $check = DB::table('categories')->where('id', $request->id)->delete();
+
+            if ($check) {
+                return back()->withInput(array('saveCheck' => '1'));
+            } else {
+                return back()->withInput(array('saveCheck' => '0'));
+            }
+        }else {
+
+            return view('category-remove-verify', ['categories' => $data]);
+        }
+    }
+
+    function removeCategoryHard(Request $request)
+    {
+        Log::info('CategoryControler:removeCategoryHard');
+
+        $data = DB::table('items')->leftJoin('loans', 'items.id', '=', 'loans.item')->leftJoin('Users', 'loans.user', '=', 'Users.id')->Join('categories', 'items.categories', '=', 'categories.id')->orderBy('categories.name', 'asc')->orderBy('items.id', 'asc')->select('Users.id as userId', 'Users.name', 'Users.surname','categories.id as categoryId', 'categories.name as categoryName',  'items.id as itemId', 'items.name as itemName' , 'loans.id', 'loans.rent_from', 'loans.rent_to')->where('categories.id', $request->categoryId)->get();
+
+        $check1 = DB::table('loans')->Join('items','loans.item', '=', 'items.id')->where('items.categories', $request->categoryId)->delete();
+        $check2 = DB::table('items')->where('categories', $request->categoryId)->delete();
+        $check3 = DB::table('categories')->where('id', $request->categoryId)->delete();
+
+        if ($check1 && $check2 && $check3) {
+            return redirect('/categories')->withInput(array('saveCheck' => '1'));
+        } else {
+            return redirect('/categories')->withInput(array('saveCheck' => '0'));
+        }
+
+    }
+
+
 }

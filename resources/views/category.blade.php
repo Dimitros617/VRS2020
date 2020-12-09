@@ -4,6 +4,7 @@
     <x-slot name="header"></x-slot>
 
     <script src="/js/datePicker.js"></script>
+    <script src="/js/main.js"></script>
     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8">
 
         <div class="container">
@@ -13,13 +14,12 @@
                 @if(old('saveCheck') == 1)
                     <div id="autoHide" class="alert-success">
                         Změna proběhla úspěšně
-                        @else
-                            <div id="autoHide" class="alert-danger">
-                                Ups... Došlo k chybě při ukládání
-                                @endif
-                                @endif
-
-                            </div>
+                @else
+                   <div id="autoHide" class="alert-danger">
+                        Ups... Došlo k chybě při ukládání
+                @endif
+            @endif
+                   </div>
                             {{--                        Pokud má uživatel oprávnění upravovat itemy--}}
 
                             @if( $permition[0]->edit_item == 1)
