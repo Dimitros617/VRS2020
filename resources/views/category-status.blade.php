@@ -45,7 +45,7 @@
 
                         @if(!is_null($category->rent_from))
 
-                        <a href="/user/. {{$category->userId}}">
+                        <a href="/users/{{$category->userId}}">
                         <label class="name">{{$category->name}} {{$category->surname}} : </label>
                         </a>
 
