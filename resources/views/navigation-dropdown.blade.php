@@ -56,7 +56,11 @@
                         {{--                        </div>--}}
 
                         <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                            {{ __('Váš profil') }}
+                            @if(Auth::permition()->new_user == 1)
+                                {{ __('Nastavení profilu') }}
+                            @else
+                                {{ __('Nastavení') }}
+                            @endif
                         </x-jet-dropdown-link>
 
                         {{--                        Přidané položkdy do menu a pozor musí se upravit 2x i pro mobilní verzi níže--}}
@@ -159,11 +163,11 @@
             <div class="flex items-center px-4">
                 <div class="flex-shrink-0">
                     <img class="h-10 w-10 rounded-full" src="{{ Auth::user()->profile_photo_url }}"
-                         alt="{{ Auth::user()->name }}"/>
+                         alt="{{ Auth::user()->name . " " . Auth::user()->surname }}"/>
                 </div>
 
                 <div class="ml-3">
-                    <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
+                    <div class="font-medium text-base text-gray-800">{{ Auth::user()->name ." ".Auth::user()->surname }}</div>
                     <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
                 </div>
             </div>
@@ -172,14 +176,18 @@
                 <!-- Account Management -->
                 <x-jet-responsive-nav-link href="{{ route('profile.show') }}"
                                            :active="request()->routeIs('profile.show')">
-                    {{ __('Nastavení') }}
+                    @if(Auth::permition()->new_user == 1)
+                        {{ __('Nastavení profilu') }}
+                    @else
+                        {{ __('Nastavení') }}
+                    @endif
                 </x-jet-responsive-nav-link>
 
                 {{--                Přidané položkdy do menu a pozor musí se upravit 2x i pro mobilní verzi níže--}}
                 @if(Auth::permition()->new_user == 1)
-                <x-jet-dropdown-link href="/users">
+                <x-jet-responsive-nav-link href="/users">
                     {{ __('Seznam uživatelů') }}
-                </x-jet-dropdown-link>
+                </x-jet-responsive-nav-link>
                 @endif
 
 
