@@ -16,9 +16,20 @@ use function PHPUnit\Framework\returnArgument;
 
 class LoansController extends Controller
 {
+
+    function showLoans(){
+
+        Log::info('LoansController:show');
+
+        $data = DB::table('loans')->Join('items', 'loans.item', '=', 'items.id')->Join('categories', 'items.categories', '=', 'categories.id')->orderBy('categories.name', 'asc')->orderBy('items.id', 'asc')->select('categories.id as categoryId', 'categories.name as categoryName',  'items.id as itemId', 'items.name as itemName', 'items.note', 'items.place' ,'items.inventory_number' , 'loans.rent_from', 'loans.rent_to')->where('loans.user', Auth::user()->id)->get();
+
+        return view('loans', ['loans' => $data]);
+
+    }
+
     function saveItemLoans(Request $request)
     {
-        Log::info('CategoryControler:saveItemLoans');
+        Log::info('LoansController:saveItemLoans');
 
         $borrow = new loans;
         $borrow->user = Auth::id();
@@ -38,7 +49,7 @@ class LoansController extends Controller
     function showItemLoans(Request $request)
     {
 
-        Log::info('CategoryControler:showItemStatus');
+        Log::info('LoansController:showItemStatus');
 
 
         $item = items::find($request->itemId);

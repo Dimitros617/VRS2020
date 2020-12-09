@@ -72,7 +72,7 @@
                         </x-jet-dropdown-link>
                         @endif
 
-                        <x-jet-dropdown-link href="/borrows">
+                        <x-jet-dropdown-link href="/loans">
                             {{ __('Moje výpůjčky') }}
                         </x-jet-dropdown-link>
 
@@ -189,7 +189,7 @@
                 </x-jet-responsive-nav-link>
                 @endif
 
-                <x-jet-responsive-nav-link href="/borrows">
+                <x-jet-responsive-nav-link href="/loans">
                     {{ __('Moje výpůjčky') }}
                 </x-jet-responsive-nav-link>
 
