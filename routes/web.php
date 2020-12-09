@@ -23,20 +23,17 @@ App::setLocale('cs');
 
 Route::get('/', function () {    return view('welcome');});
 
-
-//Route::get('main', 'App\Http\Controllers\ControllerUsing@main'); //cesta ke classe, ve které je metoda s view
-Route::get('main',[ControllerUsing::class,'main']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [DashboardController::class,'show']) ->name('dashboard');
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/loans',[CategoryController::class,'showCategories']);
-
+Route::middleware(['auth:sanctum', 'verified'])->get('/loans',[LoansController::class,'showLoans']);
 
 Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting'])->get('/categories', [CategoryController::class,'showCategories']);
 Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting'])->get('/categories/{name:name}', [CategoryController::class,'showItem']) ->name('item');
 
 Route::middleware(['auth:sanctum', 'verified', 'permition:new_user'])->get('/users', [ListUsersController::class,'showAllUsers']);
 Route::middleware(['auth:sanctum', 'verified', 'permition:new_user'])->get('/users/{id:id}', [ListUsersController::class,'showUser']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [DashboardController::class,'show']) ->name('dashboard');
+
 
 
 Route::post('/saveCategoryData', [CategoryController::class,'saveCategory']);

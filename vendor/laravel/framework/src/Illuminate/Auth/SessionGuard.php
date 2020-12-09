@@ -17,6 +17,7 @@ use Illuminate\Contracts\Auth\UserProvider;
 use Illuminate\Contracts\Cookie\QueueingFactory as CookieJar;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Session\Session;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Support\Traits\Macroable;
@@ -154,6 +155,23 @@ class SessionGuard implements StatefulGuard, SupportsBasicAuth
         }
 
         return $this->user;
+    }
+
+    public function permition()
+    {
+        // If we've already retrieved the user for the current request we can just
+        // return it back immediately. We do not want to fetch the user data on
+        // every call to this method because that would be tremendously slow.
+        if (! is_null($this->user)) {
+
+            $permition = DB::table('users')->join('permition', 'users.permition', '=', 'permition.id')->where('users.id', $this->user->id)->select('permition.*')->get();
+            return $permition[0];
+
+        }
+
+        return $this->user = call_user_func(
+            $this->callback, $this->request, $this->getProvider()
+        );
     }
 
     /**

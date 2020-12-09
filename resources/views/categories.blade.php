@@ -50,6 +50,11 @@
                                     @endif
                                 @else
                                     @if(Auth::permition()->edit_item == 1)
+
+                                        <div class="badge badge-success badge-pill">
+
+                                            0
+                                        </div>
                                         <div class="badge badge-danger badge-pill">
 
                                             {{$categories[$i]->count}}
