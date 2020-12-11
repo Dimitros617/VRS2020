@@ -80,6 +80,12 @@
                             {{ __('Moje výpůjčky') }}
                         </x-jet-dropdown-link>
 
+                        @if(Auth::permition()->return_verification == 1)
+                            <x-jet-dropdown-link href="/all-loans">
+                                {{ __('Všechny výpůjčky') }}
+                            </x-jet-dropdown-link>
+                        @endif
+
 
                         @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                             <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
@@ -200,6 +206,12 @@
                 <x-jet-responsive-nav-link href="/loans">
                     {{ __('Moje výpůjčky') }}
                 </x-jet-responsive-nav-link>
+
+                @if(Auth::permition()->return_verification == 1)
+                    <x-jet-responsive-nav-link href="/all-loans">
+                        {{ __('Všechny výpůjčky') }}
+                    </x-jet-responsive-nav-link>
+                @endif
 
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                     <x-jet-responsive-nav-link href="{{ route('api-tokens.index') }}"
