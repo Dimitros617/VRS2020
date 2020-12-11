@@ -127,7 +127,8 @@
                                                                name="rent_from" nameDB="{{$item->name}}"
                                                                autocomplete="off"
                                                                onchange="changeFrom(this)"
-                                                               onclick="showDate(this)">
+                                                               onclick="showDate(this)"
+                                                        required>
                                                     </div>
 
                                                     <div class="reserveToDiv">
@@ -137,7 +138,8 @@
                                                                name="rent_to" nameDB="{{$item->name}}"
                                                                autocomplete="off"
                                                                onchange="changeTo(this)"
-                                                               onclick="showDate(this)">
+                                                               onclick="showDate(this)"
+                                                        required>
                                                     </div>
                                                 </div>
 

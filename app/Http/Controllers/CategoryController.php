@@ -57,6 +57,7 @@ class CategoryController extends Controller
 
         if($this->checkCategoryNameExist($request->categoryName) == "true"){
             abort(409);
+            return;
         }
 
         $category = categories::find($request->categoryId);
@@ -123,6 +124,8 @@ class CategoryController extends Controller
     }
 
     public function checkCategoryNameExist($name){
+
+        Log::info('CategoryControler:checkCategoryNameExist');
 
         $data = DB::table('categories')->where('name', $name)->get();
         return count($data) > 0 ? "true" : "false";

@@ -57,13 +57,25 @@ function changeTo(input) {
     currentValue = currentValue.split('-');
     newValue = newValue.split('-');
 
-    var new_start_date = new Date(currentValue[2], currentValue[1], currentValue[0]);
-    var new_end_date = new Date(newValue[2], newValue[1], newValue[0]);
+    var new_start_date = new Date(newValue[2], newValue[1], newValue[0]);
+    var new_end_date = new Date(currentValue[2], currentValue[1], currentValue[0]);
 
-    if (new_end_date > new_start_date) {
+
+    if (new_end_date < new_start_date) {
         alert("Termín ukončení nemůže být před termínem začátku!");
         input.value = newValuestring;
     }
+
+    var data = input.parentNode.parentNode.getAttribute("data").split("/");
+
+    for (let i = 0; i< data.length; i++){
+        let now = new Date(data[i].split("-")[2], data[i].split("-")[1], data[i].split("-")[0]);
+        if(now >= new_start_date && now <= new_end_date){
+            alert("V tomto intervalu se již nachází jiná výpůjčka");
+            input.value = newValuestring;
+        }
+    }
+
 }
 
 function showDate(input) {
