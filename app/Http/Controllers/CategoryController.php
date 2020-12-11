@@ -2,17 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\categories;
-use App\Models\loans;
-use App\Models\User;
-use App\Models\items;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
-use phpDocumentor\Reflection\Types\True_;
-use function PHPUnit\Framework\returnArgument;
+
 
 
 class CategoryController extends Controller
@@ -79,11 +74,7 @@ class CategoryController extends Controller
         $category->name = 'ZZZ - Nová kategorie';
         $check = $category->save();
 
-        if ($check) {
-            return back()->withInput(array('saveCheck' => '1'));
-        } else {
-            return back()->withInput(array('saveCheck' => '0'));
-        }
+        return back()->withInput(array('saveCheck' => $check ? '1' : '0'));
 
     }
 
@@ -96,11 +87,7 @@ class CategoryController extends Controller
         if(count($data) == 0){
             $check = DB::table('categories')->where('id', $request->id)->delete();
 
-            if ($check) {
-                return back()->withInput(array('saveCheck' => '1'));
-            } else {
-                return back()->withInput(array('saveCheck' => '0'));
-            }
+            return back()->withInput(array('saveCheck' => $check ? '1' : '0'));
         }else {
 
             return view('category-remove-verify', ['categories' => $data]);
@@ -115,11 +102,7 @@ class CategoryController extends Controller
         $check2 = DB::table('items')->where('categories', $request->categoryId)->delete();
         $check3 = DB::table('categories')->where('id', $request->categoryId)->delete();
 
-        if ($check1 && $check2 && $check3) {
-            return redirect('/categories')->withInput(array('saveCheck' => '1'));
-        } else {
-            return redirect('/categories')->withInput(array('saveCheck' => '0'));
-        }
+        return back()->withInput(array('saveCheck' => $check1 && $check2 && $check3 ? '1' : '0'));
 
     }
 

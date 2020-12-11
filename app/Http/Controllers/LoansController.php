@@ -2,17 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use App\Models\categories;
 use App\Models\loans;
-use App\Models\User;
 use App\Models\items;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
-use phpDocumentor\Reflection\Types\True_;
-use function PHPUnit\Framework\returnArgument;
+
 
 class LoansController extends Controller
 {
@@ -51,11 +47,7 @@ class LoansController extends Controller
         $borrow->rent_to = $request->rent_to;
         $check = $borrow->save();
 
-        if ($check) {
-            return back()->withInput(array('saveCheck' => '1'));
-        } else {
-            return back()->withInput(array('saveCheck' => '0'));
-        }
+        return back()->withInput(array('saveCheck' => $check ? '1' : '0'));
 
     }
 

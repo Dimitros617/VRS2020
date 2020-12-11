@@ -2,17 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Http\Request;
-use App\Models\categories;
-use App\Models\loans;
-use App\Models\User;
 use App\Models\items;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
-use phpDocumentor\Reflection\Types\True_;
-use function PHPUnit\Framework\returnArgument;
+
 
 class ItemsController extends Controller
 {
@@ -26,11 +21,7 @@ class ItemsController extends Controller
         $item->categories = $request->category;
         $check = $item->save();
 
-        if ($check) {
-            return back()->withInput(array('saveCheck' => '1'));
-        } else {
-            return back()->withInput(array('saveCheck' => '0'));
-        }
+        return back()->withInput(array('saveCheck' => $check ? '1' : '0'));
 
     }
 
@@ -46,11 +37,7 @@ class ItemsController extends Controller
         $item->availability = is_null($request->availability) ? "0":  $request->availability;
         $check = $item->save();
 
-        if ($check) {
-            return back()->withInput(array('saveCheck' => '1'));
-        } else {
-            return back()->withInput(array('saveCheck' => '0'));
-        }
+        return back()->withInput(array('saveCheck' => $check ? '1' : '0'));
     }
 
     function changeItemAvailability(Request $request)
@@ -61,11 +48,7 @@ class ItemsController extends Controller
         $item->availability = (($request->availability + 1) % 2);
         $check = $item->save();
 
-        if ($check) {
-            return back()->withInput(array('saveCheck' => '1'));
-        } else {
-            return back()->withInput(array('saveCheck' => '0'));
-        }
+        return back()->withInput(array('saveCheck' => $check ? '1' : '0'));
 
     }
 
@@ -78,11 +61,8 @@ class ItemsController extends Controller
         if ($loans == 0) {
             $check = DB::table('items')->where('id', $request->itemId)->delete();
 
-            if ($check) {
-                return back()->withInput(array('saveCheck' => '1'));
-            } else {
-                return back()->withInput(array('saveCheck' => '0'));
-            }
+            return back()->withInput(array('saveCheck' => $check ? '1' : '0'));
+
         } else {
             $item = items::find($request->itemId);
             $users = DB::table('loans')->join('users', 'loans.user', '=', 'users.id')->where('item', $request->itemId)->select('users.id', 'users.name', 'users.surname', 'loans.rent_from', 'loans.rent_to')->get();
@@ -90,8 +70,6 @@ class ItemsController extends Controller
             return view('item-remove-verify', ['item' => $item, 'users' => $users]);
 
         }
-
-        return $check;
 
     }
 
