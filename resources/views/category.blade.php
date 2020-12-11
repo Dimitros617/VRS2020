@@ -3,9 +3,14 @@
 <x-app-layout>
     <x-slot name="header"></x-slot>
 
-    <script src="/js/datePicker.js"></script>
-    <script src="/js/checkCategoryNameExist.js"></script>
     <script src="/js/main.js"></script>
+    <script src="/js/datePicker.js"></script>
+    <script src="/js/categoryGets.js"></script>
+    <script>
+        window.categoryName = "{{$category['name']}}";
+    </script>
+
+
     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8">
 
         <div class="container">
@@ -28,12 +33,13 @@
                                     @csrf
                                     <input type="number" value="{{$category['id']}}" name="categoryId" hidden>
                                     <input type="text" class="categoryName nadpis h1" value="{{$category['name']}}"
-                                           name="categoryName" oninput="showButton(this)">
+                                           name="categoryName" onchange="categoryNameChange(this)" oninput="showButton(this)">
                                     <br>
                                     <textarea class="popisek " name="categoryDescription" method="POST"
                                               oninput="showButton(this)">{{$category['description']}}</textarea>
                                     <br>
                                     <input class="btn btn-primary" type="submit"  value="Uložit změny"  hidden>
+
                                 </form>
                                 {{--                            Pouze je navíc atribut disabled u prvků aby do nic uživatel nemohl psát    --}}
                             @else
@@ -62,26 +68,29 @@
                                     @endif
                                             <form action="{{'/item/' . $item->id . '/saveItemData'}}" method="POST" class="item">
                                                 @csrf
+                                                <label class="title font-weight-bold" for="name">Název: </label>
                                                 <input class="name" value="{{$item->name}}" name="name"
                                                        @if( $permition[0]->edit_item != 1) disabled @endif
                                                        oninput="showButton(this)">
 
-
+                                                <label class="title font-weight-bold" for="note">Poznámka: </label>
                                                 <input class="note" value="{{$item->note}}" name="note"
                                                        @if( $permition[0]->edit_item != 1) disabled @endif
                                                        oninput="showButton(this)">
 
-
+                                                <label class="title font-weight-bold" for="place">Místo: </label>
                                                 <input class="place" value="{{$item->place}}" name="place"
                                                        @if( $permition[0]->edit_item != 1) disabled @endif
                                                        oninput="showButton(this)">
 
-
+                                                <label class="title font-weight-bold" for="inventory_number">Inventární číslo: </label>
                                                 <input class="inventory_number" name="inventory_number"
                                                        value="{{$item->inventory_number}}"
                                                        @if( $permition[0]->edit_item != 1) disabled @endif
                                                        oninput="showButton(this)">
 
+
+                                            {{--Skryté elementy pouze pro formulář--}}
                                                 <input type="text" class="d-none" name="itemId"
                                                        value="{{$item->id}}">
 
@@ -169,10 +178,11 @@
                                                 @if( $permition[0]->edit_item == 1)
                                                     <form action="{{'/item/' . $item->id . '/changeItemAvailability'}}" method="POST" class="changeItemAvailability">
                                                          @csrf
+
                                                         <input type="text" class="d-none" name="itemId" value="{{$item->id}}">
                                                         <input type="text" class="d-none" name="availability" value="{{$item->availability}}">
                                                         @if($item->availability  == 1 )
-                                                            <input class="btn btn-success" type="submit" bool="1" value="Viditelné: ANO" onmouseover="hoverChange2(this)" onmouseleave="hoverChangeEnd2(this)">
+                                                            <input class="btn btn-success" type="submit" bool="1" value="Viditelné: ANO"  onmouseover="hoverChange2(this)" onmouseleave="hoverChangeEnd2(this)">
                                                         @else
                                                             <input class="btn btn-danger" type="submit" bool="0" value="Viditelné: NE" onmouseover="hoverChange2(this)" onmouseleave="hoverChangeEnd2(this)">
                                                         @endif
@@ -180,6 +190,7 @@
                                                 @endif
 
                                             <hr>
+                                                            <div id="alert{{$item->id}}"></div>
                                         </div>
                                         @endforeach
 
