@@ -70,7 +70,7 @@
             @php
                 $start = strtotime($loan->rent_from);
                 $end = strtotime($loan->rent_to);
-                $now = strtotime("17-12-2020");
+                $now = strtotime("now");
 
                 if($now < $start){
                     echo 'title="Výpůjčka zatím není aktivní"';
@@ -123,7 +123,9 @@
             </button>
         @else
             <button type="submit button" class="btn btn-warning "
-                    onmouseover="hoverChange(this,'status','Čekání na schválení','Zrušit odevzdání','btn-warning','btn-danger')">
+                    onmouseover="hoverChange(this,'status','Čekání na schválení','Zrušit odevzdání','btn-warning','btn-danger')"@if(Auth::permition()->return_verification == 1)
+                    onclick=" return confirm('Opravdu to chcete?');"
+                @endif>
                 Čekání na schválení
             </button>
             @endif

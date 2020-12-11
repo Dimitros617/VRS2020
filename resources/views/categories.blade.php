@@ -89,10 +89,9 @@
                                     </button>
                                 </form>
 
-                                <form action="{{'/categories/' . $categories[$i]->id .'/activeLoans'}}" method="POST"
-                                      class="removeCategory">
-                                    @csrf
-                                    <input type="text" class="d-none" name="categoryId" value="{{$categories[$i]->id}}">
+                                <form action="{{'/categories/' . $categories[$i]->id .'/activeLoans'}}" class="removeCategory">
+
+
                                     <button type="submit button" class="btn btn-warning ">Aktuální závazky</button>
                                 </form>
                             @endif

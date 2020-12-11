@@ -168,9 +168,8 @@
                                                 @endif
 
                                                 @if( $permition[0]->edit_item == 1)
-                                                    <form action="{{'/item/' . $item->id . '/activeLoans'}}" method="POST" class="activeLoans">
-                                                         @csrf
-                                                         <input type="text" class="d-none" name="itemId" value="{{$item->id}}">
+                                                    <form action="{{'/item/' . $item->id . '/activeLoans'}}"  class="activeLoans">
+
                                                          <input class="btn btn-warning" type="submit" value="Aktuální závazky">
                                                     </form>
                                                 @endif
