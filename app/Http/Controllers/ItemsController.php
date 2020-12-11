@@ -22,6 +22,7 @@ class ItemsController extends Controller
         Log::info('CategoryControler:addNewItem');
 
         $item = new items;
+        $item->name = "Nepojmenováno";
         $item->categories = $request->category;
         $check = $item->save();
 

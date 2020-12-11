@@ -33,7 +33,7 @@
                                     @csrf
                                     <input type="number" value="{{$category['id']}}" name="categoryId" hidden>
                                     <input type="text" class="categoryName nadpis h1" value="{{$category['name']}}"
-                                           name="categoryName" onchange="categoryNameChange(this)" oninput="showButton(this)">
+                                           name="categoryName" onchange="categoryNameChange(this)" oninput="showButton(this)" required>
                                     <br>
                                     <textarea class="popisek " name="categoryDescription" method="POST"
                                               oninput="showButton(this)">{{$category['description']}}</textarea>
@@ -71,7 +71,7 @@
                                                 <label class="title font-weight-bold" for="name">Název: </label>
                                                 <input class="name" value="{{$item->name}}" name="name"
                                                        @if( $permition[0]->edit_item != 1) disabled @endif
-                                                       oninput="showButton(this)">
+                                                       oninput="showButton(this)" required>
 
                                                 <label class="title font-weight-bold" for="note">Poznámka: </label>
                                                 <input class="note" value="{{$item->note}}" name="note"
