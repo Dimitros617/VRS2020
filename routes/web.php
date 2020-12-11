@@ -35,19 +35,21 @@ Route::middleware(['auth:sanctum', 'verified', 'permition:new_user'])->get('/use
 Route::middleware(['auth:sanctum', 'verified', 'permition:new_user'])->get('/users/{id:id}', [ListUsersController::class,'showUser']);
 
 
-
+//Categorie
 Route::post('/saveCategoryData', [CategoryController::class,'saveCategory']);
 Route::post('/categories/addNewCategory', [CategoryController::class,'addNewCategory']);
 Route::post('/categories/{id:id}/removeCategory', [CategoryController::class,'removeCategory']);
 Route::post('/categories/{id:id}/removeCategoryHard', [CategoryController::class,'removeCategoryHard']);
+Route::get('/categories/checkCategoryNameExist/{name?}', [CategoryController::class,'checkCategoryNameExist']);
 
+//Itemy
 Route::post('/item/addNewItem', [ItemsController::class,'addNewItem']);
 Route::post('/item/{id:id}/saveItemData', [ItemsController::class,'saveItem']);
 Route::post('/item/{id:id}/changeItemAvailability', [ItemsController::class,'changeItemAvailability']);
 Route::post('/item/{id:id}/removeItem', [ItemsController::class,'removeItem']);
 Route::post('/item/{id:id}/removeItemHard', [ItemsController::class,'removeItemHard']);
 
-
+//Vůpůjčky
 Route::post('/item/{id:id}/activeLoans', [LoansController::class,'showItemLoans']);
 Route::post('/categories/{id:id}/activeLoans', [LoansController::class,'showCategoryLoans']);
 Route::post('/item/{id:id}/saveItemLoansData', [LoansController::class,'saveItemLoans']);

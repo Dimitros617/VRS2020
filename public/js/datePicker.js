@@ -1,6 +1,6 @@
 var disableddates = [];
 
-function hoverChange(ele) {
+function hoverChange2(ele) {
 
 
     if (ele.getAttribute('bool') == 1)
@@ -9,7 +9,7 @@ function hoverChange(ele) {
         ele.value = "Změnit na ANO";
 }
 
-function hoverChangeEnd(ele) {
+function hoverChangeEnd2(ele) {
 
     if (ele.getAttribute('bool') == 1)
         ele.value = "Viditelné: ANO";
@@ -18,10 +18,6 @@ function hoverChangeEnd(ele) {
 
 }
 
-
-function showButton(ele) {
-    ele.parentElement.getElementsByClassName("btn")[0].removeAttribute("hidden");
-}
 
 function changeFrom(input) {
 

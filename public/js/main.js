@@ -39,3 +39,6 @@ setTimeout(function () {
 }, 5000); // <-- čas v millisekundách
 
 
+function showButton(ele) {
+    ele.parentElement.getElementsByClassName("btn")[0].removeAttribute("hidden");
+}

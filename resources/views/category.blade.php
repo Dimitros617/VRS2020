@@ -4,6 +4,7 @@
     <x-slot name="header"></x-slot>
 
     <script src="/js/datePicker.js"></script>
+    <script src="/js/checkCategoryNameExist.js"></script>
     <script src="/js/main.js"></script>
     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8">
 
@@ -26,13 +27,13 @@
                                 <form action="{{'/saveCategoryData'}}" method="POST" class="item">
                                     @csrf
                                     <input type="number" value="{{$category['id']}}" name="categoryId" hidden>
-                                    <input type="text" class="nadpis h1" value="{{$category['name']}}"
+                                    <input type="text" class="categoryName nadpis h1" value="{{$category['name']}}"
                                            name="categoryName" oninput="showButton(this)">
                                     <br>
                                     <textarea class="popisek " name="categoryDescription" method="POST"
                                               oninput="showButton(this)">{{$category['description']}}</textarea>
                                     <br>
-                                    <input class="btn btn-primary" type="submit" value="Uložit změny" hidden>
+                                    <input class="btn btn-primary" type="submit"  value="Uložit změny"  hidden>
                                 </form>
                                 {{--                            Pouze je navíc atribut disabled u prvků aby do nic uživatel nemohl psát    --}}
                             @else
@@ -97,7 +98,6 @@
                                                 $text = "";
                                             @endphp
                                             @foreach($loans as $loan)
-
 
                                                 @if($loan->item == $item->id)
                                                     @php
@@ -170,9 +170,9 @@
                                                         <input type="text" class="d-none" name="itemId" value="{{$item->id}}">
                                                         <input type="text" class="d-none" name="availability" value="{{$item->availability}}">
                                                         @if($item->availability  == 1 )
-                                                            <input class="btn btn-success" type="submit" bool="1" value="Viditelné: ANO" onmouseover="hoverChange(this)" onmouseleave="hoverChangeEnd(this)">
+                                                            <input class="btn btn-success" type="submit" bool="1" value="Viditelné: ANO" onmouseover="hoverChange2(this)" onmouseleave="hoverChangeEnd2(this)">
                                                         @else
-                                                            <input class="btn btn-danger" type="submit" bool="0" value="Viditelné: NE" onmouseover="hoverChange(this)" onmouseleave="hoverChangeEnd(this)">
+                                                            <input class="btn btn-danger" type="submit" bool="0" value="Viditelné: NE" onmouseover="hoverChange2(this)" onmouseleave="hoverChangeEnd2(this)">
                                                         @endif
                                                     </form>
                                                 @endif

@@ -55,6 +55,10 @@ class CategoryController extends Controller
     {
         Log::info('CategoryControler:saveCategory');
 
+        if($this->checkCategoryNameExist($request->categoryName) == "true"){
+            abort(409);
+        }
+
         $category = categories::find($request->categoryId);
         $category->name = is_null($request->categoryName) ? "": $request->categoryName;
         $category->description = is_null($request->categoryDescription) ? "": $request->categoryDescription;
@@ -106,8 +110,6 @@ class CategoryController extends Controller
     {
         Log::info('CategoryControler:removeCategoryHard');
 
-        $data = DB::table('items')->leftJoin('loans', 'items.id', '=', 'loans.item')->leftJoin('Users', 'loans.user', '=', 'Users.id')->Join('categories', 'items.categories', '=', 'categories.id')->orderBy('categories.name', 'asc')->orderBy('items.id', 'asc')->select('Users.id as userId', 'Users.name', 'Users.surname','categories.id as categoryId', 'categories.name as categoryName',  'items.id as itemId', 'items.name as itemName' , 'loans.id', 'loans.rent_from', 'loans.rent_to')->where('categories.id', $request->categoryId)->get();
-
         $check1 = DB::table('loans')->Join('items','loans.item', '=', 'items.id')->where('items.categories', $request->categoryId)->delete();
         $check2 = DB::table('items')->where('categories', $request->categoryId)->delete();
         $check3 = DB::table('categories')->where('id', $request->categoryId)->delete();
@@ -117,6 +119,13 @@ class CategoryController extends Controller
         } else {
             return redirect('/categories')->withInput(array('saveCheck' => '0'));
         }
+
+    }
+
+    public function checkCategoryNameExist($name){
+
+        $data = DB::table('categories')->where('name', $name)->get();
+        return count($data) > 0 ? "true" : "false";
 
     }
 
