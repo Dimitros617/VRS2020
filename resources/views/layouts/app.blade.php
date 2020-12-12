@@ -23,6 +23,13 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
+    <link rel="stylesheet" href="@yield('css')">
+    <link rel="stylesheet" href="@yield('css2')">
+    <link rel="stylesheet" href="@yield('css3')">
+    <link rel="stylesheet" href="@yield('css4')">
+    <link rel="stylesheet" href="@yield('css5')">
+
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/bootstrap/css/bootstrap.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/bootstrap/css/bootstrap-grid.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/bootstrap/css/bootstrap-reboot.css') }}">

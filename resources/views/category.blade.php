@@ -1,4 +1,5 @@
 @section('title',$category->name)
+@section('css', URL::asset('css/category.css'))
 
 <x-app-layout>
     <x-slot name="header"></x-slot>

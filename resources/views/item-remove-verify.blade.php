@@ -1,4 +1,5 @@
 @section('title',$item->name)
+@section('css', URL::asset('css/item-remove-verify.css'))
 
 <x-app-layout>
     <x-slot name="header"></x-slot>

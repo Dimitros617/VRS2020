@@ -1,0 +1,23 @@
+
+
+.bg-vrs-cyan{
+    background: #002e40;
+}
+
+.text-vrs-cyan{
+    color: #002e40;
+}
+
+
+.bg-vrs-yellow{
+    background: #fa9600;
+}
+
+.text-vrs-yellow{
+    color: #fa9600;
+}
+
+/*Odstranění podtržení v drop down menu u položek*/
+a.block.px-4.py-2.text-sm.leading-5.text-gray-700 {
+    text-decoration: none;
+}

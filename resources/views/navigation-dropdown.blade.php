@@ -191,7 +191,7 @@
 
                 {{--                Přidané položkdy do menu a pozor musí se upravit 2x i pro mobilní verzi níže--}}
                 @if(Auth::permition()->new_user == 1)
-                <x-jet-responsive-nav-link href="/users">
+                <x-jet-responsive-nav-link href="/users" class="text-vrs-yellow">
                     {{ __('Seznam uživatelů') }}
                 </x-jet-responsive-nav-link>
                 @endif

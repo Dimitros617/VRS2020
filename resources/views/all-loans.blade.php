@@ -1,4 +1,5 @@
 @section('title',"Moje výpůjčky")
+@section('css', URL::asset('css/all-loans.css'))
 
 <x-app-layout>
 
