@@ -38,8 +38,8 @@ Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting'])
 Route::middleware(['auth:sanctum', 'verified', 'permition:new_user'])->get('/users', [ListUsersController::class,'showAllUsers']);
 Route::middleware(['auth:sanctum', 'verified', 'permition:new_user'])->get('/users/{id:id}', [ListUsersController::class,'showUser']);
 
-
-
+//Uživatelé
+Route::post('/users/{id:id}/saveUserData', [ListUsersController::class,'saveUserData']);
 
 //Categorie
 Route::post('/saveCategoryData', [CategoryController::class,'saveCategory']);
