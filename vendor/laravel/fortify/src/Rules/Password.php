@@ -81,47 +81,47 @@ class Password implements Rule
             case $this->requireUppercase
                 && ! $this->requireNumeric
                 && ! $this->requireSpecialCharacter:
-                return __('The :attribute must be at least :length characters and contain at least one uppercase character.', [
+                return __(':attribute musí být alespoň :length znaků dlouhé a musí obsahovat alespoň jedno velké písmeno', [
                     'length' => $this->length,
                 ]);
 
             case $this->requireNumeric
                 && ! $this->requireUppercase
                 && ! $this->requireSpecialCharacter:
-                return __('The :attribute must be at least :length characters and contain at least one number.', [
+                return __(':attribute musí být alespoň :length znaků dlouhé a musí obsahovat alespoň jedno číslo.', [
                     'length' => $this->length,
                 ]);
 
             case $this->requireSpecialCharacter
                 && ! $this->requireUppercase
                 && ! $this->requireNumeric:
-                return __('The :attribute must be at least :length characters and contain at least one special character.', [
+                return __(':attribute musí být alespoň :length znaků dlouhé a musí obsahovat alespoň jeden speciální znak.', [
                     'length' => $this->length,
                 ]);
 
             case $this->requireUppercase
                 && $this->requireNumeric
                 && ! $this->requireSpecialCharacter:
-                return __('The :attribute must be at least :length characters and contain at least one uppercase character and one number.', [
+                return __(':attribute musí být alespoň :length znaků dlouhé a musí obsahovat alespoň jedno číslo a jeden speciální znak.', [
                     'length' => $this->length,
                 ]);
 
             case $this->requireUppercase
                 && $this->requireSpecialCharacter
                 && ! $this->requireNumeric:
-                return __('The :attribute must be at least :length characters and contain at least one uppercase character and one special character.', [
+                return __(':attribute musí být alespoň :length znaků dlouhé a musí obsahovat alespoň jedno velké písmeno a jeden speciální znak.', [
                     'length' => $this->length,
                 ]);
 
             case $this->requireUppercase
                 && $this->requireNumeric
                 && $this->requireSpecialCharacter:
-                return __('The :attribute must be at least :length characters and contain at least one uppercase character, one number, and one special character.', [
+                return __(':attribute musí být alespoň :length znaků dlouhé a musí obsahovat alespoň jedno velké písmeno, jedno číslo a jeden speciální znak.', [
                     'length' => $this->length,
                 ]);
 
             default:
-                return __('The :attribute must be at least :length characters.', [
+                return __(':attribute musí být alespoň :length znaků dlouhé.', [
                     'length' => $this->length,
                 ]);
         }
