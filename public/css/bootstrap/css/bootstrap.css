@@ -6532,6 +6532,10 @@ a.badge-dark:focus, a.badge-dark.focus {
   width: 75% !important;
 }
 
+.w-90 {
+    width: 90% !important;
+}
+
 .w-100 {
   width: 100% !important;
 }
@@ -7480,7 +7484,11 @@ a.badge-dark:focus, a.badge-dark.focus {
 }
 
 @media (min-width: 576px) {
-  .float-sm-start {
+    .w-sm-75 {
+        width: 75% !important;
+    }
+
+    .float-sm-start {
     float: left !important;
   }
 

@@ -30,16 +30,18 @@
                         <a href="{{url()->current().'/'.$categories[$i]->name}}"
                            class="list-group-item list-group-item-action">
 
-                            <div class="display-4">
+                            <div class="dataContainer text-center text-sm-start float-sm-start">
+                                <div class="display-4 ">
                                 {{$categories[$i]->name}}
-                            </div>
+                                </div>
 
-                            <div class="">
+                            <div class="description txx-area">
                                 {{$categories[$i]->description}}
                             </div>
-
+                            </div>
+<div class="d-table me-auto ms-auto float-sm-end ms-sm-0 me-sm-0">
                             @if($categories[$i]->availability == 1 || is_null($categories[$i]->availability) )
-                                <div class="badge badge-success badge-pill">
+                                <div class="badge badge-success badge-pill m-1 ">
                                     {{$categories[$i]->count}}
                                 </div>
                             @endif
@@ -48,11 +50,11 @@
                                 @if($i+1 < count($categories) && $categories[$i]->name == $categories[$i+1]->name)
 
 
-                                    <div class="badge badge-success badge-pill">
+                                <div class="badge badge-success badge-pill m-1">
                                         {{$categories[$i+=1]->count}}
                                     </div>
                                     @if(Auth::permition()->edit_item == 1)
-                                        <div class="badge badge-danger badge-pill">
+                                        <div class="badge badge-danger badge-pill ">
 
                                             {{$categories[$i-1]->count}}
                                         </div>
@@ -62,40 +64,43 @@
                                 @else
                                     @if(Auth::permition()->edit_item == 1)
 
-                                        <div class="badge badge-success badge-pill">
+                                        <div class="badge badge-success badge-pill m-1">
 
                                             0
                                         </div>
-                                        <div class="badge badge-danger badge-pill">
+                                        <div class="badge badge-danger badge-pill ">
 
                                             {{$categories[$i]->count}}
                                         </div>
                                     @else
-                                        <div class="badge badge-success badge-pill">
+                                        <div class="badge badge-success badge-pill m-1">
 
                                             0
                                         </div>
                                     @endif
                                 @endif
                             @endif
-
-                            @if(Auth::permition()->edit_item == 1)
+</div>
+                           <div class="d-flex justify-content-center w-100 ">
+                               @if(Auth::permition()->edit_item == 1)
                                 <form action="{{'/categories/' . $categories[$i]->id .'/removeCategory'}}" method="POST"
-                                      class="removeCategory">
+                                      class="removeCategory ">
                                     @csrf
                                     <input type="text" class="d-none" name="categoryId" value="{{$categories[$i]->id}}">
-                                    <button type="submit button" class="btn btn-danger "
+
+                                    <button type="submit button" class="btn btn-danger m-1 w-75"
                                             onclick=" return confirm('Opravdu to chcete?');">Smazat
                                     </button>
                                 </form>
 
-                                <form action="{{'/categories/' . $categories[$i]->id .'/activeLoans'}}" class="removeCategory">
+                                <form action="{{'/categories/' . $categories[$i]->id .'/activeLoans'}}" class="removeCategory ">
 
 
-                                    <button type="submit button" class="btn btn-warning ">Aktuální závazky</button>
+                                    <button type="submit button" class="btn btn-warning m-1 w-75">Aktuální závazky</button>
                                 </form>
-                            @endif
 
+                            @endif
+                           </div>
                         </a>
                         {{--                    (str_replace(' ','_',$kategory['nazev']))  pokud chceme nahradit mezery podrtrřítkem --}}
 
@@ -119,7 +124,8 @@
 
         </div>
     </div>
-
+    </div>
+    </div>
 
 </x-app-layout>
 

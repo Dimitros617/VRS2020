@@ -1,0 +1,16 @@
+.txx-area{
+    height: 50px;
+    width: 90%;
+    overflow: hidden;
+
+}
+
+.dataContainer {
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    .dataContainer {
+        width: 93%;
+    }
+}
