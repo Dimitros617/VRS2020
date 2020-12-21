@@ -2,9 +2,14 @@
     height: 50px;
     width: 90%;
     overflow: hidden;
-
+}
+.h-6p{
+    height: 60px;
 }
 
+.w-200p{
+    width: 150px;
+}
 .dataContainer {
     width: 100%;
 }

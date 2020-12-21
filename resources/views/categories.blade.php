@@ -81,22 +81,23 @@
                                 @endif
                             @endif
 </div>
-                           <div class="d-flex justify-content-center w-100 ">
+                           <div class="d-flex justify-content-center justify-content-sm-end w-100 my-2">
                                @if(Auth::permition()->edit_item == 1)
                                 <form action="{{'/categories/' . $categories[$i]->id .'/removeCategory'}}" method="POST"
-                                      class="removeCategory ">
+                                      class="removeCategory m-1">
                                     @csrf
                                     <input type="text" class="d-none" name="categoryId" value="{{$categories[$i]->id}}">
 
-                                    <button type="submit button" class="btn btn-danger m-1 w-75"
-                                            onclick=" return confirm('Opravdu to chcete?');">Smazat
+                                    <button type="submit button" class="btn btn-danger w-200p"
+                                            onclick=" return confirm('Opravdu to chcete smazat?');">Smazat
                                     </button>
                                 </form>
 
-                                <form action="{{'/categories/' . $categories[$i]->id .'/activeLoans'}}" class="removeCategory ">
+                                <form action="{{'/categories/' . $categories[$i]->id .'/activeLoans'}}"
+                                      class="removeCategory m-1">
 
 
-                                    <button type="submit button" class="btn btn-warning m-1 w-75">Aktuální závazky</button>
+                                    <button type="submit button" class="btn btn-warning w-200p ">Aktuální závazky</button>
                                 </form>
 
                             @endif
