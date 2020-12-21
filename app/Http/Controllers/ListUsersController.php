@@ -34,8 +34,9 @@ class ListUsersController extends Controller
 
         $data = DB::table('users')->join('permition', 'users.permition', '=', 'permition.id')->where('users.id', $id['id'])->select('users.id as userId', 'users.name as userName', 'users.surname as userSurname', 'users.phone as userPhone', 'users.email as userEmail', 'permition.id as permitionId', 'permition.name as permitionName')->get();
         $dataPermition = DB::table('permition')->select('permition.name as permitionName', 'permition.id as permitionId')->get();
-        //return $dataPermition;
-        return view('singleUser', ['user' => $data, 'permitions' => $dataPermition]);
+        $dataLoans = DB::table('loans')->Join('items', 'loans.item', '=', 'items.id')->Join('categories', 'items.categories', '=', 'categories.id')->orderBy('categories.name', 'asc')->orderBy('items.id', 'asc')->select('categories.id as categoryId', 'categories.name as categoryName',  'items.id as itemId', 'items.name as itemName', 'items.note', 'items.place' ,'items.inventory_number' , 'loans.id', 'loans.rent_from', 'loans.rent_to', 'loans.status')->where('loans.user', $id['id'])->get();
+
+        return view('singleUser', ['user' => $data, 'permitions' => $dataPermition, 'loans' => $dataLoans]);
     }
 
     function saveUserData(Request $request) //request pracuje s name ve formuláři
