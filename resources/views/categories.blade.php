@@ -5,7 +5,7 @@
     <x-slot name="header"></x-slot>
 {{--    <link rel="stylesheet" href="{{ URL::asset('css/categories.css') }}">--}}
 
-    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="bg-vrs-cyan overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8">
 
         <div class="container">
 
@@ -20,26 +20,26 @@
                                 @endif
                             </div>
 
-            <div class="h1"> Kategorie itemů :</div>
+            <div class="h1 text-center p-4 text-vrs-yellow"> Kategorie itemů :</div>
 
             @if(sizeof($categories) != 0)
-                <div class="list-group pt-4 pb-4">
+                <div class="list-group pb-4  ">
                     @for ($i = 0; $i < count($categories); $i++)
 
 
                         <a href="{{url()->current().'/'.$categories[$i]->name}}"
-                           class="list-group-item list-group-item-action">
+                           class="list-group-item list-group-item-action ">
 
-                            <div class="dataContainer text-center text-sm-start float-sm-start">
+                            <div class="dataContainer text-center text-sm-start float-sm-start ">
                                 <div class="display-4 ">
                                 {{$categories[$i]->name}}
                                 </div>
 
-                            <div class="description txx-area">
+                            <div class="description txx-area ">
                                 {{$categories[$i]->description}}
                             </div>
                             </div>
-<div class="d-table me-auto ms-auto float-sm-end ms-sm-0 me-sm-0">
+<div class="d-table me-auto ms-auto float-sm-end ms-sm-0 me-sm-0 ">
                             @if($categories[$i]->availability == 1 || is_null($categories[$i]->availability) )
                                 <div class="badge badge-success badge-pill m-1 ">
                                     {{$categories[$i]->count}}
