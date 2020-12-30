@@ -13,6 +13,14 @@
 .dataContainer {
     width: 100%;
 }
+.items-blocky {
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 18px solid #fa9600;
+    border-radius: 1rem;
+    box-shadow: 5px 7px 20px 2px #cac8c8;
+    background: #fff8f0;
+}
 
 @media (min-width: 576px) {
     .dataContainer {
