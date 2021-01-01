@@ -13,8 +13,14 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             {{--  Sekce pro Admin, verifiedUser  --}}
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                @if (Auth::permition()->possibility_renting == 1)
                 <a href="/loans"><div>Mé aktivní výpůjčky a rezervace: </a><div>{{ $vypujcky_pocet }}</div></div>
-            <a href="/all-loans"><div class="">Čeká na schválení: Pouze pro admina!</a><div>{{ $schvaleni_pocet }}</div></div>
+                    @if(Auth::permition()->new_user == 1)
+                        <a href="/all-loans"><div class="">Čeká na schválení: </a><div>{{ $schvaleni_pocet }}</div></div>
+                    @else
+                        <a href="/loans"><div>Čeká na schválení vrácení: </a><div>{{ $vraceni_pocet }}</div></div>
+                    @endif
+                @endif
             </div>
             <br>
             {{--  Sekce pro VŠECHNY  --}}
@@ -29,24 +35,27 @@
 
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <h2 class="">Jak to funguje?</h2>
-                <div class=""> {{--  Sekce pro unverified  --}}
+
+                <div class="">
+                    @if (Auth::permition()->possibility_renting != 1)
                     Nyní nemáte právo zapůjčovat položky. Můžete pouze:
                     <ul style="list-style-type:circle">
                         <li>Změnit své osobní údaje v záložce "Nastavení".</li>
                         <li>Pokud jste si již dříve něco půjčil a výpůjčku jste stále nevrátil, jejich seznam najdete v záložce "Moje výpůjčky".</li>
                         <li>Odhlásit se.</li>
                     </ul>
-                </div>
-                <div class=""> {{--  Sekce pro verified  --}}
-                    Sekce pro verified user. Bla bla věci JAK si vypůjčit v sekci Nová výpůjčka, JAK vrátit výpůjčku a PROČ je tam čekání na schválení, ikonky upozornění...
-                </div>
-                <div class=""> {{--  Sekce pro Admin  --}}
-                    Sekce pro Admin. Stručný manuál, možná by stálo za to udělat další blade, na kterém bude podrobnější návod pro Admina, na něj odtud odkaz.
+
+                    @elseif(Auth::permition()->new_user == 0){{-- verified --}}
+                        Sekce pro verified user. Bla bla věci JAK si vypůjčit v sekci Nová výpůjčka, JAK vrátit výpůjčku a PROČ je tam čekání na schválení, ikonky upozornění...
+                    @elseif(Auth::permition()->new_user == 1)
+                        Sekce pro Admin. Stručný manuál, možná by stálo za to udělat další blade, na kterém bude podrobnější návod pro Admina, na něj odtud odkaz.
+                    @endif
                 </div>
             </div>
 
             <br>
             {{--  Sekce pro unverifiedUser  --}}
+            @if (Auth::permition()->possibility_renting != 1)
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <h2 class="">Proč si nemohu nic půjčit?</h2>
                 <div class="">
@@ -56,6 +65,7 @@
                     </ul>
                 </div>
             </div>
+            @endif
         </div>
     </div>
 </x-app-layout>
