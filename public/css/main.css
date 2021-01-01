@@ -3,18 +3,26 @@
 .bg-vrs-cyan{
     background: #002e40;
 }
-
-.text-vrs-cyan{
+.bg-vrs-clight{
+    background: #2A5769;
+}
+.text-vrs-cyan {
     color: #002e40;
 }
-
-
+.text-vrs-clight{
+    color: #2A5769;
+}
 .bg-vrs-yellow{
     background: #fa9600;
 }
-
+.bg-vrs-ylight{
+    background: #fabd4a;
+}
 .text-vrs-yellow{
     color: #fa9600;
+}
+.text-vrs-ylight{
+    color: #fabd4a;
 }
 
 /*Odstranění podtržení v drop down menu u položek*/

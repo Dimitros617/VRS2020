@@ -4840,7 +4840,7 @@ a.badge-dark:focus, a.badge-dark.focus {
   z-index: 1;
   color: #495057;
   text-decoration: none;
-  background-color: #f8f9fa;
+  background-color: #fffcf8;
 }
 .list-group-item-action:active {
   color: #212529;
@@ -5226,7 +5226,7 @@ a.badge-dark:focus, a.badge-dark.focus {
 }
 
 .toast-body {
-  padding: 0.75rem;
+  padding: 1rem;
 }
 
 .modal-open {
