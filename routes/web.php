@@ -39,7 +39,7 @@ Route::middleware(['auth:sanctum', 'verified', 'permition:new_user'])->get('/use
 Route::middleware(['auth:sanctum', 'verified', 'permition:new_user'])->get('/users/{id:id}', [ListUsersController::class,'showUser']);
 
 //Uživatelé
-Route::post('/users/{id:id}/saveUserData', [ListUsersController::class,'saveUserData']);
+ Route::post('/users/{id:id}/saveUserData', [ListUsersController::class,'saveUserData']);
 
 //Categorie
 Route::post('/saveCategoryData', [CategoryController::class,'saveCategory']);
@@ -47,6 +47,8 @@ Route::post('/categories/addNewCategory', [CategoryController::class,'addNewCate
 Route::post('/categories/{id:id}/removeCategory', [CategoryController::class,'removeCategory']);
 Route::post('/categories/{id:id}/removeCategoryHard', [CategoryController::class,'removeCategoryHard']);
 Route::get('/categories/checkCategoryNameExist/{name?}', [CategoryController::class,'checkCategoryNameExist']);
+Route::get('/categories/categoriesSort/{sort?}', [CategoryController::class,'categoriesSort']);
+Route::get('/categories/categoriesFind/{find?}', [CategoryController::class,'categoriesFind']);
 
 //Itemy
 Route::post('/item/addNewItem', [ItemsController::class,'addNewItem']);

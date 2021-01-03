@@ -3,6 +3,7 @@
 <x-app-layout>
 
     <x-slot name="header"></x-slot>
+    <script src="/js/categoryGets.js"></script>
 {{--    <link rel="stylesheet" href="{{ URL::asset('css/categories.css') }}">--}}
 
     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -20,15 +21,38 @@
                                 @endif
                             </div>
 
+                        <div class="hlavicka">
             <div class="display-4 p-4 text-vrs-cyan"> Seznam kategorií:</div>
+                            <div class="search">
+                                <div class="card card-sm">
+                                    <div class="card-body row no-gutters align-items-center">
+                                        <div class="col-auto">
+                                            <i class="fas fa-search h4 text-body"></i>
+                                        </div>
+
+                                        <div class="col">
+                                            <input class="form-control-borderless" id="search" type="search" placeholder="Zadejte hledaný výraz">
+                                        </div>
+
+                                        <div class="col-auto">
+                                            <div class="spinner-border text-dark" id="spinner" role="status" hidden></div>
+                                            <button class="btn btn-lg btn-success" type="submit" onclick="categoryFind(this)">Najít</button>
+                                            <button class="btn btn-lg btn-primary " data-sort="none" sort="desc" onclick="categorySort(this)">&#8681;</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
             @if(sizeof($categories) != 0)
-                <div class="list-group pb-4  ">
+                <div class="list-group pb-4  " id="categoryList">
                     @for ($i = 0; $i < count($categories); $i++)
 
 
                         <a href="{{url()->current().'/'.$categories[$i]->name}}"
-                           class="items-blocky list-group-item-action toast-body ">
+                           class="items-blocky list-group-item-action toast-body categoryElement"
+                           categoryID="{{$categories[$i]->id}}">
 
                             <div class="dataContainer text-center text-sm-start float-sm-start ">
                                 <div class="h1 ">
@@ -106,6 +130,7 @@
                         {{--                    (str_replace(' ','_',$kategory['nazev']))  pokud chceme nahradit mezery podrtrřítkem --}}
 
                     @endfor
+                </div>
                     @if( $permition[0]->edit_item == 1)
                         <div class="item">
                             <form action="{{'/categories/addNewCategory'}}" method="POST" class="addNewCategory">
@@ -118,7 +143,7 @@
                             </form>
                         </div>
                     @endif
-                </div>
+
             @else
                 <div class="display-4 pt-4 pb-4">Nebyly nalezeny žádné kategorie</div>
             @endif

@@ -115,5 +115,23 @@ class CategoryController extends Controller
 
     }
 
+    public function categoriesSort($sort){
+
+        Log::info('CategoryControler:categoriesSort');
+
+        $data = DB::table('categories')->orderBy('name', $sort)->get();
+        return $data;
+
+    }
+
+    public function categoriesFind($find){
+
+        Log::info('CategoryControler:categoriesSort');
+
+        $data = DB::table('categories')->where('name', 'like', '%'.$find.'%')->get();
+        return $data;
+
+    }
+
 
 }
