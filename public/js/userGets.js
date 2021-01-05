@@ -59,15 +59,15 @@ function userFind(ele) {
         method: "GET",
         success: function (response) {
 
-            let categories = document.getElementsByClassName("userElement");
-            for (let i = 0; i< categories.length; i++){
-                categories[i].setAttribute("hidden","");
+            let users = document.getElementsByClassName("userElement");
+            for (let i = 0; i< users.length; i++){
+                users[i].setAttribute("hidden","");
             }
 
             for (let i = 0; i< response.length; i++){
-                for (let j = 0; j< categories.length; j++){
-                    if(response[i]["id"] == categories[j].getAttribute("userID")){
-                        categories[j].removeAttribute("hidden");
+                for (let j = 0; j< users.length; j++){
+                    if(response[i]["id"] == users[j].getAttribute("userID")){
+                        users[j].removeAttribute("hidden");
                         break;
                     }
                 }
