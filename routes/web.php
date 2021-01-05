@@ -39,7 +39,9 @@ Route::middleware(['auth:sanctum', 'verified', 'permition:new_user'])->get('/use
 Route::middleware(['auth:sanctum', 'verified', 'permition:new_user'])->get('/users/{id:id}', [ListUsersController::class,'showUser']);
 
 //Uživatelé
- Route::post('/users/{id:id}/saveUserData', [ListUsersController::class,'saveUserData']);
+Route::post('/users/{id:id}/saveUserData', [ListUsersController::class,'saveUserData']);
+Route::get('/users/usersSort/{sort?}', [ListUsersController::class,'usersSort']);
+Route::get('/users/usersFind/{find?}', [ListUsersController::class,'usersFind']);
 
 //Categorie
 Route::post('/saveCategoryData', [CategoryController::class,'saveCategory']);

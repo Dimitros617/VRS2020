@@ -11,6 +11,7 @@ use App\Models\categories;
 use App\Models\loans;
 use App\Models\User;
 use App\Models\items;
+use Illuminate\Support\Facades\Log;
 
 
 class ListUsersController extends Controller
@@ -18,7 +19,7 @@ class ListUsersController extends Controller
     function showAllUsers()
     {
 
-        $data = DB::table('users')->join('permition', 'users.permition', '=', 'permition.id')->select('users.id as userId', 'users.name as userName', 'users.surname as userSurname', 'users.phone as userPhone', 'users.email as userEmail', 'permition.id as permitionId', 'permition.name as permitionName')->get();
+        $data = DB::table('users')->join('permition', 'users.permition', '=', 'permition.id')->select('users.id as userId', 'users.name as userName', 'users.surname as userSurname', 'users.phone as userPhone', 'users.email as userEmail', 'permition.id as permitionId', 'permition.name as permitionName')->orderBy('surname','asc')->get();
         //return $permition;
         return view('users', ['users' => $data]);
 
@@ -52,4 +53,21 @@ class ListUsersController extends Controller
         return back()->withInput(array('saveCheck' => $check ? '1' : '0'));
     }
 
+    public function usersSort($sort){
+
+        Log::info('ListUsersController:usersSort');
+
+        $data = DB::table('users')->orderBy('surname', $sort)->get();
+        return $data;
+
+    }
+
+    public function usersFind($find){
+
+        Log::info('ListUsersController:usersFind');
+
+        $data = DB::table('users')->where('name', 'like', '%'.$find.'%')->orWhere('surname','like','%'.$find.'%')->get();
+        return $data;
+
+    }
 }
