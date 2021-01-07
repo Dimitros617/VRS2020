@@ -27,7 +27,7 @@
                 @endif
             @endif
                    </div>
-                            {{--                        Pokud má uživatel oprávnění upravovat itemy--}}
+                            {{--  Pokud má uživatel oprávnění upravovat itemy--}}
 
                             @if( $permition[0]->edit_item == 1)
                                 <form action="{{'/saveCategoryData'}}" method="POST" class="item">

@@ -18,7 +18,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
     <script src="{{ URL::asset('css/bootstrap/js/bootstrap.bundle.js') }}"></script>
-    <script src="{{ URL::asset('css/bootstrap/js/bootstrap.js') }}"></script>
+    <script src="{{ URL::asset('js/main.js') }}"></script>
 
 
     <!-- Styles -->

@@ -30,3 +30,24 @@ a.block.px-4.py-2.text-sm.leading-5.text-gray-700 {
     text-decoration: none;
 }
 
+/* Notifikace */
+img.notificationSVG {
+    width: 30px;
+}
+
+span.notificationBadge {
+    float: right;
+    position: absolute;
+    top: -10px;
+    right: -25px;
+}
+
+.notification {
+    float: right;
+    z-index: 999;
+    /* position: fixed; */
+    position: relative;
+    top: -150px;
+    /* right: 0; */
+    cursor: pointer;
+}

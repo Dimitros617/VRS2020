@@ -2,7 +2,12 @@
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
+        <!-- The Modal -->
 
+
+
+
+<div class="notifDiv">
         <div class="flex justify-between h-40">
             <div class="flex">
 
@@ -21,6 +26,7 @@
                 {{--                    </x-jet-nav-link>--}}
                 {{--                </div>--}}
             </div>
+
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -141,6 +147,8 @@
             </div>
 
             <!-- Hamburger -->
+
+
             <div class="-mr-2 flex items-center sm:hidden">
                 <button @click="open = ! open"
                         class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
@@ -154,6 +162,15 @@
                 </button>
             </div>
         </div>
+
+    <!-- Notifications -->
+    <div class="notification">
+        <a>
+            <img src="{{ URL::asset('img/mail.svg') }}" class="notificationSVG">
+            <span class="badge badge-pill badge-danger notificationBadge" onload="countNewMessages(this)"> - </span>
+        </a>
+    </div>
+    </div>
     </div>
 
     <!-- Responsive Navigation Menu -->

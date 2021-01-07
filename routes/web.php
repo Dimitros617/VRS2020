@@ -7,6 +7,7 @@ use App\Http\Controllers\ControllerUsing;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ListUsersController;
+use App\Http\Controllers\MessagesController;
 use App\Models\categories;
 use App\Models\ListUsers;
 /*
@@ -37,6 +38,9 @@ Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting'])
 
 Route::middleware(['auth:sanctum', 'verified', 'permition:new_user'])->get('/users', [ListUsersController::class,'showAllUsers']);
 Route::middleware(['auth:sanctum', 'verified', 'permition:new_user'])->get('/users/{id:id}', [ListUsersController::class,'showUser']);
+
+//Zprávy
+Route::get('/newMessages', [MessagesController::class,'countNewMessages']);
 
 //Uživatelé
 Route::post('/users/{id:id}/saveUserData', [ListUsersController::class,'saveUserData']);
