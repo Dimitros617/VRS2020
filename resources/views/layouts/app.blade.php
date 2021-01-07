@@ -18,7 +18,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
     <script src="{{ URL::asset('css/bootstrap/js/bootstrap.bundle.js') }}"></script>
-    <script src="{{ URL::asset('css/bootstrap/css/bootstrap.js') }}"></script>
+    <script src="{{ URL::asset('css/bootstrap/js/bootstrap.js') }}"></script>
 
 
     <!-- Styles -->
@@ -48,7 +48,7 @@
 
 </head>
 <body class="font-sans antialiased">
-<div class="min-h-screen bg-gray-100">
+<div class="min-h-screen bg-gray-100 bg-vrs-cyan">
     @livewire('navigation-dropdown')
 
     <!-- Page Heading -->
