@@ -46,7 +46,7 @@ class ZipDownloader extends ArchiveDownloader
         }
 
         if (!self::$hasZipArchive && !self::$hasSystemUnzip) {
-            // php.ini path is added to the error message to help users find the correct file
+            // php.ini path is added to the error messages to help users find the correct file
             $iniMessage = IniHelper::getMessage();
             $error = "The zip extension and unzip command are both missing, skipping.\n" . $iniMessage;
 
@@ -229,7 +229,7 @@ class ZipDownloader extends ArchiveDownloader
     }
 
     /**
-     * Give a meaningful error message to the user.
+     * Give a meaningful error messages to the user.
      *
      * @param  int    $retval
      * @param  string $file

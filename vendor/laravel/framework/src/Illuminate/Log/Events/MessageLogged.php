@@ -12,7 +12,7 @@ class MessageLogged
     public $level;
 
     /**
-     * The log message.
+     * The log messages.
      *
      * @var string
      */

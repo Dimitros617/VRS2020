@@ -5,14 +5,14 @@ namespace Illuminate\Mail\Events;
 class MessageSending
 {
     /**
-     * The Swift message instance.
+     * The Swift messages instance.
      *
      * @var \Swift_Message
      */
     public $message;
 
     /**
-     * The message data.
+     * The messages data.
      *
      * @var array
      */

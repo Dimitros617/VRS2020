@@ -87,7 +87,7 @@ class HtmlFormatter extends NormalizerFormatter
         $output = $this->addTitle($record['level_name'], $record['level']);
         $output .= '<table cellspacing="1" width="100%" class="monolog-output">';
 
-        $output .= $this->addRow('Message', (string) $record['message']);
+        $output .= $this->addRow('Message', (string) $record['messages']);
         $output .= $this->addRow('Time', $this->formatDate($record['datetime']));
         $output .= $this->addRow('Channel', $record['channel']);
         if ($record['context']) {

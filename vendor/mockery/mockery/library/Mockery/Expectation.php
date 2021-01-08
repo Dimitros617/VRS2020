@@ -44,7 +44,7 @@ class Expectation implements ExpectationInterface
     protected $_name = null;
 
     /**
-     * Exception message
+     * Exception messages
      *
      * @var string|null
      */
@@ -772,7 +772,7 @@ class Expectation implements ExpectationInterface
 
 
     /**
-     * Set the exception message
+     * Set the exception messages
      *
      * @param string $message
      * @return $this

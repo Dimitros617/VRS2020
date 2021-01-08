@@ -24,7 +24,7 @@ use Symfony\Component\Mime\Part\TextPart;
 final class MessageConverter
 {
     /**
-     * @throws RuntimeException when unable to convert the message to an email
+     * @throws RuntimeException when unable to convert the messages to an email
      */
     public static function toEmail(Message $message): Email
     {

@@ -401,7 +401,7 @@ abstract class AbstractPhpProcess
                 sprintf(
                     '%s: %s',
                     $exceptionArray['_PHP_Incomplete_Class_Name'],
-                    $exceptionArray['message']
+                    $exceptionArray['messages']
                 ),
                 $exceptionArray['code'],
                 $exceptionArray['file'],

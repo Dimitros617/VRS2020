@@ -7,14 +7,14 @@ use Swift_Attachment;
 class MessageSent
 {
     /**
-     * The Swift message instance.
+     * The Swift messages instance.
      *
      * @var \Swift_Message
      */
     public $message;
 
     /**
-     * The message data.
+     * The messages data.
      *
      * @var array
      */
@@ -45,11 +45,11 @@ class MessageSent
                                 ->isNotEmpty();
 
         return $hasAttachments ? [
-            'message' => base64_encode(serialize($this->message)),
+            'messages' => base64_encode(serialize($this->message)),
             'data' => base64_encode(serialize($this->data)),
             'hasAttachments' => true,
         ] : [
-            'message' => $this->message,
+            'messages' => $this->message,
             'data' => $this->data,
             'hasAttachments' => false,
         ];
@@ -64,10 +64,10 @@ class MessageSent
     public function __unserialize(array $data)
     {
         if (isset($data['hasAttachments']) && $data['hasAttachments'] === true) {
-            $this->message = unserialize(base64_decode($data['message']));
+            $this->message = unserialize(base64_decode($data['messages']));
             $this->data = unserialize(base64_decode($data['data']));
         } else {
-            $this->message = $data['message'];
+            $this->message = $data['messages'];
             $this->data = $data['data'];
         }
     }

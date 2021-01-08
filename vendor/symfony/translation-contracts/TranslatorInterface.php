@@ -17,17 +17,17 @@ namespace Symfony\Contracts\Translation;
 interface TranslatorInterface
 {
     /**
-     * Translates the given message.
+     * Translates the given messages.
      *
-     * When a number is provided as a parameter named "%count%", the message is parsed for plural
+     * When a number is provided as a parameter named "%count%", the messages is parsed for plural
      * forms and a translation is chosen according to this number using the following rules:
      *
-     * Given a message with different plural translations separated by a
-     * pipe (|), this method returns the correct portion of the message based
-     * on the given number, locale and the pluralization rules in the message
+     * Given a messages with different plural translations separated by a
+     * pipe (|), this method returns the correct portion of the messages based
+     * on the given number, locale and the pluralization rules in the messages
      * itself.
      *
-     * The message supports two different types of pluralization rules:
+     * The messages supports two different types of pluralization rules:
      *
      * interval: {0} There are no apples|{1} There is one apple|]1,Inf] There are %count% apples
      * indexed:  There is one apple|There are %count% apples
@@ -52,9 +52,9 @@ interface TranslatorInterface
      *
      * @see https://en.wikipedia.org/wiki/ISO_31-11
      *
-     * @param string      $id         The message id (may also be an object that can be cast to string)
-     * @param array       $parameters An array of parameters for the message
-     * @param string|null $domain     The domain for the message or null to use the default
+     * @param string      $id         The messages id (may also be an object that can be cast to string)
+     * @param array       $parameters An array of parameters for the messages
+     * @param string|null $domain     The domain for the messages or null to use the default
      * @param string|null $locale     The locale or null to use the default
      *
      * @return string The translated string

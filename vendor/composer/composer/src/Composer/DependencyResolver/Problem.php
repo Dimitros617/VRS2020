@@ -160,7 +160,7 @@ class Problem
      */
     protected function addReason($id, Rule $reason)
     {
-        // TODO: if a rule is part of a problem description in two sections, isn't this going to remove a message
+        // TODO: if a rule is part of a problem description in two sections, isn't this going to remove a messages
         // that is important to understand the issue?
 
         if (!isset($this->reasonSeen[$id])) {

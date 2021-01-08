@@ -14,7 +14,7 @@ namespace Monolog\Formatter;
 use DateTime;
 
 /**
- * Format a log message into an Elasticsearch record
+ * Format a log messages into an Elasticsearch record
  *
  * @author Avtandil Kikabidze <akalongman@gmail.com>
  */
@@ -74,9 +74,9 @@ class ElasticsearchFormatter extends NormalizerFormatter
     }
 
     /**
-     * Convert a log message into an Elasticsearch record
+     * Convert a log messages into an Elasticsearch record
      *
-     * @param  array $record Log message
+     * @param  array $record Log messages
      * @return array
      */
     protected function getDocument(array $record): array

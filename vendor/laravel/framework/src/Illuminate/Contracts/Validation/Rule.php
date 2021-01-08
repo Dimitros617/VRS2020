@@ -14,7 +14,7 @@ interface Rule
     public function passes($attribute, $value);
 
     /**
-     * Get the validation error message.
+     * Get the validation error messages.
      *
      * @return string|array
      */

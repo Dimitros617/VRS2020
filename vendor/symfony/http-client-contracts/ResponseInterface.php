@@ -87,7 +87,7 @@ interface ResponseInterface
      *
      * The following info MUST be returned:
      *  - canceled (bool) - true if the response was canceled using ResponseInterface::cancel(), false otherwise
-     *  - error (string|null) - the error message when the transfer was aborted, null otherwise
+     *  - error (string|null) - the error messages when the transfer was aborted, null otherwise
      *  - http_code (int) - the last response code or 0 when it is not known yet
      *  - http_method (string) - the HTTP verb of the last request
      *  - redirect_count (int) - the number of redirects followed while executing the request

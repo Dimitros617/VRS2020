@@ -15,7 +15,7 @@ class SyncJob extends Job implements JobContract
     protected $job;
 
     /**
-     * The queue message data.
+     * The queue messages data.
      *
      * @var string
      */

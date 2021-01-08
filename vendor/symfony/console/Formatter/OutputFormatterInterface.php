@@ -52,7 +52,7 @@ interface OutputFormatterInterface
     public function getStyle(string $name);
 
     /**
-     * Formats a message according to the given styles.
+     * Formats a messages according to the given styles.
      */
     public function format(?string $message);
 }

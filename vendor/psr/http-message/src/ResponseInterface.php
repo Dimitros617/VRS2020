@@ -15,7 +15,7 @@ namespace Psr\Http\Message;
  *
  * Responses are considered immutable; all methods that might change state MUST
  * be implemented such that they retain the internal state of the current
- * message and return an instance that contains the changed state.
+ * messages and return an instance that contains the changed state.
  */
 interface ResponseInterface extends MessageInterface
 {
@@ -37,7 +37,7 @@ interface ResponseInterface extends MessageInterface
      * status code.
      *
      * This method MUST be implemented in such a way as to retain the
-     * immutability of the message, and MUST return an instance that has the
+     * immutability of the messages, and MUST return an instance that has the
      * updated status and reason phrase.
      *
      * @link http://tools.ietf.org/html/rfc7231#section-6

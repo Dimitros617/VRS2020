@@ -2,4 +2,4 @@
 
 @section('title', __('Příliž mnoho požadavků'))
 @section('code', '429')
-@section('message', __('UFF... Moc požadavků najednou'))
+@section('messages', __('UFF... Moc požadavků najednou'))

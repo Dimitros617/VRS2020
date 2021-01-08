@@ -265,7 +265,7 @@ class VendorPublishCommand extends Command
     }
 
     /**
-     * Write a status message to the console.
+     * Write a status messages to the console.
      *
      * @param  string  $from
      * @param  string  $to

@@ -27,7 +27,7 @@ class ErrorHandler
      * Error handler
      *
      * @param int    $level   Level of the error raised
-     * @param string $message Error message
+     * @param string $message Error messages
      * @param string $file    Filename that the error was raised in
      * @param int    $line    Line number the error was raised at
      *

@@ -38,7 +38,7 @@ namespace Psr\Http\Message;
  *
  * Requests are considered immutable; all methods that might change state MUST
  * be implemented such that they retain the internal state of the current
- * message and return an instance that contains the changed state.
+ * messages and return an instance that contains the changed state.
  */
 interface ServerRequestInterface extends RequestInterface
 {
@@ -76,7 +76,7 @@ interface ServerRequestInterface extends RequestInterface
      * instance, nor related values in the server params.
      *
      * This method MUST be implemented in such a way as to retain the
-     * immutability of the message, and MUST return an instance that has the
+     * immutability of the messages, and MUST return an instance that has the
      * updated cookie values.
      *
      * @param array $cookies Array of key/value pairs representing cookies.
@@ -113,7 +113,7 @@ interface ServerRequestInterface extends RequestInterface
      * request, nor the values in the server params.
      *
      * This method MUST be implemented in such a way as to retain the
-     * immutability of the message, and MUST return an instance that has the
+     * immutability of the messages, and MUST return an instance that has the
      * updated query string arguments.
      *
      * @param array $query Array of query string arguments, typically from
@@ -128,7 +128,7 @@ interface ServerRequestInterface extends RequestInterface
      * This method returns upload metadata in a normalized tree, with each leaf
      * an instance of Psr\Http\Message\UploadedFileInterface.
      *
-     * These values MAY be prepared from $_FILES or the message body during
+     * These values MAY be prepared from $_FILES or the messages body during
      * instantiation, or MAY be injected via withUploadedFiles().
      *
      * @return array An array tree of UploadedFileInterface instances; an empty
@@ -140,7 +140,7 @@ interface ServerRequestInterface extends RequestInterface
      * Create a new instance with the specified uploaded files.
      *
      * This method MUST be implemented in such a way as to retain the
-     * immutability of the message, and MUST return an instance that has the
+     * immutability of the messages, and MUST return an instance that has the
      * updated body parameters.
      *
      * @param array $uploadedFiles An array tree of UploadedFileInterface instances.
@@ -185,7 +185,7 @@ interface ServerRequestInterface extends RequestInterface
      * instance with the deserialized parameters.
      *
      * This method MUST be implemented in such a way as to retain the
-     * immutability of the message, and MUST return an instance that has the
+     * immutability of the messages, and MUST return an instance that has the
      * updated body parameters.
      *
      * @param null|array|object $data The deserialized body data. This will
@@ -202,7 +202,7 @@ interface ServerRequestInterface extends RequestInterface
      * The request "attributes" may be used to allow injection of any
      * parameters derived from the request: e.g., the results of path
      * match operations; the results of decrypting cookies; the results of
-     * deserializing non-form-encoded message bodies; etc. Attributes
+     * deserializing non-form-encoded messages bodies; etc. Attributes
      * will be application and request specific, and CAN be mutable.
      *
      * @return array Attributes derived from the request.
@@ -233,7 +233,7 @@ interface ServerRequestInterface extends RequestInterface
      * described in getAttributes().
      *
      * This method MUST be implemented in such a way as to retain the
-     * immutability of the message, and MUST return an instance that has the
+     * immutability of the messages, and MUST return an instance that has the
      * updated attribute.
      *
      * @see getAttributes()
@@ -250,7 +250,7 @@ interface ServerRequestInterface extends RequestInterface
      * described in getAttributes().
      *
      * This method MUST be implemented in such a way as to retain the
-     * immutability of the message, and MUST return an instance that removes
+     * immutability of the messages, and MUST return an instance that removes
      * the attribute.
      *
      * @see getAttributes()

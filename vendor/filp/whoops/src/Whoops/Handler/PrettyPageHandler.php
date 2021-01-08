@@ -240,7 +240,7 @@ class PrettyPageHandler extends Handler
 
             "title"            => $this->getPageTitle(),
             "name"             => explode("\\", $inspector->getExceptionName()),
-            "message"          => $inspector->getExceptionMessage(),
+            "messages"          => $inspector->getExceptionMessage(),
             "previousMessages" => $inspector->getPreviousExceptionMessages(),
             "docref_url"       => $inspector->getExceptionDocrefUrl(),
             "code"             => $code,

@@ -31,10 +31,10 @@ final class ExceptionMessage extends Constraint
     public function toString(): string
     {
         if ($this->expectedMessage === '') {
-            return 'exception message is empty';
+            return 'exception messages is empty';
         }
 
-        return 'exception message contains ';
+        return 'exception messages contains ';
     }
 
     /**
@@ -64,13 +64,13 @@ final class ExceptionMessage extends Constraint
     {
         if ($this->expectedMessage === '') {
             return sprintf(
-                "exception message is empty but is '%s'",
+                "exception messages is empty but is '%s'",
                 $other->getMessage()
             );
         }
 
         return sprintf(
-            "exception message '%s' contains '%s'",
+            "exception messages '%s' contains '%s'",
             $other->getMessage(),
             $this->expectedMessage
         );

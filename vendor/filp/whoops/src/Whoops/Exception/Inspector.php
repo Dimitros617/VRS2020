@@ -59,7 +59,7 @@ class Inspector
      */
     public function getExceptionMessage()
     {
-        return $this->extractDocrefUrl($this->exception->getMessage())['message'];
+        return $this->extractDocrefUrl($this->exception->getMessage())['messages'];
     }
 
     /**
@@ -69,7 +69,7 @@ class Inspector
     {
         return array_map(function ($prev) {
             /** @var \Throwable $prev */
-            return $this->extractDocrefUrl($prev->getMessage())['message'];
+            return $this->extractDocrefUrl($prev->getMessage())['messages'];
         }, $this->getPreviousExceptions());
     }
 
@@ -97,11 +97,11 @@ class Inspector
     private function extractDocrefUrl($message)
     {
         $docref = [
-            'message' => $message,
+            'messages' => $message,
             'url' => null,
         ];
 
-        // php embbeds urls to the manual into the Exception message with the following ini-settings defined
+        // php embbeds urls to the manual into the Exception messages with the following ini-settings defined
         // http://php.net/manual/en/errorfunc.configuration.php#ini.docref-root
         if (!ini_get('html_errors') || !ini_get('docref_root')) {
             return $docref;
@@ -109,8 +109,8 @@ class Inspector
 
         $pattern = "/\[<a href='([^']+)'>(?:[^<]+)<\/a>\]/";
         if (preg_match($pattern, $message, $matches)) {
-            // -> strip those automatically generated links from the exception message
-            $docref['message'] = preg_replace($pattern, '', $message, 1);
+            // -> strip those automatically generated links from the exception messages
+            $docref['messages'] = preg_replace($pattern, '', $message, 1);
             $docref['url'] = $matches[1];
         }
 
@@ -219,7 +219,7 @@ class Inspector
                 if (isset($newFrames[0])) {
                     $newFrames[0]->addComment(
                         $previousInspector->getExceptionMessage(),
-                        'Exception message:'
+                        'Exception messages:'
                     );
                 }
                 $newFrames->prependFrames($outerFrames->topDiff($newFrames));

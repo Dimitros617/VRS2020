@@ -45,7 +45,7 @@ class QueryException extends PDOException
     }
 
     /**
-     * Format the SQL error message.
+     * Format the SQL error messages.
      *
      * @param  string  $sql
      * @param  array  $bindings

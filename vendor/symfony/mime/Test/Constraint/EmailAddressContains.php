@@ -43,7 +43,7 @@ final class EmailAddressContains extends Constraint
     protected function matches($message): bool
     {
         if (RawMessage::class === \get_class($message)) {
-            throw new \LogicException('Unable to test a message address on a RawMessage instance.');
+            throw new \LogicException('Unable to test a messages address on a RawMessage instance.');
         }
 
         $header = $message->getHeaders()->get($this->headerName);
@@ -59,7 +59,7 @@ final class EmailAddressContains extends Constraint
             return false;
         }
 
-        throw new \LogicException(sprintf('Unable to test a message address on a non-address header.'));
+        throw new \LogicException(sprintf('Unable to test a messages address on a non-address header.'));
     }
 
     /**

@@ -19,7 +19,7 @@ class PendingMailFake extends PendingMail
     }
 
     /**
-     * Send a new mailable message instance.
+     * Send a new mailable messages instance.
      *
      * @param  \Illuminate\Contracts\Mail\Mailable  $mailable;
      * @return mixed

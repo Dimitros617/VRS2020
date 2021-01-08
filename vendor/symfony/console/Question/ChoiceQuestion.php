@@ -101,9 +101,9 @@ class ChoiceQuestion extends Question
     }
 
     /**
-     * Sets the error message for invalid values.
+     * Sets the error messages for invalid values.
      *
-     * The error message has a string placeholder (%s) for the invalid value.
+     * The error messages has a string placeholder (%s) for the invalid value.
      *
      * @return $this
      */

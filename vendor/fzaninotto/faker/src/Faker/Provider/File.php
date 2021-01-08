@@ -430,7 +430,7 @@ class File extends Base
         'image/x-xbitmap'                                                           => 'xbm',
         'image/x-xpixmap'                                                           => 'xpm',
         'image/x-xwindowdump'                                                       => 'xwd',
-        'message/rfc822'                                                            => array('eml', 'mime'),
+        'messages/rfc822'                                                            => array('eml', 'mime'),
         'model/iges'                                                                => array('igs', 'iges'),
         'model/mesh'                                                                => array('msh', 'mesh', 'silo'),
         'model/vnd.collada+xml'                                                     => 'dae',

@@ -2734,7 +2734,7 @@ abstract class Assert
     }
 
     /**
-     * Fails a test with the given message.
+     * Fails a test with the given messages.
      *
      * @throws AssertionFailedError
      *
@@ -2773,7 +2773,7 @@ abstract class Assert
             $trace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS);
             array_unshift($trace, $hint);
 
-            throw new SyntheticSkippedError($hint['message'], 0, $hint['file'], (int) $hint['line'], $trace);
+            throw new SyntheticSkippedError($hint['messages'], 0, $hint['file'], (int) $hint['line'], $trace);
         }
 
         throw new SkippedTestError($message);
@@ -2813,7 +2813,7 @@ abstract class Assert
         }
 
         if ($hint) {
-            $hint['message'] = implode(PHP_EOL, $lines);
+            $hint['messages'] = implode(PHP_EOL, $lines);
         }
 
         return $hint;

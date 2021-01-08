@@ -12,14 +12,14 @@
 namespace Symfony\Component\Translation\Formatter;
 
 /**
- * Formats ICU message patterns.
+ * Formats ICU messages patterns.
  *
  * @author Nicolas Grekas <p@tchwork.com>
  */
 interface IntlFormatterInterface
 {
     /**
-     * Formats a localized message using rules defined by ICU MessageFormat.
+     * Formats a localized messages using rules defined by ICU MessageFormat.
      *
      * @see http://icu-project.org/apiref/icu4c/classMessageFormat.html#details
      */

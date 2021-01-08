@@ -188,7 +188,7 @@ class NormalizerFormatter implements FormatterInterface
 
         $data = [
             'class' => Utils::getClass($e),
-            'message' => $e->getMessage(),
+            'messages' => $e->getMessage(),
             'code' => (int) $e->getCode(),
             'file' => $e->getFile().':'.$e->getLine(),
         ];

@@ -14,7 +14,7 @@ namespace Monolog\Formatter;
 use Monolog\Logger;
 
 /**
- * Serializes a log message according to Wildfire's header requirements
+ * Serializes a log messages according to Wildfire's header requirements
  *
  * @author Eric Clemmons (@ericclemmons) <eric@uxdriven.com>
  * @author Christophe Coevoet <stof@notk.org>
@@ -53,7 +53,7 @@ class WildfireFormatter extends NormalizerFormatter
         }
 
         $record = $this->normalize($record);
-        $message = ['message' => $record['message']];
+        $message = ['messages' => $record['messages']];
         $handleError = false;
         if ($record['context']) {
             $message['context'] = $record['context'];
@@ -69,14 +69,14 @@ class WildfireFormatter extends NormalizerFormatter
 
         if (isset($record['context']['table'])) {
             $type  = 'TABLE';
-            $label = $record['channel'] .': '. $record['message'];
+            $label = $record['channel'] .': '. $record['messages'];
             $message = $record['context']['table'];
         } else {
             $type  = $this->logLevels[$record['level']];
             $label = $record['channel'];
         }
 
-        // Create JSON object describing the appearance of the message in the console
+        // Create JSON object describing the appearance of the messages in the console
         $json = $this->toJson([
             [
                 'Type'  => $type,
@@ -87,7 +87,7 @@ class WildfireFormatter extends NormalizerFormatter
             $message,
         ], $handleError);
 
-        // The message itself is a serialization of the above JSON object + it's length
+        // The messages itself is a serialization of the above JSON object + it's length
         return sprintf(
             '%d|%s|',
             strlen($json),

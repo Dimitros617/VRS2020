@@ -356,7 +356,7 @@ Usage:
   $name [--version] [--help] [files...]
 
 Options:
-  -h, --help            Display this help message.
+  -h, --help            Display this help messages.
   -c, --config FILE     Use an alternate PsySH config file location.
       --cwd PATH        Use an alternate working directory.
   -V, --version         Display the PsySH version.

@@ -71,7 +71,7 @@ class AuthHelper
      * @param  string      $url
      * @param  string      $origin
      * @param  int         $statusCode HTTP status code that triggered this call
-     * @param  string|null $reason     a message/description explaining why this was called
+     * @param  string|null $reason     a messages/description explaining why this was called
      * @param  string[]    $headers
      * @return array|null  containing retry (bool) and storeAuth (string|bool) keys, if retry is true the request should be
      *                                retried, if storeAuth is true then on a successful retry the authentication should be persisted to auth.json

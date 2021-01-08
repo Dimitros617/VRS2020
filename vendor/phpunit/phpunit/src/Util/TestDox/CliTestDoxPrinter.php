@@ -42,19 +42,19 @@ class CliTestDoxPrinter extends TestDoxPrinter
     private const PREFIX_SIMPLE = [
         'default' => '│',
         'start'   => '│',
-        'message' => '│',
+        'messages' => '│',
         'diff'    => '│',
         'trace'   => '│',
         'last'    => '│',
     ];
 
     /**
-     * Colored Testdox use box-drawing for a more textured map of the message.
+     * Colored Testdox use box-drawing for a more textured map of the messages.
      */
     private const PREFIX_DECORATED = [
         'default' => '│',
         'start'   => '┐',
-        'message' => '├',
+        'messages' => '├',
         'diff'    => '┊',
         'trace'   => '╵',
         'last'    => '┴',
@@ -75,37 +75,37 @@ class CliTestDoxPrinter extends TestDoxPrinter
         BaseTestRunner::STATUS_ERROR => [
             'symbol'  => '✘',
             'color'   => 'fg-yellow',
-            'message' => 'bg-yellow,fg-black',
+            'messages' => 'bg-yellow,fg-black',
         ],
         BaseTestRunner::STATUS_FAILURE => [
             'symbol'  => '✘',
             'color'   => 'fg-red',
-            'message' => 'bg-red,fg-white',
+            'messages' => 'bg-red,fg-white',
         ],
         BaseTestRunner::STATUS_SKIPPED => [
             'symbol'  => '↩',
             'color'   => 'fg-cyan',
-            'message' => 'fg-cyan',
+            'messages' => 'fg-cyan',
         ],
         BaseTestRunner::STATUS_RISKY => [
             'symbol'  => '☢',
             'color'   => 'fg-yellow',
-            'message' => 'fg-yellow',
+            'messages' => 'fg-yellow',
         ],
         BaseTestRunner::STATUS_INCOMPLETE => [
             'symbol'  => '∅',
             'color'   => 'fg-yellow',
-            'message' => 'fg-yellow',
+            'messages' => 'fg-yellow',
         ],
         BaseTestRunner::STATUS_WARNING => [
             'symbol'  => '⚠',
             'color'   => 'fg-yellow',
-            'message' => 'fg-yellow',
+            'messages' => 'fg-yellow',
         ],
         BaseTestRunner::STATUS_UNKNOWN => [
             'symbol'  => '?',
             'color'   => 'fg-blue',
-            'message' => 'fg-white,bg-blue',
+            'messages' => 'fg-white,bg-blue',
         ],
     ];
 
@@ -185,7 +185,7 @@ class CliTestDoxPrinter extends TestDoxPrinter
     {
         // spacer line for new suite headers and after verbose messages
         if ($prevResult['testName'] !== '' &&
-            (!empty($prevResult['message']) || $prevResult['className'] !== $result['className'])) {
+            (!empty($prevResult['messages']) || $prevResult['className'] !== $result['className'])) {
             $this->write(PHP_EOL);
         }
 
@@ -212,7 +212,7 @@ class CliTestDoxPrinter extends TestDoxPrinter
         $this->write($line);
 
         // additional information when verbose
-        $this->write($result['message']);
+        $this->write($result['messages']);
     }
 
     protected function formatThrowable(Throwable $t, ?int $status = null): string
@@ -291,7 +291,7 @@ class CliTestDoxPrinter extends TestDoxPrinter
         }
 
         if ($message && $this->colors) {
-            $style            = self::STATUS_STYLES[$result['status']]['message'] ?? '';
+            $style            = self::STATUS_STYLES[$result['status']]['messages'] ?? '';
             [$message, $diff] = $this->colorizeMessageAndDiff($style, $message);
         }
 
@@ -310,7 +310,7 @@ class CliTestDoxPrinter extends TestDoxPrinter
         $out   = $this->prefixLines($prefix['start'], PHP_EOL) . PHP_EOL;
 
         if ($message) {
-            $out .= $this->prefixLines($prefix['message'], $message . PHP_EOL) . PHP_EOL;
+            $out .= $this->prefixLines($prefix['messages'], $message . PHP_EOL) . PHP_EOL;
         }
 
         if ($diff) {

@@ -32,7 +32,7 @@ class TypeErrorException extends \Exception implements Exception
     }
 
     /**
-     * Get the raw (unformatted) message for this error.
+     * Get the raw (unformatted) messages for this error.
      *
      * @return string
      */

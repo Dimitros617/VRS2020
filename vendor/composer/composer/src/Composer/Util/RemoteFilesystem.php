@@ -573,8 +573,8 @@ class RemoteFilesystem
      *
      * @param  int                $notificationCode The notification code
      * @param  int                $severity         The severity level
-     * @param  string             $message          The message
-     * @param  int                $messageCode      The message code
+     * @param  string             $message          The messages
+     * @param  int                $messageCode      The messages code
      * @param  int                $bytesTransferred The loaded size
      * @param  int                $bytesMax         The total size
      * @throws TransportException

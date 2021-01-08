@@ -519,7 +519,7 @@ class CurlDownloader
         if ($code != CURLM_OK && $code != CURLM_CALL_MULTI_PERFORM) {
             throw new \RuntimeException(
                 isset($this->multiErrors[$code])
-                ? "cURL error: {$code} ({$this->multiErrors[$code][0]}): cURL message: {$this->multiErrors[$code][1]}"
+                ? "cURL error: {$code} ({$this->multiErrors[$code][0]}): cURL messages: {$this->multiErrors[$code][1]}"
                 : 'Unexpected cURL error: ' . $code
             );
         }

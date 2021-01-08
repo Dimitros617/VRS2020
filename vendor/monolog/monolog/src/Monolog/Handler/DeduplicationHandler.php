@@ -27,7 +27,7 @@ use Monolog\Logger;
  * whole data set is discarded.
  *
  * This is mainly useful in combination with Mail handlers or things like Slack or HipChat handlers
- * that send messages to people, to avoid spamming with the same message over and over in case of
+ * that send messages to people, to avoid spamming with the same messages over and over in case of
  * a major component failure like a database server being down which makes all requests fail in the
  * same way.
  *
@@ -113,7 +113,7 @@ class DeduplicationHandler extends BufferHandler
 
         $yesterday = time() - 86400;
         $timestampValidity = $record['datetime']->getTimestamp() - $this->time;
-        $expectedMessage = preg_replace('{[\r\n].*}', '', $record['message']);
+        $expectedMessage = preg_replace('{[\r\n].*}', '', $record['messages']);
 
         for ($i = count($store) - 1; $i >= 0; $i--) {
             list($timestamp, $level, $message) = explode(':', $store[$i], 3);
@@ -168,6 +168,6 @@ class DeduplicationHandler extends BufferHandler
 
     private function appendRecord(array $record): void
     {
-        file_put_contents($this->deduplicationStore, $record['datetime']->getTimestamp() . ':' . $record['level_name'] . ':' . preg_replace('{[\r\n].*}', '', $record['message']) . "\n", FILE_APPEND);
+        file_put_contents($this->deduplicationStore, $record['datetime']->getTimestamp() . ':' . $record['level_name'] . ':' . preg_replace('{[\r\n].*}', '', $record['messages']) . "\n", FILE_APPEND);
     }
 }

@@ -12,7 +12,7 @@
 namespace Monolog\Formatter;
 
 /**
- * Serializes a log message to Logstash Event Format
+ * Serializes a log messages to Logstash Event Format
  *
  * @see https://www.elastic.co/products/logstash
  * @see https://github.com/elastic/logstash/blob/master/logstash-core/src/main/java/org/logstash/Event.java
@@ -22,12 +22,12 @@ namespace Monolog\Formatter;
 class LogstashFormatter extends NormalizerFormatter
 {
     /**
-     * @var string the name of the system for the Logstash log message, used to fill the @source field
+     * @var string the name of the system for the Logstash log messages, used to fill the @source field
      */
     protected $systemName;
 
     /**
-     * @var string an application name for the Logstash log message, used to fill the @type field
+     * @var string an application name for the Logstash log messages, used to fill the @type field
      */
     protected $applicationName;
 
@@ -73,8 +73,8 @@ class LogstashFormatter extends NormalizerFormatter
             '@version' => 1,
             'host' => $this->systemName,
         ];
-        if (isset($record['message'])) {
-            $message['message'] = $record['message'];
+        if (isset($record['messages'])) {
+            $message['messages'] = $record['messages'];
         }
         if (isset($record['channel'])) {
             $message['type'] = $record['channel'];

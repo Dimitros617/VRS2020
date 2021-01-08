@@ -5,9 +5,9 @@ namespace Psr\Log;
 /**
  * Describes a logger instance.
  *
- * The message MUST be a string or object implementing __toString().
+ * The messages MUST be a string or object implementing __toString().
  *
- * The message MAY contain placeholders in the form: {foo} where foo
+ * The messages MAY contain placeholders in the form: {foo} where foo
  * will be replaced by the context data in key "foo".
  *
  * The context array can contain arbitrary data. The only assumption that

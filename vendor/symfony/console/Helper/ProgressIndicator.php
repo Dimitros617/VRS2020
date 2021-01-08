@@ -62,7 +62,7 @@ class ProgressIndicator
     }
 
     /**
-     * Sets the current indicator message.
+     * Sets the current indicator messages.
      */
     public function setMessage(?string $message)
     {
@@ -115,7 +115,7 @@ class ProgressIndicator
     }
 
     /**
-     * Finish the indicator with message.
+     * Finish the indicator with messages.
      *
      * @param $message
      */
@@ -203,7 +203,7 @@ class ProgressIndicator
     }
 
     /**
-     * Overwrites a previous message to the output.
+     * Overwrites a previous messages to the output.
      */
     private function overwrite(string $message)
     {
@@ -226,7 +226,7 @@ class ProgressIndicator
             'indicator' => function (self $indicator) {
                 return $indicator->indicatorValues[$indicator->indicatorCurrent % \count($indicator->indicatorValues)];
             },
-            'message' => function (self $indicator) {
+            'messages' => function (self $indicator) {
                 return $indicator->message;
             },
             'elapsed' => function (self $indicator) {
@@ -241,14 +241,14 @@ class ProgressIndicator
     private static function initFormats(): array
     {
         return [
-            'normal' => ' %indicator% %message%',
-            'normal_no_ansi' => ' %message%',
+            'normal' => ' %indicator% %messages%',
+            'normal_no_ansi' => ' %messages%',
 
-            'verbose' => ' %indicator% %message% (%elapsed:6s%)',
-            'verbose_no_ansi' => ' %message% (%elapsed:6s%)',
+            'verbose' => ' %indicator% %messages% (%elapsed:6s%)',
+            'verbose_no_ansi' => ' %messages% (%elapsed:6s%)',
 
-            'very_verbose' => ' %indicator% %message% (%elapsed:6s%, %memory:6s%)',
-            'very_verbose_no_ansi' => ' %message% (%elapsed:6s%, %memory:6s%)',
+            'very_verbose' => ' %indicator% %messages% (%elapsed:6s%, %memory:6s%)',
+            'very_verbose_no_ansi' => ' %messages% (%elapsed:6s%, %memory:6s%)',
         ];
     }
 }

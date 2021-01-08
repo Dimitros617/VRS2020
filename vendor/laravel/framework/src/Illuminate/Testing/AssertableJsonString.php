@@ -295,7 +295,7 @@ class AssertableJsonString implements ArrayAccess, Countable
     }
 
     /**
-     * Get the assertion message for assertJson.
+     * Get the assertion messages for assertJson.
      *
      * @param  array  $data
      * @return string

@@ -234,8 +234,8 @@ class ClassMapGenerator
                 $message = 'File at "%s" could not be parsed as PHP, it may be binary or corrupted';
             }
             $error = error_get_last();
-            if (isset($error['message'])) {
-                $message .= PHP_EOL . 'The following message may be helpful:' . PHP_EOL . $error['message'];
+            if (isset($error['messages'])) {
+                $message .= PHP_EOL . 'The following messages may be helpful:' . PHP_EOL . $error['messages'];
             }
             throw new \RuntimeException(sprintf($message, $path));
         }

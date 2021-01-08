@@ -64,45 +64,45 @@ interface IOInterface extends LoggerInterface
     public function isDecorated();
 
     /**
-     * Writes a message to the output.
+     * Writes a messages to the output.
      *
-     * @param string|array $messages  The message as an array of lines or a single string
+     * @param string|array $messages  The messages as an array of lines or a single string
      * @param bool         $newline   Whether to add a newline or not
      * @param int          $verbosity Verbosity level from the VERBOSITY_* constants
      */
     public function write($messages, $newline = true, $verbosity = self::NORMAL);
 
     /**
-     * Writes a message to the error output.
+     * Writes a messages to the error output.
      *
-     * @param string|array $messages  The message as an array of lines or a single string
+     * @param string|array $messages  The messages as an array of lines or a single string
      * @param bool         $newline   Whether to add a newline or not
      * @param int          $verbosity Verbosity level from the VERBOSITY_* constants
      */
     public function writeError($messages, $newline = true, $verbosity = self::NORMAL);
 
     /**
-     * Writes a message to the output, without formatting it.
+     * Writes a messages to the output, without formatting it.
      *
-     * @param string|array $messages  The message as an array of lines or a single string
+     * @param string|array $messages  The messages as an array of lines or a single string
      * @param bool         $newline   Whether to add a newline or not
      * @param int          $verbosity Verbosity level from the VERBOSITY_* constants
      */
     public function writeRaw($messages, $newline = true, $verbosity = self::NORMAL);
 
     /**
-     * Writes a message to the error output, without formatting it.
+     * Writes a messages to the error output, without formatting it.
      *
-     * @param string|array $messages  The message as an array of lines or a single string
+     * @param string|array $messages  The messages as an array of lines or a single string
      * @param bool         $newline   Whether to add a newline or not
      * @param int          $verbosity Verbosity level from the VERBOSITY_* constants
      */
     public function writeErrorRaw($messages, $newline = true, $verbosity = self::NORMAL);
 
     /**
-     * Overwrites a previous message to the output.
+     * Overwrites a previous messages to the output.
      *
-     * @param string|array $messages  The message as an array of lines or a single string
+     * @param string|array $messages  The messages as an array of lines or a single string
      * @param bool         $newline   Whether to add a newline or not
      * @param int          $size      The size of line
      * @param int          $verbosity Verbosity level from the VERBOSITY_* constants
@@ -110,9 +110,9 @@ interface IOInterface extends LoggerInterface
     public function overwrite($messages, $newline = true, $size = null, $verbosity = self::NORMAL);
 
     /**
-     * Overwrites a previous message to the error output.
+     * Overwrites a previous messages to the error output.
      *
-     * @param string|array $messages  The message as an array of lines or a single string
+     * @param string|array $messages  The messages as an array of lines or a single string
      * @param bool         $newline   Whether to add a newline or not
      * @param int          $size      The size of line
      * @param int          $verbosity Verbosity level from the VERBOSITY_* constants

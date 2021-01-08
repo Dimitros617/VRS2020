@@ -15,7 +15,7 @@ namespace Psr\Http\Message;
  * state of the current instance and return an instance that contains the
  * changed state.
  *
- * Typically the Host header will be also be present in the request message.
+ * Typically the Host header will be also be present in the request messages.
  * For server-side requests, the scheme will typically be discoverable in the
  * server parameters.
  *

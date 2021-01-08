@@ -156,7 +156,7 @@ HELP;
 }
 
 /**
- * @param string $message Error message
+ * @param string $message Error messages
  */
 function fail($message)
 {

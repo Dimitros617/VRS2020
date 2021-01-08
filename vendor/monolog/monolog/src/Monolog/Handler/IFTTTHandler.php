@@ -21,7 +21,7 @@ use Monolog\Utils;
  *
  * value1 will be the channel from monolog's Logger constructor,
  * value2 will be the level name (ERROR, WARNING, ..)
- * value3 will be the log record's message
+ * value3 will be the log record's messages
  *
  * @author Nehal Patel <nehal@nehalpatel.me>
  */
@@ -52,7 +52,7 @@ class IFTTTHandler extends AbstractProcessingHandler
         $postData = [
             "value1" => $record["channel"],
             "value2" => $record["level_name"],
-            "value3" => $record["message"],
+            "value3" => $record["messages"],
         ];
         $postString = Utils::jsonEncode($postData);
 

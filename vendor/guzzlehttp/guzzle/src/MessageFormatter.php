@@ -12,8 +12,8 @@ use Psr\Http\Message\ResponseInterface;
  *
  * The following variable substitutions are supported:
  *
- * - {request}:        Full HTTP request message
- * - {response}:       Full HTTP response message
+ * - {request}:        Full HTTP request messages
+ * - {response}:       Full HTTP response messages
  * - {ts}:             ISO 8601 date in GMT
  * - {date_iso_8601}   ISO 8601 date in GMT
  * - {date_common_log} Apache common log date using the configured timezone.
@@ -26,8 +26,8 @@ use Psr\Http\Message\ResponseInterface;
  * - {code}:           Status code of the response (if available)
  * - {phrase}:         Reason phrase of the response  (if available)
  * - {error}:          Any error messages (if available)
- * - {req_header_*}:   Replace `*` with the lowercased name of a request header to add to the message
- * - {res_header_*}:   Replace `*` with the lowercased name of a response header to add to the message
+ * - {req_header_*}:   Replace `*` with the lowercased name of a request header to add to the messages
+ * - {res_header_*}:   Replace `*` with the lowercased name of a response header to add to the messages
  * - {req_headers}:    Request headers
  * - {res_headers}:    Response headers
  * - {req_body}:       Request body
@@ -54,7 +54,7 @@ class MessageFormatter implements MessageFormatterInterface
     private $template;
 
     /**
-     * @param string $template Log message template
+     * @param string $template Log messages template
      */
     public function __construct(?string $template = self::CLF)
     {
@@ -62,7 +62,7 @@ class MessageFormatter implements MessageFormatterInterface
     }
 
     /**
-     * Returns a formatted message string.
+     * Returns a formatted messages string.
      *
      * @param RequestInterface       $request  Request that was sent
      * @param ResponseInterface|null $response Response that was received
@@ -184,7 +184,7 @@ class MessageFormatter implements MessageFormatterInterface
     }
 
     /**
-     * Get headers from message as string
+     * Get headers from messages as string
      */
     private function headers(MessageInterface $message): string
     {

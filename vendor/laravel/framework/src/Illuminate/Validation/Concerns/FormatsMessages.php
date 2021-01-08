@@ -12,7 +12,7 @@ trait FormatsMessages
     use ReplacesAttributes;
 
     /**
-     * Get the validation message for an attribute and rule.
+     * Get the validation messages for an attribute and rule.
      *
      * @param  string  $attribute
      * @param  string  $rule
@@ -22,9 +22,9 @@ trait FormatsMessages
     {
         $inlineMessage = $this->getInlineMessage($attribute, $rule);
 
-        // First we will retrieve the custom message for the validation rule if one
-        // exists. If a custom validation message is being used we'll return the
-        // custom message, otherwise we'll keep searching for a valid message.
+        // First we will retrieve the custom messages for the validation rule if one
+        // exists. If a custom validation messages is being used we'll return the
+        // custom messages, otherwise we'll keep searching for a valid messages.
         if (! is_null($inlineMessage)) {
             return $inlineMessage;
         }
@@ -35,7 +35,7 @@ trait FormatsMessages
             $customKey = "validation.custom.{$attribute}.{$lowerRule}"
         );
 
-        // First we check for a custom defined validation message for the attribute
+        // First we check for a custom defined validation messages for the attribute
         // and rule. This allows the developer to specify specific messages for
         // only some attributes and rules that need to get specially formed.
         if ($customMessage !== $customKey) {
@@ -43,8 +43,8 @@ trait FormatsMessages
         }
 
         // If the rule being validated is a "size" rule, we will need to gather the
-        // specific error message for the type of attribute being validated such
-        // as a number, file or string which all have different message types.
+        // specific error messages for the type of attribute being validated such
+        // as a number, file or string which all have different messages types.
         elseif (in_array($rule, $this->sizeRules)) {
             return $this->getSizeMessage($attribute, $rule);
         }
@@ -64,7 +64,7 @@ trait FormatsMessages
     }
 
     /**
-     * Get the proper inline error message for standard and size rules.
+     * Get the proper inline error messages for standard and size rules.
      *
      * @param  string  $attribute
      * @param  string  $rule
@@ -80,7 +80,7 @@ trait FormatsMessages
     }
 
     /**
-     * Get the inline message for a rule if it exists.
+     * Get the inline messages for a rule if it exists.
      *
      * @param  string  $attribute
      * @param  string  $lowerRule
@@ -93,8 +93,8 @@ trait FormatsMessages
 
         $keys = ["{$attribute}.{$lowerRule}", $lowerRule];
 
-        // First we will check for a custom message for an attribute specific rule
-        // message for the fields, then we will check for a general custom line
+        // First we will check for a custom messages for an attribute specific rule
+        // messages for the fields, then we will check for a general custom line
         // that is not attribute specific. If we find either we'll return it.
         foreach ($keys as $key) {
             foreach (array_keys($source) as $sourceKey) {
@@ -116,7 +116,7 @@ trait FormatsMessages
     }
 
     /**
-     * Get the custom error message from translator.
+     * Get the custom error messages from translator.
      *
      * @param  string  $key
      * @return string
@@ -159,7 +159,7 @@ trait FormatsMessages
     }
 
     /**
-     * Get the proper error message for an attribute and size rule.
+     * Get the proper error messages for an attribute and size rule.
      *
      * @param  string  $attribute
      * @param  string  $rule
@@ -202,7 +202,7 @@ trait FormatsMessages
     }
 
     /**
-     * Replace all error message place-holders with actual values.
+     * Replace all error messages place-holders with actual values.
      *
      * @param  string  $message
      * @param  string  $attribute
@@ -280,7 +280,7 @@ trait FormatsMessages
     }
 
     /**
-     * Replace the :attribute placeholder in the given message.
+     * Replace the :attribute placeholder in the given messages.
      *
      * @param  string  $message
      * @param  string  $value
@@ -296,7 +296,7 @@ trait FormatsMessages
     }
 
     /**
-     * Replace the :input placeholder in the given message.
+     * Replace the :input placeholder in the given messages.
      *
      * @param  string  $message
      * @param  string  $attribute
@@ -351,7 +351,7 @@ trait FormatsMessages
 
         // For each attribute in the list we will simply get its displayable form as
         // this is convenient when replacing lists of parameters like some of the
-        // replacement functions do when formatting out the validation message.
+        // replacement functions do when formatting out the validation messages.
         foreach ($values as $key => $value) {
             $attributes[$key] = $this->getDisplayableAttribute($value);
         }
@@ -360,7 +360,7 @@ trait FormatsMessages
     }
 
     /**
-     * Call a custom validator message replacer.
+     * Call a custom validator messages replacer.
      *
      * @param  string  $message
      * @param  string  $attribute
@@ -381,7 +381,7 @@ trait FormatsMessages
     }
 
     /**
-     * Call a class based validator message replacer.
+     * Call a class based validator messages replacer.
      *
      * @param  string  $callback
      * @param  string  $message

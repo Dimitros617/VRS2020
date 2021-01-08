@@ -165,7 +165,7 @@ class Shell extends Application
     {
         return new InputDefinition([
             new InputArgument('command', InputArgument::REQUIRED, 'The command to execute'),
-            new InputOption('--help', '-h', InputOption::VALUE_NONE, 'Display this help message.'),
+            new InputOption('--help', '-h', InputOption::VALUE_NONE, 'Display this help messages.'),
         ]);
     }
 
@@ -1168,7 +1168,7 @@ class Shell extends Application
             if ($message === '') {
                 $message = \get_class($e);
             } else {
-                $message = \sprintf('%s with message \'%s\'', \get_class($e), $message);
+                $message = \sprintf('%s with messages \'%s\'', \get_class($e), $message);
             }
         }
 
@@ -1500,7 +1500,7 @@ class Shell extends Application
     }
 
     /**
-     * Write a startup message if set.
+     * Write a startup messages if set.
      */
     protected function writeStartupMessage()
     {

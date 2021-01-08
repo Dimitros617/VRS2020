@@ -14,7 +14,7 @@ namespace Monolog\Processor;
 use Monolog\Utils;
 
 /**
- * Processes a record's message according to PSR-3 rules
+ * Processes a record's messages according to PSR-3 rules
  *
  * It replaces {foo} with the value from $context['foo']
  *
@@ -32,7 +32,7 @@ class PsrLogMessageProcessor implements ProcessorInterface
 
     /**
      * @param string|null $dateFormat              The format of the timestamp: one supported by DateTime::format
-     * @param bool        $removeUsedContextFields If set to true the fields interpolated into message gets unset
+     * @param bool        $removeUsedContextFields If set to true the fields interpolated into messages gets unset
      */
     public function __construct(?string $dateFormat = null, bool $removeUsedContextFields = false)
     {
@@ -46,14 +46,14 @@ class PsrLogMessageProcessor implements ProcessorInterface
      */
     public function __invoke(array $record): array
     {
-        if (false === strpos($record['message'], '{')) {
+        if (false === strpos($record['messages'], '{')) {
             return $record;
         }
 
         $replacements = [];
         foreach ($record['context'] as $key => $val) {
             $placeholder = '{' . $key . '}';
-            if (strpos($record['message'], $placeholder) === false) {
+            if (strpos($record['messages'], $placeholder) === false) {
                 continue;
             }
 
@@ -80,7 +80,7 @@ class PsrLogMessageProcessor implements ProcessorInterface
             }
         }
 
-        $record['message'] = strtr($record['message'], $replacements);
+        $record['messages'] = strtr($record['messages'], $replacements);
 
         return $record;
     }

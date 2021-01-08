@@ -37,7 +37,7 @@ class MessagePart extends DataPart
 
     public function getMediaType(): string
     {
-        return 'message';
+        return 'messages';
     }
 
     public function getMediaSubtype(): string

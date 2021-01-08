@@ -65,7 +65,7 @@ class PasswordBroker implements PasswordBrokerContract
         if ($callback) {
             $callback($user, $token);
         } else {
-            // Once we have the reset token, we are ready to send the message out to this
+            // Once we have the reset token, we are ready to send the messages out to this
             // user with a link to reset their password. We will then redirect back to
             // the current URI having nothing set in the session to indicate errors.
             $user->sendPasswordResetNotification($token);
@@ -87,7 +87,7 @@ class PasswordBroker implements PasswordBrokerContract
 
         // If the responses from the validate method is not a user instance, we will
         // assume that it is a redirect and simply return it from this method and
-        // the user is properly redirected having an error message on the post.
+        // the user is properly redirected having an error messages on the post.
         if (! $user instanceof CanResetPasswordContract) {
             return $user;
         }

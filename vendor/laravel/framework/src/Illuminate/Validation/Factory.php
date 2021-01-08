@@ -53,7 +53,7 @@ class Factory implements FactoryContract
     protected $dependentExtensions = [];
 
     /**
-     * All of the custom validator message replacers.
+     * All of the custom validator messages replacers.
      *
      * @var array
      */
@@ -228,7 +228,7 @@ class Factory implements FactoryContract
     }
 
     /**
-     * Register a custom validator message replacer.
+     * Register a custom validator messages replacer.
      *
      * @param  string  $rule
      * @param  \Closure|string  $replacer

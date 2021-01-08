@@ -23,7 +23,7 @@ final class Headers
 {
     private const UNIQUE_HEADERS = [
         'date', 'from', 'sender', 'reply-to', 'to', 'cc', 'bcc',
-        'message-id', 'in-reply-to', 'references', 'subject',
+        'messages-id', 'in-reply-to', 'references', 'subject',
     ];
     private const HEADER_CLASS_MAP = [
         'date' => DateHeader::class,
@@ -33,7 +33,7 @@ final class Headers
         'to' => MailboxListHeader::class,
         'cc' => MailboxListHeader::class,
         'bcc' => MailboxListHeader::class,
-        'message-id' => IdentificationHeader::class,
+        'messages-id' => IdentificationHeader::class,
         'in-reply-to' => IdentificationHeader::class,
         'references' => IdentificationHeader::class,
         'return-path' => PathHeader::class,

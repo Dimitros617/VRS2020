@@ -693,12 +693,12 @@ final class PhptTestCase implements Reorderable, SelfDescribing, Test
     {
         $needle       = '';
         $previousLine = '';
-        $block        = 'message';
+        $block        = 'messages';
 
         foreach (preg_split('/\r\n|\r|\n/', $message) as $line) {
             $line = trim($line);
 
-            if ($block === 'message' && $line === '--- Expected') {
+            if ($block === 'messages' && $line === '--- Expected') {
                 $block = 'expected';
             }
 

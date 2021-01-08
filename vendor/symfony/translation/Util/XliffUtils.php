@@ -121,7 +121,7 @@ class XliffUtils
             $errorsAsString .= sprintf("[%s %s] %s (in %s - line %d, column %d)\n",
                 \LIBXML_ERR_WARNING === $error['level'] ? 'WARNING' : 'ERROR',
                 $error['code'],
-                $error['message'],
+                $error['messages'],
                 $error['file'],
                 $error['line'],
                 $error['column']
@@ -181,7 +181,7 @@ class XliffUtils
             $errors[] = [
                 'level' => \LIBXML_ERR_WARNING == $error->level ? 'WARNING' : 'ERROR',
                 'code' => $error->code,
-                'message' => trim($error->message),
+                'messages' => trim($error->message),
                 'file' => $error->file ?: 'n/a',
                 'line' => $error->line,
                 'column' => $error->column,

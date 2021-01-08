@@ -222,7 +222,7 @@ class DOMCaster
     {
         $a += [
             'severity' => $dom->severity,
-            'message' => $dom->message,
+            'messages' => $dom->message,
             'type' => $dom->type,
             'relatedException' => $dom->relatedException,
             'related_data' => $dom->related_data,

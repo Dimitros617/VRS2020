@@ -137,7 +137,7 @@ final class TestFailure
     }
 
     /**
-     * Returns the exception's message.
+     * Returns the exception's messages.
      */
     public function exceptionMessage(): string
     {

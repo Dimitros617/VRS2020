@@ -15,7 +15,7 @@ use SebastianBergmann\Comparator\ComparisonFailure;
 /**
  * Exception for expectations which failed their check.
  *
- * The exception contains the error message and optionally a
+ * The exception contains the error messages and optionally a
  * SebastianBergmann\Comparator\ComparisonFailure which is used to
  * generate diff output of the failed expectations.
  *

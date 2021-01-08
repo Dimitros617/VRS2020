@@ -2272,7 +2272,7 @@ interface CarbonInterface extends DateTimeInterface, JsonSerializable
     public function getTranslatedShortMonthName($context = null);
 
     /**
-     * Returns raw translation message for a given key.
+     * Returns raw translation messages for a given key.
      *
      * @param string                                             $key        key to find
      * @param string|null                                        $locale     current locale used if null
@@ -2284,7 +2284,7 @@ interface CarbonInterface extends DateTimeInterface, JsonSerializable
     public function getTranslationMessage(string $key, string $locale = null, string $default = null, $translator = null);
 
     /**
-     * Returns raw translation message for a given key.
+     * Returns raw translation messages for a given key.
      *
      * @param \Symfony\Component\Translation\TranslatorInterface $translator the translator to use
      * @param string                                             $key        key to find

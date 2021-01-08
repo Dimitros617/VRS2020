@@ -43,7 +43,7 @@ class RarDownloader extends ArchiveDownloader
         }
 
         if (!class_exists('RarArchive')) {
-            // php.ini path is added to the error message to help users find the correct file
+            // php.ini path is added to the error messages to help users find the correct file
             $iniMessage = IniHelper::getMessage();
 
             $error = "Could not decompress the archive, enable the PHP rar extension or install unrar.\n"

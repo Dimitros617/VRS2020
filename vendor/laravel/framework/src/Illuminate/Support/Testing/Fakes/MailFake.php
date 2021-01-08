@@ -16,7 +16,7 @@ class MailFake implements Factory, Mailer, MailQueue
     use ReflectsClosures;
 
     /**
-     * The mailer currently being used to send a message.
+     * The mailer currently being used to send a messages.
      *
      * @var string
      */
@@ -308,7 +308,7 @@ class MailFake implements Factory, Mailer, MailQueue
     }
 
     /**
-     * Send a new message with only a raw text part.
+     * Send a new messages with only a raw text part.
      *
      * @param  string  $text
      * @param  \Closure|string  $callback
@@ -320,7 +320,7 @@ class MailFake implements Factory, Mailer, MailQueue
     }
 
     /**
-     * Send a new message using a view.
+     * Send a new messages using a view.
      *
      * @param  string|array  $view
      * @param  array  $data
@@ -345,7 +345,7 @@ class MailFake implements Factory, Mailer, MailQueue
     }
 
     /**
-     * Queue a new e-mail message for sending.
+     * Queue a new e-mail messages for sending.
      *
      * @param  string|array  $view
      * @param  string|null  $queue
@@ -365,7 +365,7 @@ class MailFake implements Factory, Mailer, MailQueue
     }
 
     /**
-     * Queue a new e-mail message for sending after (n) seconds.
+     * Queue a new e-mail messages for sending after (n) seconds.
      *
      * @param  \DateTimeInterface|\DateInterval|int  $delay
      * @param  \Illuminate\Contracts\Mail\Mailable|string|array  $view

@@ -30,7 +30,7 @@ final class ExceptionMessageRegularExpression extends Constraint
 
     public function toString(): string
     {
-        return 'exception message matches ';
+        return 'exception messages matches ';
     }
 
     /**
@@ -48,7 +48,7 @@ final class ExceptionMessageRegularExpression extends Constraint
 
         if ($match === false) {
             throw new \PHPUnit\Framework\Exception(
-                "Invalid expected exception message regex given: '{$this->expectedMessageRegExp}'"
+                "Invalid expected exception messages regex given: '{$this->expectedMessageRegExp}'"
             );
         }
 
@@ -66,7 +66,7 @@ final class ExceptionMessageRegularExpression extends Constraint
     protected function failureDescription($other): string
     {
         return sprintf(
-            "exception message '%s' matches '%s'",
+            "exception messages '%s' matches '%s'",
             $other->getMessage(),
             $this->expectedMessageRegExp
         );

@@ -12,7 +12,7 @@
 namespace Psy\Exception;
 
 /**
- * A custom error Exception for Psy with a formatted $message.
+ * A custom error Exception for Psy with a formatted $messages.
  */
 class ErrorException extends \ErrorException implements Exception
 {
@@ -72,7 +72,7 @@ class ErrorException extends \ErrorException implements Exception
     }
 
     /**
-     * Get the raw (unformatted) message for this error.
+     * Get the raw (unformatted) messages for this error.
      *
      * @return string
      */

@@ -38,7 +38,7 @@ class LogMessage
     public function toArray()
     {
         return [
-            'message' => $this->message,
+            'messages' => $this->message,
             'level' => $this->level,
             'context' => $this->context,
             'microtime' => $this->microtime,

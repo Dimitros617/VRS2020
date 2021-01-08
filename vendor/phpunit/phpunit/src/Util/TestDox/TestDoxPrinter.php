@@ -195,14 +195,14 @@ class TestDoxPrinter extends DefaultResultPrinter
             'className'  => $this->formatClassName($test),
             'testName'   => $testName,
             'testMethod' => $this->formatTestName($test),
-            'message'    => '',
+            'messages'    => '',
             'status'     => $status,
             'time'       => $time,
             'verbose'    => $verbose,
         ];
 
         if ($t !== null) {
-            $result['message'] = $this->formatTestResultMessage($t, $result);
+            $result['messages'] = $this->formatTestResultMessage($t, $result);
         }
 
         $this->testResults[$this->testIndex]  = $result;
@@ -321,7 +321,7 @@ class TestDoxPrinter extends DefaultResultPrinter
         return [
             'className' => '',
             'testName'  => '',
-            'message'   => '',
+            'messages'   => '',
             'failed'    => '',
             'verbose'   => '',
         ];

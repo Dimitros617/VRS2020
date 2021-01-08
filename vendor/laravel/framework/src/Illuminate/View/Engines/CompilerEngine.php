@@ -82,7 +82,7 @@ class CompilerEngine extends PhpEngine
     }
 
     /**
-     * Get the exception message for an exception.
+     * Get the exception messages for an exception.
      *
      * @param  \Throwable  $e
      * @return string

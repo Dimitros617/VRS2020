@@ -76,7 +76,7 @@ trait TranslatorTrait
         (?P<right>\+?Inf|\-?\d+(\.\d+)?)
         \s*
     (?P<right_delimiter>[\[\]])
-)\s*(?P<message>.*?)$/xs
+)\s*(?P<messages>.*?)$/xs
 EOF;
 
         $standardRules = [];
@@ -88,7 +88,7 @@ EOF;
                 if ($matches[2]) {
                     foreach (explode(',', $matches[3]) as $n) {
                         if ($number == $n) {
-                            return strtr($matches['message'], $parameters);
+                            return strtr($matches['messages'], $parameters);
                         }
                     }
                 } else {
@@ -98,7 +98,7 @@ EOF;
                     if (('[' === $matches['left_delimiter'] ? $number >= $leftNumber : $number > $leftNumber)
                         && (']' === $matches['right_delimiter'] ? $number <= $rightNumber : $number < $rightNumber)
                     ) {
-                        return strtr($matches['message'], $parameters);
+                        return strtr($matches['messages'], $parameters);
                     }
                 }
             } elseif (preg_match('/^\w+\:\s*(.*?)$/', $part, $matches)) {

@@ -23,7 +23,7 @@ use Monolog\Utils;
  */
 class LineFormatter extends NormalizerFormatter
 {
-    public const SIMPLE_FORMAT = "[%datetime%] %channel%.%level_name%: %message% %context% %extra%\n";
+    public const SIMPLE_FORMAT = "[%datetime%] %channel%.%level_name%: %messages% %context% %extra%\n";
 
     protected $format;
     protected $allowInlineLineBreaks;
@@ -31,7 +31,7 @@ class LineFormatter extends NormalizerFormatter
     protected $includeStacktraces;
 
     /**
-     * @param string|null $format                     The format of the message
+     * @param string|null $format                     The format of the messages
      * @param string|null $dateFormat                 The format of the timestamp: one supported by DateTime::format
      * @param bool        $allowInlineLineBreaks      Whether to allow inline line breaks in log entries
      * @param bool        $ignoreEmptyContextAndExtra

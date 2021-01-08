@@ -21,7 +21,7 @@ class CommandNotFoundException extends \InvalidArgumentException implements Exce
     private $alternatives;
 
     /**
-     * @param string     $message      Exception message to throw
+     * @param string     $message      Exception messages to throw
      * @param array      $alternatives List of similar defined names
      * @param int        $code         Exception code
      * @param \Throwable $previous     Previous exception used for the exception chaining

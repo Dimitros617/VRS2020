@@ -373,12 +373,12 @@ abstract class ParserAbstract implements Parser
     }
 
     /**
-     * Format error message including expected tokens.
+     * Format error messages including expected tokens.
      *
      * @param int $symbol Unexpected symbol
      * @param int $state  State at time of error
      *
-     * @return string Formatted error message
+     * @return string Formatted error messages
      */
     protected function getErrorMessage(int $symbol, int $state) : string {
         $expectedString = '';

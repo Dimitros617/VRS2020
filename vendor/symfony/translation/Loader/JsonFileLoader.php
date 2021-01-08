@@ -38,7 +38,7 @@ class JsonFileLoader extends FileLoader
     }
 
     /**
-     * Translates JSON_ERROR_* constant into meaningful message.
+     * Translates JSON_ERROR_* constant into meaningful messages.
      */
     private function getJSONErrorMessage(int $errorCode): string
     {

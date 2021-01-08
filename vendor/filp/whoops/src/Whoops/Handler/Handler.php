@@ -16,7 +16,7 @@ abstract class Handler implements HandlerInterface
 {
     /*
      Return constants that can be returned from Handler::handle
-     to message the handler walker.
+     to messages the handler walker.
      */
     const DONE         = 0x10; // returning this is optional, only exists for
                                // semantic purposes

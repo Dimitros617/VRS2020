@@ -1547,7 +1547,7 @@ class Configuration
     }
 
     /**
-     * Set the startup message.
+     * Set the startup messages.
      *
      * @param string $message
      */
@@ -1557,7 +1557,7 @@ class Configuration
     }
 
     /**
-     * Get the startup message.
+     * Get the startup messages.
      *
      * @return string|null
      */

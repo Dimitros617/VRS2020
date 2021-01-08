@@ -41,6 +41,9 @@ Route::middleware(['auth:sanctum', 'verified', 'permition:new_user'])->get('/use
 
 //Zprávy
 Route::get('/newMessages', [MessagesController::class,'countNewMessages']);
+Route::get('/allMessages', [MessagesController::class,'showAllMessages']);
+Route::get('/changeMessagePriority/{id?}', [MessagesController::class,'changeMessagePriority']);
+Route::get('/removeMessage/{id?}', [MessagesController::class,'removeMessage']);
 
 //Uživatelé
 Route::post('/users/{id:id}/saveUserData', [ListUsersController::class,'saveUserData']);

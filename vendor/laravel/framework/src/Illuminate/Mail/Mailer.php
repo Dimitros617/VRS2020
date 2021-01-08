@@ -189,7 +189,7 @@ class Mailer implements MailerContract, MailQueueContract
     }
 
     /**
-     * Send a new message with only an HTML part.
+     * Send a new messages with only an HTML part.
      *
      * @param  string  $html
      * @param  mixed  $callback
@@ -201,7 +201,7 @@ class Mailer implements MailerContract, MailQueueContract
     }
 
     /**
-     * Send a new message with only a raw text part.
+     * Send a new messages with only a raw text part.
      *
      * @param  string  $text
      * @param  mixed  $callback
@@ -213,7 +213,7 @@ class Mailer implements MailerContract, MailQueueContract
     }
 
     /**
-     * Send a new message with only a plain part.
+     * Send a new messages with only a plain part.
      *
      * @param  string  $view
      * @param  array  $data
@@ -226,7 +226,7 @@ class Mailer implements MailerContract, MailQueueContract
     }
 
     /**
-     * Render the given message as a view.
+     * Render the given messages as a view.
      *
      * @param  string|array  $view
      * @param  array  $data
@@ -239,13 +239,13 @@ class Mailer implements MailerContract, MailQueueContract
         // be used when sending an e-mail. We will extract both of them out here.
         [$view, $plain, $raw] = $this->parseView($view);
 
-        $data['message'] = $this->createMessage();
+        $data['messages'] = $this->createMessage();
 
         return $this->renderView($view ?: $plain, $data);
     }
 
     /**
-     * Send a new message using a view.
+     * Send a new messages using a view.
      *
      * @param  \Illuminate\Contracts\Mail\Mailable|string|array  $view
      * @param  array  $data
@@ -263,25 +263,25 @@ class Mailer implements MailerContract, MailQueueContract
         // be used when sending an e-mail. We will extract both of them out here.
         [$view, $plain, $raw] = $this->parseView($view);
 
-        $data['message'] = $message = $this->createMessage();
+        $data['messages'] = $message = $this->createMessage();
 
         // Once we have retrieved the view content for the e-mail we will set the body
-        // of this message using the HTML type, which will provide a simple wrapper
+        // of this messages using the HTML type, which will provide a simple wrapper
         // to creating view based emails that are able to receive arrays of data.
         $callback($message);
 
         $this->addContent($message, $view, $plain, $raw, $data);
 
         // If a global "to" address has been set, we will set that address on the mail
-        // message. This is primarily useful during local development in which each
-        // message should be delivered into a single mail address for inspection.
+        // messages. This is primarily useful during local development in which each
+        // messages should be delivered into a single mail address for inspection.
         if (isset($this->to['address'])) {
             $this->setGlobalToAndRemoveCcAndBcc($message);
         }
 
-        // Next we will determine if the message should be sent. We give the developer
-        // one final chance to stop this message and then we will send it to all of
-        // its recipients. We will then fire the sent event for the sent message.
+        // Next we will determine if the messages should be sent. We give the developer
+        // one final chance to stop this messages and then we will send it to all of
+        // its recipients. We will then fire the sent event for the sent messages.
         $swiftMessage = $message->getSwiftMessage();
 
         if ($this->shouldSendMessage($swiftMessage, $data)) {
@@ -340,7 +340,7 @@ class Mailer implements MailerContract, MailQueueContract
     }
 
     /**
-     * Add the content to a given message.
+     * Add the content to a given messages.
      *
      * @param  \Illuminate\Mail\Message  $message
      * @param  string  $view
@@ -383,7 +383,7 @@ class Mailer implements MailerContract, MailQueueContract
     }
 
     /**
-     * Set the global "to" address on the given message.
+     * Set the global "to" address on the given messages.
      *
      * @param  \Illuminate\Mail\Message  $message
      * @return void
@@ -396,7 +396,7 @@ class Mailer implements MailerContract, MailQueueContract
     }
 
     /**
-     * Queue a new e-mail message for sending.
+     * Queue a new e-mail messages for sending.
      *
      * @param  \Illuminate\Contracts\Mail\Mailable  $view
      * @param  string|null  $queue
@@ -418,7 +418,7 @@ class Mailer implements MailerContract, MailQueueContract
     }
 
     /**
-     * Queue a new e-mail message for sending on the given queue.
+     * Queue a new e-mail messages for sending on the given queue.
      *
      * @param  string  $queue
      * @param  \Illuminate\Contracts\Mail\Mailable  $view
@@ -430,7 +430,7 @@ class Mailer implements MailerContract, MailQueueContract
     }
 
     /**
-     * Queue a new e-mail message for sending on the given queue.
+     * Queue a new e-mail messages for sending on the given queue.
      *
      * This method didn't match rest of framework's "onQueue" phrasing. Added "onQueue".
      *
@@ -444,7 +444,7 @@ class Mailer implements MailerContract, MailQueueContract
     }
 
     /**
-     * Queue a new e-mail message for sending after (n) seconds.
+     * Queue a new e-mail messages for sending after (n) seconds.
      *
      * @param  \DateTimeInterface|\DateInterval|int  $delay
      * @param  \Illuminate\Contracts\Mail\Mailable  $view
@@ -465,7 +465,7 @@ class Mailer implements MailerContract, MailQueueContract
     }
 
     /**
-     * Queue a new e-mail message for sending after (n) seconds on the given queue.
+     * Queue a new e-mail messages for sending after (n) seconds on the given queue.
      *
      * @param  string  $queue
      * @param  \DateTimeInterface|\DateInterval|int  $delay
@@ -478,24 +478,24 @@ class Mailer implements MailerContract, MailQueueContract
     }
 
     /**
-     * Create a new message instance.
+     * Create a new messages instance.
      *
      * @return \Illuminate\Mail\Message
      */
     protected function createMessage()
     {
-        $message = new Message($this->swift->createMessage('message'));
+        $message = new Message($this->swift->createMessage('messages'));
 
-        // If a global from address has been specified we will set it on every message
+        // If a global from address has been specified we will set it on every messages
         // instance so the developer does not have to repeat themselves every time
-        // they create a new message. We'll just go ahead and push this address.
+        // they create a new messages. We'll just go ahead and push this address.
         if (! empty($this->from['address'])) {
             $message->from($this->from['address'], $this->from['name']);
         }
 
-        // When a global reply address was specified we will set this on every message
+        // When a global reply address was specified we will set this on every messages
         // instance so the developer does not have to repeat themselves every time
-        // they create a new message. We will just go ahead and push this address.
+        // they create a new messages. We will just go ahead and push this address.
         if (! empty($this->replyTo['address'])) {
             $message->replyTo($this->replyTo['address'], $this->replyTo['name']);
         }
@@ -525,7 +525,7 @@ class Mailer implements MailerContract, MailQueueContract
     }
 
     /**
-     * Determines if the message can be sent.
+     * Determines if the messages can be sent.
      *
      * @param  \Swift_Message  $message
      * @param  array  $data
@@ -543,7 +543,7 @@ class Mailer implements MailerContract, MailQueueContract
     }
 
     /**
-     * Dispatch the message sent event.
+     * Dispatch the messages sent event.
      *
      * @param  \Illuminate\Mail\Message  $message
      * @param  array  $data

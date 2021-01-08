@@ -94,7 +94,7 @@ class RollbarHandler extends AbstractProcessingHandler
             unset($context['exception']);
             $toLog = $exception;
         } else {
-            $toLog = $record['message'];
+            $toLog = $record['messages'];
         }
 
         $this->rollbarLogger->log($context['level'], $toLog, $context);

@@ -136,7 +136,7 @@ final class Utils
     }
 
     /**
-     * Throws an exception according to a given code with a customized message
+     * Throws an exception according to a given code with a customized messages
      *
      * @param  int               $code return code of json_last_error function
      * @param  mixed             $data data that was meant to be encoded

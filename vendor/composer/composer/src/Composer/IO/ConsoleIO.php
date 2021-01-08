@@ -221,7 +221,7 @@ class ConsoleIO extends BaseIO
         // messages can be an array, let's convert it to string anyway
         $messages = implode($newline ? "\n" : '', (array) $messages);
 
-        // since overwrite is supposed to overwrite last message...
+        // since overwrite is supposed to overwrite last messages...
         if (!isset($size)) {
             // removing possible formatting of lastMessage with strip_tags
             $size = strlen(strip_tags($stderr ? $this->lastMessageErr : $this->lastMessage));
@@ -229,7 +229,7 @@ class ConsoleIO extends BaseIO
         // ...let's fill its length with backspaces
         $this->doWrite(str_repeat("\x08", $size), false, $stderr, $verbosity);
 
-        // write the new message
+        // write the new messages
         $this->doWrite($messages, false, $stderr, $verbosity);
 
         // In cmd.exe on Win8.1 (possibly 10?), the line can not be cleared, so we need to

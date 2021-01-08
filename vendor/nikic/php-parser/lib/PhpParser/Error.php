@@ -10,7 +10,7 @@ class Error extends \RuntimeException
     /**
      * Creates an Exception signifying a parse error.
      *
-     * @param string    $message    Error message
+     * @param string    $message    Error messages
      * @param array|int $attributes Attributes of node/token where error occurred
      *                              (or start line of error -- deprecated)
      */
@@ -25,9 +25,9 @@ class Error extends \RuntimeException
     }
 
     /**
-     * Gets the error message
+     * Gets the error messages
      *
-     * @return string Error message
+     * @return string Error messages
      */
     public function getRawMessage() : string {
         return $this->rawMessage;
@@ -73,7 +73,7 @@ class Error extends \RuntimeException
     /**
      * Sets the line of the PHP file the error occurred in.
      *
-     * @param string $message Error message
+     * @param string $message Error messages
      */
     public function setRawMessage(string $message) {
         $this->rawMessage = $message;
@@ -130,11 +130,11 @@ class Error extends \RuntimeException
     }
 
     /**
-     * Formats message including line and column information.
+     * Formats messages including line and column information.
      *
      * @param string $code Source code associated with the error, for calculation of the columns
      *
-     * @return string Formatted message
+     * @return string Formatted messages
      */
     public function getMessageWithColumnInfo(string $code) : string {
         return sprintf(
@@ -166,7 +166,7 @@ class Error extends \RuntimeException
     }
 
     /**
-     * Updates the exception message after a change to rawMessage or rawLine.
+     * Updates the exception messages after a change to rawMessage or rawLine.
      */
     protected function updateMessage() {
         $this->message = $this->rawMessage;

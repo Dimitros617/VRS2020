@@ -26,7 +26,7 @@ class PhpExtractor extends AbstractFileExtractor implements ExtractorInterface
     const DOMAIN_TOKEN = 1001;
 
     /**
-     * Prefix for new found message.
+     * Prefix for new found messages.
      *
      * @var string
      */
@@ -204,8 +204,8 @@ class PhpExtractor extends AbstractFileExtractor implements ExtractorInterface
     }
 
     /**
-     * Extracts the message from the iterator while the tokens
-     * match allowed message tokens.
+     * Extracts the messages from the iterator while the tokens
+     * match allowed messages tokens.
      */
     private function getValue(\Iterator $tokenIterator)
     {
@@ -251,7 +251,7 @@ class PhpExtractor extends AbstractFileExtractor implements ExtractorInterface
     }
 
     /**
-     * Extracts trans message from PHP tokens.
+     * Extracts trans messages from PHP tokens.
      */
     protected function parseTokens(array $tokens, MessageCatalogue $catalog, string $filename)
     {

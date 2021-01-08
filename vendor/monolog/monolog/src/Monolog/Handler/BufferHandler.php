@@ -19,7 +19,7 @@ use Monolog\Formatter\FormatterInterface;
  * Buffers all records until closing the handler and then pass them as batch.
  *
  * This is useful for a MailHandler to send only one mail per request instead of
- * sending one per log message.
+ * sending one per log messages.
  *
  * @author Christophe Coevoet <stof@notk.org>
  */

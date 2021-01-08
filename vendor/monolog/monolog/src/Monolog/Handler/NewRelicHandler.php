@@ -91,10 +91,10 @@ class NewRelicHandler extends AbstractProcessingHandler
         }
 
         if (isset($record['context']['exception']) && $record['context']['exception'] instanceof \Throwable) {
-            newrelic_notice_error($record['message'], $record['context']['exception']);
+            newrelic_notice_error($record['messages'], $record['context']['exception']);
             unset($record['formatted']['context']['exception']);
         } else {
-            newrelic_notice_error($record['message']);
+            newrelic_notice_error($record['messages']);
         }
 
         if (isset($record['formatted']['context']) && is_array($record['formatted']['context'])) {

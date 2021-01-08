@@ -103,14 +103,14 @@ class ShellOutput extends ConsoleOutput
     }
 
     /**
-     * Writes a message to the output.
+     * Writes a messages to the output.
      *
      * Optionally, pass `$type | self::NUMBER_LINES` as the $type parameter to
      * number the lines of output.
      *
      * @throws \InvalidArgumentException When unknown output type is given
      *
-     * @param string|array $messages The message as an array of lines or a single string
+     * @param string|array $messages The messages as an array of lines or a single string
      * @param bool         $newline  Whether to add a newline or not
      * @param int          $type     The type of output
      */
@@ -142,11 +142,11 @@ class ShellOutput extends ConsoleOutput
     }
 
     /**
-     * Writes a message to the output.
+     * Writes a messages to the output.
      *
      * Handles paged output, or writes directly to the output stream.
      *
-     * @param string $message A message to write to the output
+     * @param string $message A messages to write to the output
      * @param bool   $newline Whether to add a newline or not
      */
     public function doWrite($message, $newline)

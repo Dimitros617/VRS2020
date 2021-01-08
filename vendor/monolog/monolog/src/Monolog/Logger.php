@@ -279,13 +279,13 @@ class Logger implements LoggerInterface, ResettableInterface
      * Adds a log record.
      *
      * @param  int    $level   The logging level
-     * @param  string $message The log message
+     * @param  string $message The log messages
      * @param  array  $context The log context
      * @return bool   Whether the record has been processed
      */
     public function addRecord(int $level, string $message, array $context = []): bool
     {
-        // check if any handler will handle this message so we can return early and save cycles
+        // check if any handler will handle this messages so we can return early and save cycles
         $handlerKey = null;
         foreach ($this->handlers as $key => $handler) {
             if ($handler->isHandling(['level' => $level])) {
@@ -301,7 +301,7 @@ class Logger implements LoggerInterface, ResettableInterface
         $levelName = static::getLevelName($level);
 
         $record = [
-            'message' => $message,
+            'messages' => $message,
             'context' => $context,
             'level' => $level,
             'level_name' => $levelName,
@@ -468,7 +468,7 @@ class Logger implements LoggerInterface, ResettableInterface
      * This method allows for compatibility with common interfaces.
      *
      * @param mixed  $level   The log level
-     * @param string $message The log message
+     * @param string $message The log messages
      * @param array  $context The log context
      */
     public function log($level, $message, array $context = []): void
@@ -483,7 +483,7 @@ class Logger implements LoggerInterface, ResettableInterface
      *
      * This method allows for compatibility with common interfaces.
      *
-     * @param string $message The log message
+     * @param string $message The log messages
      * @param array  $context The log context
      */
     public function debug($message, array $context = []): void
@@ -496,7 +496,7 @@ class Logger implements LoggerInterface, ResettableInterface
      *
      * This method allows for compatibility with common interfaces.
      *
-     * @param string $message The log message
+     * @param string $message The log messages
      * @param array  $context The log context
      */
     public function info($message, array $context = []): void
@@ -509,7 +509,7 @@ class Logger implements LoggerInterface, ResettableInterface
      *
      * This method allows for compatibility with common interfaces.
      *
-     * @param string $message The log message
+     * @param string $message The log messages
      * @param array  $context The log context
      */
     public function notice($message, array $context = []): void
@@ -522,7 +522,7 @@ class Logger implements LoggerInterface, ResettableInterface
      *
      * This method allows for compatibility with common interfaces.
      *
-     * @param string $message The log message
+     * @param string $message The log messages
      * @param array  $context The log context
      */
     public function warning($message, array $context = []): void
@@ -535,7 +535,7 @@ class Logger implements LoggerInterface, ResettableInterface
      *
      * This method allows for compatibility with common interfaces.
      *
-     * @param string $message The log message
+     * @param string $message The log messages
      * @param array  $context The log context
      */
     public function error($message, array $context = []): void
@@ -548,7 +548,7 @@ class Logger implements LoggerInterface, ResettableInterface
      *
      * This method allows for compatibility with common interfaces.
      *
-     * @param string $message The log message
+     * @param string $message The log messages
      * @param array  $context The log context
      */
     public function critical($message, array $context = []): void
@@ -561,7 +561,7 @@ class Logger implements LoggerInterface, ResettableInterface
      *
      * This method allows for compatibility with common interfaces.
      *
-     * @param string $message The log message
+     * @param string $message The log messages
      * @param array  $context The log context
      */
     public function alert($message, array $context = []): void
@@ -574,7 +574,7 @@ class Logger implements LoggerInterface, ResettableInterface
      *
      * This method allows for compatibility with common interfaces.
      *
-     * @param string $message The log message
+     * @param string $message The log messages
      * @param array  $context The log context
      */
     public function emergency($message, array $context = []): void

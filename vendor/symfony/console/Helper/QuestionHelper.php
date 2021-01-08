@@ -222,7 +222,7 @@ class QuestionHelper extends Helper
     }
 
     /**
-     * Outputs an error message.
+     * Outputs an error messages.
      */
     protected function writeError(OutputInterface $output, \Exception $error)
     {

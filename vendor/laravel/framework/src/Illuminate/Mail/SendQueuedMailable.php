@@ -8,7 +8,7 @@ use Illuminate\Contracts\Mail\Mailable as MailableContract;
 class SendQueuedMailable
 {
     /**
-     * The mailable message instance.
+     * The mailable messages instance.
      *
      * @var \Illuminate\Contracts\Mail\Mailable
      */

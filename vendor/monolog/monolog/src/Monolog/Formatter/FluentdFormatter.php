@@ -16,7 +16,7 @@ use Monolog\Utils;
 /**
  * Class FluentdFormatter
  *
- * Serializes a log message to Fluentd unix socket protocol
+ * Serializes a log messages to Fluentd unix socket protocol
  *
  * Fluentd config:
  *
@@ -37,7 +37,7 @@ use Monolog\Utils;
 class FluentdFormatter implements FormatterInterface
 {
     /**
-     * @var bool $levelTag should message level be a part of the fluentd tag
+     * @var bool $levelTag should messages level be a part of the fluentd tag
      */
     protected $levelTag = false;
 
@@ -63,7 +63,7 @@ class FluentdFormatter implements FormatterInterface
         }
 
         $message = [
-            'message' => $record['message'],
+            'messages' => $record['messages'],
             'context' => $record['context'],
             'extra' => $record['extra'],
         ];

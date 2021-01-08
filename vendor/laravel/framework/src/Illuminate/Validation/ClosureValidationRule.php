@@ -21,7 +21,7 @@ class ClosureValidationRule implements RuleContract
     public $failed = false;
 
     /**
-     * The validation error message.
+     * The validation error messages.
      *
      * @var string|null
      */
@@ -59,7 +59,7 @@ class ClosureValidationRule implements RuleContract
     }
 
     /**
-     * Get the validation error message.
+     * Get the validation error messages.
      *
      * @return string
      */

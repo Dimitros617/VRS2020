@@ -41,8 +41,8 @@ class SyslogUdpHandler extends AbstractSyslogHandler
      * @param string|int $facility Either one of the names of the keys in $this->facilities, or a LOG_* facility constant
      * @param string|int $level    The minimum logging level at which this handler will be triggered
      * @param bool       $bubble   Whether the messages that are handled can bubble up the stack or not
-     * @param string     $ident    Program name or tag for each log message.
-     * @param int        $rfc      RFC to format the message for.
+     * @param string     $ident    Program name or tag for each log messages.
+     * @param int        $rfc      RFC to format the messages for.
      */
     public function __construct(string $host, int $port = 514, $facility = LOG_USER, $level = Logger::DEBUG, bool $bubble = true, string $ident = 'php', int $rfc = self::RFC5424)
     {

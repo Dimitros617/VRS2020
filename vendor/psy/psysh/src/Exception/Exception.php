@@ -19,7 +19,7 @@ interface Exception
     /**
      * This is the only thing, really...
      *
-     * Return a raw (unformatted) version of the message.
+     * Return a raw (unformatted) version of the messages.
      *
      * @return string
      */

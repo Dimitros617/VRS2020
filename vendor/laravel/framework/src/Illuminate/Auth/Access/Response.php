@@ -14,7 +14,7 @@ class Response implements Arrayable
     protected $allowed;
 
     /**
-     * The response message.
+     * The response messages.
      *
      * @var string|null
      */
@@ -87,7 +87,7 @@ class Response implements Arrayable
     }
 
     /**
-     * Get the response message.
+     * Get the response messages.
      *
      * @return string|null
      */
@@ -132,13 +132,13 @@ class Response implements Arrayable
     {
         return [
             'allowed' => $this->allowed(),
-            'message' => $this->message(),
+            'messages' => $this->message(),
             'code' => $this->code(),
         ];
     }
 
     /**
-     * Get the string representation of the message.
+     * Get the string representation of the messages.
      *
      * @return string
      */

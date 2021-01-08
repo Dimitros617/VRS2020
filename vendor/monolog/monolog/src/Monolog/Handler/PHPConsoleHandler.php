@@ -187,7 +187,7 @@ class PHPConsoleHandler extends AbstractProcessingHandler
     private function handleDebugRecord(array $record): void
     {
         $tags = $this->getRecordTags($record);
-        $message = $record['message'];
+        $message = $record['messages'];
         if ($record['context']) {
             $message .= ' ' . Utils::jsonEncode($this->connector->getDumper()->dump(array_filter($record['context'])), null, true);
         }
@@ -205,7 +205,7 @@ class PHPConsoleHandler extends AbstractProcessingHandler
 
         $this->connector->getErrorsDispatcher()->dispatchError(
             $context['code'] ?? null,
-            $context['message'] ?? $record['message'],
+            $context['messages'] ?? $record['messages'],
             $context['file'] ?? null,
             $context['line'] ?? null,
             $this->options['classesPartialsTraceIgnore']
@@ -238,6 +238,6 @@ class PHPConsoleHandler extends AbstractProcessingHandler
      */
     protected function getDefaultFormatter(): FormatterInterface
     {
-        return new LineFormatter('%message%');
+        return new LineFormatter('%messages%');
     }
 }

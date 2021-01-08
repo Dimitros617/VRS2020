@@ -449,7 +449,7 @@ if (! function_exists('info')) {
 
 if (! function_exists('logger')) {
     /**
-     * Log a debug message to the logs.
+     * Log a debug messages to the logs.
      *
      * @param  string|null  $message
      * @param  array  $context
@@ -784,7 +784,7 @@ if (! function_exists('today')) {
 
 if (! function_exists('trans')) {
     /**
-     * Translate the given message.
+     * Translate the given messages.
      *
      * @param  string|null  $key
      * @param  array  $replace
@@ -803,7 +803,7 @@ if (! function_exists('trans')) {
 
 if (! function_exists('trans_choice')) {
     /**
-     * Translates the given message based on a count.
+     * Translates the given messages based on a count.
      *
      * @param  string  $key
      * @param  \Countable|int|array  $number
@@ -819,7 +819,7 @@ if (! function_exists('trans_choice')) {
 
 if (! function_exists('__')) {
     /**
-     * Translate the given message.
+     * Translate the given messages.
      *
      * @param  string|null  $key
      * @param  array  $replace

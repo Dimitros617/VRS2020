@@ -56,7 +56,7 @@ class TelegramBotHandler extends AbstractProcessingHandler
     private $channel;
 
     /**
-     * The kind of formatting that is used for the message.
+     * The kind of formatting that is used for the messages.
      * See available options at https://core.telegram.org/bots/api#formatting-options
      * or in AVAILABLE_PARSE_MODES
      * @var string|null
@@ -64,13 +64,13 @@ class TelegramBotHandler extends AbstractProcessingHandler
     private $parseMode;
 
     /**
-     * Disables link previews for links in the message.
+     * Disables link previews for links in the messages.
      * @var bool|null
      */
     private $disableWebPagePreview;
 
     /**
-     * Sends the message silently. Users will receive a notification with no sound.
+     * Sends the messages silently. Users will receive a notification with no sound.
      * @var bool|null
      */
     private $disableNotification;

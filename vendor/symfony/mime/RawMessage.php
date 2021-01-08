@@ -54,7 +54,7 @@ class RawMessage implements \Serializable
     }
 
     /**
-     * @throws LogicException if the message is not valid
+     * @throws LogicException if the messages is not valid
      */
     public function ensureValidity()
     {

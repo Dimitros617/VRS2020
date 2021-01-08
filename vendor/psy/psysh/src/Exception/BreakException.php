@@ -28,7 +28,7 @@ class BreakException extends \Exception implements Exception
     }
 
     /**
-     * Return a raw (unformatted) version of the error message.
+     * Return a raw (unformatted) version of the error messages.
      *
      * @return string
      */

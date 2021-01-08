@@ -33,7 +33,7 @@ interface MetadataAwareInterface
     public function getMetadata(string $key = '', string $domain = 'messages');
 
     /**
-     * Adds metadata to a message domain.
+     * Adds metadata to a messages domain.
      *
      * @param string $key    The key
      * @param mixed  $value  The value

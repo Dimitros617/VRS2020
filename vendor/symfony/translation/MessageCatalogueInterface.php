@@ -48,41 +48,41 @@ interface MessageCatalogueInterface
     public function all(string $domain = null);
 
     /**
-     * Sets a message translation.
+     * Sets a messages translation.
      *
-     * @param string $id          The message id
+     * @param string $id          The messages id
      * @param string $translation The messages translation
      * @param string $domain      The domain name
      */
     public function set(string $id, string $translation, string $domain = 'messages');
 
     /**
-     * Checks if a message has a translation.
+     * Checks if a messages has a translation.
      *
-     * @param string $id     The message id
+     * @param string $id     The messages id
      * @param string $domain The domain name
      *
-     * @return bool true if the message has a translation, false otherwise
+     * @return bool true if the messages has a translation, false otherwise
      */
     public function has(string $id, string $domain = 'messages');
 
     /**
-     * Checks if a message has a translation (it does not take into account the fallback mechanism).
+     * Checks if a messages has a translation (it does not take into account the fallback mechanism).
      *
-     * @param string $id     The message id
+     * @param string $id     The messages id
      * @param string $domain The domain name
      *
-     * @return bool true if the message has a translation, false otherwise
+     * @return bool true if the messages has a translation, false otherwise
      */
     public function defines(string $id, string $domain = 'messages');
 
     /**
-     * Gets a message translation.
+     * Gets a messages translation.
      *
-     * @param string $id     The message id
+     * @param string $id     The messages id
      * @param string $domain The domain name
      *
-     * @return string The message translation
+     * @return string The messages translation
      */
     public function get(string $id, string $domain = 'messages');
 

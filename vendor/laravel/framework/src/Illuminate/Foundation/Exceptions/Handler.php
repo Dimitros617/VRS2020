@@ -384,7 +384,7 @@ class Handler implements ExceptionHandlerContract
     protected function unauthenticated($request, AuthenticationException $exception)
     {
         return $request->expectsJson()
-                    ? response()->json(['message' => $exception->getMessage()], 401)
+                    ? response()->json(['messages' => $exception->getMessage()], 401)
                     : redirect()->guest($exception->redirectTo() ?? route('login'));
     }
 
@@ -430,7 +430,7 @@ class Handler implements ExceptionHandlerContract
     protected function invalidJson($request, ValidationException $exception)
     {
         return response()->json([
-            'message' => $exception->getMessage(),
+            'messages' => $exception->getMessage(),
             'errors' => $exception->errors(),
         ], $exception->status);
     }
@@ -623,7 +623,7 @@ class Handler implements ExceptionHandlerContract
     protected function convertExceptionToArray(Throwable $e)
     {
         return config('app.debug') ? [
-            'message' => $e->getMessage(),
+            'messages' => $e->getMessage(),
             'exception' => get_class($e),
             'file' => $e->getFile(),
             'line' => $e->getLine(),
@@ -631,7 +631,7 @@ class Handler implements ExceptionHandlerContract
                 return Arr::except($trace, ['args']);
             })->all(),
         ] : [
-            'message' => $this->isHttpException($e) ? $e->getMessage() : 'Server Error',
+            'messages' => $this->isHttpException($e) ? $e->getMessage() : 'Server Error',
         ];
     }
 

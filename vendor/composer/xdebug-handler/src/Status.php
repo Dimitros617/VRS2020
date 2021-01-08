@@ -60,7 +60,7 @@ class Status
     }
 
     /**
-     * Calls a handler method to report a message
+     * Calls a handler method to report a messages
      *
      * @param string $op The handler constant
      * @param null|string $data Data required by the handler
@@ -73,7 +73,7 @@ class Status
     }
 
     /**
-     * Outputs a status message
+     * Outputs a status messages
      *
      * @param string $text
      * @param string $level

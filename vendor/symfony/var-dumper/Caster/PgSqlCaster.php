@@ -57,7 +57,7 @@ class PgSqlCaster
     private static $diagCodes = [
         'severity' => \PGSQL_DIAG_SEVERITY,
         'sqlstate' => \PGSQL_DIAG_SQLSTATE,
-        'message' => \PGSQL_DIAG_MESSAGE_PRIMARY,
+        'messages' => \PGSQL_DIAG_MESSAGE_PRIMARY,
         'detail' => \PGSQL_DIAG_MESSAGE_DETAIL,
         'hint' => \PGSQL_DIAG_MESSAGE_HINT,
         'statement position' => \PGSQL_DIAG_STATEMENT_POSITION,

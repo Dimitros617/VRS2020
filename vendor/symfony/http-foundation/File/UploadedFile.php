@@ -260,9 +260,9 @@ class UploadedFile extends File
     }
 
     /**
-     * Returns an informative upload error message.
+     * Returns an informative upload error messages.
      *
-     * @return string The error message regarding the specified error code
+     * @return string The error messages regarding the specified error code
      */
     public function getErrorMessage()
     {

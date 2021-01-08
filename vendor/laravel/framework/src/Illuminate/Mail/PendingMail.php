@@ -16,28 +16,28 @@ class PendingMail
     protected $mailer;
 
     /**
-     * The locale of the message.
+     * The locale of the messages.
      *
      * @var string
      */
     protected $locale;
 
     /**
-     * The "to" recipients of the message.
+     * The "to" recipients of the messages.
      *
      * @var array
      */
     protected $to = [];
 
     /**
-     * The "cc" recipients of the message.
+     * The "cc" recipients of the messages.
      *
      * @var array
      */
     protected $cc = [];
 
     /**
-     * The "bcc" recipients of the message.
+     * The "bcc" recipients of the messages.
      *
      * @var array
      */
@@ -55,7 +55,7 @@ class PendingMail
     }
 
     /**
-     * Set the locale of the message.
+     * Set the locale of the messages.
      *
      * @param  string  $locale
      * @return $this
@@ -68,7 +68,7 @@ class PendingMail
     }
 
     /**
-     * Set the recipients of the message.
+     * Set the recipients of the messages.
      *
      * @param  mixed  $users
      * @return $this
@@ -85,7 +85,7 @@ class PendingMail
     }
 
     /**
-     * Set the recipients of the message.
+     * Set the recipients of the messages.
      *
      * @param  mixed  $users
      * @return $this
@@ -98,7 +98,7 @@ class PendingMail
     }
 
     /**
-     * Set the recipients of the message.
+     * Set the recipients of the messages.
      *
      * @param  mixed  $users
      * @return $this
@@ -111,7 +111,7 @@ class PendingMail
     }
 
     /**
-     * Send a new mailable message instance.
+     * Send a new mailable messages instance.
      *
      * @param  \Illuminate\Contracts\Mail\Mailable  $mailable
      *
@@ -134,7 +134,7 @@ class PendingMail
     }
 
     /**
-     * Deliver the queued message after the given delay.
+     * Deliver the queued messages after the given delay.
      *
      * @param  \DateTimeInterface|\DateInterval|int  $delay
      * @param  \Illuminate\Contracts\Mail\Mailable  $mailable

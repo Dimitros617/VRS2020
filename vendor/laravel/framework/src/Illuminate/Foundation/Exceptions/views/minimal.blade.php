@@ -35,7 +35,7 @@
                     </div>
 
                     <div class="ml-4 text-lg text-vrs-yellow uppercase tracking-wider">
-                        @yield('message')
+                        @yield('messages')
                     </div>
                 </div>
             </div>

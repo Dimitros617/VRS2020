@@ -21,7 +21,7 @@ use Symfony\Component\Console\Formatter\OutputFormatter;
 class FormatterHelper extends Helper
 {
     /**
-     * Formats a message within a section.
+     * Formats a messages within a section.
      *
      * @return string The format section
      */
@@ -31,11 +31,11 @@ class FormatterHelper extends Helper
     }
 
     /**
-     * Formats a message as a block of text.
+     * Formats a messages as a block of text.
      *
-     * @param string|array $messages The message to write in the block
+     * @param string|array $messages The messages to write in the block
      *
-     * @return string The formatter message
+     * @return string The formatter messages
      */
     public function formatBlock($messages, string $style, bool $large = false)
     {
@@ -67,7 +67,7 @@ class FormatterHelper extends Helper
     }
 
     /**
-     * Truncates a message to the given length.
+     * Truncates a messages to the given length.
      *
      * @return string
      */

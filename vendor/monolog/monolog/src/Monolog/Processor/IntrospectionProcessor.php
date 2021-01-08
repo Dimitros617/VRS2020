@@ -14,7 +14,7 @@ namespace Monolog\Processor;
 use Monolog\Logger;
 
 /**
- * Injects line/file:class/function where the log message came from
+ * Injects line/file:class/function where the log messages came from
  *
  * Warning: This only works if the handler processes the logs directly.
  * If you put the processor on a handler that is behind a FingersCrossedHandler

@@ -56,7 +56,7 @@ class Validator implements ValidatorContract
     protected $excludeAttributes = [];
 
     /**
-     * The message bag instance.
+     * The messages bag instance.
      *
      * @var \Illuminate\Support\MessageBag
      */
@@ -540,7 +540,7 @@ class Validator implements ValidatorContract
 
         // If we have made it this far we will make sure the attribute is validatable and if it is
         // we will call the validation method with the attribute. If a method returns false the
-        // attribute is invalid and we will add a failure message for this failing attribute.
+        // attribute is invalid and we will add a failure messages for this failing attribute.
         $validatable = $this->isValidatable($rule, $attribute, $value);
 
         if ($rule instanceof RuleContract) {
@@ -776,7 +776,7 @@ class Validator implements ValidatorContract
     }
 
     /**
-     * Add a failed rule and error message to the collection.
+     * Add a failed rule and error messages to the collection.
      *
      * @param  string  $attribute
      * @param  string  $rule
@@ -884,7 +884,7 @@ class Validator implements ValidatorContract
     }
 
     /**
-     * Get the message container for the validator.
+     * Get the messages container for the validator.
      *
      * @return \Illuminate\Support\MessageBag
      */
@@ -898,7 +898,7 @@ class Validator implements ValidatorContract
     }
 
     /**
-     * An alternative more semantic shortcut to the message container.
+     * An alternative more semantic shortcut to the messages container.
      *
      * @return \Illuminate\Support\MessageBag
      */
@@ -1162,7 +1162,7 @@ class Validator implements ValidatorContract
     }
 
     /**
-     * Register an array of custom validator message replacers.
+     * Register an array of custom validator messages replacers.
      *
      * @param  array  $replacers
      * @return void
@@ -1179,7 +1179,7 @@ class Validator implements ValidatorContract
     }
 
     /**
-     * Register a custom validator message replacer.
+     * Register a custom validator messages replacer.
      *
      * @param  string  $rule
      * @param  \Closure|string  $replacer

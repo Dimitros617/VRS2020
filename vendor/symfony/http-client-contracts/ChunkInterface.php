@@ -65,7 +65,7 @@ interface ChunkInterface
     public function getOffset(): int;
 
     /**
-     * In case of error, returns the message that describes it.
+     * In case of error, returns the messages that describes it.
      */
     public function getError(): ?string;
 }

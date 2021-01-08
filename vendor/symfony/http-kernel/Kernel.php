@@ -524,7 +524,7 @@ abstract class Kernel implements KernelInterface, RebootableInterface, Terminabl
 
                 $collectedLogs[$message] = [
                     'type' => $type,
-                    'message' => $message,
+                    'messages' => $message,
                     'file' => $file,
                     'line' => $line,
                     'trace' => [$backtrace[0]],

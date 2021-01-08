@@ -18,7 +18,7 @@ class ServiceUnavailableHttpException extends HttpException
 {
     /**
      * @param int|string $retryAfter The number of seconds or HTTP-date after which the request may be retried
-     * @param string     $message    The internal exception message
+     * @param string     $message    The internal exception messages
      * @param \Throwable $previous   The previous exception
      * @param int        $code       The internal exception code
      */

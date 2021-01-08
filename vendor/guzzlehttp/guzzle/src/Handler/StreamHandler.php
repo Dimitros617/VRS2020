@@ -220,7 +220,7 @@ class StreamHandler
         $errors = [];
         \set_error_handler(static function ($_, $msg, $file, $line) use (&$errors): bool {
             $errors[] = [
-                'message' => $msg,
+                'messages' => $msg,
                 'file'    => $file,
                 'line'    => $line
             ];
@@ -487,7 +487,7 @@ class StreamHandler
             \STREAM_NOTIFY_COMPLETED     => 'COMPLETED',
             \STREAM_NOTIFY_RESOLVE       => 'RESOLVE',
         ];
-        static $args = ['severity', 'message', 'message_code', 'bytes_transferred', 'bytes_max'];
+        static $args = ['severity', 'messages', 'message_code', 'bytes_transferred', 'bytes_max'];
 
         $value = Utils::debugResource($value);
         $ident = $request->getMethod() . ' ' . $request->getUri()->withFragment('');

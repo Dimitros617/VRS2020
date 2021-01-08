@@ -40,12 +40,12 @@ class ErrorListener implements EventSubscriberInterface
         $error = $event->getError();
 
         if (!$inputString = $this->getInputString($event)) {
-            $this->logger->error('An error occurred while using the console. Message: "{message}"', ['exception' => $error, 'message' => $error->getMessage()]);
+            $this->logger->error('An error occurred while using the console. Message: "{messages}"', ['exception' => $error, 'messages' => $error->getMessage()]);
 
             return;
         }
 
-        $this->logger->error('Error thrown while running command "{command}". Message: "{message}"', ['exception' => $error, 'command' => $inputString, 'message' => $error->getMessage()]);
+        $this->logger->error('Error thrown while running command "{command}". Message: "{messages}"', ['exception' => $error, 'command' => $inputString, 'messages' => $error->getMessage()]);
     }
 
     public function onConsoleTerminate(ConsoleTerminateEvent $event)

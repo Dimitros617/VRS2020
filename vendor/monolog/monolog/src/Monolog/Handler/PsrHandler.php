@@ -19,8 +19,8 @@ use Monolog\Formatter\FormatterInterface;
  * Proxies log messages to an existing PSR-3 compliant logger.
  *
  * If a formatter is configured, the formatter's output MUST be a string and the
- * formatted message will be fed to the wrapped PSR logger instead of the original
- * log record's message.
+ * formatted messages will be fed to the wrapped PSR logger instead of the original
+ * log record's messages.
  *
  * @author Michael Moussa <michael.moussa@gmail.com>
  */
@@ -63,7 +63,7 @@ class PsrHandler extends AbstractHandler implements FormattableHandlerInterface
             $formatted = $this->formatter->format($record);
             $this->logger->log(strtolower($record['level_name']), (string) $formatted, $record['context']);
         } else {
-            $this->logger->log(strtolower($record['level_name']), $record['message'], $record['context']);
+            $this->logger->log(strtolower($record['level_name']), $record['messages'], $record['context']);
         }
 
         return false === $this->bubble;

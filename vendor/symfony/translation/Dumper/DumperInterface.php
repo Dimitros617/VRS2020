@@ -22,7 +22,7 @@ use Symfony\Component\Translation\MessageCatalogue;
 interface DumperInterface
 {
     /**
-     * Dumps the message catalogue.
+     * Dumps the messages catalogue.
      *
      * @param array $options Options that are used by the dumper
      */

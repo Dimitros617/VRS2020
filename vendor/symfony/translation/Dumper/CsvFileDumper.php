@@ -14,7 +14,7 @@ namespace Symfony\Component\Translation\Dumper;
 use Symfony\Component\Translation\MessageCatalogue;
 
 /**
- * CsvFileDumper generates a csv formatted string representation of a message catalogue.
+ * CsvFileDumper generates a csv formatted string representation of a messages catalogue.
  *
  * @author Stealth35
  */

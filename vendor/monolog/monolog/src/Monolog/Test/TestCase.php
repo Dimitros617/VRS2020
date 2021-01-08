@@ -28,7 +28,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
     protected function getRecord($level = Logger::WARNING, $message = 'test', array $context = []): array
     {
         return [
-            'message' => (string) $message,
+            'messages' => (string) $message,
             'context' => $context,
             'level' => $level,
             'level_name' => Logger::getLevelName($level),
@@ -41,8 +41,8 @@ class TestCase extends \PHPUnit\Framework\TestCase
     protected function getMultipleRecords(): array
     {
         return [
-            $this->getRecord(Logger::DEBUG, 'debug message 1'),
-            $this->getRecord(Logger::DEBUG, 'debug message 2'),
+            $this->getRecord(Logger::DEBUG, 'debug messages 1'),
+            $this->getRecord(Logger::DEBUG, 'debug messages 2'),
             $this->getRecord(Logger::INFO, 'information'),
             $this->getRecord(Logger::WARNING, 'warning'),
             $this->getRecord(Logger::ERROR, 'error'),
@@ -58,7 +58,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
         $formatter->expects($this->any())
             ->method('format')
             ->will($this->returnCallback(function ($record) {
-                return $record['message'];
+                return $record['messages'];
             }));
 
         return $formatter;

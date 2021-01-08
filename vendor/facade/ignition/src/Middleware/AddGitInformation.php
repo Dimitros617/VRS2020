@@ -11,7 +11,7 @@ class AddGitInformation
     {
         $report->group('git', [
             'hash' => $this->hash(),
-            'message' => $this->message(),
+            'messages' => $this->message(),
             'tag' => $this->tag(),
             'remote' => $this->remote(),
             'isDirty' => ! $this->isClean(),

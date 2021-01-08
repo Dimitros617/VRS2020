@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\Factory as Queue;
 interface Mailable
 {
     /**
-     * Send the message using the given mailer.
+     * Send the messages using the given mailer.
      *
      * @param  \Illuminate\Contracts\Mail\Factory|\Illuminate\Contracts\Mail\Mailer  $mailer
      * @return void
@@ -15,7 +15,7 @@ interface Mailable
     public function send($mailer);
 
     /**
-     * Queue the given message.
+     * Queue the given messages.
      *
      * @param  \Illuminate\Contracts\Queue\Factory  $queue
      * @return mixed
@@ -23,7 +23,7 @@ interface Mailable
     public function queue(Queue $queue);
 
     /**
-     * Deliver the queued message after the given delay.
+     * Deliver the queued messages after the given delay.
      *
      * @param  \DateTimeInterface|\DateInterval|int  $delay
      * @param  \Illuminate\Contracts\Queue\Factory  $queue
@@ -32,7 +32,7 @@ interface Mailable
     public function later($delay, Queue $queue);
 
     /**
-     * Set the recipients of the message.
+     * Set the recipients of the messages.
      *
      * @param  object|array|string  $address
      * @param  string|null  $name
@@ -41,7 +41,7 @@ interface Mailable
     public function cc($address, $name = null);
 
     /**
-     * Set the recipients of the message.
+     * Set the recipients of the messages.
      *
      * @param  object|array|string  $address
      * @param  string|null  $name
@@ -50,7 +50,7 @@ interface Mailable
     public function bcc($address, $name = null);
 
     /**
-     * Set the recipients of the message.
+     * Set the recipients of the messages.
      *
      * @param  object|array|string  $address
      * @param  string|null  $name
@@ -59,7 +59,7 @@ interface Mailable
     public function to($address, $name = null);
 
     /**
-     * Set the locale of the message.
+     * Set the locale of the messages.
      *
      * @param  string  $locale
      * @return $this
@@ -67,7 +67,7 @@ interface Mailable
     public function locale($locale);
 
     /**
-     * Set the name of the mailer that should be used to send the message.
+     * Set the name of the mailer that should be used to send the messages.
      *
      * @param  string  $mailer
      * @return $this

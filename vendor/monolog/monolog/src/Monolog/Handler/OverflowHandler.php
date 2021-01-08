@@ -113,7 +113,7 @@ class OverflowHandler extends AbstractHandler implements FormattableHandlerInter
         }
 
         if ($this->thresholdMap[$level] == 0) {
-            // This current message is breaking the threshold. Flush the buffer and continue handling the current record
+            // This current messages is breaking the threshold. Flush the buffer and continue handling the current record
             foreach ($this->buffer[$level] ?? [] as $buffered) {
                 $this->handler->handle($buffered);
             }

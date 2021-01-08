@@ -56,7 +56,7 @@ class QtFileLoader implements LoaderInterface
 
         $catalogue = new MessageCatalogue($locale);
         if (1 == $nodes->length) {
-            $translations = $nodes->item(0)->nextSibling->parentNode->parentNode->getElementsByTagName('message');
+            $translations = $nodes->item(0)->nextSibling->parentNode->parentNode->getElementsByTagName('messages');
             foreach ($translations as $translation) {
                 $translationValue = (string) $translation->getElementsByTagName('translation')->item(0)->nodeValue;
 

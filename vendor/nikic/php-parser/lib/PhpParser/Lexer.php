@@ -98,7 +98,7 @@ class Lexer
         for ($i = $start; $i < $end; $i++) {
             $chr = $this->code[$i];
             if ($chr === "\0") {
-                // PHP cuts error message after null byte, so need special case
+                // PHP cuts error messages after null byte, so need special case
                 $errorMsg = 'Unexpected null byte';
             } else {
                 $errorMsg = sprintf(

@@ -141,9 +141,9 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
     }
 
     /**
-     * Returns a log message for the events of the last request processing.
+     * Returns a log messages for the events of the last request processing.
      *
-     * @return string A log message
+     * @return string A log messages
      */
     public function getLog()
     {
@@ -518,7 +518,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
             clock MUST NOT send a "Date" header, although it MUST send one in most other cases
             except for 1xx or 5xx responses where it MAY do so.
 
-            Anyway, a client that received a message without a "Date" header MUST add it.
+            Anyway, a client that received a messages without a "Date" header MUST add it.
         */
         if (!$response->headers->has('Date')) {
             $response->setDate(\DateTime::createFromFormat('U', time()));

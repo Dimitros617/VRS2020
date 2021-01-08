@@ -21,7 +21,7 @@ interface Mailer
     public function bcc($users);
 
     /**
-     * Send a new message with only a raw text part.
+     * Send a new messages with only a raw text part.
      *
      * @param  string  $text
      * @param  mixed  $callback
@@ -30,7 +30,7 @@ interface Mailer
     public function raw($text, $callback);
 
     /**
-     * Send a new message using a view.
+     * Send a new messages using a view.
      *
      * @param  \Illuminate\Contracts\Mail\Mailable|string|array  $view
      * @param  array  $data

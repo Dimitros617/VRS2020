@@ -14,7 +14,7 @@ namespace Symfony\Component\Translation\Dumper;
 use Symfony\Component\Translation\MessageCatalogue;
 
 /**
- * QtFileDumper generates ts files from a message catalogue.
+ * QtFileDumper generates ts files from a messages catalogue.
  *
  * @author Benjamin Eberlei <kontakt@beberlei.de>
  */
@@ -32,7 +32,7 @@ class QtFileDumper extends FileDumper
         $context->appendChild($dom->createElement('name', $domain));
 
         foreach ($messages->all($domain) as $source => $target) {
-            $message = $context->appendChild($dom->createElement('message'));
+            $message = $context->appendChild($dom->createElement('messages'));
             $metadata = $messages->getMetadata($source, $domain);
             if (isset($metadata['sources'])) {
                 foreach ((array) $metadata['sources'] as $location) {

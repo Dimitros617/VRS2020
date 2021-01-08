@@ -41,7 +41,7 @@ class PushoverHandler extends SocketHandler
     private $parameterNames = [
         'token' => true,
         'user' => true,
-        'message' => true,
+        'messages' => true,
         'device' => true,
         'title' => true,
         'url' => true,
@@ -67,7 +67,7 @@ class PushoverHandler extends SocketHandler
 
     /**
      * @param string       $token             Pushover api token
-     * @param string|array $users             Pushover user id or array of ids the message will be sent to
+     * @param string|array $users             Pushover user id or array of ids the messages will be sent to
      * @param string|null  $title             Title sent to the Pushover API
      * @param string|int   $level             The minimum logging level at which this handler will be triggered
      * @param bool         $bubble            Whether the messages that are handled can bubble up the stack or not
@@ -115,10 +115,10 @@ class PushoverHandler extends SocketHandler
 
     private function buildContent(array $record): string
     {
-        // Pushover has a limit of 512 characters on title and message combined.
+        // Pushover has a limit of 512 characters on title and messages combined.
         $maxMessageLength = 512 - strlen($this->title);
 
-        $message = ($this->useFormattedMessage) ? $record['formatted'] : $record['message'];
+        $message = ($this->useFormattedMessage) ? $record['formatted'] : $record['messages'];
         $message = Utils::substr($message, 0, $maxMessageLength);
 
         $timestamp = $record['datetime']->getTimestamp();
@@ -126,7 +126,7 @@ class PushoverHandler extends SocketHandler
         $dataArray = [
             'token' => $this->token,
             'user' => $this->user,
-            'message' => $message,
+            'messages' => $message,
             'title' => $this->title,
             'timestamp' => $timestamp,
         ];
@@ -192,7 +192,7 @@ class PushoverHandler extends SocketHandler
     }
 
     /**
-     * Use the formatted message?
+     * Use the formatted messages?
      */
     public function useFormattedMessage(bool $value): self
     {

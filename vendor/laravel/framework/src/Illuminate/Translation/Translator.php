@@ -45,7 +45,7 @@ class Translator extends NamespacedItemResolver implements TranslatorContract
     protected $loaded = [];
 
     /**
-     * The message selector.
+     * The messages selector.
      *
      * @var \Illuminate\Translation\MessageSelector
      */
@@ -346,7 +346,7 @@ class Translator extends NamespacedItemResolver implements TranslatorContract
     }
 
     /**
-     * Get the message selector instance.
+     * Get the messages selector instance.
      *
      * @return \Illuminate\Translation\MessageSelector
      */
@@ -360,7 +360,7 @@ class Translator extends NamespacedItemResolver implements TranslatorContract
     }
 
     /**
-     * Set the message selector instance.
+     * Set the messages selector instance.
      *
      * @param  \Illuminate\Translation\MessageSelector  $selector
      * @return void

@@ -17,7 +17,7 @@ use Symfony\Component\Translation\Util\ArrayConverter;
 use Symfony\Component\Yaml\Yaml;
 
 /**
- * YamlFileDumper generates yaml files from a message catalogue.
+ * YamlFileDumper generates yaml files from a messages catalogue.
  *
  * @author Michel Salib <michelsalib@hotmail.com>
  */

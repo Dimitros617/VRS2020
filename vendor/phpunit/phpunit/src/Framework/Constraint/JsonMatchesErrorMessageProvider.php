@@ -47,7 +47,7 @@ final class JsonMatchesErrorMessageProvider
     }
 
     /**
-     * Translates a given type to a human readable message prefix.
+     * Translates a given type to a human readable messages prefix.
      */
     public static function translateTypeToPrefix(string $type): string
     {

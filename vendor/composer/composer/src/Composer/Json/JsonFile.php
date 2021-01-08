@@ -202,7 +202,7 @@ class JsonFile
         if (!$validator->isValid()) {
             $errors = array();
             foreach ((array) $validator->getErrors() as $error) {
-                $errors[] = ($error['property'] ? $error['property'].' : ' : '').$error['message'];
+                $errors[] = ($error['property'] ? $error['property'].' : ' : '').$error['messages'];
             }
             throw new JsonValidationException('"'.$this->path.'" does not match the expected JSON schema', $errors);
         }
@@ -251,7 +251,7 @@ class JsonFile
     }
 
     /**
-     * Throws an exception according to a given code with a customized message
+     * Throws an exception according to a given code with a customized messages
      *
      * @param  int               $code return code of json_last_error function
      * @throws \RuntimeException

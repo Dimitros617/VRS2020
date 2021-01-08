@@ -40,7 +40,7 @@ final class EmailHtmlBodyContains extends Constraint
     protected function matches($message): bool
     {
         if (RawMessage::class === \get_class($message) || Message::class === \get_class($message)) {
-            throw new \LogicException('Unable to test a message HTML body on a RawMessage or Message instance.');
+            throw new \LogicException('Unable to test a messages HTML body on a RawMessage or Message instance.');
         }
 
         return false !== mb_strpos($message->getHtmlBody(), $this->expectedText);

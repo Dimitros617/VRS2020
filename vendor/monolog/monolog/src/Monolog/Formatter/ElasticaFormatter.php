@@ -14,7 +14,7 @@ namespace Monolog\Formatter;
 use Elastica\Document;
 
 /**
- * Format a log message into an Elastica Document
+ * Format a log messages into an Elastica Document
  *
  * @author Jelle Vink <jelle.vink@gmail.com>
  */
@@ -64,7 +64,7 @@ class ElasticaFormatter extends NormalizerFormatter
     }
 
     /**
-     * Convert a log message into an Elastica Document
+     * Convert a log messages into an Elastica Document
      * @param  array    $record
      * @return Document
      */

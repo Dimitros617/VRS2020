@@ -33,13 +33,13 @@ class SendGridHandler extends MailHandler
     protected $apiKey;
 
     /**
-     * The email addresses to which the message will be sent
+     * The email addresses to which the messages will be sent
      * @var string
      */
     protected $from;
 
     /**
-     * The email addresses to which the message will be sent
+     * The email addresses to which the messages will be sent
      * @var array
      */
     protected $to;

@@ -32,14 +32,14 @@ class ErrorLogHandler extends AbstractProcessingHandler
      * @param int        $messageType    Says where the error should go.
      * @param int|string $level          The minimum logging level at which this handler will be triggered
      * @param bool       $bubble         Whether the messages that are handled can bubble up the stack or not
-     * @param bool       $expandNewlines If set to true, newlines in the message will be expanded to be take multiple log entries
+     * @param bool       $expandNewlines If set to true, newlines in the messages will be expanded to be take multiple log entries
      */
     public function __construct(int $messageType = self::OPERATING_SYSTEM, $level = Logger::DEBUG, bool $bubble = true, bool $expandNewlines = false)
     {
         parent::__construct($level, $bubble);
 
         if (false === in_array($messageType, self::getAvailableTypes(), true)) {
-            $message = sprintf('The given message type "%s" is not supported', print_r($messageType, true));
+            $message = sprintf('The given messages type "%s" is not supported', print_r($messageType, true));
 
             throw new \InvalidArgumentException($message);
         }
@@ -64,7 +64,7 @@ class ErrorLogHandler extends AbstractProcessingHandler
      */
     protected function getDefaultFormatter(): FormatterInterface
     {
-        return new LineFormatter('[%datetime%] %channel%.%level_name%: %message% %context% %extra%');
+        return new LineFormatter('[%datetime%] %channel%.%level_name%: %messages% %context% %extra%');
     }
 
     /**

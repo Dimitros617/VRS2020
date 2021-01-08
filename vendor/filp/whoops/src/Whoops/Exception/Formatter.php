@@ -20,7 +20,7 @@ class Formatter
         $exception = $inspector->getException();
         $response = [
             'type'    => get_class($exception),
-            'message' => $exception->getMessage(),
+            'messages' => $exception->getMessage(),
             'code'    => $exception->getCode(),
             'file'    => $exception->getFile(),
             'line'    => $exception->getLine(),
@@ -53,7 +53,7 @@ class Formatter
         $frames = $inspector->getFrames();
 
         $plain = $inspector->getExceptionName();
-        $plain .= ' thrown with message "';
+        $plain .= ' thrown with messages "';
         $plain .= $message;
         $plain .= '"'."\n\n";
 

@@ -60,7 +60,7 @@ class FleepHookHandler extends SocketHandler
     /**
      * Returns the default formatter to use with this handler
      *
-     * Overloaded to remove empty context and extra arrays from the end of the log message.
+     * Overloaded to remove empty context and extra arrays from the end of the log messages.
      *
      * @return LineFormatter
      */
@@ -108,7 +108,7 @@ class FleepHookHandler extends SocketHandler
     private function buildContent(array $record): string
     {
         $dataArray = [
-            'message' => $record['formatted'],
+            'messages' => $record['formatted'],
         ];
 
         return http_build_query($dataArray);

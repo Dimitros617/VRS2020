@@ -25,10 +25,10 @@ Once the Capsule instance has been registered. You may use it like so:
 
 ```PHP
 // As an instance...
-$queue->push('SendEmail', ['message' => $message]);
+$queue->push('SendEmail', ['messages' => $message]);
 
 // If setAsGlobal has been called...
-Queue::push('SendEmail', ['message' => $message]);
+Queue::push('SendEmail', ['messages' => $message]);
 ```
 
 For further documentation on using the queue, consult the [Laravel framework documentation](https://laravel.com/docs).

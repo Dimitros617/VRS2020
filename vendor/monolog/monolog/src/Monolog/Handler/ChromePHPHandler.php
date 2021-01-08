@@ -151,7 +151,7 @@ class ChromePHPHandler extends AbstractProcessingHandler
             self::$overflowed = true;
 
             $record = [
-                'message' => 'Incomplete logs, chrome header size limit reached',
+                'messages' => 'Incomplete logs, chrome header size limit reached',
                 'context' => [],
                 'level' => Logger::WARNING,
                 'level_name' => Logger::getLevelName(Logger::WARNING),

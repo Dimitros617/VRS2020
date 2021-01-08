@@ -159,7 +159,7 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
                 $log = ['Unknown Compiler Pass', implode(': ', $log)];
             }
 
-            $logs[$log[0]][] = ['message' => $log[1]];
+            $logs[$log[0]][] = ['messages' => $log[1]];
         }
 
         return $logs;
@@ -177,7 +177,7 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
                 continue;
             }
 
-            $message = '_'.$log['message'];
+            $message = '_'.$log['messages'];
             $exception = $log['context']['exception'];
 
             if ($exception instanceof SilencedErrorContext) {

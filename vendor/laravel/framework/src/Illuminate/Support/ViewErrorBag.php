@@ -64,7 +64,7 @@ class ViewErrorBag implements Countable
     }
 
     /**
-     * Determine if the default message bag has any messages.
+     * Determine if the default messages bag has any messages.
      *
      * @return bool
      */

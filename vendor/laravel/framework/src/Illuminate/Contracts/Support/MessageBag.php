@@ -5,14 +5,14 @@ namespace Illuminate\Contracts\Support;
 interface MessageBag extends Arrayable
 {
     /**
-     * Get the keys present in the message bag.
+     * Get the keys present in the messages bag.
      *
      * @return array
      */
     public function keys();
 
     /**
-     * Add a message to the bag.
+     * Add a messages to the bag.
      *
      * @param  string  $key
      * @param  string  $message
@@ -37,7 +37,7 @@ interface MessageBag extends Arrayable
     public function has($key);
 
     /**
-     * Get the first message from the bag for a given key.
+     * Get the first messages from the bag for a given key.
      *
      * @param  string|null  $key
      * @param  string|null  $format
@@ -70,29 +70,29 @@ interface MessageBag extends Arrayable
     public function getMessages();
 
     /**
-     * Get the default message format.
+     * Get the default messages format.
      *
      * @return string
      */
     public function getFormat();
 
     /**
-     * Set the default message format.
+     * Set the default messages format.
      *
      * @param  string  $format
      * @return $this
      */
-    public function setFormat($format = ':message');
+    public function setFormat($format = ':messages');
 
     /**
-     * Determine if the message bag has any messages.
+     * Determine if the messages bag has any messages.
      *
      * @return bool
      */
     public function isEmpty();
 
     /**
-     * Determine if the message bag has any messages.
+     * Determine if the messages bag has any messages.
      *
      * @return bool
      */

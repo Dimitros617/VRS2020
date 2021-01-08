@@ -53,14 +53,14 @@ class FlowdockFormatter implements FormatterInterface
             'in %s: %s - %s',
             $this->source,
             $record['level_name'],
-            $this->getShortMessage($record['message'])
+            $this->getShortMessage($record['messages'])
         );
 
         $record['flowdock'] = [
             'source' => $this->source,
             'from_address' => $this->sourceEmail,
             'subject' => $subject,
-            'content' => $record['message'],
+            'content' => $record['messages'],
             'tags' => $tags,
             'project' => $this->source,
         ];

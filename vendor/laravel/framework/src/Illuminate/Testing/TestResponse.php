@@ -666,7 +666,7 @@ class TestResponse implements ArrayAccess
 
                 if (! $hasError) {
                     PHPUnit::fail(
-                        "Failed to find a validation error in the response for key and message: '$key' => '$value'".PHP_EOL.PHP_EOL.$errorMessage
+                        "Failed to find a validation error in the response for key and messages: '$key' => '$value'".PHP_EOL.PHP_EOL.$errorMessage
                     );
                 }
             }

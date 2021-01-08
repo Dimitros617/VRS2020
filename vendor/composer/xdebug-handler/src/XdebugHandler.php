@@ -78,7 +78,7 @@ class XdebugHandler
     }
 
     /**
-     * Activates status message output to a PSR3 logger
+     * Activates status messages output to a PSR3 logger
      *
      * @param LoggerInterface $logger
      *

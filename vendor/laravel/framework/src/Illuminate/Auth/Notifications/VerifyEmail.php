@@ -19,7 +19,7 @@ class VerifyEmail extends Notification
     public static $createUrlCallback;
 
     /**
-     * The callback that should be used to build the mail message.
+     * The callback that should be used to build the mail messages.
      *
      * @var \Closure|null
      */
@@ -54,7 +54,7 @@ class VerifyEmail extends Notification
     }
 
     /**
-     * Get the verify email notification mail message for the given URL.
+     * Get the verify email notification mail messages for the given URL.
      *
      * @param  string  $verificationUrl
      * @return \Illuminate\Notifications\Messages\MailMessage
@@ -102,7 +102,7 @@ class VerifyEmail extends Notification
     }
 
     /**
-     * Set a callback that should be used when building the notification mail message.
+     * Set a callback that should be used when building the notification mail messages.
      *
      * @param  \Closure  $callback
      * @return void

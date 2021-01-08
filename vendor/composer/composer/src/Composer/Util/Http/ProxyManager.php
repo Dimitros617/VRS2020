@@ -104,7 +104,7 @@ class ProxyManager
     /**
      * Returns true if a proxy is being used
      *
-     * @return bool If false any error will be in $message
+     * @return bool If false any error will be in $messages
      */
     public function isProxying()
     {
@@ -114,7 +114,7 @@ class ProxyManager
     /**
      * Returns proxy configuration info which can be shown to the user
      *
-     * @return string|null Safe proxy URL or an error message if setting up proxy failed or null if no proxy was configured
+     * @return string|null Safe proxy URL or an error messages if setting up proxy failed or null if no proxy was configured
      */
     public function getFormattedProxy()
     {

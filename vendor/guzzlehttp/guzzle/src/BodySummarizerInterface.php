@@ -7,7 +7,7 @@ use Psr\Http\Message\MessageInterface;
 interface BodySummarizerInterface
 {
     /**
-     * Returns a summarized message body.
+     * Returns a summarized messages body.
      */
     public function summarize(MessageInterface $message): ?string;
 }

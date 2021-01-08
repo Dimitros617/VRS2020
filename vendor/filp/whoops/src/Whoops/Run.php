@@ -449,7 +449,7 @@ final class Run implements RunInterface
             $this->allowQuit = false;
             $this->handleError(
                 $error['type'],
-                $error['message'],
+                $error['messages'],
                 $error['file'],
                 $error['line']
             );

@@ -21,98 +21,98 @@ class Mailable implements MailableContract, Renderable
     use ForwardsCalls, Localizable;
 
     /**
-     * The locale of the message.
+     * The locale of the messages.
      *
      * @var string
      */
     public $locale;
 
     /**
-     * The person the message is from.
+     * The person the messages is from.
      *
      * @var array
      */
     public $from = [];
 
     /**
-     * The "to" recipients of the message.
+     * The "to" recipients of the messages.
      *
      * @var array
      */
     public $to = [];
 
     /**
-     * The "cc" recipients of the message.
+     * The "cc" recipients of the messages.
      *
      * @var array
      */
     public $cc = [];
 
     /**
-     * The "bcc" recipients of the message.
+     * The "bcc" recipients of the messages.
      *
      * @var array
      */
     public $bcc = [];
 
     /**
-     * The "reply to" recipients of the message.
+     * The "reply to" recipients of the messages.
      *
      * @var array
      */
     public $replyTo = [];
 
     /**
-     * The subject of the message.
+     * The subject of the messages.
      *
      * @var string
      */
     public $subject;
 
     /**
-     * The Markdown template for the message (if applicable).
+     * The Markdown template for the messages (if applicable).
      *
      * @var string
      */
     protected $markdown;
 
     /**
-     * The HTML to use for the message.
+     * The HTML to use for the messages.
      *
      * @var string
      */
     protected $html;
 
     /**
-     * The view to use for the message.
+     * The view to use for the messages.
      *
      * @var string
      */
     public $view;
 
     /**
-     * The plain text view to use for the message.
+     * The plain text view to use for the messages.
      *
      * @var string
      */
     public $textView;
 
     /**
-     * The view data for the message.
+     * The view data for the messages.
      *
      * @var array
      */
     public $viewData = [];
 
     /**
-     * The attachments for the message.
+     * The attachments for the messages.
      *
      * @var array
      */
     public $attachments = [];
 
     /**
-     * The raw attachments for the message.
+     * The raw attachments for the messages.
      *
      * @var array
      */
@@ -126,21 +126,21 @@ class Mailable implements MailableContract, Renderable
     public $diskAttachments = [];
 
     /**
-     * The callbacks for the message.
+     * The callbacks for the messages.
      *
      * @var array
      */
     public $callbacks = [];
 
     /**
-     * The name of the theme that should be used when formatting the message.
+     * The name of the theme that should be used when formatting the messages.
      *
      * @var string|null
      */
     public $theme;
 
     /**
-     * The name of the mailer that should send the message.
+     * The name of the mailer that should send the messages.
      *
      * @var string
      */
@@ -154,7 +154,7 @@ class Mailable implements MailableContract, Renderable
     public static $viewDataCallback;
 
     /**
-     * Send the message using the given mailer.
+     * Send the messages using the given mailer.
      *
      * @param  \Illuminate\Contracts\Mail\Factory|\Illuminate\Contracts\Mail\Mailer  $mailer
      * @return void
@@ -179,7 +179,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Queue the message for sending.
+     * Queue the messages for sending.
      *
      * @param  \Illuminate\Contracts\Queue\Factory  $queue
      * @return mixed
@@ -200,7 +200,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Deliver the queued message after the given delay.
+     * Deliver the queued messages after the given delay.
      *
      * @param  \DateTimeInterface|\DateInterval|int  $delay
      * @param  \Illuminate\Contracts\Queue\Factory  $queue
@@ -246,7 +246,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Build the view for the message.
+     * Build the view for the messages.
      *
      * @return array|string
      *
@@ -275,7 +275,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Build the Markdown view for the message.
+     * Build the Markdown view for the messages.
      *
      * @return array
      *
@@ -298,7 +298,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Build the view data for the message.
+     * Build the view data for the messages.
      *
      * @return array
      *
@@ -322,7 +322,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Build the text view for a Markdown message.
+     * Build the text view for a Markdown messages.
      *
      * @param  \Illuminate\Mail\Markdown  $markdown
      * @param  array  $data
@@ -335,7 +335,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Add the sender to the message.
+     * Add the sender to the messages.
      *
      * @param  \Illuminate\Mail\Message  $message
      * @return $this
@@ -350,7 +350,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Add all of the recipients to the message.
+     * Add all of the recipients to the messages.
      *
      * @param  \Illuminate\Mail\Message  $message
      * @return $this
@@ -367,7 +367,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Set the subject for the message.
+     * Set the subject for the messages.
      *
      * @param  \Illuminate\Mail\Message  $message
      * @return $this
@@ -384,7 +384,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Add all of the attachments to the message.
+     * Add all of the attachments to the messages.
      *
      * @param  \Illuminate\Mail\Message  $message
      * @return $this
@@ -407,7 +407,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Add all of the disk attachments to the message.
+     * Add all of the disk attachments to the messages.
      *
      * @param  \Illuminate\Mail\Message  $message
      * @return void
@@ -428,7 +428,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Run the callbacks for the message.
+     * Run the callbacks for the messages.
      *
      * @param  \Illuminate\Mail\Message  $message
      * @return $this
@@ -443,7 +443,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Set the locale of the message.
+     * Set the locale of the messages.
      *
      * @param  string  $locale
      * @return $this
@@ -456,7 +456,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Set the priority of this message.
+     * Set the priority of this messages.
      *
      * The value is an integer where 1 is the highest priority and 5 is the lowest.
      *
@@ -473,7 +473,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Set the sender of the message.
+     * Set the sender of the messages.
      *
      * @param  object|array|string  $address
      * @param  string|null  $name
@@ -497,7 +497,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Set the recipients of the message.
+     * Set the recipients of the messages.
      *
      * @param  object|array|string  $address
      * @param  string|null  $name
@@ -521,7 +521,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Set the recipients of the message.
+     * Set the recipients of the messages.
      *
      * @param  object|array|string  $address
      * @param  string|null  $name
@@ -545,7 +545,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Set the recipients of the message.
+     * Set the recipients of the messages.
      *
      * @param  object|array|string  $address
      * @param  string|null  $name
@@ -569,7 +569,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Set the "reply to" address of the message.
+     * Set the "reply to" address of the messages.
      *
      * @param  object|array|string  $address
      * @param  string|null  $name
@@ -593,7 +593,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Set the recipients of the message.
+     * Set the recipients of the messages.
      *
      * All recipients are stored internally as [['name' => ?, 'address' => ?]]
      *
@@ -684,7 +684,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Set the subject of the message.
+     * Set the subject of the messages.
      *
      * @param  string  $subject
      * @return $this
@@ -697,7 +697,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Set the Markdown template for the message.
+     * Set the Markdown template for the messages.
      *
      * @param  string  $view
      * @param  array  $data
@@ -712,7 +712,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Set the view and view data for the message.
+     * Set the view and view data for the messages.
      *
      * @param  string  $view
      * @param  array  $data
@@ -727,7 +727,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Set the rendered HTML content for the message.
+     * Set the rendered HTML content for the messages.
      *
      * @param  string  $html
      * @return $this
@@ -740,7 +740,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Set the plain text view for the message.
+     * Set the plain text view for the messages.
      *
      * @param  string  $textView
      * @param  array  $data
@@ -755,7 +755,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Set the view data for the message.
+     * Set the view data for the messages.
      *
      * @param  string|array  $key
      * @param  mixed  $value
@@ -773,7 +773,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Attach a file to the message.
+     * Attach a file to the messages.
      *
      * @param  string  $file
      * @param  array  $options
@@ -790,7 +790,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Attach a file to the message from storage.
+     * Attach a file to the messages from storage.
      *
      * @param  string  $path
      * @param  string|null  $name
@@ -803,7 +803,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Attach a file to the message from storage.
+     * Attach a file to the messages from storage.
      *
      * @param  string  $disk
      * @param  string  $path
@@ -845,7 +845,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Set the name of the mailer that should send the message.
+     * Set the name of the mailer that should send the messages.
      *
      * @param  string  $mailer
      * @return $this
@@ -858,7 +858,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Register a callback to be called with the Swift message instance.
+     * Register a callback to be called with the Swift messages instance.
      *
      * @param  callable  $callback
      * @return $this
@@ -882,7 +882,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Apply the callback's message changes if the given "value" is true.
+     * Apply the callback's messages changes if the given "value" is true.
      *
      * @param  mixed  $value
      * @param  callable  $callback
@@ -901,7 +901,7 @@ class Mailable implements MailableContract, Renderable
     }
 
     /**
-     * Dynamically bind parameters to the message.
+     * Dynamically bind parameters to the messages.
      *
      * @param  string  $method
      * @param  array  $parameters

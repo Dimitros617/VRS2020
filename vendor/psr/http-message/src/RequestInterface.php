@@ -19,14 +19,14 @@ namespace Psr\Http\Message;
  *
  * Requests are considered immutable; all methods that might change state MUST
  * be implemented such that they retain the internal state of the current
- * message and return an instance that contains the changed state.
+ * messages and return an instance that contains the changed state.
  */
 interface RequestInterface extends MessageInterface
 {
     /**
-     * Retrieves the message's request target.
+     * Retrieves the messages's request target.
      *
-     * Retrieves the message's request-target either as it will appear (for
+     * Retrieves the messages's request-target either as it will appear (for
      * clients), as it appeared at request (for servers), or as it was
      * specified for the instance (see withRequestTarget()).
      *
@@ -50,7 +50,7 @@ interface RequestInterface extends MessageInterface
      * request-target, verbatim.
      *
      * This method MUST be implemented in such a way as to retain the
-     * immutability of the message, and MUST return an instance that has the
+     * immutability of the messages, and MUST return an instance that has the
      * changed request target.
      *
      * @link http://tools.ietf.org/html/rfc7230#section-5.3 (for the various
@@ -75,7 +75,7 @@ interface RequestInterface extends MessageInterface
      * modify the given string.
      *
      * This method MUST be implemented in such a way as to retain the
-     * immutability of the message, and MUST return an instance that has the
+     * immutability of the messages, and MUST return an instance that has the
      * changed request method.
      *
      * @param string $method Case-sensitive method.
@@ -117,7 +117,7 @@ interface RequestInterface extends MessageInterface
      *   the Host header in the returned request.
      *
      * This method MUST be implemented in such a way as to retain the
-     * immutability of the message, and MUST return an instance that has the
+     * immutability of the messages, and MUST return an instance that has the
      * new UriInterface instance.
      *
      * @link http://tools.ietf.org/html/rfc3986#section-4.3

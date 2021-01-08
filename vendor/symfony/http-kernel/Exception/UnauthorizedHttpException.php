@@ -18,7 +18,7 @@ class UnauthorizedHttpException extends HttpException
 {
     /**
      * @param string     $challenge WWW-Authenticate challenge string
-     * @param string     $message   The internal exception message
+     * @param string     $message   The internal exception messages
      * @param \Throwable $previous  The previous exception
      * @param int        $code      The internal exception code
      */

@@ -55,9 +55,9 @@ class SymfonyStyle extends OutputStyle
     }
 
     /**
-     * Formats a message as a block of text.
+     * Formats a messages as a block of text.
      *
-     * @param string|array $messages The message to write in the block
+     * @param string|array $messages The messages to write in the block
      */
     public function block($messages, ?string $type = null, ?string $style = null, string $prefix = ' ', bool $padding = false, bool $escape = true)
     {
@@ -164,7 +164,7 @@ class SymfonyStyle extends OutputStyle
     }
 
     /**
-     * Formats an info message.
+     * Formats an info messages.
      *
      * @param string|array $message
      */

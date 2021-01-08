@@ -1,3 +1,27 @@
+
+
+<div id="messageModal" hidden onclick=" closeMessages(this)">
+
+    <div class=" messageBackground bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-6xl mx-auto sm:px-6 lg:px-8" id="allMessages">
+        <div class="d-flex justify-content-between messagesHeaderBox">
+            <div class="display-4 p-4 text-white"> Zprávy: </div>
+            <div class="spinner-border  text-vrs-yellow"  style="width: 3rem; height: 3rem; margin: auto;" id="messageLoading" role="status"></div>
+            <div class="newMessageBox"><button type="button" class="btn btn-light" onclick="newMessage()">Nová zpráva</button></div>
+        </div>
+        <div id="messagesBox"></div>
+    </div>
+
+    <div class=" messageBackground bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-6xl mx-auto sm:px-6 lg:px-8" id="newMessages" hidden>
+        <div class="d-flex justify-content-between messagesHeaderBox">
+            <div class="display-4 p-4 text-white"> Nová zpráva: </div>
+            <div class="spinner-border  text-vrs-yellow"  style="width: 3rem; height: 3rem; margin: auto;" id="messageLoading" role="status" hidden></div>
+            <div class="newMessageBox"><button type="button" class="btn btn-light" onclick="allMessage()">Moje zprávy</button></div>
+        </div>
+        <div id="messagesBox"></div>
+    </div>
+
+</div>
+
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100 shadow-lg p-3 mb-5">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,8 +53,8 @@
 
 
             <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ml-6">
-                <x-jet-dropdown align="right" width="48">
+            <div class="hidden sm:flex sm:items-center sm:ml-6 headerMargin">
+                <x-jet-dropdown align="right" width="48" >
                     <x-slot name="trigger">
                         @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                             <button
@@ -165,9 +189,10 @@
 
     <!-- Notifications -->
     <div class="notification">
-        <a>
+        <a onclick="showMessages()">
             <img src="{{ URL::asset('img/mail.svg') }}" class="notificationSVG">
-            <span class="badge badge-pill badge-danger notificationBadge" onload="countNewMessages(this)"> - </span>
+            <span class="badge badge-pill badge-danger notificationBadge" id="newMessageCount" onload="countNewMessages(this); setInterval(countNewMessages, 20000,this)" hidden> - </span>
+            <div class="spinner-grow spinner-grow-sm text-danger notificationBadge" id="newMessageCountLoading" role="status"></div>
         </a>
     </div>
     </div>

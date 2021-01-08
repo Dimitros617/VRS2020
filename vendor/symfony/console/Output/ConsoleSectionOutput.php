@@ -62,7 +62,7 @@ class ConsoleSectionOutput extends StreamOutput
     }
 
     /**
-     * Overwrites the previous output with a new message.
+     * Overwrites the previous output with a new messages.
      *
      * @param array|string $message
      */

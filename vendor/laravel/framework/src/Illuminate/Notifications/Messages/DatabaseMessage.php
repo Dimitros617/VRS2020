@@ -12,7 +12,7 @@ class DatabaseMessage
     public $data = [];
 
     /**
-     * Create a new database message.
+     * Create a new database messages.
      *
      * @param  array  $data
      * @return void

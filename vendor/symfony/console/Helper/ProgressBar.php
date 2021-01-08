@@ -159,12 +159,12 @@ final class ProgressBar
      * @param string $message The text to associate with the placeholder
      * @param string $name    The name of the placeholder
      */
-    public function setMessage(string $message, string $name = 'message')
+    public function setMessage(string $message, string $name = 'messages')
     {
         $this->messages[$name] = $message;
     }
 
-    public function getMessage(string $name = 'message')
+    public function getMessage(string $name = 'messages')
     {
         return $this->messages[$name];
     }
@@ -449,7 +449,7 @@ final class ProgressBar
     }
 
     /**
-     * Overwrites a previous message to the output.
+     * Overwrites a previous messages to the output.
      */
     private function overwrite(string $message): void
     {

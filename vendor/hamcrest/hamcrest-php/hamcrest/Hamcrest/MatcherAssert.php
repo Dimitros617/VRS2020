@@ -19,7 +19,7 @@ class MatcherAssert
      * Make an assertion and throw {@link Hamcrest\AssertionError} if it fails.
      *
      * The first parameter may optionally be a string identifying the assertion
-     * to be included in the failure message.
+     * to be included in the failure messages.
      *
      * If the third parameter is not a matcher it is passed to
      * {@link Hamcrest\Core\IsEqual#equalTo} to create one.
@@ -94,7 +94,7 @@ class MatcherAssert
      * throws a {@link Hamcrest\AssertionError} with a description
      * of the failure along with the optional <code>$identifier</code>.
      *
-     * @param string $identifier added to the message upon failure
+     * @param string $identifier added to the messages upon failure
      * @param mixed $actual value to compare against <code>$matcher</code>
      * @param \Hamcrest\Matcher $matcher applied to <code>$actual</code>
      * @throws AssertionError

@@ -52,7 +52,7 @@ class ComparisonFailure extends RuntimeException
     protected $identical;
 
     /**
-     * Optional message which is placed in front of the first line
+     * Optional messages which is placed in front of the first line
      * returned by toString().
      *
      * @var string

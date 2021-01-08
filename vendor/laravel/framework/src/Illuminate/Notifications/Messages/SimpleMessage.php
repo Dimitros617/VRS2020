@@ -224,7 +224,7 @@ class SimpleMessage
     }
 
     /**
-     * Get an array representation of the message.
+     * Get an array representation of the messages.
      *
      * @return array
      */

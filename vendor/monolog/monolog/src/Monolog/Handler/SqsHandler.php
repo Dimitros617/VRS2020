@@ -22,9 +22,9 @@ use Monolog\Utils;
  */
 class SqsHandler extends AbstractProcessingHandler
 {
-    /** 256 KB in bytes - maximum message size in SQS */
+    /** 256 KB in bytes - maximum messages size in SQS */
     protected const MAX_MESSAGE_SIZE = 262144;
-    /** 100 KB in bytes - head message size for new error log */
+    /** 100 KB in bytes - head messages size for new error log */
     protected const HEAD_MESSAGE_SIZE = 102400;
 
     /** @var SqsClient */

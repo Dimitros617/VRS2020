@@ -14,7 +14,7 @@ namespace Symfony\Component\Translation\Dumper;
 use Symfony\Component\Translation\MessageCatalogue;
 
 /**
- * IniFileDumper generates an ini formatted string representation of a message catalogue.
+ * IniFileDumper generates an ini formatted string representation of a messages catalogue.
  *
  * @author Stealth35
  */

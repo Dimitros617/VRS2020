@@ -2,4 +2,4 @@
 
 @section('title', __('Nenalezeno'))
 @section('code', '404')
-@section('message', __('UPS... To co hledáte tu není.'))
+@section('messages', __('UPS... To co hledáte tu není.'))

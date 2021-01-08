@@ -324,7 +324,7 @@ final class Writer implements WriterContract
     }
 
     /**
-     * Renders an message into the console.
+     * Renders an messages into the console.
      *
      * @return $this
      */

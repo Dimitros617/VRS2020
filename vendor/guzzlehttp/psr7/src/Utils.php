@@ -146,7 +146,7 @@ final class Utils
      * Clone and modify a request with the given changes.
      *
      * This method is useful for reducing the number of clones needed to mutate
-     * a message.
+     * a messages.
      *
      * The changes can be one of:
      * - method: (string) Changes the HTTP method.

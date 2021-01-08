@@ -14,7 +14,7 @@ namespace Monolog\Formatter;
 use Monolog\Logger;
 
 /**
- * Formats a log message according to the ChromePHP array format
+ * Formats a log messages according to the ChromePHP array format
  *
  * @author Christophe Coevoet <stof@notk.org>
  */
@@ -46,7 +46,7 @@ class ChromePHPFormatter implements FormatterInterface
             unset($record['extra']['file'], $record['extra']['line']);
         }
 
-        $message = ['message' => $record['message']];
+        $message = ['messages' => $record['messages']];
         if ($record['context']) {
             $message['context'] = $record['context'];
         }

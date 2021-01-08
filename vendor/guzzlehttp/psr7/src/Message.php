@@ -9,7 +9,7 @@ use Psr\Http\Message\ResponseInterface;
 final class Message
 {
     /**
-     * Returns the string representation of an HTTP message.
+     * Returns the string representation of an HTTP messages.
      *
      * @param MessageInterface $message Message to convert to a string.
      *
@@ -29,7 +29,7 @@ final class Message
                 . $message->getStatusCode() . ' '
                 . $message->getReasonPhrase();
         } else {
-            throw new \InvalidArgumentException('Unknown message type');
+            throw new \InvalidArgumentException('Unknown messages type');
         }
 
         foreach ($message->getHeaders() as $name => $values) {
@@ -46,11 +46,11 @@ final class Message
     }
 
     /**
-     * Get a short summary of the message body.
+     * Get a short summary of the messages body.
      *
      * Will return `null` if the response is not printable.
      *
-     * @param MessageInterface $message    The message to get the body summary
+     * @param MessageInterface $message    The messages to get the body summary
      * @param int              $truncateAt The maximum allowed size of the summary
      *
      * @return string|null
@@ -86,9 +86,9 @@ final class Message
     }
 
     /**
-     * Attempts to rewind a message body and throws an exception on failure.
+     * Attempts to rewind a messages body and throws an exception on failure.
      *
-     * The body of the message will only be rewound if a call to `tell()`
+     * The body of the messages will only be rewound if a call to `tell()`
      * returns a value other than `0`.
      *
      * @param MessageInterface $message Message to rewind
@@ -105,11 +105,11 @@ final class Message
     }
 
     /**
-     * Parses an HTTP message into an associative array.
+     * Parses an HTTP messages into an associative array.
      *
      * The array contains the "start-line" key containing the start line of
-     * the message, "headers" key containing an associative array of header
-     * array values, and a "body" key containing the body of the message.
+     * the messages, "headers" key containing an associative array of header
+     * array values, and a "body" key containing the body of the messages.
      *
      * @param string $message HTTP request or response to parse.
      *
@@ -118,7 +118,7 @@ final class Message
     public static function parseMessage($message)
     {
         if (!$message) {
-            throw new \InvalidArgumentException('Invalid message');
+            throw new \InvalidArgumentException('Invalid messages');
         }
 
         $message = ltrim($message, "\r\n");
@@ -126,7 +126,7 @@ final class Message
         $messageParts = preg_split("/\r?\n\r?\n/", $message, 2);
 
         if ($messageParts === false || count($messageParts) !== 2) {
-            throw new \InvalidArgumentException('Invalid message: Missing header delimiter');
+            throw new \InvalidArgumentException('Invalid messages: Missing header delimiter');
         }
 
         list($rawHeaders, $body) = $messageParts;
@@ -134,7 +134,7 @@ final class Message
         $headerParts = preg_split("/\r?\n/", $rawHeaders, 2);
 
         if ($headerParts === false || count($headerParts) !== 2) {
-            throw new \InvalidArgumentException('Invalid message: Missing status line');
+            throw new \InvalidArgumentException('Invalid messages: Missing status line');
         }
 
         list($startLine, $rawHeaders) = $headerParts;
@@ -171,7 +171,7 @@ final class Message
     }
 
     /**
-     * Constructs a URI for an HTTP request message.
+     * Constructs a URI for an HTTP request messages.
      *
      * @param string $path    Path from the start-line
      * @param array  $headers Array of headers (each value an array).
@@ -196,9 +196,9 @@ final class Message
     }
 
     /**
-     * Parses a request message string into a request object.
+     * Parses a request messages string into a request object.
      *
-     * @param string $message Request message string.
+     * @param string $message Request messages string.
      *
      * @return Request
      */
@@ -224,9 +224,9 @@ final class Message
     }
 
     /**
-     * Parses a response message string into a response object.
+     * Parses a response messages string into a response object.
      *
-     * @param string $message Response message string.
+     * @param string $message Response messages string.
      *
      * @return Response
      */

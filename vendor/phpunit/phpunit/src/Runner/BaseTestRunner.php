@@ -147,7 +147,7 @@ abstract class BaseTestRunner
     }
 
     /**
-     * Clears the status message.
+     * Clears the status messages.
      */
     protected function clearStatus(): void
     {

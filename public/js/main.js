@@ -42,21 +42,15 @@ function showButton(ele) {
     ele.parentElement.getElementsByClassName("btn")[0].removeAttribute("hidden");
 }
 
-function countNewMessages(ele)
-{
-    console.log('Debug Objects: ANOOOO');
-    $.ajax({
-        url: '/newMessages',
-        method: "GET",
-        success: function (response) {
-
-            ele.innerHTML = response;
-        }
-    });
-    console.log('Debug Objects: JOP');
-}
-
 $(function(){
     $('span[onload]').trigger('onload');
 });
+
+function setPasivRefresh(){
+
+let messageRefresh = 0;
+
+
+
+}
 

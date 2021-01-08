@@ -74,7 +74,7 @@ final class TeamCity extends DefaultResultPrinter
             'testFailed',
             [
                 'name'     => $test->getName(),
-                'message'  => self::getMessage($t),
+                'messages'  => self::getMessage($t),
                 'details'  => self::getDetails($t),
                 'duration' => self::toMilliseconds($time),
             ]
@@ -90,7 +90,7 @@ final class TeamCity extends DefaultResultPrinter
             'testFailed',
             [
                 'name'     => $test->getName(),
-                'message'  => self::getMessage($e),
+                'messages'  => self::getMessage($e),
                 'details'  => self::getDetails($e),
                 'duration' => self::toMilliseconds($time),
             ]
@@ -104,7 +104,7 @@ final class TeamCity extends DefaultResultPrinter
     {
         $parameters = [
             'name'     => $test->getName(),
-            'message'  => self::getMessage($e),
+            'messages'  => self::getMessage($e),
             'details'  => self::getDetails($e),
             'duration' => self::toMilliseconds($time),
         ];
@@ -174,7 +174,7 @@ final class TeamCity extends DefaultResultPrinter
             'testIgnored',
             [
                 'name'     => $testName,
-                'message'  => self::getMessage($t),
+                'messages'  => self::getMessage($t),
                 'details'  => self::getDetails($t),
                 'duration' => self::toMilliseconds($time),
             ]

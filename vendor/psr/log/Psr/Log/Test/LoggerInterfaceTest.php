@@ -45,8 +45,8 @@ abstract class LoggerInterfaceTest extends TestCase
         $logger->log($level, $message, array('user' => 'Bob'));
 
         $expected = array(
-            $level.' message of level '.$level.' with context: Bob',
-            $level.' message of level '.$level.' with context: Bob',
+            $level.' messages of level '.$level.' with context: Bob',
+            $level.' messages of level '.$level.' with context: Bob',
         );
         $this->assertEquals($expected, $this->getLogs());
     }
@@ -54,14 +54,14 @@ abstract class LoggerInterfaceTest extends TestCase
     public function provideLevelsAndMessages()
     {
         return array(
-            LogLevel::EMERGENCY => array(LogLevel::EMERGENCY, 'message of level emergency with context: {user}'),
-            LogLevel::ALERT => array(LogLevel::ALERT, 'message of level alert with context: {user}'),
-            LogLevel::CRITICAL => array(LogLevel::CRITICAL, 'message of level critical with context: {user}'),
-            LogLevel::ERROR => array(LogLevel::ERROR, 'message of level error with context: {user}'),
-            LogLevel::WARNING => array(LogLevel::WARNING, 'message of level warning with context: {user}'),
-            LogLevel::NOTICE => array(LogLevel::NOTICE, 'message of level notice with context: {user}'),
-            LogLevel::INFO => array(LogLevel::INFO, 'message of level info with context: {user}'),
-            LogLevel::DEBUG => array(LogLevel::DEBUG, 'message of level debug with context: {user}'),
+            LogLevel::EMERGENCY => array(LogLevel::EMERGENCY, 'messages of level emergency with context: {user}'),
+            LogLevel::ALERT => array(LogLevel::ALERT, 'messages of level alert with context: {user}'),
+            LogLevel::CRITICAL => array(LogLevel::CRITICAL, 'messages of level critical with context: {user}'),
+            LogLevel::ERROR => array(LogLevel::ERROR, 'messages of level error with context: {user}'),
+            LogLevel::WARNING => array(LogLevel::WARNING, 'messages of level warning with context: {user}'),
+            LogLevel::NOTICE => array(LogLevel::NOTICE, 'messages of level notice with context: {user}'),
+            LogLevel::INFO => array(LogLevel::INFO, 'messages of level info with context: {user}'),
+            LogLevel::DEBUG => array(LogLevel::DEBUG, 'messages of level debug with context: {user}'),
         );
     }
 
@@ -126,11 +126,11 @@ abstract class LoggerInterfaceTest extends TestCase
     public function testContextExceptionKeyCanBeExceptionOrOtherValues()
     {
         $logger = $this->getLogger();
-        $logger->warning('Random message', array('exception' => 'oops'));
+        $logger->warning('Random messages', array('exception' => 'oops'));
         $logger->critical('Uncaught Exception!', array('exception' => new \LogicException('Fail')));
 
         $expected = array(
-            'warning Random message',
+            'warning Random messages',
             'critical Uncaught Exception!'
         );
         $this->assertEquals($expected, $this->getLogs());

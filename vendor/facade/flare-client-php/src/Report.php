@@ -262,7 +262,7 @@ class Report
             'language_version' => $this->languageVersion ?? phpversion(),
             'exception_class' => $this->exceptionClass,
             'seen_at' => $this->getCurrentTime(),
-            'message' => $this->message,
+            'messages' => $this->message,
             'glows' => $this->glows,
             'solutions' => $this->solutions,
             'stacktrace' => $this->stacktrace->toArray(),

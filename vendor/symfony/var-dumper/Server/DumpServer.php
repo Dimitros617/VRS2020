@@ -58,10 +58,10 @@ class DumpServer
 
             $payload = @unserialize(base64_decode($message), ['allowed_classes' => [Data::class, Stub::class]]);
 
-            // Impossible to decode the message, give up.
+            // Impossible to decode the messages, give up.
             if (false === $payload) {
                 if ($this->logger) {
-                    $this->logger->warning('Unable to decode a message from {clientId} client.', ['clientId' => $clientId]);
+                    $this->logger->warning('Unable to decode a messages from {clientId} client.', ['clientId' => $clientId]);
                 }
 
                 continue;

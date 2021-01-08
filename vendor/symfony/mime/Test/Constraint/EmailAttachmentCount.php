@@ -42,7 +42,7 @@ final class EmailAttachmentCount extends Constraint
     protected function matches($message): bool
     {
         if (RawMessage::class === \get_class($message) || Message::class === \get_class($message)) {
-            throw new \LogicException('Unable to test a message attachment on a RawMessage or Message instance.');
+            throw new \LogicException('Unable to test a messages attachment on a RawMessage or Message instance.');
         }
 
         return $this->expectedValue === \count($message->getAttachments());

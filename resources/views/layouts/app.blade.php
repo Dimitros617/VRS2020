@@ -19,6 +19,7 @@
     <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
     <script src="{{ URL::asset('css/bootstrap/js/bootstrap.bundle.js') }}"></script>
     <script src="{{ URL::asset('js/main.js') }}"></script>
+    <script src="{{ URL::asset('js/messages.js') }}"></script>
 
 
     <!-- Styles -->

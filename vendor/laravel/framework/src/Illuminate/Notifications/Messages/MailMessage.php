@@ -17,7 +17,7 @@ class MailMessage extends SimpleMessage implements Renderable
     public $view;
 
     /**
-     * The view data for the message.
+     * The view data for the messages.
      *
      * @var array
      */
@@ -38,63 +38,63 @@ class MailMessage extends SimpleMessage implements Renderable
     public $theme;
 
     /**
-     * The "from" information for the message.
+     * The "from" information for the messages.
      *
      * @var array
      */
     public $from = [];
 
     /**
-     * The "reply to" information for the message.
+     * The "reply to" information for the messages.
      *
      * @var array
      */
     public $replyTo = [];
 
     /**
-     * The "cc" information for the message.
+     * The "cc" information for the messages.
      *
      * @var array
      */
     public $cc = [];
 
     /**
-     * The "bcc" information for the message.
+     * The "bcc" information for the messages.
      *
      * @var array
      */
     public $bcc = [];
 
     /**
-     * The attachments for the message.
+     * The attachments for the messages.
      *
      * @var array
      */
     public $attachments = [];
 
     /**
-     * The raw attachments for the message.
+     * The raw attachments for the messages.
      *
      * @var array
      */
     public $rawAttachments = [];
 
     /**
-     * Priority level of the message.
+     * Priority level of the messages.
      *
      * @var int
      */
     public $priority;
 
     /**
-     * The callbacks for the message.
+     * The callbacks for the messages.
      *
      * @var array
      */
     public $callbacks = [];
 
     /**
-     * Set the view for the mail message.
+     * Set the view for the mail messages.
      *
      * @param  array|string  $view
      * @param  array  $data
@@ -154,7 +154,7 @@ class MailMessage extends SimpleMessage implements Renderable
     }
 
     /**
-     * Set the from address for the mail message.
+     * Set the from address for the mail messages.
      *
      * @param  string  $address
      * @param  string|null  $name
@@ -168,7 +168,7 @@ class MailMessage extends SimpleMessage implements Renderable
     }
 
     /**
-     * Set the "reply to" address of the message.
+     * Set the "reply to" address of the messages.
      *
      * @param  array|string  $address
      * @param  string|null  $name
@@ -186,7 +186,7 @@ class MailMessage extends SimpleMessage implements Renderable
     }
 
     /**
-     * Set the cc address for the mail message.
+     * Set the cc address for the mail messages.
      *
      * @param  array|string  $address
      * @param  string|null  $name
@@ -204,7 +204,7 @@ class MailMessage extends SimpleMessage implements Renderable
     }
 
     /**
-     * Set the bcc address for the mail message.
+     * Set the bcc address for the mail messages.
      *
      * @param  array|string  $address
      * @param  string|null  $name
@@ -222,7 +222,7 @@ class MailMessage extends SimpleMessage implements Renderable
     }
 
     /**
-     * Attach a file to the message.
+     * Attach a file to the messages.
      *
      * @param  string  $file
      * @param  array  $options
@@ -251,7 +251,7 @@ class MailMessage extends SimpleMessage implements Renderable
     }
 
     /**
-     * Set the priority of this message.
+     * Set the priority of this messages.
      *
      * The value is an integer where 1 is the highest priority and 5 is the lowest.
      *
@@ -266,7 +266,7 @@ class MailMessage extends SimpleMessage implements Renderable
     }
 
     /**
-     * Get the data array for the mail message.
+     * Get the data array for the mail messages.
      *
      * @return array
      */
@@ -300,7 +300,7 @@ class MailMessage extends SimpleMessage implements Renderable
     }
 
     /**
-     * Render the mail notification message into an HTML string.
+     * Render the mail notification messages into an HTML string.
      *
      * @return string
      */
@@ -319,7 +319,7 @@ class MailMessage extends SimpleMessage implements Renderable
     }
 
     /**
-     * Register a callback to be called with the Swift message instance.
+     * Register a callback to be called with the Swift messages instance.
      *
      * @param  callable  $callback
      * @return $this
@@ -332,7 +332,7 @@ class MailMessage extends SimpleMessage implements Renderable
     }
 
     /**
-     * Apply the callback's message changes if the given "value" is true.
+     * Apply the callback's messages changes if the given "value" is true.
      *
      * @param  mixed  $value
      * @param  callable  $callback
@@ -351,7 +351,7 @@ class MailMessage extends SimpleMessage implements Renderable
     }
 
     /**
-     * Apply the callback's message changes if the given "value" is false.
+     * Apply the callback's messages changes if the given "value" is false.
      *
      * @param  mixed  $value
      * @param  callable  $callback

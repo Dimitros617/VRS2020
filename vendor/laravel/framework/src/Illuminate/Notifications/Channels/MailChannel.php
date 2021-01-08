@@ -67,7 +67,7 @@ class MailChannel
     }
 
     /**
-     * Get the mailer Closure for the message.
+     * Get the mailer Closure for the messages.
      *
      * @param  mixed  $notifiable
      * @param  \Illuminate\Notifications\Notification  $notification
@@ -122,7 +122,7 @@ class MailChannel
     }
 
     /**
-     * Build the mail message.
+     * Build the mail messages.
      *
      * @param  \Illuminate\Mail\Message  $mailMessage
      * @param  mixed  $notifiable
@@ -148,7 +148,7 @@ class MailChannel
     }
 
     /**
-     * Address the mail message.
+     * Address the mail messages.
      *
      * @param  \Illuminate\Mail\Message  $mailMessage
      * @param  mixed  $notifiable
@@ -176,7 +176,7 @@ class MailChannel
     }
 
     /**
-     * Add the "from" and "reply to" addresses to the message.
+     * Add the "from" and "reply to" addresses to the messages.
      *
      * @param  \Illuminate\Mail\Message  $mailMessage
      * @param  \Illuminate\Notifications\Messages\MailMessage  $message
@@ -196,7 +196,7 @@ class MailChannel
     }
 
     /**
-     * Get the recipients of the given message.
+     * Get the recipients of the given messages.
      *
      * @param  mixed  $notifiable
      * @param  \Illuminate\Notifications\Notification  $notification
@@ -217,7 +217,7 @@ class MailChannel
     }
 
     /**
-     * Add the attachments to the message.
+     * Add the attachments to the messages.
      *
      * @param  \Illuminate\Mail\Message  $mailMessage
      * @param  \Illuminate\Notifications\Messages\MailMessage  $message
@@ -235,7 +235,7 @@ class MailChannel
     }
 
     /**
-     * Run the callbacks for the message.
+     * Run the callbacks for the messages.
      *
      * @param  \Illuminate\Mail\Message  $mailMessage
      * @param  \Illuminate\Notifications\Messages\MailMessage  $message

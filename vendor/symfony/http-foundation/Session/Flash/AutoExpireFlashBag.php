@@ -12,7 +12,7 @@
 namespace Symfony\Component\HttpFoundation\Session\Flash;
 
 /**
- * AutoExpireFlashBag flash message container.
+ * AutoExpireFlashBag flash messages container.
  *
  * @author Drak <drak@zikula.org>
  */

@@ -23,7 +23,7 @@ class ResetPassword extends Notification
     public static $createUrlCallback;
 
     /**
-     * The callback that should be used to build the mail message.
+     * The callback that should be used to build the mail messages.
      *
      * @var \Closure|null
      */
@@ -76,7 +76,7 @@ class ResetPassword extends Notification
     }
 
     /**
-     * Get the reset password notification mail message for the given URL.
+     * Get the reset password notification mail messages for the given URL.
      *
      * @param  string  $url
      * @return \Illuminate\Notifications\Messages\MailMessage
@@ -103,7 +103,7 @@ class ResetPassword extends Notification
     }
 
     /**
-     * Set a callback that should be used when building the notification mail message.
+     * Set a callback that should be used when building the notification mail messages.
      *
      * @param  \Closure  $callback
      * @return void

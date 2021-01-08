@@ -16,7 +16,7 @@ class BroadcastMessage
     public $data;
 
     /**
-     * Create a new message instance.
+     * Create a new messages instance.
      *
      * @param  array  $data
      * @return void
@@ -27,7 +27,7 @@ class BroadcastMessage
     }
 
     /**
-     * Set the message data.
+     * Set the messages data.
      *
      * @param  array  $data
      * @return $this

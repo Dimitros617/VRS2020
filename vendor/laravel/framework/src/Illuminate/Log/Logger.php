@@ -40,7 +40,7 @@ class Logger implements LoggerInterface
     }
 
     /**
-     * Log an emergency message to the logs.
+     * Log an emergency messages to the logs.
      *
      * @param  string  $message
      * @param  array  $context
@@ -52,7 +52,7 @@ class Logger implements LoggerInterface
     }
 
     /**
-     * Log an alert message to the logs.
+     * Log an alert messages to the logs.
      *
      * @param  string  $message
      * @param  array  $context
@@ -64,7 +64,7 @@ class Logger implements LoggerInterface
     }
 
     /**
-     * Log a critical message to the logs.
+     * Log a critical messages to the logs.
      *
      * @param  string  $message
      * @param  array  $context
@@ -76,7 +76,7 @@ class Logger implements LoggerInterface
     }
 
     /**
-     * Log an error message to the logs.
+     * Log an error messages to the logs.
      *
      * @param  string  $message
      * @param  array  $context
@@ -88,7 +88,7 @@ class Logger implements LoggerInterface
     }
 
     /**
-     * Log a warning message to the logs.
+     * Log a warning messages to the logs.
      *
      * @param  string  $message
      * @param  array  $context
@@ -112,7 +112,7 @@ class Logger implements LoggerInterface
     }
 
     /**
-     * Log an informational message to the logs.
+     * Log an informational messages to the logs.
      *
      * @param  string  $message
      * @param  array  $context
@@ -124,7 +124,7 @@ class Logger implements LoggerInterface
     }
 
     /**
-     * Log a debug message to the logs.
+     * Log a debug messages to the logs.
      *
      * @param  string  $message
      * @param  array  $context
@@ -136,7 +136,7 @@ class Logger implements LoggerInterface
     }
 
     /**
-     * Log a message to the logs.
+     * Log a messages to the logs.
      *
      * @param  string  $level
      * @param  string  $message
@@ -162,7 +162,7 @@ class Logger implements LoggerInterface
     }
 
     /**
-     * Write a message to the log.
+     * Write a messages to the log.
      *
      * @param  string  $level
      * @param  string  $message

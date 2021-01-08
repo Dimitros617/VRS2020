@@ -53,7 +53,7 @@ class RequestException extends TransferException implements RequestExceptionInte
     }
 
     /**
-     * Factory method to create a new exception with a normalized error message
+     * Factory method to create a new exception with a normalized error messages
      *
      * @param RequestInterface             $request        Request sent
      * @param ResponseInterface            $response       Response received

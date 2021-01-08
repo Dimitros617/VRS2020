@@ -95,9 +95,9 @@ class Application extends BaseApplication
             register_shutdown_function(function () {
                 $lastError = error_get_last();
 
-                if ($lastError && $lastError['message'] &&
-                   (strpos($lastError['message'], 'Allowed memory') !== false /*Zend PHP out of memory error*/ ||
-                    strpos($lastError['message'], 'exceeded memory') !== false /*HHVM out of memory errors*/)) {
+                if ($lastError && $lastError['messages'] &&
+                   (strpos($lastError['messages'], 'Allowed memory') !== false /*Zend PHP out of memory error*/ ||
+                    strpos($lastError['messages'], 'exceeded memory') !== false /*HHVM out of memory errors*/)) {
                     echo "\n". 'Check https://getcomposer.org/doc/articles/troubleshooting.md#memory-limit-errors for more info on how to handle out of memory errors.';
                 }
             });

@@ -63,7 +63,7 @@ class ZendMonitorHandler extends AbstractProcessingHandler
     {
         $this->writeZendMonitorCustomEvent(
             Logger::getLevelName($record['level']),
-            $record['message'],
+            $record['messages'],
             $record['formatted'],
             $this->levelMap[$record['level']]
         );

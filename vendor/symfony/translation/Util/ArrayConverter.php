@@ -12,7 +12,7 @@
 namespace Symfony\Component\Translation\Util;
 
 /**
- * ArrayConverter generates tree like structure from a message catalogue.
+ * ArrayConverter generates tree like structure from a messages catalogue.
  * e.g. this
  *   'foo.bar1' => 'test1',
  *   'foo.bar2' => 'test2'

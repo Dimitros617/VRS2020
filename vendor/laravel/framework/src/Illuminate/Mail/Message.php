@@ -21,14 +21,14 @@ class Message
     protected $swift;
 
     /**
-     * CIDs of files embedded in the message.
+     * CIDs of files embedded in the messages.
      *
      * @var array
      */
     protected $embeddedFiles = [];
 
     /**
-     * Create a new message instance.
+     * Create a new messages instance.
      *
      * @param  \Swift_Message  $swift
      * @return void
@@ -39,7 +39,7 @@ class Message
     }
 
     /**
-     * Add a "from" address to the message.
+     * Add a "from" address to the messages.
      *
      * @param  string|array  $address
      * @param  string|null  $name
@@ -53,7 +53,7 @@ class Message
     }
 
     /**
-     * Set the "sender" of the message.
+     * Set the "sender" of the messages.
      *
      * @param  string|array  $address
      * @param  string|null  $name
@@ -67,7 +67,7 @@ class Message
     }
 
     /**
-     * Set the "return path" of the message.
+     * Set the "return path" of the messages.
      *
      * @param  string  $address
      * @return $this
@@ -80,7 +80,7 @@ class Message
     }
 
     /**
-     * Add a recipient to the message.
+     * Add a recipient to the messages.
      *
      * @param  string|array  $address
      * @param  string|null  $name
@@ -99,7 +99,7 @@ class Message
     }
 
     /**
-     * Add a carbon copy to the message.
+     * Add a carbon copy to the messages.
      *
      * @param  string|array  $address
      * @param  string|null  $name
@@ -118,7 +118,7 @@ class Message
     }
 
     /**
-     * Add a blind carbon copy to the message.
+     * Add a blind carbon copy to the messages.
      *
      * @param  string|array  $address
      * @param  string|null  $name
@@ -137,7 +137,7 @@ class Message
     }
 
     /**
-     * Add a reply to address to the message.
+     * Add a reply to address to the messages.
      *
      * @param  string|array  $address
      * @param  string|null  $name
@@ -149,7 +149,7 @@ class Message
     }
 
     /**
-     * Add a recipient to the message.
+     * Add a recipient to the messages.
      *
      * @param  string|array  $address
      * @param  string  $name
@@ -168,7 +168,7 @@ class Message
     }
 
     /**
-     * Set the subject of the message.
+     * Set the subject of the messages.
      *
      * @param  string  $subject
      * @return $this
@@ -181,7 +181,7 @@ class Message
     }
 
     /**
-     * Set the message priority level.
+     * Set the messages priority level.
      *
      * @param  int  $level
      * @return $this
@@ -194,7 +194,7 @@ class Message
     }
 
     /**
-     * Attach a file to the message.
+     * Attach a file to the messages.
      *
      * @param  string  $file
      * @param  array  $options
@@ -246,7 +246,7 @@ class Message
     }
 
     /**
-     * Embed a file in the message and get the CID.
+     * Embed a file in the messages and get the CID.
      *
      * @param  string  $file
      * @return string
@@ -263,7 +263,7 @@ class Message
     }
 
     /**
-     * Embed in-memory data in the message and get the CID.
+     * Embed in-memory data in the messages and get the CID.
      *
      * @param  string  $data
      * @param  string  $name
@@ -286,7 +286,7 @@ class Message
      */
     protected function prepAttachment($attachment, $options = [])
     {
-        // First we will check for a MIME type on the message, which instructs the
+        // First we will check for a MIME type on the messages, which instructs the
         // mail client on what type of attachment the file is so that it may be
         // downloaded correctly by the user. The MIME option is not required.
         if (isset($options['mime'])) {

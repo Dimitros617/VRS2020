@@ -1190,7 +1190,7 @@ use Guzzle\Http\Plugin\LogPlugin;
 /** @var \Guzzle\Http\Client */
 $client;
 
-// $verbosity is an integer indicating desired message verbosity level
+// $verbosity is an integer indicating desired messages verbosity level
 $client->addSubscriber(new LogPlugin(new ClosureLogAdapter(function($m) { echo $m; }, $verbosity = LogPlugin::LOG_VERBOSE);
 ```
 
@@ -1204,7 +1204,7 @@ use Guzzle\Plugin\Log\LogPlugin;
 /** @var \Guzzle\Http\Client */
 $client;
 
-// $format is a string indicating desired message format -- @see MessageFormatter
+// $format is a string indicating desired messages format -- @see MessageFormatter
 $client->addSubscriber(new LogPlugin(new ClosureLogAdapter(function($m) { echo $m; }, $format = MessageFormatter::DEBUG_FORMAT);
 ```
 

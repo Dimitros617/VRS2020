@@ -1,4 +1,4 @@
-@component('mail::message')
+@component('mail::messages')
 {{-- Greeting --}}
 @if (! empty($greeting))
 # {{ $greeting }}

@@ -23,7 +23,7 @@ use Monolog\Formatter\LineFormatter;
 class NativeMailerHandler extends MailHandler
 {
     /**
-     * The email addresses to which the message will be sent
+     * The email addresses to which the messages will be sent
      * @var array
      */
     protected $to;
@@ -35,31 +35,31 @@ class NativeMailerHandler extends MailHandler
     protected $subject;
 
     /**
-     * Optional headers for the message
+     * Optional headers for the messages
      * @var array
      */
     protected $headers = [];
 
     /**
-     * Optional parameters for the message
+     * Optional parameters for the messages
      * @var array
      */
     protected $parameters = [];
 
     /**
-     * The wordwrap length for the message
+     * The wordwrap length for the messages
      * @var int
      */
     protected $maxColumnWidth;
 
     /**
-     * The Content-type for the message
+     * The Content-type for the messages
      * @var string|null
      */
     protected $contentType;
 
     /**
-     * The encoding for the message
+     * The encoding for the messages
      * @var string
      */
     protected $encoding = 'utf-8';
@@ -70,7 +70,7 @@ class NativeMailerHandler extends MailHandler
      * @param string       $from           The sender of the mail
      * @param string|int   $level          The minimum logging level at which this handler will be triggered
      * @param bool         $bubble         Whether the messages that are handled can bubble up the stack or not
-     * @param int          $maxColumnWidth The maximum column width that the message lines will have
+     * @param int          $maxColumnWidth The maximum column width that the messages lines will have
      */
     public function __construct($to, string $subject, string $from, $level = Logger::ERROR, bool $bubble = true, int $maxColumnWidth = 70)
     {
@@ -82,7 +82,7 @@ class NativeMailerHandler extends MailHandler
     }
 
     /**
-     * Add headers to the message
+     * Add headers to the messages
      *
      * @param string|array $headers Custom added headers
      */
@@ -99,7 +99,7 @@ class NativeMailerHandler extends MailHandler
     }
 
     /**
-     * Add parameters to the message
+     * Add parameters to the messages
      *
      * @param string|array $parameters Custom added parameters
      */

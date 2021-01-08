@@ -14,7 +14,7 @@ namespace Symfony\Component\Translation\Dumper;
 use Symfony\Component\Translation\MessageCatalogue;
 
 /**
- * PoFileDumper generates a gettext formatted string representation of a message catalogue.
+ * PoFileDumper generates a gettext formatted string representation of a messages catalogue.
  *
  * @author Stealth35
  */
@@ -93,7 +93,7 @@ class PoFileDumper extends FileDumper
         (?P<right>\+?Inf|\-?\d+(\.\d+)?)
         \s*
     (?P<right_delimiter>[\[\]])
-)\s*(?P<message>.*?)$/xs
+)\s*(?P<messages>.*?)$/xs
 EOF;
 
         $standardRules = [];

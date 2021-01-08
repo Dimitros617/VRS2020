@@ -108,7 +108,7 @@ class Local extends AbstractAdapter
             clearstatcache(false, $root);
 
             if ( ! is_dir($root)) {
-                $errorMessage = isset($mkdirError['message']) ? $mkdirError['message'] : '';
+                $errorMessage = isset($mkdirError['messages']) ? $mkdirError['messages'] : '';
                 throw new Exception(sprintf('Impossible to create the root directory "%s". %s', $root, $errorMessage));
             }
         }

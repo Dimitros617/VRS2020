@@ -40,7 +40,7 @@ final class EmailTextBodyContains extends Constraint
     protected function matches($message): bool
     {
         if (RawMessage::class === \get_class($message) || Message::class === \get_class($message)) {
-            throw new \LogicException('Unable to test a message text body on a RawMessage or Message instance.');
+            throw new \LogicException('Unable to test a messages text body on a RawMessage or Message instance.');
         }
 
         return false !== mb_strpos($message->getTextBody(), $this->expectedText);

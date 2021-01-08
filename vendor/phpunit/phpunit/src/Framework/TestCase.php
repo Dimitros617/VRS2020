@@ -623,7 +623,7 @@ abstract class TestCase extends Assert implements Reorderable, SelfDescribing, T
 
     /**
      * Sets up an expectation for an exception to be raised by the code under test.
-     * Information for expected exception class, expected exception message, and
+     * Information for expected exception class, expected exception messages, and
      * expected exception code are retrieved from a given Exception object.
      */
     public function expectExceptionObject(\Exception $exception): void
@@ -1580,7 +1580,7 @@ abstract class TestCase extends Assert implements Reorderable, SelfDescribing, T
 
             throw new AssertionFailedError(
                 sprintf(
-                    'Failed asserting that exception with message "%s" is thrown',
+                    'Failed asserting that exception with messages "%s" is thrown',
                     $this->expectedExceptionMessage
                 )
             );
@@ -1589,7 +1589,7 @@ abstract class TestCase extends Assert implements Reorderable, SelfDescribing, T
 
             throw new AssertionFailedError(
                 sprintf(
-                    'Failed asserting that exception with message matching "%s" is thrown',
+                    'Failed asserting that exception with messages matching "%s" is thrown',
                     $this->expectedExceptionMessageRegExp
                 )
             );

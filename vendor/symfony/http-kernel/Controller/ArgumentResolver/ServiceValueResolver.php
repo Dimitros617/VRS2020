@@ -83,7 +83,7 @@ final class ServiceValueResolver implements ArgumentValueResolverInterface
                 $message = sprintf('Cannot resolve %s: %s', $what, $message);
             }
 
-            $r = new \ReflectionProperty($e, 'message');
+            $r = new \ReflectionProperty($e, 'messages');
             $r->setAccessible(true);
             $r->setValue($e, $message);
 

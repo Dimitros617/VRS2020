@@ -445,7 +445,7 @@ class Client implements ClientInterface, \Psr\Http\Client\ClientInterface
 
         // Merge in conditional headers if they are not present.
         if (isset($options['_conditional'])) {
-            // Build up the changes so it's in a single clone of the message.
+            // Build up the changes so it's in a single clone of the messages.
             $modify = [];
             foreach ($options['_conditional'] as $k => $v) {
                 if (!$request->hasHeader($k)) {
@@ -461,7 +461,7 @@ class Client implements ClientInterface, \Psr\Http\Client\ClientInterface
     }
 
     /**
-     * Return an InvalidArgumentException with pre-set message.
+     * Return an InvalidArgumentException with pre-set messages.
      */
     private function invalidBody(): InvalidArgumentException
     {

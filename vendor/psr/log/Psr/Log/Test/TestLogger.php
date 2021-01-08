@@ -27,32 +27,32 @@ use Psr\Log\AbstractLogger;
  * @method bool hasInfoRecords()
  * @method bool hasDebugRecords()
  *
- * @method bool hasEmergencyThatContains($message)
- * @method bool hasAlertThatContains($message)
- * @method bool hasCriticalThatContains($message)
- * @method bool hasErrorThatContains($message)
- * @method bool hasWarningThatContains($message)
- * @method bool hasNoticeThatContains($message)
- * @method bool hasInfoThatContains($message)
- * @method bool hasDebugThatContains($message)
+ * @method bool hasEmergencyThatContains($messages)
+ * @method bool hasAlertThatContains($messages)
+ * @method bool hasCriticalThatContains($messages)
+ * @method bool hasErrorThatContains($messages)
+ * @method bool hasWarningThatContains($messages)
+ * @method bool hasNoticeThatContains($messages)
+ * @method bool hasInfoThatContains($messages)
+ * @method bool hasDebugThatContains($messages)
  *
- * @method bool hasEmergencyThatMatches($message)
- * @method bool hasAlertThatMatches($message)
- * @method bool hasCriticalThatMatches($message)
- * @method bool hasErrorThatMatches($message)
- * @method bool hasWarningThatMatches($message)
- * @method bool hasNoticeThatMatches($message)
- * @method bool hasInfoThatMatches($message)
- * @method bool hasDebugThatMatches($message)
+ * @method bool hasEmergencyThatMatches($messages)
+ * @method bool hasAlertThatMatches($messages)
+ * @method bool hasCriticalThatMatches($messages)
+ * @method bool hasErrorThatMatches($messages)
+ * @method bool hasWarningThatMatches($messages)
+ * @method bool hasNoticeThatMatches($messages)
+ * @method bool hasInfoThatMatches($messages)
+ * @method bool hasDebugThatMatches($messages)
  *
- * @method bool hasEmergencyThatPasses($message)
- * @method bool hasAlertThatPasses($message)
- * @method bool hasCriticalThatPasses($message)
- * @method bool hasErrorThatPasses($message)
- * @method bool hasWarningThatPasses($message)
- * @method bool hasNoticeThatPasses($message)
- * @method bool hasInfoThatPasses($message)
- * @method bool hasDebugThatPasses($message)
+ * @method bool hasEmergencyThatPasses($messages)
+ * @method bool hasAlertThatPasses($messages)
+ * @method bool hasCriticalThatPasses($messages)
+ * @method bool hasErrorThatPasses($messages)
+ * @method bool hasWarningThatPasses($messages)
+ * @method bool hasNoticeThatPasses($messages)
+ * @method bool hasInfoThatPasses($messages)
+ * @method bool hasDebugThatPasses($messages)
  */
 class TestLogger extends AbstractLogger
 {
@@ -70,7 +70,7 @@ class TestLogger extends AbstractLogger
     {
         $record = [
             'level' => $level,
-            'message' => $message,
+            'messages' => $message,
             'context' => $context,
         ];
 
@@ -86,10 +86,10 @@ class TestLogger extends AbstractLogger
     public function hasRecord($record, $level)
     {
         if (is_string($record)) {
-            $record = ['message' => $record];
+            $record = ['messages' => $record];
         }
         return $this->hasRecordThatPasses(function ($rec) use ($record) {
-            if ($rec['message'] !== $record['message']) {
+            if ($rec['messages'] !== $record['messages']) {
                 return false;
             }
             if (isset($record['context']) && $rec['context'] !== $record['context']) {
@@ -102,14 +102,14 @@ class TestLogger extends AbstractLogger
     public function hasRecordThatContains($message, $level)
     {
         return $this->hasRecordThatPasses(function ($rec) use ($message) {
-            return strpos($rec['message'], $message) !== false;
+            return strpos($rec['messages'], $message) !== false;
         }, $level);
     }
 
     public function hasRecordThatMatches($regex, $level)
     {
         return $this->hasRecordThatPasses(function ($rec) use ($regex) {
-            return preg_match($regex, $rec['message']) > 0;
+            return preg_match($regex, $rec['messages']) > 0;
         }, $level);
     }
 

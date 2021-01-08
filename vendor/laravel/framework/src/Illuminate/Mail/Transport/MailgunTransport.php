@@ -85,7 +85,7 @@ class MailgunTransport extends Transport
     }
 
     /**
-     * Get the HTTP payload for sending the Mailgun message.
+     * Get the HTTP payload for sending the Mailgun messages.
      *
      * @param  \Swift_Mime_SimpleMessage  $message
      * @param  string  $to
@@ -104,9 +104,9 @@ class MailgunTransport extends Transport
                     'contents' => $to,
                 ],
                 [
-                    'name' => 'message',
+                    'name' => 'messages',
                     'contents' => $message->toString(),
-                    'filename' => 'message.mime',
+                    'filename' => 'messages.mime',
                 ],
             ],
         ];
@@ -126,7 +126,7 @@ class MailgunTransport extends Transport
     }
 
     /**
-     * Get all of the contacts for the message.
+     * Get all of the contacts for the messages.
      *
      * @param  \Swift_Mime_SimpleMessage  $message
      * @return array
@@ -139,7 +139,7 @@ class MailgunTransport extends Transport
     }
 
     /**
-     * Get the message ID from the response.
+     * Get the messages ID from the response.
      *
      * @param  \Psr\Http\Message\ResponseInterface  $response
      * @return string

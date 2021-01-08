@@ -65,9 +65,9 @@ class ExceptionDataCollector extends DataCollector
     }
 
     /**
-     * Gets the exception message.
+     * Gets the exception messages.
      *
-     * @return string The exception message
+     * @return string The exception messages
      */
     public function getMessage()
     {

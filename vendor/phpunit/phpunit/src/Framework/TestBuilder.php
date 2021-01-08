@@ -218,7 +218,7 @@ final class TestBuilder
         $message = $t->getMessage();
 
         if (empty(trim($message))) {
-            $message = '<no message>';
+            $message = '<no messages>';
         }
 
         if ($t instanceof InvalidDataSetException) {

@@ -158,7 +158,7 @@ final class Style
     }
 
     /**
-     * Displays a warning message.
+     * Displays a warning messages.
      */
     public function writeWarning(string $message): void
     {

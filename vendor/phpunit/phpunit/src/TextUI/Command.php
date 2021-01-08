@@ -585,7 +585,7 @@ class Command
     }
 
     /**
-     * Show the help message.
+     * Show the help messages.
      */
     protected function showHelp(): void
     {

@@ -150,7 +150,7 @@ class BeanstalkdQueue extends Queue implements QueueContract
     }
 
     /**
-     * Delete a message from the Beanstalk queue.
+     * Delete a messages from the Beanstalk queue.
      *
      * @param  string  $queue
      * @param  string|int  $id

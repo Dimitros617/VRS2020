@@ -20,7 +20,7 @@ use Psr\Http\Message\UploadedFileInterface;
  *
  * Requests are considered immutable; all methods that might change state are
  * implemented such that they retain the internal state of the current
- * message and return a new instance that contains the changed state.
+ * messages and return a new instance that contains the changed state.
  */
 class ServerRequest extends Request implements ServerRequestInterface
 {

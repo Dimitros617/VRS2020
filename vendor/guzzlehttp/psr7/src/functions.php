@@ -8,7 +8,7 @@ use Psr\Http\Message\StreamInterface;
 use Psr\Http\Message\UriInterface;
 
 /**
- * Returns the string representation of an HTTP message.
+ * Returns the string representation of an HTTP messages.
  *
  * @param MessageInterface $message Message to convert to a string.
  *
@@ -120,7 +120,7 @@ function normalize_header($header)
  * Clone and modify a request with the given changes.
  *
  * This method is useful for reducing the number of clones needed to mutate a
- * message.
+ * messages.
  *
  * The changes can be one of:
  * - method: (string) Changes the HTTP method.
@@ -144,9 +144,9 @@ function modify_request(RequestInterface $request, array $changes)
 }
 
 /**
- * Attempts to rewind a message body and throws an exception on failure.
+ * Attempts to rewind a messages body and throws an exception on failure.
  *
- * The body of the message will only be rewound if a call to `tell()` returns a
+ * The body of the messages will only be rewound if a call to `tell()` returns a
  * value other than `0`.
  *
  * @param MessageInterface $message Message to rewind
@@ -253,9 +253,9 @@ function readline(StreamInterface $stream, $maxLength = null)
 }
 
 /**
- * Parses a request message string into a request object.
+ * Parses a request messages string into a request object.
  *
- * @param string $message Request message string.
+ * @param string $message Request messages string.
  *
  * @return Request
  *
@@ -267,9 +267,9 @@ function parse_request($message)
 }
 
 /**
- * Parses a response message string into a response object.
+ * Parses a response messages string into a response object.
  *
- * @param string $message Response message string.
+ * @param string $message Response messages string.
  *
  * @return Response
  *
@@ -350,11 +350,11 @@ function mimetype_from_extension($extension)
 }
 
 /**
- * Parses an HTTP message into an associative array.
+ * Parses an HTTP messages into an associative array.
  *
  * The array contains the "start-line" key containing the start line of
- * the message, "headers" key containing an associative array of header
- * array values, and a "body" key containing the body of the message.
+ * the messages, "headers" key containing an associative array of header
+ * array values, and a "body" key containing the body of the messages.
  *
  * @param string $message HTTP request or response to parse.
  *
@@ -369,7 +369,7 @@ function _parse_message($message)
 }
 
 /**
- * Constructs a URI for an HTTP request message.
+ * Constructs a URI for an HTTP request messages.
  *
  * @param string $path    Path from the start-line
  * @param array  $headers Array of headers (each value an array).
@@ -385,11 +385,11 @@ function _parse_request_uri($path, array $headers)
 }
 
 /**
- * Get a short summary of the message body.
+ * Get a short summary of the messages body.
  *
  * Will return `null` if the response is not printable.
  *
- * @param MessageInterface $message    The message to get the body summary
+ * @param MessageInterface $message    The messages to get the body summary
  * @param int              $truncateAt The maximum allowed size of the summary
  *
  * @return string|null

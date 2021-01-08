@@ -17,7 +17,7 @@ namespace Symfony\Component\HttpKernel\Exception;
 class UnsupportedMediaTypeHttpException extends HttpException
 {
     /**
-     * @param string     $message  The internal exception message
+     * @param string     $message  The internal exception messages
      * @param \Throwable $previous The previous exception
      * @param int        $code     The internal exception code
      */

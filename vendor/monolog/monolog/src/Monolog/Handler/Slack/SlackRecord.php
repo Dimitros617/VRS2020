@@ -53,7 +53,7 @@ class SlackRecord
     private $userIcon;
 
     /**
-     * Whether the message should be added to Slack as attachment (plain text otherwise)
+     * Whether the messages should be added to Slack as attachment (plain text otherwise)
      * @var bool
      */
     private $useAttachment;
@@ -71,7 +71,7 @@ class SlackRecord
     private $includeContextAndExtra;
 
     /**
-     * Dot separated list of fields to exclude from slack message. E.g. ['context.field1', 'extra.field2']
+     * Dot separated list of fields to exclude from slack messages. E.g. ['context.field1', 'extra.field2']
      * @var array
      */
     private $excludeFields;
@@ -131,7 +131,7 @@ class SlackRecord
         if ($this->formatter && !$this->useAttachment) {
             $message = $this->formatter->format($record);
         } else {
-            $message = $record['message'];
+            $message = $record['messages'];
         }
 
         if ($this->useAttachment) {
@@ -189,7 +189,7 @@ class SlackRecord
     }
 
     /**
-     * Returns a Slack message attachment color associated with
+     * Returns a Slack messages attachment color associated with
      * provided level.
      */
     public function getAttachmentColor(int $level): string

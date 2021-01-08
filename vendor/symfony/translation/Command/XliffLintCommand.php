@@ -133,7 +133,7 @@ EOF
                 $errors[] = [
                     'line' => -1,
                     'column' => -1,
-                    'message' => sprintf('There is a mismatch between the language included in the file name ("%s") and the "%s" value used in the "target-language" attribute of the file.', basename($file), $targetLanguage),
+                    'messages' => sprintf('There is a mismatch between the language included in the file name ("%s") and the "%s" value used in the "target-language" attribute of the file.', basename($file), $targetLanguage),
                 ];
             }
         }
@@ -142,7 +142,7 @@ EOF
             $errors[] = [
                 'line' => $xmlError['line'],
                 'column' => $xmlError['column'],
-                'message' => $xmlError['message'],
+                'messages' => $xmlError['messages'],
             ];
         }
 
@@ -177,7 +177,7 @@ EOF
                 $io->text('<error> ERROR </error>'.($info['file'] ? sprintf(' in %s', $info['file']) : ''));
                 $io->listing(array_map(function ($error) {
                     // general document errors have a '-1' line number
-                    return -1 === $error['line'] ? $error['message'] : sprintf('Line %d, Column %d: %s', $error['line'], $error['column'], $error['message']);
+                    return -1 === $error['line'] ? $error['messages'] : sprintf('Line %d, Column %d: %s', $error['line'], $error['column'], $error['messages']);
                 }, $info['messages']));
             }
         }
