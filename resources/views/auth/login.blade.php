@@ -20,8 +20,13 @@
 
                 <div>
                 <!-- <x-jet-label for="email" value="{{ __('E-mail woe') }}" /> -->
-                    <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" placeholder="E-mail" :value="old('email')" required autofocus />
+                    <x-jet-input id="email" class="block mt-1 w-full"  name="nick" placeholder="E-mail nebo přezdívka" :value="old('email')"  autofocus />
                 </div>
+
+{{--                <div>--}}
+{{--                <!-- <x-jet-label for="email" value="{{ __('Nick woe') }}" /> -->--}}
+{{--                    <x-jet-input id="nick" class="block mt-1 w-full"  name="nick" placeholder="Nick" :value="old('email')"  autofocus />--}}
+{{--                </div>--}}
 
                 <div class="mt-4">
                 <!-- <x-jet-label for="password" value="{{ __('Passwordíček plz') }}" /> -->

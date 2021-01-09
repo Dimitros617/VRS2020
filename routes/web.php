@@ -44,11 +44,13 @@ Route::get('/newMessages', [MessagesController::class,'countNewMessages']);
 Route::get('/allMessages', [MessagesController::class,'showAllMessages']);
 Route::get('/changeMessagePriority/{id?}', [MessagesController::class,'changeMessagePriority']);
 Route::get('/removeMessage/{id?}', [MessagesController::class,'removeMessage']);
+Route::get('/sendMessage/{nick:nick}/{text?}', [MessagesController::class,'sendMessage']);
 
 //Uživatelé
 Route::post('/users/{id:id}/saveUserData', [ListUsersController::class,'saveUserData']);
 Route::get('/users/usersSort/{sort?}', [ListUsersController::class,'usersSort']);
 Route::get('/users/usersFind/{find?}', [ListUsersController::class,'usersFind']);
+Route::get('/getUserNames', [ListUsersController::class,'getUserNames']);
 
 //Categorie
 Route::post('/saveCategoryData', [CategoryController::class,'saveCategory']);

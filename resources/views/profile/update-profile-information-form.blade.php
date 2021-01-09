@@ -66,6 +66,13 @@
             <x-jet-input-error for="surname" class="mt-2" />
         </div>
 
+        <!-- Přezdívka -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="nick" value="{{ __('Přezdívka') }}" />
+            <x-jet-input id="nick" type="text" class="mt-1 block w-full" wire:model.defer="state.nick" autocomplete="nickname" />
+            <x-jet-input-error for="nick" class="mt-2" />
+        </div>
+
         <!-- Telefon -->
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="phone" value="{{ __('Telefon') }}" />

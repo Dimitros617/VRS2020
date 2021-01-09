@@ -70,4 +70,12 @@ class ListUsersController extends Controller
         return $data;
 
     }
+
+    public function getUserNames(){
+
+        $data = DB::table('users')->select('nick')->get();
+
+        return $data;
+    }
+
 }

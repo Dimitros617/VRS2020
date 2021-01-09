@@ -14,10 +14,17 @@
     <div class=" messageBackground bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-6xl mx-auto sm:px-6 lg:px-8" id="newMessages" hidden>
         <div class="d-flex justify-content-between messagesHeaderBox">
             <div class="display-4 p-4 text-white"> Nová zpráva: </div>
-            <div class="spinner-border  text-vrs-yellow"  style="width: 3rem; height: 3rem; margin: auto;" id="messageLoading" role="status" hidden></div>
+            <div class="spinner-border  text-vrs-yellow"  style="width: 3rem; height: 3rem; margin: auto;" id="sendMessageLoading" role="status" hidden></div>
             <div class="newMessageBox"><button type="button" class="btn btn-light" onclick="allMessage()">Moje zprávy</button></div>
         </div>
-        <div id="messagesBox"></div>
+        <div id="messagesBox">
+            <div class="autocomplete" >
+                <input id="userNameTo" type="text" name="myCountry" autocomplete="off" placeholder="Komu:">
+                <textarea id="messageText"></textarea>
+                <button type="button" class="btn btn-success float-end mt-3" onclick="sendMessage(this)">Odeslat</button>
+                <div id="httpRequestMessage" class="float-end mt-4 mr-3" hidden>Odesláno</div>
+            </div>
+        </div>
     </div>
 
 </div>
@@ -65,7 +72,7 @@
                         @else
                             <button
                                 class="flex items-center text-lg font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                                <div>{{ Auth::user()->name . " " . Auth::user()->surname }}</div>
+                                <div>{{ Auth::user()->nick}}</div>
 
                                 <div class="ml-1">
                                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"

@@ -24,6 +24,11 @@
                 </div>
 
                 <div class="mt-4">
+                <!--<x-jet-label for="surname" value="{{ __('Přezdívka') }}" /> -->
+                    <x-jet-input id="nick" class="block mt-1 w-full" type="text" name="nick" placeholder="Přezdívka " :value="old('nick')" required autofocus autocomplete="nickname" />
+                </div>
+
+                <div class="mt-4">
                 <!--<x-jet-label for="phone" value="{{ __('Telefon') }}" />-->
                     <x-jet-input id="phone" class="block mt-1 w-full" type="tel" name="phone" placeholder="Telefon ve formátu +420 111 222 333"  :value="old('phone')" required autofocus autocomplete="phone" />
                 </div>

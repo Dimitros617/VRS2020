@@ -17,10 +17,12 @@ class Createmessages extends Migration
 
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('messages',300)->default('');
+            $table->unsignedBigInteger('from_user_id');
+            $table->string('messages',3000)->default('');
             $table->tinyInteger('priority',)->default('0');
 
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('from_user_id')->references('id')->on('users');
 
         });
     }
