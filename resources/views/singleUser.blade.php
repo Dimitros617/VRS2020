@@ -26,6 +26,7 @@
                     <div class="display-4">
                         <input class="" name="userName" value="{{$user[0] -> userName}}" required>
                         <input class="" name="userSurname" value="{{$user[0] -> userSurname}}" required>
+                        <input class="" name="userNick" value="{{$user[0] -> userNick}}" required>
                     </div>
 
                     <label for="name">Telefon: </label>

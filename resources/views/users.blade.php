@@ -40,10 +40,11 @@
                     </div>
                     <div id="userList">
                     @foreach($users as $user)
-                        <a href="{{url()->current().'/'.$user -> userId}}" class="list-group-item list-group-item-action userElement" userID="{{$user->userId}}">
+                        <div class="list-group-item list-group-item-action userElement" userID="{{$user->userId}}">
                             <div class="display-4">
                                 {{$user -> userSurname}}
-                                {{$user -> userName}}
+                                {{$user -> userName}} -
+                                {{$user -> userNick}}
                             </div>
                             <div>
                                 {{$user -> permitionName}}
@@ -53,7 +54,13 @@
                                 <p>E-mail: {{$user -> userEmail}} </p>
                             </div>
 
-                        </a>
+                            <button type="submit button" class="btn btn-success w-200p ">Poslat zprávu</button>
+                            <a href="{{url()->current().'/'.$user -> userId}}">
+                                <button type="submit button" class="btn btn-warning w-200p ">Upravit uživatele</button>
+                            </a>
+                        </div>
+
+
                     @endforeach
                     </div>
                 </div>
