@@ -6913,6 +6913,10 @@ a.badge-dark:focus, a.badge-dark.focus {
   margin-top: 1.5rem !important;
 }
 
+.mt-4-5 {
+    margin-top: 2.3rem !important;
+}
+
 .mt-5 {
   margin-top: 3rem !important;
 }
@@ -6945,6 +6949,8 @@ a.badge-dark:focus, a.badge-dark.focus {
   margin-right: 3rem !important;
 }
 
+
+
 .me-auto {
   margin-right: auto !important;
 }
@@ -6973,6 +6979,10 @@ a.badge-dark:focus, a.badge-dark.focus {
   margin-bottom: 3rem !important;
 }
 
+.mb-55px{
+    margin-bottom: 55px !important;
+}
+
 .mb-auto {
   margin-bottom: auto !important;
 }
@@ -6999,6 +7009,10 @@ a.badge-dark:focus, a.badge-dark.focus {
 
 .ms-5 {
   margin-left: 3rem !important;
+}
+
+.ms-90 {
+    margin-left: 90% !important;
 }
 
 .ms-auto {
@@ -7864,10 +7878,18 @@ a.badge-dark:focus, a.badge-dark.focus {
   .mt-sm-4 {
     margin-top: 1.5rem !important;
   }
+    .mt-sm-4-5 {
+        margin-top: 2.3rem !important;
+    }
+
 
   .mt-sm-5 {
     margin-top: 3rem !important;
   }
+
+    .mt-sm-70px {
+        margin-top: 70px !important;
+    }
 
   .mt-sm-auto {
     margin-top: auto !important;
@@ -7896,6 +7918,8 @@ a.badge-dark:focus, a.badge-dark.focus {
   .me-sm-5 {
     margin-right: 3rem !important;
   }
+
+
 
   .me-sm-auto {
     margin-right: auto !important;

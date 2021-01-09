@@ -2,26 +2,26 @@
 
 <div id="messageModal" hidden onclick=" closeMessages(this)">
 
-    <div class=" messageBackground bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-6xl mx-auto sm:px-6 lg:px-8" id="allMessages">
+    <div class=" messageBackground bg-white overflow-hidden shadow-xl rounded max-w-6xl mx-auto sm:px-6 lg:px-8" id="allMessages">
         <div class="d-flex justify-content-between messagesHeaderBox">
             <div class="display-4 p-4 text-white"> Zprávy: </div>
             <div class="spinner-border  text-vrs-yellow"  style="width: 3rem; height: 3rem; margin: auto;" id="messageLoading" role="status"></div>
-            <div class="newMessageBox"><button type="button" class="btn btn-light" onclick="newMessage()">Nová zpráva</button></div>
+            <div class="newMessageBox"><button type="button" class="btn btn-light text-20px" onclick="newMessage()">Nová zpráva</button></div>
         </div>
         <div id="messagesBox"></div>
     </div>
 
-    <div class=" messageBackground bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-6xl mx-auto sm:px-6 lg:px-8" id="newMessages" hidden>
+    <div class=" messageBackground bg-white overflow-hidden shadow-xl rounded max-w-6xl mx-auto sm:px-6 lg:px-8" id="newMessages" hidden>
         <div class="d-flex justify-content-between messagesHeaderBox">
             <div class="display-4 p-4 text-white"> Nová zpráva: </div>
             <div class="spinner-border  text-vrs-yellow"  style="width: 3rem; height: 3rem; margin: auto;" id="sendMessageLoading" role="status" hidden></div>
-            <div class="newMessageBox"><button type="button" class="btn btn-light" onclick="allMessage()">Moje zprávy</button></div>
+            <div class="newMessageBox"><button type="button" class="btn btn-light text-20px" onclick="allMessage()">Moje zprávy</button></div>
         </div>
         <div id="messagesBox">
             <div class="autocomplete" >
-                <input id="userNameTo" type="text" name="myCountry" autocomplete="off" placeholder="Přezdívka příjemce:">
-                <textarea id="messageText"></textarea>
-                <button type="button" class="btn btn-success float-end mt-3" onclick="sendMessage(this)">Odeslat</button>
+                <input id="userNameTo" type="text"  autocomplete="off" placeholder="Přezdívka příjemce:">
+                <textarea id="messageText" placeholder="Text zprávy pro příjemce, maximálně 3000 znaků."></textarea>
+                <button type="button" class="btn btn-success float-end mt-3 " onclick="sendMessage(this)">Odeslat</button>
                 <div id="httpRequestMessage" class="float-end mt-4 mr-3" hidden>Odesláno</div>
             </div>
         </div>
@@ -39,13 +39,13 @@
 
 
 <div class="notifDiv">
-        <div class="flex justify-between h-40">
+        <div class="flex justify-between flex-sm-row h-40 flex-column">
             <div class="flex">
 
 
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
-                    <a class="ml-20" style="transform: scale(2);" href="{{ route('dashboard') }}">
+                <div class="w-100 mb-55px flex-shrink-0 flex items-center">
+                    <a class="ml-20 headLogoMobile mt-4-5 mt-sm-5"  href="{{ route('dashboard') }}">
                         <x-jet-application-logo class="block h-9 w-auto"/>
                     </a>
                 </div>
@@ -71,8 +71,8 @@
                             </button>
                         @else
                             <button
-                                class="flex items-center text-lg font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                                <div>{{ Auth::user()->nick}}</div>
+                                class="text-vrs-yellow fw-bolder flex items-center text-lg font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                                <div> {{ Auth::user()->nick}}</div>
 
                                 <div class="ml-1">
                                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
@@ -180,9 +180,9 @@
             <!-- Hamburger -->
 
 
-            <div class="-mr-2 flex items-center sm:hidden">
+            <div class="mobileHeadMenu flex items-center sm:hidden mt-sm-70px " >
                 <button @click="open = ! open"
-                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+                        class="ms-90 me-sm-0 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex"
                               stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -196,7 +196,7 @@
 
     <!-- Notifications -->
     <div class="notification">
-        <a onclick="showMessages()">
+        <a onclick="showMessages(); achievementCount()">
             <img src="{{ URL::asset('img/mail.svg') }}" class="notificationSVG">
             <span class="badge badge-pill badge-danger notificationBadge" id="newMessageCount" onload="countNewMessages(this); setInterval(countNewMessages, 20000,this)" hidden> - </span>
             <div class="spinner-grow spinner-grow-sm text-danger notificationBadge" id="newMessageCountLoading" role="status"></div>
