@@ -52,13 +52,17 @@
                             </div>
 
                             <div class="">
-                                <p>E-mail: {{$user -> userEmail}} </p>
+                                @if(Auth::permition()->new_user == 1)
+                                    <p>E-mail: {{$user -> userEmail}} </p>
+                                @endif
                             </div>
 
-                            <button type="submit button" class="btn btn-success w-200p " onclick="prefixNewMessage('{{$user -> userNick}}')">Poslat zprávu</button>
-                            <a href="{{url()->current().'/'.$user -> userId}}">
-                                <button type="submit button" class="btn btn-warning w-200p ">Upravit uživatele</button>
-                            </a>
+                            <button type="submit button" class="btn btn-success w-200p " onclick="prefixNewMessage('{{$user -> userNick}}') ">Poslat zprávu</button>
+                            @if(Auth::permition()->new_user == 1)
+                                <a href="{{url()->current().'/'.$user -> userId}}">
+                                    <button type="submit button" class="btn btn-warning w-200p ">Upravit uživatele</button>
+                                </a>
+                            @endif
                         </div>
 
 

@@ -47,8 +47,9 @@
                 <br>
                 <input class="btn btn-primary" type="submit" value="Uložit změny">
             </form>
+                            <button type="submit button" class="btn btn-success w-200p " onclick="prefixNewMessage('{{$user[0] -> userNick}}') ">Poslat zprávu</button>
 
-                            <div class="h1"> Moje aktuální výpůjčky :</div>
+                            <div class="h1"> Aktuální výpůjčky :</div>
 
                             @php
                                 $lastCategory = -1;
@@ -104,7 +105,7 @@
                 }elseif ($now >= $start && $now <= $end){
                     echo 'title="Výpůjčka je právě aktivní"';
                 }else{
-                    echo 'title="Již je po termínu, měly by jste položku vrátit"';
+                    echo 'title="Již je po termínu, měli byste položku vrátit."';
                 }
 
             echo ">";
