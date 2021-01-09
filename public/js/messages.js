@@ -23,6 +23,13 @@ function newMessage(){
 
 }
 
+function prefixNewMessage(nick){
+    showMessages();
+    newMessage();
+    document.getElementById("userNameTo").value = nick;
+
+}
+
 function allMessage(){
 
     document.getElementById("newMessages").setAttribute("hidden","");
@@ -332,5 +339,3 @@ function autocomplete(inp, arr) {
         closeAllLists(e.target);
     });
 }
-
-var names = new Array();

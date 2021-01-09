@@ -8,6 +8,7 @@
     </x-slot>
     <script src="/js/userGets.js"></script>
 
+
     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8">
 
         <div class="container">
@@ -54,7 +55,7 @@
                                 <p>E-mail: {{$user -> userEmail}} </p>
                             </div>
 
-                            <button type="submit button" class="btn btn-success w-200p ">Poslat zprávu</button>
+                            <button type="submit button" class="btn btn-success w-200p " onclick="prefixNewMessage('{{$user -> userNick}}')">Poslat zprávu</button>
                             <a href="{{url()->current().'/'.$user -> userId}}">
                                 <button type="submit button" class="btn btn-warning w-200p ">Upravit uživatele</button>
                             </a>
