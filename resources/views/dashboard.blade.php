@@ -42,6 +42,7 @@
                     <ul style="list-style-type:circle">
                         <li>Změnit své osobní údaje v záložce "Nastavení".</li>
                         <li>Pokud jste si již dříve něco půjčil a výpůjčku jste stále nevrátil, jejich seznam najdete v záložce "Moje výpůjčky".</li>
+                        <li>Posílat zprávy SÁM SOBĚ! či jinému uživateli, jehož přezdívku znáte.</li>
                         <li>Odhlásit se.</li>
                     </ul>
 
