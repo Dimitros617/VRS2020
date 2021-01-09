@@ -36,7 +36,7 @@ Route::middleware(['auth:sanctum', 'verified', 'permition:return_verification'])
 Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting'])->get('/categories', [CategoryController::class,'showCategories']);
 Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting'])->get('/categories/{name:name}', [CategoryController::class,'showItem']) ->name('item');
 
-Route::middleware(['auth:sanctum', 'verified', 'permition:new_user'])->get('/users', [ListUsersController::class,'showAllUsers']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/users', [ListUsersController::class,'showAllUsers']);
 Route::middleware(['auth:sanctum', 'verified', 'permition:new_user'])->get('/users/{id:id}', [ListUsersController::class,'showUser']);
 
 //Zprávy

@@ -66,7 +66,7 @@ class ListUsersController extends Controller
     public function usersFind($find){
 
         Log::info('ListUsersController:usersFind');
-
+        // nešlapající dotaz na databázi, aby se dalo hledat i podle permition $data = DB::table('users')->join('permition', 'users.permition', '=', 'permition.id')->select('users.name as userName', 'users.surname as userSurname','users.nick as userNick','permition.name as permitionName')->where('userName', 'like', '%'.$find.'%')->orWhere('userSurname','like','%'.$find.'%')->orWhere('userNick','like','%'.$find.'%')->orWhere('permitionName','like','%'.$find.'%')->get();
         $data = DB::table('users')->where('name', 'like', '%'.$find.'%')->orWhere('surname','like','%'.$find.'%')->orWhere('nick','like','%'.$find.'%')->get();
         return $data;
 

@@ -101,11 +101,10 @@
                         </x-jet-dropdown-link>
 
                         {{--                        Přidané položkdy do menu a pozor musí se upravit 2x i pro mobilní verzi níže--}}
-                        @if(Auth::permition()->new_user == 1)
+
                         <x-jet-dropdown-link href="/users">
                             {{ __('Seznam uživatelů') }}
                         </x-jet-dropdown-link>
-                        @endif
 
                         @if(Auth::permition()->possibility_renting == 1)
                         <x-jet-dropdown-link href="/categories">
@@ -239,12 +238,10 @@
                 </x-jet-responsive-nav-link>
 
                 {{--                Přidané položkdy do menu a pozor musí se upravit 2x i pro mobilní verzi níže--}}
-                @if(Auth::permition()->new_user == 1)
-                <x-jet-responsive-nav-link href="/users" class="text-vrs-yellow">
+
+                <x-jet-responsive-nav-link href="/users">
                     {{ __('Seznam uživatelů') }}
                 </x-jet-responsive-nav-link>
-                @endif
-
 
                 @if(Auth::permition()->possibility_renting == 1)
                 <x-jet-responsive-nav-link href="/categories">
