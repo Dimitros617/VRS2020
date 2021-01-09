@@ -28,6 +28,8 @@ function allMessage(){
     document.getElementById("newMessages").setAttribute("hidden","");
     document.getElementById("allMessages").removeAttribute("hidden");
 
+    document.getElementById("messageModal").click();
+    showMessages();
 }
 
 function countNewMessages(ele)
@@ -105,7 +107,7 @@ function getMessageDiv(user_from, text, priority, id){
     div.setAttribute('id', 'message');
     div.setAttribute('class', 'messPriority' + priority);
     div.classList.add("message");
-    div.setAttribute('title','Smazat správu?');
+    div.setAttribute('title','Smazat zprávu?');
     div.setAttribute('onmouseenter','checkPriority(this)');
 
     let from = document.createElement('h3');
