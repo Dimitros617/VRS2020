@@ -6607,6 +6607,10 @@ a.badge-dark:focus, a.badge-dark.focus {
   flex: 1 1 auto !important;
 }
 
+.flex-flow-column{
+    flex-flow: column;
+}
+
 .flex-row {
   flex-direction: row !important;
 }
@@ -7480,6 +7484,10 @@ a.badge-dark:focus, a.badge-dark.focus {
   border-radius: 0.3rem !important;
 }
 
+.rounded-4 {
+    border-radius: 0.4rem !important;
+}
+
 .rounded-circle {
   border-radius: 50% !important;
 }
@@ -7572,6 +7580,10 @@ a.badge-dark:focus, a.badge-dark.focus {
   .d-sm-none {
     display: none !important;
   }
+
+    .flex-sm-flow-row {
+        flex-flow: row !important;
+    }
 
   .flex-sm-fill {
     flex: 1 1 auto !important;

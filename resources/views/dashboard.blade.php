@@ -7,7 +7,7 @@
 {{--            {{ __('Hlavní strana') }}--}}
 {{--        </h2>--}}
     </x-slot>
-    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8" onload="checkUserAlone()">
+    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8">
     <div class="container">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             {{--  Sekce pro Admin, verifiedUser  --}}

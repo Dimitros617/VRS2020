@@ -79,11 +79,5 @@ class ListUsersController extends Controller
         return $data;
     }
 
-    public function checkUserAlone(){
-
-        $data = DB::table('users')->select('nick')->get();
-
-        return $data;
-    }
 
 }

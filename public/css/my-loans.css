@@ -1,0 +1,74 @@
+.rentFromDiv, .rentToDiv {
+    float: none !important;
+    width: 50% !important;
+
+}
+
+.rentFromDiv {
+    margin-top: 0.6rem !important;
+}
+
+.submitButtonDiv {
+    margin-top: -6.5rem !important;
+
+}
+
+@media (max-width: 760px) {
+
+    .submitButtonDiv {
+        float: none !important;
+        width: 112%;
+        height: 5rem;
+        margin-top: -0.5rem;
+        margin-bottom: -3rem;
+        display: block;
+        margin-left: -1rem;
+    }
+
+    form.addNewCategory {
+        height: 13.5rem !important;
+    }
+
+    .rentFromDiv, .rentToDiv {
+        float: none !important;
+        width: 100% !important;
+        margin: 0 !important;
+        text-align: center !important;
+    }
+
+    .icon {
+        float: none !important;
+        height: 60px;
+        width: 100% !important;
+        text-align: center;
+        display: block;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    .iconSvg {
+        width: 3rem !important;
+        height: 3rem;
+        margin-top: 0px !important;
+        color: #002e40;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .submitButton {
+        margin-bottom: -15rem !important;
+    }
+
+    .submitButtonDiv {
+
+        box-shadow: none !important;
+    }
+}
+
+@media (max-width: 576px) {
+
+    form.addNewCategory {
+        height: 12.5rem !important;
+    }
+
+}

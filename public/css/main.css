@@ -128,7 +128,7 @@ svg.h-6.w-6 {
 
     .notificationBadge {
         float: left !important;
-        position: fixed !important;
+        position: static !important;
         margin-top: -40px;
         margin-left: 22px;
     }
