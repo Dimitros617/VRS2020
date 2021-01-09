@@ -19,7 +19,7 @@
         </div>
         <div id="messagesBox">
             <div class="autocomplete" >
-                <input id="userNameTo" type="text" name="myCountry" autocomplete="off" placeholder="Komu:">
+                <input id="userNameTo" type="text" name="myCountry" autocomplete="off" placeholder="Přezdívka příjemce:">
                 <textarea id="messageText"></textarea>
                 <button type="button" class="btn btn-success float-end mt-3" onclick="sendMessage(this)">Odeslat</button>
                 <div id="httpRequestMessage" class="float-end mt-4 mr-3" hidden>Odesláno</div>

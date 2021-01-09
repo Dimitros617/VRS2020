@@ -184,8 +184,26 @@ function removeMessage(ele){
 
 function sendMessage(ele){
 
-    let to = ele.parentNode.getElementsByTagName("input")[0].value;
-    let text = ele.parentNode.getElementsByTagName("textarea")[0].value;
+    let to = ele.parentNode.getElementsByTagName("input")[0].value.trim();
+    let text = ele.parentNode.getElementsByTagName("textarea")[0].value.trim();
+
+    if(to == ""){
+        document.getElementById("httpRequestMessage").innerHTML = "Vyplňte přezdívku příjemce!";
+        document.getElementById("httpRequestMessage").removeAttribute("hidden");
+        setInterval(function (){
+            document.getElementById("httpRequestMessage").setAttribute("hidden","");
+        },2000);
+        return;
+    }
+
+    if(text == ""){
+        document.getElementById("httpRequestMessage").innerHTML = "Vyplňte text zprávy!";
+        document.getElementById("httpRequestMessage").removeAttribute("hidden");
+        setInterval(function (){
+            document.getElementById("httpRequestMessage").setAttribute("hidden","");
+        },2000);
+        return;
+    }
 
     document.getElementById("sendMessageLoading").removeAttribute("hidden");
     $.ajax({
@@ -196,6 +214,7 @@ function sendMessage(ele){
             document.getElementById("sendMessageLoading").setAttribute("hidden", "");
             ele.parentNode.getElementsByTagName("input")[0].value = "";
             ele.parentNode.getElementsByTagName("textarea")[0].value = "";
+            document.getElementById("httpRequestMessage").innerHTML = "Odesláno";
             document.getElementById("httpRequestMessage").removeAttribute("hidden");
             setInterval(function (){
                 document.getElementById("httpRequestMessage").setAttribute("hidden","");
