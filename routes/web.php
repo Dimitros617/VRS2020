@@ -52,6 +52,8 @@ Route::get('/users/usersSort/{sort?}', [ListUsersController::class,'usersSort'])
 Route::get('/users/usersFind/{find?}', [ListUsersController::class,'usersFind']);
 Route::get('/getUserNames', [ListUsersController::class,'getUserNames']);
 
+Route::get('/checkUserAlone', [ListUsersController::class,'checkUserAlone']);
+
 //Categorie
 Route::post('/saveCategoryData', [CategoryController::class,'saveCategory']);
 Route::post('/categories/addNewCategory', [CategoryController::class,'addNewCategory']);

@@ -29,31 +29,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee11485e-be3d-4401-963f-6d84bd64f0f9" name="Revert &quot;First Commit&quot;" comment="Revert &quot;First Commit&quot;&#10;&#10;This reverts commit 7389926d">
-      <change afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/first-user.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/PermitionVerify.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/PermitionVerify.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/all-loans.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/all-loans.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/categories.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/category-remove-verify.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/category-remove-verify.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/category-status.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/category-status.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/category.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ListUsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ListUsersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/bootstrap/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/bootstrap/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/item-remove-verify.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/item-remove-verify.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/item-status.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/item-status.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/my-loans.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/my-loans.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/my_borrows.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/navigation-dropdown.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/navigation-dropdown.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views/401.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views/401.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views/403.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views/403.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views/404.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views/404.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views/419.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views/419.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views/429.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views/429.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views/500.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views/500.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views/503.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views/503.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views/minimal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views/minimal.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/jetstream/resources/views/components/responsive-nav-link.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/jetstream/resources/views/components/responsive-nav-link.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/jetstream/stubs/inertia/resources/js/Jetstream/ResponsiveNavLink.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/jetstream/stubs/inertia/resources/js/Jetstream/ResponsiveNavLink.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,6 +233,7 @@
     <hideBySeverity>
       <option value="300" />
     </hideBySeverity>
+    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="1iyF5qs0lSbGXT3k5VutWjZW3Xp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -269,6 +253,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -276,13 +261,15 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Xamp\htdocs\VRS\resources\views" />
+      <recent name="D:\Xamp\htdocs\VRS\public\SPCMZ\LIST" />
+      <recent name="D:\Xamp\htdocs\VRS\public\SPCMZ\REMOVE" />
+      <recent name="D:\Xamp\htdocs\VRS\public\SPCMZ\ADD" />
       <recent name="D:\Xamp\htdocs\VRS\resources\views\profile" />
-      <recent name="D:\Xamp\htdocs\VRS\resources\lang\cz" />
-      <recent name="D:\Xamp\htdocs\VRS\resources\lang" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Xamp\htdocs\VRS\resources\views" />
       <recent name="D:\Xamp\htdocs\VRS\public\Img" />
+      <recent name="D:\Xamp\htdocs\VRS\public\SPCMZ\GET" />
+      <recent name="D:\Xamp\htdocs\VRS\resources\views" />
       <recent name="D:\Xamp\htdocs\VRS\public" />
       <recent name="D:\Xamp\htdocs\VRS\resources\Img" />
     </key>
@@ -378,6 +365,17 @@
       <workItem from="1607684908809" duration="30137000" />
       <workItem from="1607730764769" duration="963000" />
       <workItem from="1607775130569" duration="4012000" />
+      <workItem from="1607803232223" duration="778000" />
+      <workItem from="1607812557854" duration="324000" />
+      <workItem from="1607812942175" duration="1811000" />
+      <workItem from="1607898534366" duration="16950000" />
+      <workItem from="1608069824892" duration="754000" />
+      <workItem from="1608554555775" duration="648000" />
+      <workItem from="1609327346764" duration="308000" />
+      <workItem from="1609671153064" duration="11167000" />
+      <workItem from="1610032415002" duration="21613000" />
+      <workItem from="1610114788748" duration="37688000" />
+      <workItem from="1610195997725" duration="17075000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1602874504350</created>
@@ -624,7 +622,70 @@
       <option name="project" value="LOCAL" />
       <updated>1607731057179</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Upraveny stránky pro HTTP response status codes, a přidáno linkování css pro Kačku">
+      <created>1607803414507</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1607803414507</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Přidáno zobrazování notifikací/zpráv pro uživatele">
+      <created>1610046245163</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1610046245163</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Přidáno zobrazení nových zpráv, asynchronní synchronizace">
+      <created>1610134330715</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1610134330715</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Doděláno posílání a správa zpráv. Přidán Nick a možnost loginu přes něj, upraven user seting. feat Viol">
+      <created>1610152089656</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1610152089656</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Oveřování prázdných zpráv při odesílání">
+      <created>1610153850076</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1610153850076</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Přidáno refrešování zpráv i při vnitřním překliknutí">
+      <created>1610154287534</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1610154287534</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Přidáno ověřování selhání poslílání zpráv">
+      <created>1610154938174</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1610154938174</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Opraveno Klonování zpráv #20">
+      <created>1610197339740</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1610197339740</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Opraveno Scrollování zpráv #21 + dodělaná responzivní hlavička">
+      <created>1610208030049</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1610208030049</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -656,16 +717,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Edit dashboardu, upravena registrace, přidány stránky nová výpůjčka a seznam vůpůjček" />
-    <MESSAGE value="Načítání dat z kategorie, problém v borrowing.blade.php" />
-    <MESSAGE value="Snaha o dynmické URL nfunguje zase" />
-    <MESSAGE value="Dočasná oprava migrate databáze" />
-    <MESSAGE value="Vendor + database repaire" />
-    <MESSAGE value="Oprava databáze, přejmenování categories" />
-    <MESSAGE value="Edit user seting a propojení s databází /nutný composer update" />
-    <MESSAGE value="Přidána možnost vypůjčit si Itemy přes UI + uprava migraci (nutný Drop DB)" />
-    <MESSAGE value="Přidáno zobrazování již zabraných termínů uživately" />
-    <MESSAGE value="Přidáno zobrazování již zabraných termínů vypůjčky itemu uživately" />
     <MESSAGE value="Přidáno oznámení uživately o správném uložení dat do databáze" />
     <MESSAGE value="Přídána plná možnost editace stávajících itemů a kategorií, uživatelům z dostatečným oprávněním." />
     <MESSAGE value="Přidána možnost přidávat a odebírat kategorie a itemy" />
@@ -681,7 +732,17 @@
     <MESSAGE value="Zpracována issue: Značení stavu výpůjčky #8" />
     <MESSAGE value="Přidán kompletní systém pro schvalování výpůjček, + update bootstrapu na v5" />
     <MESSAGE value="Zhezkání controllerů" />
-    <option name="LAST_COMMIT_MESSAGE" value="Zhezkání controllerů" />
+    <MESSAGE value="Upraveny stránky pro HTTP response status codes, a přidáno linkování css pro Kačku" />
+    <MESSAGE value="Přidáno vyhledávání a filtrování kategorií" />
+    <MESSAGE value="Přidáno zobrazování notifikací/zpráv pro uživatele" />
+    <MESSAGE value="Přidáno zobrazení nových zpráv, asynchronní synchronizace" />
+    <MESSAGE value="Doděláno posílání a správa zpráv. Přidán Nick a možnost loginu přes něj, upraven user seting. feat Viol" />
+    <MESSAGE value="Oveřování prázdných zpráv při odesílání" />
+    <MESSAGE value="Přidáno refrešování zpráv i při vnitřním překliknutí" />
+    <MESSAGE value="Přidáno ověřování selhání poslílání zpráv" />
+    <MESSAGE value="Opraveno Klonování zpráv #20" />
+    <MESSAGE value="Opraveno Scrollování zpráv #21 + dodělaná responzivní hlavička" />
+    <option name="LAST_COMMIT_MESSAGE" value="Opraveno Scrollování zpráv #21 + dodělaná responzivní hlavička" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -693,7 +754,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/navigation-dropdown.blade.php</url>
-          <line>65</line>
+          <line>102</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">

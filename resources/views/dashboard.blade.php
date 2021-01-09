@@ -7,17 +7,17 @@
 {{--            {{ __('Hlavní strana') }}--}}
 {{--        </h2>--}}
     </x-slot>
-    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8" onload="checkUserAlone()">
     <div class="container">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             {{--  Sekce pro Admin, verifiedUser  --}}
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 @if (Auth::permition()->possibility_renting == 1)
-                <a href="/loans"><div>Mé aktivní výpůjčky a rezervace: </a><div>{{ $vypujcky_pocet }}</div></div>
+                <a href="/loans"><div>Mé aktivní výpůjčky a rezervace: <div>{{ $vypujcky_pocet }}</div></div></a>
                     @if(Auth::permition()->new_user == 1)
-                        <a href="/all-loans"><div class="">Čeká na schválení: </a><div>{{ $schvaleni_pocet }}</div></div>
+                        <a href="/all-loans"><div class="">Čeká na schválení: <div>{{ $schvaleni_pocet }}</div></div></a>
                     @else
-                        <a href="/loans"><div>Čeká na schválení vrácení: </a><div>{{ $vraceni_pocet }}</div></div>
+                        <a href="/loans"><div>Čeká na schválení vrácení: <div>{{ $vraceni_pocet }}</div></div></a>
                     @endif
                 @endif
             </div>

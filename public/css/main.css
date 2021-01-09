@@ -1,28 +1,28 @@
 
 
 .bg-vrs-cyan{
-    background: #002e40;
+    background: #002e40 !important;
 }
 .bg-vrs-clight{
-    background: #2A5769;
+    background: #2A5769 !important;
 }
 .text-vrs-cyan {
-    color: #002e40;
+    color: #002e40!important;
 }
 .text-vrs-clight{
-    color: #2A5769;
+    color: #2A5769!important;
 }
 .bg-vrs-yellow{
-    background: #fa9600;
+    background: #fa9600!important;
 }
 .bg-vrs-ylight{
-    background: #fabd4a;
+    background: #fabd4a!important;
 }
 .text-vrs-yellow{
-    color: #fa9600;
+    color: #fa9600!important;
 }
 .text-vrs-ylight{
-    color: #fabd4a;
+    color: #fabd4a!important;
 }
 
 

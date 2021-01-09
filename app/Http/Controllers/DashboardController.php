@@ -7,11 +7,22 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use App\Models\loans;
+use App\Models\User;
 
 class DashboardController extends Controller
 {
     function show()
     {
+
+        Log::info('DashboardControler:show');
+
+        $firstUser = $this->checkUserAlone();
+        if($firstUser != null){
+            return $firstUser;
+        }
+
+
         $activeLoans = DB::table('loans')->where('loans.user', Auth::user()->id)->where('status', 1)->get();
         $waitingLoans = DB::table('loans')->where('loans.user', Auth::user()->id)->where('status', 2)->get();
         $allWaitingLoans = DB::table('loans')->where('status', 2)->get();
@@ -21,8 +32,28 @@ class DashboardController extends Controller
         $schvaleni_pocet = count($allWaitingLoans);
 
 
-        Log::info('DashboardControler:show');
+
         return view( 'dashboard',['vypujcky_pocet' => $vypujcky_pocet, 'schvaleni_pocet' => $schvaleni_pocet, 'vraceni_pocet' => $vraceni_pocet]);
+
+    }
+
+    function checkUserAlone(){
+
+        Log::info('DashboardControler:show->checkUserAlone');
+
+        $count = DB::table('users')->get();
+
+        if(count($count) == 1){
+            $user = User::find(Auth::user()->id);
+            if($user -> current_team_id == null) {
+                $user->current_team_id = 1;
+                $user->permition = 3;
+                $user->save();
+                return view( 'first-user');
+            }
+        }
+
+        return null;
 
     }
 }

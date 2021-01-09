@@ -6567,6 +6567,10 @@ a.badge-dark:focus, a.badge-dark.focus {
   min-width: 100vw !important;
 }
 
+.h-4rem {
+    height: 4rem !important;
+}
+
 .h-25 {
   height: 25% !important;
 }
@@ -7221,6 +7225,10 @@ a.badge-dark:focus, a.badge-dark.focus {
 
 .fs-6 {
   font-size: 1rem !important;
+}
+
+.fs-7 {
+    font-size: 1.5rem !important;
 }
 
 .fst-italic {
