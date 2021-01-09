@@ -1,4 +1,7 @@
 
+var showMessagesRequest = null;
+var sendMessageTimeout = null;
+
 function newMessage(){
 
     document.getElementById("allMessages").setAttribute("hidden","");
@@ -15,12 +18,9 @@ function newMessage(){
                 names.push(response[i]["nick"])
             }
 
-            autocomplete(document.getElementById("userNameTo"), names);autocomplete(document.getElementById("userNameTo"), names);;
+            autocomplete(document.getElementById("userNameTo"), names);autocomplete(document.getElementById("userNameTo"), names);
         }
     });
-
-
-
 }
 
 function prefixNewMessage(nick){
@@ -70,6 +70,7 @@ function closeMessages(ele){
     if(ele == event.target){
         ele.setAttribute('hidden','');
         document.getElementById('messageLoading').removeAttribute('hidden');
+        showMessagesRequest.abort();
 
         let messages = document.getElementById("messagesBox").childNodes;
         for (let i = 0; i < messages.length ; i++){
@@ -84,7 +85,7 @@ function showMessages(){
 
     document.getElementById('messageModal').removeAttribute('hidden');
 
-    $.ajax({
+    showMessagesRequest = $.ajax({
         url: '/allMessages',
         method: "GET",
         success: function (response) {
@@ -199,7 +200,8 @@ function sendMessage(ele){
     if(to == ""){
         document.getElementById("httpRequestMessage").innerHTML = "Vyplňte přezdívku příjemce!";
         document.getElementById("httpRequestMessage").removeAttribute("hidden");
-        setInterval(function (){
+        clearTimeout(sendMessageTimeout);
+        sendMessageTimeout = setTimeout(function (){
             document.getElementById("httpRequestMessage").setAttribute("hidden","");
         },2000);
         return;
@@ -208,7 +210,8 @@ function sendMessage(ele){
     if(text == ""){
         document.getElementById("httpRequestMessage").innerHTML = "Vyplňte text zprávy!";
         document.getElementById("httpRequestMessage").removeAttribute("hidden");
-        setInterval(function (){
+        clearTimeout(sendMessageTimeout);
+        sendMessageTimeout = setTimeout(function (){
             document.getElementById("httpRequestMessage").setAttribute("hidden","");
         },2000);
         return;
@@ -225,7 +228,8 @@ function sendMessage(ele){
             ele.parentNode.getElementsByTagName("textarea")[0].value = "";
             document.getElementById("httpRequestMessage").innerHTML = "Odesláno";
             document.getElementById("httpRequestMessage").removeAttribute("hidden");
-            setInterval(function (){
+            clearTimeout(sendMessageTimeout);
+            sendMessageTimeout = setTimeout(function (){
                 document.getElementById("httpRequestMessage").setAttribute("hidden","");
             },2000);
         },
@@ -233,7 +237,8 @@ function sendMessage(ele){
             document.getElementById("sendMessageLoading").setAttribute("hidden", "");
             document.getElementById("httpRequestMessage").innerHTML = "Odeslání selhalo";
             document.getElementById("httpRequestMessage").removeAttribute("hidden");
-            setInterval(function (){
+            clearTimeout(sendMessageTimeout);
+            sendMessageTimeout = setTimeout(function (){
                 document.getElementById("httpRequestMessage").setAttribute("hidden","");
             },2000);
         }

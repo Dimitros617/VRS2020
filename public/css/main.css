@@ -48,11 +48,9 @@ img.notificationSVG {
 
 .notification {
     float: right;
-    z-index: 999;
-    /* position: fixed; */
+    z-index: 5;
     position: relative;
     top: -125px;
-    /* right: 0; */
     cursor: pointer;
 }
 #messageModal {
