@@ -165,7 +165,7 @@ function removeMessage(ele){
         $.ajax({
             url: '/removeMessage/' + ele.getAttribute('mess_id'),
             method: "GET",
-            success: function (response) {
+            success: function () {
                 ele.setAttribute("hidden","");
 
                 let mess = document.getElementsByClassName("message");
@@ -211,12 +211,20 @@ function sendMessage(ele){
     $.ajax({
         url: '/sendMessage/' + to + '/' +  text,
         method: "GET",
-        success: function (response) {
+        success: function () {
 
             document.getElementById("sendMessageLoading").setAttribute("hidden", "");
             ele.parentNode.getElementsByTagName("input")[0].value = "";
             ele.parentNode.getElementsByTagName("textarea")[0].value = "";
             document.getElementById("httpRequestMessage").innerHTML = "Odesláno";
+            document.getElementById("httpRequestMessage").removeAttribute("hidden");
+            setInterval(function (){
+                document.getElementById("httpRequestMessage").setAttribute("hidden","");
+            },2000);
+        },
+        error: function (){
+            document.getElementById("sendMessageLoading").setAttribute("hidden", "");
+            document.getElementById("httpRequestMessage").innerHTML = "Odeslání selhalo";
             document.getElementById("httpRequestMessage").removeAttribute("hidden");
             setInterval(function (){
                 document.getElementById("httpRequestMessage").setAttribute("hidden","");
