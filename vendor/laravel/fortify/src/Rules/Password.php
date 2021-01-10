@@ -121,7 +121,7 @@ class Password implements Rule
                 ]);
 
             default:
-                return __(':attribute musí být alespoň :length znaků dlouhé. Krev jednorožce po vás nechceme, tak alespoň tu délku dodržte :-)', [
+                return __(':attribute musí být alespoň :length znaků dlouhé. Krev jednorožce po vás nechceme, tak alespoň tu délku dodržte.', [
                     'length' => $this->length,
                 ]);
         }
