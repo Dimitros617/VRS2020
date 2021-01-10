@@ -30,14 +30,15 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [DashboardCon
 Route::middleware(['auth:sanctum', 'verified'])->get('/loans',[LoansController::class,'showLoans']);
 Route::middleware(['auth:sanctum', 'verified', 'permition:return_verification'])->get('/all-loans',[LoansController::class,'showAllLoans']);
 
-Route::middleware(['auth:sanctum', 'verified', 'permition:return_verification'])->get('/item/{id:id}/activeLoans', [LoansController::class,'showItemLoans']);
-Route::middleware(['auth:sanctum', 'verified', 'permition:return_verification'])->get('/categories/{id:id}/activeLoans', [LoansController::class,'showCategoryLoans']);
+Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting'])->get('/item/{id:id}/activeLoans', [LoansController::class,'showItemLoans']);
+Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting'])->get('/categories/{id:id}/activeLoans', [LoansController::class,'showCategoryLoans']);
 
 Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting'])->get('/categories', [CategoryController::class,'showCategories']);
 Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting'])->get('/categories/{name:name}', [CategoryController::class,'showItem']) ->name('item');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/users', [ListUsersController::class,'showAllUsers']);
 Route::middleware(['auth:sanctum', 'verified', 'permition:new_user'])->get('/users/{id:id}', [ListUsersController::class,'showUser']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/users/{id:id}/loans', [ListUsersController::class,'showLoans']);
 
 //Zprávy
 Route::get('/newMessages', [MessagesController::class,'countNewMessages']);

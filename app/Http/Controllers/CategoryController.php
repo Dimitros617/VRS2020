@@ -19,7 +19,7 @@ class CategoryController extends Controller
     {
 
         echo "<script>console.log('Debug Objects: CategoryController' );</script>";
-        Log::info('CategoryControler:show');
+        Log::info('CategoryControler:showCategories');
 
         $data = DB::table('categories')->leftJoin('items', 'categories.id', '=', 'items.categories')->select('categories.id','categories.name', 'categories.description', 'items.availability', DB::raw('COUNT(items.categories) as count'))->groupByRaw('categories.name, categories.description, items.availability, categories.id')->get();
         $permition = DB::table('users')->join('permition', 'users.permition', '=', 'permition.id')->where('users.id', Auth::id())->select('permition.edit_item', 'permition.possibility_renting')->get();
@@ -36,9 +36,9 @@ class CategoryController extends Controller
 
         $dataItems = DB::table('items')->where('categories', $name['id'])->get();
         $dataLoans = DB::table('loans')->join('items', 'loans.item', '=', 'items.id')->where('categories', $name['id'])->select('loans.item', 'loans.rent_from', 'loans.rent_to')->get();
-        $permition = DB::table('users')->join('permition', 'users.permition', '=', 'permition.id')->where('users.id', Auth::id())->select('permition.edit_item')->get();
-
-        return view('category', ['category' => $name, 'items' => $dataItems, 'loans' => $dataLoans, 'permition' => $permition]);
+        $permition = DB::table('users')->join('permition', 'users.permition', '=', 'permition.id')->where('users.id', Auth::id())->select('permition.edit_item','permition.possibility_renting')->get();
+        $data = DB::table('categories')->leftJoin('items', 'categories.id', '=', 'items.categories')->select('categories.id','categories.name', 'categories.description', 'items.availability', DB::raw('COUNT(items.categories) as count'))->groupByRaw('categories.name, categories.description, items.availability, categories.id')->get();
+        return view('category', ['category' => $name, 'items' => $dataItems, 'loans' => $dataLoans, 'permition' => $permition, 'categories' => $data]);
 
     }
 

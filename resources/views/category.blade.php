@@ -53,7 +53,8 @@
 
 
 
-                            <div class="data">
+                            @if(sizeof($categories) != 0)
+                                <div class="data">
                                 @foreach($items as $item)
 
                                     {{--                Pokud má item nastaveno availability na 1 zoobrazí se, pokud ne z nemožní se sním práce pro uživatel--}}
@@ -168,7 +169,7 @@
                                                     </form>
                                                 @endif
 
-                                                @if( $permition[0]->edit_item == 1)
+                                                @if( $permition[0]->possibility_renting == 1)
                                                     <form action="{{'/item/' . $item->id . '/activeLoans'}}"  class="activeLoans">
 
                                                          <input class="btn btn-warning" type="submit" value="Aktuální závazky">
@@ -193,8 +194,9 @@
                                                             <div id="alert{{$item->id}}"></div>
                                         </div>
                                         @endforeach
-
-
+                                            @else
+                                                <div class="display-4 pt-4 pb-4">Nebylo nic nalezeno</div>
+                                            @endif
                                                                 @if( $permition[0]->edit_item == 1)
                                                                     <div class="item">
                                                                     <form action="{{'/item/addNewItem'}}" method="POST" class="addNewItem">

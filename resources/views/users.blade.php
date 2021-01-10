@@ -57,11 +57,16 @@
                                 @endif
                             </div>
 
-                            <button type="submit button" class="btn btn-success w-200p " onclick="prefixNewMessage('{{$user -> userNick}}') ">Poslat zprávu</button>
-                            @if(Auth::permition()->new_user == 1)
-                                <a href="{{url()->current().'/'.$user -> userId}}">
-                                    <button type="submit button" class="btn btn-warning w-200p ">Upravit uživatele</button>
+                            <button class="btn btn-primary w-200p " onclick="prefixNewMessage('{{$user -> userNick}}') ">Poslat zprávu</button>
+                            @if(Auth::permition()->possibility_renting == 1)
+                                <a href="{{url()->current().'/'.$user -> userId.'/loans'}}">
+                                    <button class="btn btn-warning w-200p">Závazky uživatele</button>
                                 </a>
+                                @if(Auth::permition()->new_user == 1)
+                                    <a href="{{url()->current().'/'.$user -> userId}}">
+                                        <button class="btn btn-success w-200p ">Upravit uživatele</button>
+                                    </a>
+                                @endif
                             @endif
                         </div>
 
