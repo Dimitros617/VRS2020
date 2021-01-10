@@ -26,14 +26,15 @@ class DashboardController extends Controller
         $activeLoans = DB::table('loans')->where('loans.user', Auth::user()->id)->where('status', 1)->get();
         $waitingLoans = DB::table('loans')->where('loans.user', Auth::user()->id)->where('status', 2)->get();
         $allWaitingLoans = DB::table('loans')->where('status', 2)->get();
+        $users = DB::table('users')->get();
 
         $vypujcky_pocet =count($activeLoans);
         $vraceni_pocet = count($waitingLoans);
         $schvaleni_pocet = count($allWaitingLoans);
+        $users_pocet = count($users);
 
 
-
-        return view( 'dashboard',['vypujcky_pocet' => $vypujcky_pocet, 'schvaleni_pocet' => $schvaleni_pocet, 'vraceni_pocet' => $vraceni_pocet]);
+        return view( 'dashboard',['vypujcky_pocet' => $vypujcky_pocet, 'schvaleni_pocet' => $schvaleni_pocet, 'vraceni_pocet' => $vraceni_pocet, 'users_pocet' => $users_pocet]);
 
     }
 

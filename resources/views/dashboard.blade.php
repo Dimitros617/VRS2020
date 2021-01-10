@@ -11,16 +11,38 @@
     <div class="container">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             {{--  Sekce pro Admin, verifiedUser  --}}
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                @if (Auth::permition()->possibility_renting == 1)
-                <a href="/loans"><div>Mé aktivní výpůjčky a rezervace: <div>{{ $vypujcky_pocet }}</div></div></a>
-                    @if(Auth::permition()->new_user == 1)
-                        <a href="/all-loans"><div class="">Čeká na schválení: <div>{{ $schvaleni_pocet }}</div></div></a>
-                    @else
-                        <a href="/loans"><div>Čeká na schválení vrácení: <div>{{ $vraceni_pocet }}</div></div></a>
+
+                <div class="align-content-center d-sm-flex rounded-4 overflow-hidden flex-flow-column flex-sm-flow-row mb-4">
+
+                    @if (Auth::permition()->possibility_renting == 1)
+                        <a @if(Auth::permition()->new_user == 1) href="/all-loans" @else href="/loans" @endif>
+                            <button class="btn btn-warning align-content- text-center flex-fill rounded-0 type="button">
+                                @if (Auth::permition()->new_user == 1)
+                                    Čekající na schválení: {{ $schvaleni_pocet }}
+                                @else
+                                    Čekající na schválení vrácení: {{ $vraceni_pocet }}
+                                @endif
+                            </button>
+                        </a>
+
+                        <a href="/loans">
+                            <button class="btn btn-success flex-fill rounded-0" type="button">
+                                Mé aktivní výpůjčky a rezervace: {{ $vypujcky_pocet }}
+                            </button>
+                        </a>
                     @endif
-                @endif
-            </div>
+
+                        <a href="/users">
+                            <button class="btn btn-danger flex-fill rounded-0" type="button">
+                                @if (Auth::permition()->new_user == 1)
+                                    Všichni uživatelé: {{$users_pocet}}
+                                @else
+                                    Seznam uživatelů
+                                @endif
+                            </button>
+                        </a>
+
+                </div>
 
             <br>
             {{--  Sekce pro VŠECHNY  --}}

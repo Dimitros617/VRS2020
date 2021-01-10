@@ -8,7 +8,7 @@
 
     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8">
 
-        <div class="container p-6">
+        <div class="container">
 
             @if(old('saveCheck'))
                 @if(old('saveCheck') == 1)
@@ -22,7 +22,7 @@
                             </div>
 
                         <div class="hlavicka">
-            <div class="pageTitle"> Seznam kategorií:</div>
+            <div class="display-4 p-4 text-vrs-cyan"> Seznam kategorií:</div>
                             <div class="search">
                                 <div class="card card-sm">
                                     <div class="card-body row no-gutters align-items-center">
