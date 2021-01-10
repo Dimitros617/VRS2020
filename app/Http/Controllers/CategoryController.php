@@ -102,7 +102,7 @@ class CategoryController extends Controller
         $check2 = DB::table('items')->where('categories', $request->categoryId)->delete();
         $check3 = DB::table('categories')->where('id', $request->categoryId)->delete();
 
-        return back()->withInput(array('saveCheck' => $check1 && $check2 && $check3 ? '1' : '0'));
+        return redirect('/categories');
 
     }
 

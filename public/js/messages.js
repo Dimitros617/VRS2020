@@ -199,6 +199,7 @@ function sendMessage(ele){
     let to = ele.parentNode.getElementsByTagName("input")[0].value.trim();
     let text = ele.parentNode.getElementsByTagName("textarea")[0].value.trim();
 
+
     if(to == ""){
         document.getElementById("httpRequestMessage").innerHTML = "Vyplňte přezdívku příjemce!";
         document.getElementById("httpRequestMessage").removeAttribute("hidden");

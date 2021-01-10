@@ -23,7 +23,7 @@
                     @endif
 
 
-                            <div class="h1 mb-4 fw-bolder "> Aktuální výpůjčky :</div>
+                            <div class="pageTitle"> Aktuální výpůjčky :</div>
 
 
                             <div class="align-content-center d-sm-flex rounded-4 overflow-hidden flex-flow-column flex-sm-flow-row mb-4">

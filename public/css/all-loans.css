@@ -46,7 +46,7 @@ button.flex-fill.rounded-0 {
 
 .itemName {
     font-weight: 700;
-    font-size:  xxx-large;
+    font-size: 2rem;
 }
 
 .itemDiv {
@@ -70,18 +70,14 @@ button.flex-fill.rounded-0 {
 }
 
 .categoryDiv div.h4 {
-    color: white;
+    color: #002e40;
     padding-top: 18px;
     font-size: xxx-large;
-    background: #002e40;
-    width: 117%;
-    display: block;
-    margin-left: -50px;
-    margin-right: auto;
+    font-weight: 700;
     text-align: center;
     margin-top: -26px;
     height: 90px;
-    border-bottom: 10px solid #fa9600;
+    border-bottom: 5px solid #fa9600;
     margin-bottom: 30px;
 }
 

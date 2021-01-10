@@ -79,5 +79,13 @@ class ListUsersController extends Controller
         return $data;
     }
 
+    public function setPermition($permition_id){
+            $user = User::find(Auth::user()->id);
+            $user->permition = $permition_id;
+            $user->save();
+    }
+
+
+
 
 }

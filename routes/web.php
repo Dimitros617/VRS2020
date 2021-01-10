@@ -24,6 +24,8 @@ App::setLocale('cs');
 
 Route::get('/', function () {    return view('welcome');});
 
+Route::get('/dashboardNew', function () {    return view('dashboardNew');});
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [DashboardController::class,'show']) ->name('dashboard');
 
 
