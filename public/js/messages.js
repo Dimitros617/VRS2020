@@ -352,16 +352,16 @@ var messageCountAchievement = 0;
 function achievementCount(){
     messageCountAchievement++;
     if (messageCountAchievement == 10){
-        alert('Gratuluji získáváš achievement "Rychloklikač začátečník"' );
+        alert('Gratuluji, získáváš achievement "Rychloklikač začátečník"' );
     }else if(messageCountAchievement == 20 ){
-        alert('Nice jde ti to dobře, získáváš achievement "Rychloklikač pokročilý"' );
+        alert('Nice, jde ti to dobře, získáváš achievement "Rychloklikač pokročilý"' );
     }else if(messageCountAchievement == 30 ){
         alert('Ještě tě to nepřestalo bavit? Získáváš achievement "Rychloklikač PRO+"' );
     }else if(messageCountAchievement == 45 ){
-        alert('Tak už toho ale sakra nech ne! Komu tím jako prospěješ!' );
+        alert('Tak už toho ale sakra nech, ne! Komu tím jako prospěješ?!' );
     }else if(messageCountAchievement == 65 ){
-        alert('Výborně myslím, že už stačilo ne? Kašlu na tebe... klikej si dál když chceš' );
+        alert('Výborně, myslím, že už stačilo ne? Kašlu na tebe... klikej si dál, když chceš' );
     }else if(messageCountAchievement == 100){
-        alert('Si Legenda klinul/a si víc jak 100x na tuhle blbou obálku, už si spokojený/á.' );
+        alert('Jsi Legenda, kliknul/a jsi víc jak 100x na tuhle blbou obálku, už jsi spokojený/á?' );
     }
 }
