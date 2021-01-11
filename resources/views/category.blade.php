@@ -53,7 +53,7 @@
 
 
 
-                            @if(sizeof($categories) != 0)
+                            @if(sizeof($items) != 0)
                                 <div class="data">
                                 @foreach($items as $item)
 
@@ -195,8 +195,9 @@
                                         </div>
                                         @endforeach
                                             @else
-                                                <div class="display-4 pt-4 pb-4">Nebylo nic nalezeno</div>
+                                                <div class="display-6 pt-4 pb-4">Nebylo nic nalezeno</div>
                                             @endif
+
                                                                 @if( $permition[0]->edit_item == 1)
                                                                     <div class="item">
                                                                     <form action="{{'/item/addNewItem'}}" method="POST" class="addNewItem">

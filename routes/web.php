@@ -29,7 +29,7 @@ Route::get('/dashboardNew', function () {    return view('dashboardNew');});
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [DashboardController::class,'show']) ->name('dashboard');
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/loans',[LoansController::class,'showLoans']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/loans',[LoansController::class,'showLoans'])->name('loans');
 Route::middleware(['auth:sanctum', 'verified', 'permition:return_verification'])->get('/all-loans',[LoansController::class,'showAllLoans']);
 
 Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting'])->get('/item/{id:id}/activeLoans', [LoansController::class,'showItemLoans']);

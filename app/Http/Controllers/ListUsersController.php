@@ -18,7 +18,7 @@ class ListUsersController extends Controller
 {
     function showAllUsers()
     {
-
+        Log::info('ListUsersController:showAllUsers');
         $data = DB::table('users')->join('permition', 'users.permition', '=', 'permition.id')->select('users.id as userId', 'users.name as userName', 'users.surname as userSurname', 'users.phone as userPhone', 'users.email as userEmail','users.nick as userNick', 'permition.id as permitionId', 'permition.name as permitionName')->orderBy('surname','asc')->get();
         //return $permition;
         return view('users', ['users' => $data]);
@@ -28,7 +28,8 @@ class ListUsersController extends Controller
 
     function showUser(User $id)
     {
-        //return $id;
+
+        Log::info('ListUsersController:showUser');
         if($id['id'] == Auth::user()->id){
             return redirect()->route('profile.show');
         }
@@ -41,6 +42,11 @@ class ListUsersController extends Controller
 
     function showLoans(User $id)
     {
+        Log::info('ListUsersController:showLoans');
+        if($id['id'] == Auth::user()->id){
+            return redirect()->route('loans');
+        }
+
         $data = DB::table('users')->where('users.id', $id['id'])->select('users.id as userId', 'users.name as userName', 'users.surname as userSurname','users.nick as userNick')->get();
         $dataLoans = DB::table('loans')->Join('items', 'loans.item', '=', 'items.id')->Join('categories', 'items.categories', '=', 'categories.id')->orderBy('categories.name', 'asc')->orderBy('items.id', 'asc')->select('categories.id as categoryId', 'categories.name as categoryName',  'items.id as itemId', 'items.name as itemName', 'items.note', 'items.place' ,'items.inventory_number' , 'loans.id', 'loans.rent_from', 'loans.rent_to', 'loans.status')->where('loans.user', $id['id'])->get();
 
@@ -49,6 +55,8 @@ class ListUsersController extends Controller
 
     function saveUserData(Request $request) //request pracuje s name ve formuláři
     {
+        Log::info('ListUsersController:saveUserData');
+
         $user = User::find($request -> userId);
         $user -> name = $request -> userName;
         $user -> surname = $request -> userSurname;

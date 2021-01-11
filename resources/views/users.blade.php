@@ -60,7 +60,9 @@
                                 @endif
                             </div>
 
+                            @if(($user->userId != Auth::user()->id))
                             <button class="btn btn-primary w-200p " onclick="prefixNewMessage('{{$user -> userNick}}') ">Poslat zprávu</button>
+                            @endif
                             @if(Auth::permition()->possibility_renting == 1)
                                 <a href="{{url()->current().'/'.$user -> userId.'/loans'}}">
                                     <button class="btn btn-warning w-200p">Závazky uživatele</button>

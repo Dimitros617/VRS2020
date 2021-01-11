@@ -16,7 +16,7 @@
 
                     @if (Auth::permition()->possibility_renting == 1)
                         <a @if(Auth::permition()->new_user == 1) href="/all-loans" @else href="/loans" @endif>
-                            <button class="btn btn-warning align-content- text-center flex-fill rounded-0 type="button">
+                            <button class="btn btn-warning align-content- text-center flex-fill rounded-0" type="button">
                                 @if (Auth::permition()->new_user == 1)
                                     Čekající na schválení: {{ $schvaleni_pocet }}
                                 @else
