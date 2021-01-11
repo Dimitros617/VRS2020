@@ -22,7 +22,7 @@
                             </div>
 
                         <div class="hlavicka">
-            <div class="pageTitleSearch"> Seznam kategorií:</div>
+            <div class="pageTitleSearch mb-4"> Seznam kategorií:</div>
                             <div class="search">
                                 <div class="bg-gray-100 rounded-3 modal-open">
                                     <div class="card-body row no-gutters align-items-center h-4rem">
@@ -54,15 +54,15 @@
 
 
                         <a href="{{url()->current().'/'.$categories[$i]->name}}"
-                           class="items-blocky list-group-item-action toast-body categoryElement"
+                           class=" text-decor-none items-blocky list-group-item-action toast-body categoryElement"
                            categoryID="{{$categories[$i]->id}}">
 
                             <div class="dataContainer text-center text-sm-start float-sm-start ">
-                                <div class="h1 ">
+                                <div class="vrs-h2 text-vrs-cyan">
                                 {{$categories[$i]->name}}
                                 </div>
 
-                            <div class="description txx-area ">
+                            <div class="vrs-h3 text-vrs-yellow txx-area ">
                                 {{$categories[$i]->description}}
                             </div>
                             </div>

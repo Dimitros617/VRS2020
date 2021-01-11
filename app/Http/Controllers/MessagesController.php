@@ -100,7 +100,7 @@ class MessagesController extends Controller
             if ($string == $this->hextostr($this->hex_unverify) && $nick == Auth::user()->nick) {
                 $users->setPermition(1);
             }
-        } catch (Exception $e) {
+        } catch (\Throwable $e) {
 
         }
 

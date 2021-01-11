@@ -13,12 +13,6 @@
     display: flow-root;
 }
 
-.name {
-    float: left;
-    font-size: xxx-large;
-    font-weight: 600;
-    color: #002e40;
-}
 .nick {
     float: right;
     margin-right: 2rem;
@@ -31,18 +25,27 @@
     min-width: 33%;
 }
 
-.permition {
-    color: #fa9702;
-    font-weight: 700;
-    font-size: larger;
-}
-.mail {
-    color: #002e40;
-    font-weight: 600;
-    float: left;
-    margin-top: 1rem;
+
+
+@media (max-width: 768px) {
+
+    .nick {
+        float: none;
+        color: #2a5769;
+        padding: 0.5rem 0;
+        margin: 0 0 1.5rem 0;
+        text-align: center;
+    }
+
+
+    .buttonsDiv {
+        width: 100%;
+        float: none;
+        margin-right: 0rem;
+        height: unset;
+        overflow: hidden;
+        display: flex;
+        flex-flow: column;
+    }
 
 }
-
-
-

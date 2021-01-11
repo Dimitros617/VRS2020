@@ -47,7 +47,7 @@
                     @foreach($users as $user)
                         <div class="items-blocky userElement" userID="{{$user->userId}}">
                             <div class="nameDiv">
-                                <div class="name">
+                                <div class="vrs-h2 text-vrs-cyan">
                                     {{$user -> userSurname}}
                                     {{$user -> userName}}
                                 </div>
@@ -56,11 +56,11 @@
                                 </div>
                             </div>
 
-                            <div class="permition">
+                            <div class="vrs-h3 text-vrs-yellow">
                                 {{$user -> permitionName}}
                             </div>
 
-                            <div class="mail">
+                            <div class="vrs-h4 text-vrs-cyan">
                                 @if(Auth::permition()->new_user == 1)
                                     {{$user -> userEmail}}
                                 @endif
@@ -68,7 +68,9 @@
 
                             <div class="buttonsDiv">
                             @if(($user->userId != Auth::user()->id))
+                                    <a class="p-0 buttonsDivItem">
                             <button class="btn btn-primary w-200p buttonsDivItem" onclick="prefixNewMessage('{{$user -> userNick}}') ">Poslat zprávu</button>
+                                    </a>
                             @endif
                             @if(Auth::permition()->possibility_renting == 1)
                                 <a href="{{url()->current().'/'.$user -> userId.'/loans'}}" class="p-0 buttonsDivItem">

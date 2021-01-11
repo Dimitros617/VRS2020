@@ -25,6 +25,30 @@
     color: #fabd4a!important;
 }
 
+.text-decor-none{
+    text-decoration: none;
+}
+
+.vrs-h2 {
+    float: left;
+    font-size: xxx-large;
+    font-weight: 600;
+}
+
+
+.vrs-h3 {
+    font-weight: 700;
+    font-size: larger;
+}
+.vrs-h4 {
+    font-weight: 600;
+    float: left;
+    margin-top: 1rem;
+
+}
+
+
+
 
 .pageTitle{
     text-align: center;
@@ -34,7 +58,7 @@
     border-bottom: 5px solid #fa9600;
     padding: 3px 4rem;
     font-weight: 700 !important;
-    margin-bottom: 2rem !important;
+    margin-bottom: 4rem !important;
     font-size: xxx-large;
     color: #002e40;
 }
@@ -211,6 +235,10 @@ a.block.px-4.py-2.text-sm.leading-5.text-gray-700 {
 button.buttonsDivItem, input.buttonsDivItem {
     width: 100%;
 }
+
+
+
+
 /*Změna barvy a velikosti mobilní nabídky v hlavičce*/
 svg.h-6.w-6 {
     color: #002c3d;
@@ -253,6 +281,22 @@ svg.h-6.w-6 {
         position: static !important;
         margin-top: -40px;
         margin-left: 22px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .vrs-h2 {
+        float: none;
+        text-align: center;
+        text-decoration: none !important;
+    }
+
+    .vrs-h3, .vrs-h4 {
+        text-align: center;
+        float: none;
+        text-decoration: none !important;
     }
 
 }

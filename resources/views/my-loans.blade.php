@@ -25,7 +25,7 @@
                                 @endif
                             </div>
 
-                            <div class="h1"> Moje aktuální výpůjčky :</div>
+                            <div class="pageTitle"> Moje aktuální výpůjčky :</div>
 
                             @php
                                 $lastCategory = -1;
