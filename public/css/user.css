@@ -1,7 +1,48 @@
 
 .userElement {
     background: #f4f5f7;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     display: flow-root;
     border-radius: 10px;
+    /*box-shadow: 4px 3px 6px 2px #e6e6e6;*/
+    border-bottom: 10px solid #e0e0e0;
+    padding: 1rem 1rem;
 }
+
+.nameDiv {
+    display: flow-root;
+}
+
+.name {
+    float: left;
+    font-size: xxx-large;
+    font-weight: 600;
+    color: #002e40;
+}
+.nick {
+    float: right;
+    margin-right: 2rem;
+    color: #2a5769;
+    padding: 0.5rem 0rem;
+    font-size: xx-large;
+    font-weight: 700;
+    border-radius: 5px;
+    text-align: right;
+    min-width: 33%;
+}
+
+.permition {
+    color: #fa9702;
+    font-weight: 700;
+    font-size: larger;
+}
+.mail {
+    color: #002e40;
+    font-weight: 600;
+    float: left;
+    margin-top: 1rem;
+
+}
+
+
+

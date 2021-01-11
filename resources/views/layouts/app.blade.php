@@ -50,7 +50,7 @@
 
 </head>
 <body class="font-sans antialiased">
-<div class="min-h-screen bg-gray-100 bg-vrs-cyan">
+<div class="min-h-screen bg-gray-100 bg-vrs-cyan pb-4">
     @livewire('navigation-dropdown')
 
     <!-- Page Heading -->

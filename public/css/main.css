@@ -53,7 +53,7 @@
     display: inline-block;
     padding-bottom: 1rem;
     border-bottom: 10px solid #fa9702;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     /* flex-flow: wrap; */
     /* height: -webkit-fill-available; */
 }
@@ -196,6 +196,7 @@ a.block.px-4.py-2.text-sm.leading-5.text-gray-700 {
     overflow: hidden;
     height: 2.7rem;
     display: flex;
+    margin-top: 2rem;
 }
 
 .buttonsDivItem {

@@ -12,7 +12,7 @@
 
     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8">
 
-        <div class="container">
+        <div class="container p-6 ">
 
             @if(sizeof($users) != 0)
                 <div class="list-group pt-4 pb-4">
@@ -45,19 +45,24 @@
                     </div>
                     <div id="userList">
                     @foreach($users as $user)
-                        <div class="items-blocky toast-body userElement" userID="{{$user->userId}}">
-                            <div class="display-4">
-                                {{$user -> userSurname}}
-                                {{$user -> userName}} -
-                                {{$user -> userNick}}
+                        <div class="items-blocky userElement" userID="{{$user->userId}}">
+                            <div class="nameDiv">
+                                <div class="name">
+                                    {{$user -> userSurname}}
+                                    {{$user -> userName}}
+                                </div>
+                                <div class="nick">
+                                    {{$user -> userNick}}
+                                </div>
                             </div>
-                            <div>
+
+                            <div class="permition">
                                 {{$user -> permitionName}}
                             </div>
 
-                            <div class="">
+                            <div class="mail">
                                 @if(Auth::permition()->new_user == 1)
-                                    <p>E-mail: {{$user -> userEmail}} </p>
+                                    {{$user -> userEmail}}
                                 @endif
                             </div>
 
