@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 
-class LoansHistory extends Migration
+class CreateLoansHistory extends Migration
 {
     public function up()
     {
@@ -19,7 +19,6 @@ class LoansHistory extends Migration
             $table->string('email');
             $table->string('item');
             $table->string('categories');
-            $table->string('name');
             $table->string('note');
             $table->string('place');
             $table->string('inventory_number');
