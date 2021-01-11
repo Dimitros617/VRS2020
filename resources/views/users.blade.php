@@ -1,4 +1,5 @@
 @section('title',"Seznam uživatelů")
+@section('css', URL::asset('css/user.css'))
 <x-app-layout>
 
     <x-slot name="header">
@@ -44,7 +45,7 @@
                     </div>
                     <div id="userList">
                     @foreach($users as $user)
-                        <div class="list-group-item list-group-item-action userElement" userID="{{$user->userId}}">
+                        <div class="items-blocky toast-body userElement" userID="{{$user->userId}}">
                             <div class="display-4">
                                 {{$user -> userSurname}}
                                 {{$user -> userName}} -
@@ -60,19 +61,21 @@
                                 @endif
                             </div>
 
+                            <div class="buttonsDiv">
                             @if(($user->userId != Auth::user()->id))
-                            <button class="btn btn-primary w-200p " onclick="prefixNewMessage('{{$user -> userNick}}') ">Poslat zprávu</button>
+                            <button class="btn btn-primary w-200p buttonsDivItem" onclick="prefixNewMessage('{{$user -> userNick}}') ">Poslat zprávu</button>
                             @endif
                             @if(Auth::permition()->possibility_renting == 1)
-                                <a href="{{url()->current().'/'.$user -> userId.'/loans'}}">
-                                    <button class="btn btn-warning w-200p">Závazky uživatele</button>
+                                <a href="{{url()->current().'/'.$user -> userId.'/loans'}}" class="p-0 buttonsDivItem">
+                                    <button class="btn btn-warning w-200p buttonsDivItem">Závazky uživatele</button>
                                 </a>
-                                @if(Auth::permition()->new_user == 1)
-                                    <a href="{{url()->current().'/'.$user -> userId}}">
-                                        <button class="btn btn-success w-200p ">Upravit uživatele</button>
-                                    </a>
-                                @endif
                             @endif
+                            @if(Auth::permition()->new_user == 1)
+                                <a href="{{url()->current().'/'.$user -> userId}}" class="p-0 buttonsDivItem">
+                                    <button class="btn btn-success w-200p buttonsDivItem">Upravit uživatele</button>
+                                </a>
+                            @endif
+                            </div>
                         </div>
 
 

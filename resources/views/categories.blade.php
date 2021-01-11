@@ -108,23 +108,23 @@
                                 @endif
                             @endif
 </div>
-                           <div class="d-flex justify-content-center justify-content-sm-end w-100 my-2">
+                           <div class="d-flex justify-content-center justify-content-sm-end my-2 buttonsDiv">
                                @if(Auth::permition()->edit_item == 1)
                                 <form action="{{'/categories/' . $categories[$i]->id .'/removeCategory'}}" method="POST"
-                                      class="removeCategory m-1">
+                                      class="buttonsDivItem">
                                     @csrf
-                                    <input type="text" class="d-none" name="categoryId" value="{{$categories[$i]->id}}">
+                                    <input type="text" class="d-none buttonsDivItem" name="categoryId" value="{{$categories[$i]->id}}">
 
-                                    <button type="submit button" class="btn btn-danger w-200p"
+                                    <button type="submit button" class="btn btn-danger w-200p buttonsDivItem"
                                             onclick=" return confirm('Opravdu to chcete smazat?');">Smazat
                                     </button>
                                 </form>
 
                                 <form action="{{'/categories/' . $categories[$i]->id .'/activeLoans'}}"
-                                      class="removeCategory m-1">
+                                      class="buttonsDivItem">
 
 
-                                    <button type="submit button" class="btn btn-warning w-200p ">Aktuální závazky</button>
+                                    <button type="submit button" class="btn btn-warning w-200p buttonsDivItem">Aktuální závazky</button>
                                 </form>
 
                             @endif

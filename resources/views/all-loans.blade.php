@@ -239,7 +239,7 @@
             @if($lastItem != -1 && $loan->categoryId == $lastCategory)
         </div>
         @endif
-        <div class="itemDiv">
+        <div class="itemDiv ">
             <label class="title font-weight-bold" for="itemName"> Název :</label>
             <div class="itemName">{{$loan->itemName}}</div>
 

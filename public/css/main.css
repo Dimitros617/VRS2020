@@ -187,6 +187,29 @@ a.block.px-4.py-2.text-sm.leading-5.text-gray-700 {
     transform: scale(2);
 }
 
+/*Tlačítkový pás*/
+.buttonsDiv {
+    width: 50%;
+    float: right;
+    margin-right: 2rem;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 2.7rem;
+    display: flex;
+}
+
+.buttonsDivItem {
+    border-radius: 0 !important;
+    height: 2.7rem;
+    padding: 0 !important;
+    margin: 0;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+button.buttonsDivItem, input.buttonsDivItem {
+    width: 100%;
+}
 /*Změna barvy a velikosti mobilní nabídky v hlavičce*/
 svg.h-6.w-6 {
     color: #002c3d;
@@ -199,6 +222,12 @@ svg.h-6.w-6 {
 
 /* Logo hlavička*/
 @media (max-width: 576px) {
+
+    .buttonsDiv {
+        float: none;
+        width: 100%;
+
+    }
 
     .headLogoMobile {
         transform: scale(2);
@@ -228,6 +257,11 @@ svg.h-6.w-6 {
 }
 
 @media (max-width: 992px) {
+    .buttonsDiv {
+        width: 100%;
+        margin-right: 0 !important;
+    }
+
     .search {
         margin-left: 0;
         float: none;

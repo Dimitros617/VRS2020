@@ -55,7 +55,7 @@ button.flex-fill.rounded-0 {
     margin-bottom: 20px;
     border-bottom: 10px solid #fa9600;
     border-radius: 10px;
-    box-shadow: 8px 6px 9px #00000029;
+    box-shadow: inset 0px -1px 9px #00000087;
 }
 
 .categoryDiv {
@@ -73,7 +73,7 @@ button.flex-fill.rounded-0 {
     color: #002e40;
     padding-top: 18px;
     font-size: xxx-large;
-    font-weight: 700;
+    font-weight: 600;
     text-align: center;
     margin-top: -26px;
     height: 90px;
@@ -148,7 +148,7 @@ a.userNameLink {
     color: #002e40;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 780px) {
 
     .userData {
         width: 90%;

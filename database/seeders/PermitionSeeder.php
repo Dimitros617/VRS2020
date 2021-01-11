@@ -16,7 +16,7 @@ class PermitionSeeder extends Seeder
     {
         DB::table('permition')->insert([
             'id' => 1,
-            'name' => 'unverifiedUser',
+            'name' => 'Registrovaný',
             'possibility_renting' => 0,
             'new_user' => 0,
             'return_verification' => 0,
@@ -25,7 +25,7 @@ class PermitionSeeder extends Seeder
         ]);
         DB::table('permition')->insert([
             'id' => 2,
-            'name' => 'verifiedUser',
+            'name' => 'Ověřený',
             'possibility_renting' => 1,
             'new_user' => 0,
             'return_verification' => 0,
@@ -35,7 +35,7 @@ class PermitionSeeder extends Seeder
         ]);
         DB::table('permition')->insert([
             'id' => 3,
-            'name' => 'Admin',
+            'name' => 'Administrátor',
             'possibility_renting' => 1,
             'new_user' => 1,
             'return_verification' => 1,
