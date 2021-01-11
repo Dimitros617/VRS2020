@@ -39,6 +39,85 @@
     color: #002e40;
 }
 
+.pageTitleSearch{
+    width: fit-content;
+    font-weight: 700 !important;
+    font-size: xxx-large;
+    color: #002e40;
+}
+
+.hlavicka {
+    width: 100%;
+    /* background: aqua; */
+    display: inline-flex;
+    display: inline-block;
+    padding-bottom: 1rem;
+    border-bottom: 10px solid #fa9702;
+    margin-bottom: 2rem;
+    /* flex-flow: wrap; */
+    /* height: -webkit-fill-available; */
+}
+
+.pageTitleSearch {
+    width: fit-content;
+    padding-left: 3rem;
+    font-weight: 700 !important;
+    font-size: xxx-large;
+    color: #002e40;
+    float: left;
+}
+
+input#search {
+    height: 3rem;
+    background: transparent !important;
+}
+
+.search {
+    /* margin-left: 3rem; */
+    float: right;
+    width: 50%;
+}
+
+input#search {
+    height: 3rem;
+}
+
+/*.searchButtonDiv {*/
+/*    overflow: hidden;*/
+/*    padding: 0;*/
+/*    border-radius: 8px !important;*/
+/*    margin-right: 0;*/
+/*    height: 3rem;*/
+/*    padding-left: 0 !important;*/
+/*    padding-right: 0 !important;*/
+/*}*/
+
+.searchButtonDiv {
+    overflow: hidden;
+    padding: 0;
+    /* border-radius: 8px !important; */
+    margin-right: -5px;
+    margin-top: -1rem !important;
+    height: 4rem;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/*.searchButton {*/
+/*    margin: 0;*/
+/*    width: fit-content;*/
+/*    float: left;*/
+/*    border-radius: 0 !important;*/
+/*}*/
+
+.searchButton {
+    margin: 0;
+    width: fit-content;
+    float: left;
+    border-radius: 0 !important;
+    height: 100%;
+}
+
 /*Odstranění podtržení v drop down menu u položek*/
 a.block.px-4.py-2.text-sm.leading-5.text-gray-700 {
     text-decoration: none;
@@ -148,8 +227,18 @@ svg.h-6.w-6 {
 
 }
 
-@media (max-width: 500px) {
+@media (max-width: 992px) {
+    .search {
+        margin-left: 0;
+        float: none;
+        width: 100%;
+    }
 
-
+    .pageTitleSearch {
+        width: 100%;
+        padding-left: 0;
+        text-align: center;
+        float: none;
+    }
 
 }

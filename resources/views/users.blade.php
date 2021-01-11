@@ -17,27 +17,30 @@
                 <div class="list-group pt-4 pb-4">
 
                     <div class="hlavicka">
-                        <div class="display-4 p-4 text-vrs-cyan"> Seznam uživatelů:</div>
-                            <div class="search">
-                                <div class="card card-sm">
-                                    <div class="card-body row no-gutters align-items-center">
-                                        <div class="col-auto">
-                                            <i class="fas fa-search h4 text-body"></i>
-                                        </div>
+                        <div class="pageTitleSearch"> Seznam uživatelů:</div>
+                        <div class="search">
+                            <div class="bg-gray-100 rounded-3 modal-open">
+                                <div class="card-body row no-gutters align-items-center h-4rem">
 
-                                        <div class="col">
-                                            <input class="form-control-borderless" id="search" type="search" placeholder="Zadejte hledaný výraz">
-                                        </div>
-
-                                        <div class="col-auto">
-                                            <div class="spinner-border text-dark" id="spinner" role="status" hidden></div>
-                                            <button class="btn btn-lg btn-success" type="submit" onclick="userFind(this)">Najít</button>
-                                            <button class="btn btn-lg btn-primary " data-sort="none" sort="desc" onclick="userSort(this)">&#8681;</button>
-                                        </div>
+                                    <div class="col">
+                                        <input class="form-control-borderless mt--1" id="search" type="search" placeholder="Zadejte hledaný výraz">
 
                                     </div>
+
+                                    <div class="col-auto">
+                                        <div class="spinner-border text-vrs-yellow searchSpinner mt--1" id="spinner" role="status" hidden></div>
+                                    </div>
+
+
+                                    <div class="col-auto searchButtonDiv">
+
+                                        <button class="btn btn-lg btn-success searchButton" type="submit" onclick="userFind(this)">Najít</button>
+                                        <button class="btn btn-lg btn-primary searchButton" data-sort="none" sort="desc" onclick="userSort(this)">&#8681;</button>
+                                    </div>
+
                                 </div>
                             </div>
+                        </div>
                     </div>
                     <div id="userList">
                     @foreach($users as $user)

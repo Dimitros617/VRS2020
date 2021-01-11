@@ -6571,6 +6571,14 @@ a.badge-dark:focus, a.badge-dark.focus {
     height: 4rem !important;
 }
 
+.h-5rem {
+    height: 5rem !important;
+}
+
+.h-6rem {
+    height: 6rem !important;
+}
+
 .h-25 {
   height: 25% !important;
 }
@@ -6899,6 +6907,10 @@ a.badge-dark:focus, a.badge-dark.focus {
 .my-auto {
   margin-top: auto !important;
   margin-bottom: auto !important;
+}
+
+.mt--1 {
+    margin-top: -1rem !important;
 }
 
 .mt-0 {

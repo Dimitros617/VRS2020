@@ -6,7 +6,7 @@
     <script src="/js/categoryGets.js"></script>
 {{--    <link rel="stylesheet" href="{{ URL::asset('css/categories.css') }}">--}}
 
-    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="p-3 p-sm-5 bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8 ">
 
         <div class="container">
 
@@ -22,22 +22,25 @@
                             </div>
 
                         <div class="hlavicka">
-            <div class="display-4 p-4 text-vrs-cyan"> Seznam kategorií:</div>
+            <div class="pageTitleSearch"> Seznam kategorií:</div>
                             <div class="search">
-                                <div class="card card-sm">
-                                    <div class="card-body row no-gutters align-items-center">
-                                        <div class="col-auto">
-                                            <i class="fas fa-search h4 text-body"></i>
-                                        </div>
+                                <div class="bg-gray-100 rounded-3 modal-open">
+                                    <div class="card-body row no-gutters align-items-center h-4rem">
 
                                         <div class="col">
-                                            <input class="form-control-borderless" id="search" type="search" placeholder="Zadejte hledaný výraz">
+                                            <input class="form-control-borderless mt--1" id="search" type="search" placeholder="Zadejte hledaný výraz">
+
                                         </div>
 
                                         <div class="col-auto">
-                                            <div class="spinner-border text-dark" id="spinner" role="status" hidden></div>
-                                            <button class="btn btn-lg btn-success" type="submit" onclick="categoryFind(this)">Najít</button>
-                                            <button class="btn btn-lg btn-primary " data-sort="none" sort="desc" onclick="categorySort(this)">&#8681;</button>
+                                            <div class="spinner-border text-vrs-yellow searchSpinner mt--1" id="spinner" role="status" hidden></div>
+                                        </div>
+
+
+                                        <div class="col-auto searchButtonDiv">
+
+                                            <button class="btn btn-lg btn-success searchButton" type="submit" onclick="categoryFind(this)">Najít</button>
+                                            <button class="btn btn-lg btn-primary searchButton" data-sort="none" sort="desc" onclick="categorySort(this)">&#8681;</button>
                                         </div>
 
                                     </div>
