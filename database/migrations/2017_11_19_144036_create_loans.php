@@ -13,7 +13,16 @@ class CreateLoans extends Migration
 
             $table->id();
             $table->unsignedBigInteger('user');
+            $table->string('name');
+            $table->string('surname');
+            $table->string('phone');
+            $table->string('email');
             $table->unsignedBigInteger('item');
+            $table->unsignedBigInteger('categories');
+            $table->string('name');
+            $table->string('note');
+            $table->string('place');
+            $table->string('inventory_number');
             $table->string('rent_from');
             $table->string('rent_to');
             $table->tinyInteger('status')->default('1');
