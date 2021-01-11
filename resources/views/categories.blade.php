@@ -119,7 +119,8 @@
                                             onclick=" return confirm('Opravdu to chcete smazat?');">Smazat
                                     </button>
                                 </form>
-
+                               @endif
+                               @if(Auth::permition()->possibility_renting == 1)
                                 <form action="{{'/categories/' . $categories[$i]->id .'/activeLoans'}}"
                                       class="buttonsDivItem">
 
@@ -127,7 +128,7 @@
                                     <button type="submit button" class="btn btn-warning w-200p buttonsDivItem">Aktuální závazky</button>
                                 </form>
 
-                            @endif
+                                @endif
                            </div>
                         </a>
                         {{--                    (str_replace(' ','_',$kategory['nazev']))  pokud chceme nahradit mezery podrtrřítkem --}}
