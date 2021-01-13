@@ -4,17 +4,17 @@ function hoverChange2(ele) {
 
 
     if (ele.getAttribute('bool') == 1)
-        ele.value = "Změnit na NE";
+        ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = "Změnit na NE";
     else
-        ele.value = "Změnit na ANO";
+        ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = "Změnit na ANO";
 }
 
 function hoverChangeEnd2(ele) {
 
     if (ele.getAttribute('bool') == 1)
-        ele.value = "Viditelné: ANO";
+        ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = "Viditelné: ANO";
     else
-        ele.value = "Viditelné: NE";
+        ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = "Viditelné: NE";
 
 }
 

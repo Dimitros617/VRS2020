@@ -47,7 +47,17 @@
 
 }
 
+.vrs-d-block{
+    display: block;
+}
 
+.emptyElementLoans {
+    color: #002e40;
+    font-weight: 700;
+    margin: 1rem 0rem;
+    text-align: center;
+    font-size: larger;
+}
 
 
 .pageTitle{
@@ -69,6 +79,7 @@
     font-size: xxx-large;
     color: #002e40;
 }
+
 
 .hlavicka {
     width: 100%;

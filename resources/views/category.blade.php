@@ -7,6 +7,8 @@
     <script src="/js/main.js"></script>
     <script src="/js/datePicker.js"></script>
     <script src="/js/categoryGets.js"></script>
+    <script src="/js/categorySaves.js"></script>
+    <script src="/js/remove.js"></script>
     <script>
         window.categoryName = "{{$category['name']}}";
     </script>
@@ -30,23 +32,24 @@
                             {{--  Pokud má uživatel oprávnění upravovat itemy--}}
 
                             @if( $permition[0]->edit_item == 1)
-                                <form action="{{'/saveCategoryData'}}" method="POST" class="item">
+                                <form action="{{'/saveCategoryData'}}" method="POST" class="categoryData d-flow-root">
                                     @csrf
                                     <input type="number" value="{{$category['id']}}" name="categoryId" hidden>
-                                    <input type="text" class="categoryName nadpis h1" value="{{$category['name']}}"
+                                    <input type="text" class="pageTitle" value="{{$category['name']}}" name="categoryNameOld"  hidden>
+
+                                    <input type="text" class="pageTitle" value="{{$category['name']}}"
                                            name="categoryName" onchange="categoryNameChange(this)" oninput="showButton(this)" required>
-                                    <br>
-                                    <textarea class="popisek " name="categoryDescription" method="POST"
+                                    <br>                                    <textarea class="vrs-h3 text-vrs-yellow w-100 text-center p-3" name="categoryDescription" method="POST"
                                               oninput="showButton(this)">{{$category['description']}}</textarea>
                                     <br>
-                                    <input class="btn btn-primary" type="submit"  value="Uložit změny"  hidden>
+                                    <input class="btn btn-primary float-end p-2 me-4-5 w-10rem" type="submit"  value="Uložit změny"  hidden>
 
                                 </form>
                                 {{--                            Pouze je navíc atribut disabled u prvků aby do nic uživatel nemohl psát    --}}
                             @else
-                                <input type="text" class="nadpis h1" value="{{$category['name']}}" disabled>
+                                <input type="text" class="pageTitle bg-white" value="{{$category['name']}}" disabled>
                                 <br>
-                                <textarea class="popisek " disabled>{{$category['description']}}</textarea>
+                                <textarea class="vrs-h3 text-vrs-yellow w-100 text-center p-3 bg-white" disabled>{{$category['description']}}</textarea>
                                 <br>
                             @endif
 
@@ -63,47 +66,49 @@
                                             <div class="item" >
                                     @else
                                         @if($permition[0]->edit_item == 1)
-                                                        <div class="item bg-light ">
+                                                        <div class="item hiddenItem ">
                                                 @else
                                                         <div class="item" hidden>
                                             @endif
                                     @endif
-                                            <form action="{{'/item/' . $item->id . '/saveItemData'}}" method="POST" class="item">
+                                            <form  class="itemDataDiv">
                                                 @csrf
+
+                                                <div class="itemDataDivRow">
                                                 <label class="title font-weight-bold" for="name">Název: </label>
                                                 <input class="name" value="{{$item->name}}" name="name"
                                                        @if( $permition[0]->edit_item != 1) disabled @endif
                                                        oninput="showButton(this)" required>
+                                                </div>
 
+                                                <div class="itemDataDivRow">
                                                 <label class="title font-weight-bold" for="note">Poznámka: </label>
                                                 <input class="note" value="{{$item->note}}" name="note"
                                                        @if( $permition[0]->edit_item != 1) disabled @endif
                                                        oninput="showButton(this)">
-
+                                                </div>
+                                                    <div class="itemDataDivRow">
                                                 <label class="title font-weight-bold" for="place">Místo: </label>
                                                 <input class="place" value="{{$item->place}}" name="place"
                                                        @if( $permition[0]->edit_item != 1) disabled @endif
                                                        oninput="showButton(this)">
-
+                                                    </div>
+                                                        <div class="itemDataDivRow">
                                                 <label class="title font-weight-bold" for="inventory_number">Inventární číslo: </label>
                                                 <input class="inventory_number" name="inventory_number"
                                                        value="{{$item->inventory_number}}"
                                                        @if( $permition[0]->edit_item != 1) disabled @endif
                                                        oninput="showButton(this)">
+                                                        </div>
 
 
-                                            {{--Skryté elementy pouze pro formulář--}}
-                                                <input type="text" class="d-none" name="itemId"
-                                                       value="{{$item->id}}">
 
-                                                <input type="text" class="d-none" name="categoriesId"
-                                                       value="{{$item->categories}}">
-
-                                                <input type="text" class="d-none" name="availability"
-                                                       value="{{$item->availability}}">
+                                                <button type="submit button" class="btn btn-primary w-200p float-end p-2 me-4-5 w-10rem text-white" onclick="saveItemData(this,'{{$item->id}}', '{{$item->categories}}', '{{$item->availability}}'); return false" hidden>
+                                                    <div id="buttonText">Uložit změny</div>
+                                                    <div id="buttonLoading" class="spinner-grow text-light" role="status" hidden></div>
+                                                </button>
 
 
-                                                <input class="btn btn-primary" type="submit" value="Uložit změny" hidden>
                                             </form>
                                             @php
                                                 $text = "";
@@ -125,7 +130,7 @@
                                                 @else
                                                 @endif
                                             @endforeach
-                                            <form action="{{'/item/' . $item->id . '/saveItemLoansData'}}" method="POST" class="item">
+                                            <form action="{{'/item/' . $item->id . '/saveItemLoansData'}}" method="POST" >
                                                 @csrf
                                                 <input type="text" class="d-none" name="itemId"
                                                        value="{{$item->id}}">
@@ -133,7 +138,7 @@
                                                 <div class="dateReservation" data="{{$text}}">
                                                     <div class="reserveFromDiv">
                                                         <label>Od:</label>
-                                                        <input class="date reserveFrom border" type="text"
+                                                        <input class="date reserveFromInput" type="text"
                                                                class="reserveFrom"
                                                                name="rent_from" nameDB="{{$item->name}}"
                                                                autocomplete="off"
@@ -144,7 +149,7 @@
 
                                                     <div class="reserveToDiv">
                                                         <label>Do:</label>
-                                                        <input class="date reserveTo border" type="text"
+                                                        <input class="date reserveToInput" type="text"
                                                                class="reserveTo"
                                                                name="rent_to" nameDB="{{$item->name}}"
                                                                autocomplete="off"
@@ -155,58 +160,100 @@
                                                 </div>
 
                                                 <br>
-                                                <input class="btn btn-primary" type="submit" value="Vypůjčit">
 
+
+                                                <input id="newLoanFormSubmit" type="submit" hidden >
 
 
                                             </form>
 
+                                                            <div class="buttonsDiv">
+                                                                <a class="buttonsDivItem">
+                                                                <input class="btn btn-primary buttonsDivItem" type="submit" value="Vypůjčit" onclick="document.getElementById('newLoanFormSubmit').click();">
+                                                                </a>
+
                                                 @if( $permition[0]->edit_item == 1)
-                                                    <form action="{{'/item/' . $item->id . '/removeItem'}}" method="POST" class="itemRemove">
-                                                        @csrf
-                                                        <input type="text" class="d-none" name="itemId" value="{{$item->id}}">
-                                                        <input class="btn btn-danger" type="submit" value="Smazat">
-                                                    </form>
+{{--                                                    <form action="{{'/item/' . $item->id . '/removeItem'}}" method="POST" class="buttonsDivItem">--}}
+{{--                                                        @csrf--}}
+{{--                                                        <input type="text" class="d-none" name="itemId" value="{{$item->id}}">--}}
+{{--                                                        <input class="btn btn-danger buttonsDivItem" type="submit" value="Smazat">--}}
+{{--                                                    </form>--}}
+                                                    <div class="buttonsDivItem">
+                                                        <button type="submit button" class="btn btn-danger w-200p buttonsDivItem" onclick="removeItem(this, '{{$item->id}}'); return false;">
+                                                            <div id="removeText">Smazat</div>
+                                                            <div id="removeLoading" class="spinner-grow text-light" role="status" hidden></div>
+                                                        </button>
+                                                    </div>
                                                 @endif
 
                                                 @if( $permition[0]->possibility_renting == 1)
-                                                    <form action="{{'/item/' . $item->id . '/activeLoans'}}"  class="activeLoans">
+                                                    <form action="{{'/item/' . $item->id . '/activeLoans'}}"  class="buttonsDivItem">
 
-                                                         <input class="btn btn-warning" type="submit" value="Aktuální závazky">
+                                                         <input class="btn btn-warning buttonsDivItem" type="submit" value="Aktuální závazky">
                                                     </form>
                                                 @endif
 
                                                 @if( $permition[0]->edit_item == 1)
-                                                    <form action="{{'/item/' . $item->id . '/changeItemAvailability'}}" method="POST" class="changeItemAvailability">
-                                                         @csrf
+{{--                                                    <form action="{{'/item/' . $item->id . '/changeItemAvailability'}}" method="POST" class="buttonsDivItem">--}}
+{{--                                                         @csrf--}}
 
-                                                        <input type="text" class="d-none" name="itemId" value="{{$item->id}}">
-                                                        <input type="text" class="d-none" name="availability" value="{{$item->availability}}">
-                                                        @if($item->availability  == 1 )
-                                                            <input class="btn btn-success" type="submit" bool="1" value="Viditelné: ANO"  onmouseover="hoverChange2(this)" onmouseleave="hoverChangeEnd2(this)">
+{{--                                                        <input type="text" class="d-none" name="itemId" value="{{$item->id}}">--}}
+{{--                                                        <input type="text" class="d-none" name="availability" value="{{$item->availability}}">--}}
+{{--                                                        @if($item->availability  == 1 )--}}
+{{--                                                            <input class="btn btn-success buttonsDivItem" type="submit" bool="1" value="Viditelné: ANO"  onmouseover="hoverChange2(this)" onmouseleave="hoverChangeEnd2(this)" onclick="changeItemAvailability(ele,)">--}}
+{{--                                                        @else--}}
+{{--                                                            <input class="btn btn-danger buttonsDivItem" type="submit" bool="0" value="Viditelné: NE" >--}}
+{{--                                                        @endif--}}
+{{--                                                    </form>--}}
+
+                                                    <div class="buttonsDivItem">
+                                                        <button type="submit button" class="btn
+
+                                                         @if($item->availability  == 1 )
+                                                            btn-success
                                                         @else
-                                                            <input class="btn btn-danger" type="submit" bool="0" value="Viditelné: NE" onmouseover="hoverChange2(this)" onmouseleave="hoverChangeEnd2(this)">
+                                                            btn-danger
                                                         @endif
-                                                    </form>
-                                                @endif
 
-                                            <hr>
+                                                         w-200p buttonsDivItem" onmouseover="hoverChange2(this)"; onmouseleave="hoverChangeEnd2(this)"; onclick="changeItemAvailability(this, '{{$item->id}}'); return false;"
+                                                                @if($item->availability  == 1 )
+                                                                bool="1"
+                                                                @else
+                                                                bool="0"
+                                                                @endif
+                                                        >
+                                                            <div id="buttonText">
+                                                                @if($item->availability  == 1 )
+                                                                Viditelné: ANO
+                                                                @else
+                                                                Viditelné: NE
+                                                                @endif
+                                                            </div>
+
+                                                            <div id="buttonLoading" class="spinner-grow text-light" role="status" hidden></div>
+                                                        </button>
+                                                    </div>
+                                                @endif
+                                            </div>
+
+
                                                             <div id="alert{{$item->id}}"></div>
                                         </div>
                                         @endforeach
                                             @else
-                                                <div class="display-6 pt-4 pb-4">Nebylo nic nalezeno</div>
+                                                <div class="emptyElementLoans">Nebylo zde nic nalezeno</div>
                                             @endif
 
                                                                 @if( $permition[0]->edit_item == 1)
-                                                                    <div class="item">
+                                                                    <div class="">
                                                                     <form action="{{'/item/addNewItem'}}" method="POST" class="addNewItem">
                                                                         @csrf
                                                                         <input type="text" class="d-none" name="category" value="{{$category->id}}">
 
-                                                                        <button type="submit" class="btn btn-light w-100 text-center align-middle mb-2">
-                                                                            Přidat novou položku
-                                                                            <h1>&#43;</h1>
+                                                                        <button type="submit" class="btn btn-light w-100 text-center align-middle mb-5 mt-4 pt-4 fw-bolder text-vrs-clight " onclick="document.getElementById('addNewItemSpinner').removeAttribute('hidden');document.getElementById('addNewItemText').setAttribute('hidden','');">
+                                                                            <span class="d-block w-100 ">Přidat novou položku</span>
+                                                                            <h1 id="addNewItemText" >&#43;</h1>
+                                                                            <div class="spinner-grow text-vrs-cyan mb-4 mt-4" id="addNewItemSpinner" hidden></div>
                                                                         </button>
 
                                                                     </form>

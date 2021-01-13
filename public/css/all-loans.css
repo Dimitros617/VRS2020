@@ -10,13 +10,7 @@
 }
 
 
-.emptyElementLoans {
-    color: #002e40;
-    font-weight: 700;
-    margin: 1rem 0rem;
-    text-align: center;
-    font-size: larger;
-}
+
 
 button.flex-fill.rounded-0 {
     width: -webkit-fill-available;

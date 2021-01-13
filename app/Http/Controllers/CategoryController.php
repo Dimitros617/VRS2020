@@ -51,7 +51,7 @@ class CategoryController extends Controller
     {
         Log::info('CategoryControler:saveCategory');
 
-        if($this->checkCategoryNameExist($request->categoryName) == "true"){
+        if($this->checkCategoryNameExist($request->categoryName) == "true" && $request->categoryName != $request->categoryNameOld){
             abort(409);
             return;
         }
@@ -88,7 +88,7 @@ class CategoryController extends Controller
         if(count($data) == 0){
             $check = DB::table('categories')->where('id', $request->id)->delete();
 
-            return back()->withInput(array('saveCheck' => $check ? '1' : '0'));
+            return $check;
         }else {
 
             return view('category-remove-verify', ['categories' => $data]);

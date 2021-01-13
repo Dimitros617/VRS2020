@@ -37,35 +37,36 @@ class ItemsController extends Controller
         $item->availability = is_null($request->availability) ? "0":  $request->availability;
         $check = $item->save();
 
-        return back()->withInput(array('saveCheck' => $check ? '1' : '0'));
+        return $check;
     }
 
     function changeItemAvailability(Request $request)
     {
         Log::info('CategoryControler:changeItemAvailability');
 
-        $item = items::find($request->itemId);
+        $item = items::find($request->id);
         $item->availability = (($request->availability + 1) % 2);
         $check = $item->save();
 
-        return back()->withInput(array('saveCheck' => $check ? '1' : '0'));
+        $availability = (($request->availability + 1) % 2);
+        return array("return" => $check, "availability" => $availability);
 
     }
 
     function removeItem(Request $request)
     {
-        Log::info('CategoryControler:removeItem');
+        Log::info('CategoryControler:removeItem' . $request->id);
 
-        $loans = DB::table('loans')->where('item', $request->itemId)->count();
+        $loans = DB::table('loans')->where('item', $request->id)->count();
 
         if ($loans == 0) {
-            $check = DB::table('items')->where('id', $request->itemId)->delete();
+            $check = DB::table('items')->where('id', $request->id)->delete();
 
-            return back()->withInput(array('saveCheck' => $check ? '1' : '0'));
+            return  $check;
 
         } else {
-            $item = items::find($request->itemId);
-            $users = DB::table('loans')->join('users', 'loans.user', '=', 'users.id')->where('item', $request->itemId)->select('users.id', 'users.name', 'users.surname', 'loans.rent_from', 'loans.rent_to')->get();
+            $item = items::find($request->id);
+            $users = DB::table('loans')->join('users', 'loans.user', '=', 'users.id')->where('item', $request->id)->select('users.id', 'users.name', 'users.surname', 'loans.rent_from', 'loans.rent_to')->get();
 
             return view('item-remove-verify', ['item' => $item, 'users' => $users]);
 

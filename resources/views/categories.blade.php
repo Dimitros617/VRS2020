@@ -4,6 +4,7 @@
 
     <x-slot name="header"></x-slot>
     <script src="/js/categoryGets.js"></script>
+    <script src="/js/remove.js"></script>
 {{--    <link rel="stylesheet" href="{{ URL::asset('css/categories.css') }}">--}}
 
     <div class="p-3 p-sm-5 bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8 ">
@@ -110,19 +111,17 @@
 </div>
                            <div class="d-flex justify-content-center justify-content-sm-end my-2 buttonsDiv">
                                @if(Auth::permition()->edit_item == 1)
-                                <form action="{{'/categories/' . $categories[$i]->id .'/removeCategory'}}" method="POST"
-                                      class="buttonsDivItem">
-                                    @csrf
-                                    <input type="text" class="d-none buttonsDivItem" name="categoryId" value="{{$categories[$i]->id}}">
-
-                                    <button type="submit button" class="btn btn-danger w-200p buttonsDivItem"
-                                            onclick=" return confirm('Opravdu to chcete smazat?');">Smazat
+                                <div class="buttonsDivItem">
+                                    <button type="submit button" class="btn btn-danger w-200p buttonsDivItem" onclick="removeCategory(this, '{{$categories[$i]->id}}'); return false">
+                                        <div id="removeText">Smazat</div>
+                                        <div id="removeLoading" class="spinner-grow text-light" role="status" hidden></div>
                                     </button>
-                                </form>
+                                </div>
                                @endif
                                @if(Auth::permition()->possibility_renting == 1)
+                                {{--   Form protože nemuže být a v a--}}
                                 <form action="{{'/categories/' . $categories[$i]->id .'/activeLoans'}}"
-                                      class="buttonsDivItem">
+                                      class=" p-0 buttonsDivItem">
 
 
                                     <button type="submit button" class="btn btn-warning w-200p buttonsDivItem">Aktuální závazky</button>
@@ -142,9 +141,10 @@
                 <div class="item">
                     <form action="{{'/categories/addNewCategory'}}" method="POST" class="addNewCategory">
                         @csrf
-                        <button type="submit" class="btn btn-light w-100 text-center align-middle mb-2 mt-4 pt-4 fw-bolder text-vrs-clight">
-                            Přidat novou kategorii
-                            <h1>&#43;</h1>
+                        <button type="submit" class="btn btn-light w-100 text-center align-middle mb-2 mt-4 pt-4 fw-bolder text-vrs-clight " onclick="document.getElementById('addNewCategorySpinner').removeAttribute('hidden');document.getElementById('addNewCategoryText').setAttribute('hidden','');">
+                            <span class="d-block w-100 ">Přidat novou kategorii</span>
+                            <h1 id="addNewCategoryText" >&#43;</h1>
+                            <div class="spinner-grow text-vrs-cyan mb-4 mt-4" id="addNewCategorySpinner" hidden></div>
                         </button>
 
                     </form>

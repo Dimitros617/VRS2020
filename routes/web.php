@@ -58,8 +58,8 @@ Route::get('/getUserNames', [ListUsersController::class,'getUserNames']);
 //Categorie
 Route::post('/saveCategoryData', [CategoryController::class,'saveCategory']);
 Route::post('/categories/addNewCategory', [CategoryController::class,'addNewCategory']);
-Route::post('/categories/{id:id}/removeCategory', [CategoryController::class,'removeCategory']);
 Route::post('/categories/{id:id}/removeCategoryHard', [CategoryController::class,'removeCategoryHard']);
+Route::get('/categories/{id:id}/removeCategory', [CategoryController::class,'removeCategory']);
 Route::get('/categories/checkCategoryNameExist/{name?}', [CategoryController::class,'checkCategoryNameExist']);
 Route::get('/categories/categoriesSort/{sort?}', [CategoryController::class,'categoriesSort']);
 Route::get('/categories/categoriesFind/{find?}', [CategoryController::class,'categoriesFind']);
@@ -67,9 +67,9 @@ Route::get('/categories/categoriesFind/{find?}', [CategoryController::class,'cat
 //Itemy
 Route::post('/item/addNewItem', [ItemsController::class,'addNewItem']);
 Route::post('/item/{id:id}/saveItemData', [ItemsController::class,'saveItem']);
-Route::post('/item/{id:id}/changeItemAvailability', [ItemsController::class,'changeItemAvailability']);
-Route::post('/item/{id:id}/removeItem', [ItemsController::class,'removeItem']);
+Route::get('/item/{id:id}/changeItemAvailability', [ItemsController::class,'changeItemAvailability']);
 Route::post('/item/{id:id}/removeItemHard', [ItemsController::class,'removeItemHard']);
+Route::get('/item/{id:id}/removeItem', [ItemsController::class,'removeItem']);
 
 //Vůpůjčky
 //Route::post('/item/{id:id}/activeLoans', [LoansController::class,'showItemLoans']);

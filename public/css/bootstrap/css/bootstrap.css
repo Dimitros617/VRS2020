@@ -6310,6 +6310,10 @@ a.badge-dark:focus, a.badge-dark.focus {
   display: block !important;
 }
 
+.d-flow-root {
+    display: flow-root !important;
+}
+
 .d-content {
     display: contents !important;
 }
@@ -6557,6 +6561,10 @@ a.badge-dark:focus, a.badge-dark.focus {
 
 .w-100 {
   width: 100% !important;
+}
+
+.w-10rem{
+    width: 10rem;
 }
 
 .w-auto {
@@ -6971,6 +6979,10 @@ a.badge-dark:focus, a.badge-dark.focus {
 
 .me-4 {
   margin-right: 1.5rem !important;
+}
+
+.me-4-5 {
+    margin-right: 2rem !important;
 }
 
 .me-5 {
