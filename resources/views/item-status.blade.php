@@ -29,7 +29,7 @@
                 <div class="list-group">
 
                     @if(count($users) == 0)
-                        <div class="nothing"> Tatuto položka není vypůjčená ani rezervovaná</div>
+                        <div class="emptyElementLoans"> Tatuto položka není vypůjčená ani rezervovaná</div>
                     @endif
 
                     @foreach($users as $user)

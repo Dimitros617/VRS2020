@@ -106,7 +106,7 @@
                             </div>
                             </div>
                         @else
-                            Pro tuto položku nejsou zaznamenány zádné závazky
+                            <div class="emptyElementLoans">Pro tuto položku nejsou zaznamenány zádné závazky</div>
                         @endif
                 @php
                     $lastCategory = $category->categoryId;
