@@ -67,7 +67,7 @@
             @endif
             @endif
 
-            <form action="{{'/loans/' . $loan->id .'/return'}}" method="POST" class="addNewCategory">
+            <form action="{{'/loans/' . $loan->id .'/return'}}" method="POST" class="loanRecordBox">
                 @csrf
 
                 <div class="icon"

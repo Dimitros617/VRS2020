@@ -25,7 +25,7 @@
   --bs-info: #0dcaf0;
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
-  --bs-light: #f8f9fa;
+  --bs-light: #f4f5f7 ;
   --bs-dark: #212529;
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -454,6 +454,10 @@ iframe {
 summary {
   display: list-item;
   cursor: pointer;
+}
+
+.cursor-pointer{
+    cursor: pointer;
 }
 
 progress {
@@ -3103,13 +3107,13 @@ textarea.form-control-lg {
 
 .btn-light {
   color: #000;
-  background-color: #f8f9fa;
-  border-color: #f8f9fa;
+  background-color: #f4f5f7 ;
+  border-color: #f4f5f7;
 }
 .btn-light:hover {
   color: #000;
-  background-color: #f9fafb;
-  border-color: #f9fafb;
+  background-color: #e0e0e0;
+  border-color: #e0e0e0;
 }
 .btn-check:focus + .btn-light, .btn-light:focus {
   color: #000;
@@ -6306,6 +6310,10 @@ a.badge-dark:focus, a.badge-dark.focus {
   display: block !important;
 }
 
+.d-content {
+    display: contents !important;
+}
+
 .d-grid {
   display: grid !important;
 }
@@ -7396,7 +7404,7 @@ a.badge-dark:focus, a.badge-dark.focus {
 }
 
 .bg-light {
-  background-color: #f8f9fa !important;
+  background-color: #f4f5f7  !important;
 }
 
 .bg-dark {

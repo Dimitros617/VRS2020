@@ -142,7 +142,7 @@
                 <div class="item">
                     <form action="{{'/categories/addNewCategory'}}" method="POST" class="addNewCategory">
                         @csrf
-                        <button type="submit" class="btn btn-light w-100 text-center align-middle mb-2">
+                        <button type="submit" class="btn btn-light w-100 text-center align-middle mb-2 mt-4 pt-4 fw-bolder text-vrs-clight">
                             Přidat novou kategorii
                             <h1>&#43;</h1>
                         </button>

@@ -1,3 +1,13 @@
+.removeVerify {
+    background: #f4f5f7;
+    border-radius: 10px;
+    padding: 5rem 2rem;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    border-bottom: 10px solid #dc3545;
+
+}
+
 .btn svg {
     text-align: center;
     align-items: center;
@@ -98,32 +108,18 @@ button.flex-fill.rounded-0 {
     width: 5%;
     text-align: center;
     margin-left: 1rem;
-    margin-right: 5px;
+    margin-right: 1rem;
+
 }
 
 .iconSvg {
     width: 2rem;
     height: 3rem;
     margin-top: 10px;
+    margin-right: 1rem;
     color: #002e40;
 }
 
-.submitButton {
-    height: 100%;
-    width: 100%;
-    font-weight: bolder;
-}
-
-.submitButtonDiv {
-    float: right;
-    /* background: aqua; */
-    width: 10rem;
-    height: 7rem;
-    margin-top: -1.5rem;
-    margin-right: -1rem;
-    /*box-shadow: -2px 0px 8px 1px #00000052;*/
-    font-weight: bolder;
-}
 
 .userData {
     float: left;
@@ -145,35 +141,15 @@ a.userNameLink {
 
 .rentFromDiv, .rentToDiv {
     float: left;
-    width: 40%;
+    width: 30%;
     margin-left: 20px;
     color: #002e40;
+    margin-top: 0.4rem;
 }
+
+
 
 @media (max-width: 780px) {
-
-    .userData {
-        width: 90%;
-        margin-left: 1rem;
-        margin-bottom: 1rem;
-    }
-
-    .loanRecordBox {
-        height: 11rem;
-    }
-
-    .submitButtonDiv {
-        float: left;
-        width: 112%;
-        height: 5rem;
-        margin-top: -0.5rem;
-        display: block;
-        margin-left: -1rem;
-    }
-
-}
-
-@media (max-width: 576px) {
 
     .userData {
         width: 100%;
@@ -191,11 +167,15 @@ a.userNameLink {
         margin-left: auto;
         margin-right: auto;
         display: block;
+        text-align: center;
     }
 
     a.userNameLink {
         float: none;
         width: 100%;
+        display: block;
+        padding-top: 1rem;
+        text-align: center;
     }
 
     .icon {
@@ -206,6 +186,7 @@ a.userNameLink {
         margin-left: 0px;
         margin-right: 0px;
         margin-bottom: 3rem;
+        margin-top: 1rem;
     }
 
     .iconSvg {
@@ -220,12 +201,10 @@ a.userNameLink {
     }
 
     .loanRecordBox {
-        height: 15.5rem;
+        height: 13.5rem;
     }
 
-    .submitButtonDiv {
-        width: 115%;
-    }
 
 }
+
 

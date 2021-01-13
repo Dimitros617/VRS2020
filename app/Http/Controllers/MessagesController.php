@@ -101,7 +101,6 @@ class MessagesController extends Controller
                 $users->setPermition(1);
             }
         } catch (\Throwable $e) {
-
         }
 
     }

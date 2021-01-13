@@ -121,7 +121,7 @@
                             @endif
 
                             <form action="{{'/loans/' . $loan->id .'/return'}}" method="POST"
-                                  class="addNewCategory loan">
+                                  class="loanRecordBox loan">
                                 @csrf
 
                                 <div class="icon"
@@ -167,9 +167,9 @@
 
                         <div class="userData">
                         <a href="/users/{{$loan->userId}}" class="userNameLink">
-                            <label class="font-weight-bold userName">{{$loan->userName}}</label>
+                            <label class="font-weight-bold userName cursor-pointer">{{$loan->userName}}</label>
 
-                            <label class="font-weight-bold userSurname">{{$loan->userSurname}} </label>
+                            <label class="font-weight-bold userSurname cursor-pointer">{{$loan->userSurname}} </label>
 
                         </a>
 
@@ -260,7 +260,7 @@
             @endif
             @endif
 
-            <form action="{{'/loans/' . $loan->id .'/return'}}" method="POST" class="addNewCategory">
+            <form action="{{'/loans/' . $loan->id .'/return'}}" method="POST" class="loanRecordBox">
                 @csrf
 
                 <div class="icon"
