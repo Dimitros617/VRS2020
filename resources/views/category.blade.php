@@ -130,7 +130,7 @@
                                                 @else
                                                 @endif
                                             @endforeach
-                                            <form action="{{'/item/' . $item->id . '/saveItemLoansData'}}" method="POST" >
+                                            <form  id="form" >
                                                 @csrf
                                                 <input type="text" class="d-none" name="itemId"
                                                        value="{{$item->id}}">
@@ -168,16 +168,15 @@
                                             </form>
 
                                                             <div class="buttonsDiv">
-                                                                <a class="buttonsDivItem">
-                                                                <input class="btn btn-primary buttonsDivItem" type="submit" value="Vypůjčit" onclick="document.getElementById('newLoanFormSubmit').click();">
-                                                                </a>
+                                                                <div class="buttonsDivItem">
+                                                                    <button type="submit button" class="btn btn-primary w-200p buttonsDivItem" onclick="saveItemLoansData(this); return false;">
+                                                                        <div id="buttonText">Vypůjčit</div>
+                                                                        <div id="buttonLoading" class="spinner-grow text-light" role="status" hidden></div>
+                                                                    </button>
+                                                                </div>
 
                                                 @if( $permition[0]->edit_item == 1)
-{{--                                                    <form action="{{'/item/' . $item->id . '/removeItem'}}" method="POST" class="buttonsDivItem">--}}
-{{--                                                        @csrf--}}
-{{--                                                        <input type="text" class="d-none" name="itemId" value="{{$item->id}}">--}}
-{{--                                                        <input class="btn btn-danger buttonsDivItem" type="submit" value="Smazat">--}}
-{{--                                                    </form>--}}
+
                                                     <div class="buttonsDivItem">
                                                         <button type="submit button" class="btn btn-danger w-200p buttonsDivItem" onclick="removeItem(this, '{{$item->id}}'); return false;">
                                                             <div id="removeText">Smazat</div>
@@ -188,23 +187,15 @@
 
                                                 @if( $permition[0]->possibility_renting == 1)
                                                     <form action="{{'/item/' . $item->id . '/activeLoans'}}"  class="buttonsDivItem">
-
-                                                         <input class="btn btn-warning buttonsDivItem" type="submit" value="Aktuální závazky">
+                                                        <button type="submit button" class="btn btn-warning w-200p buttonsDivItem" onclick="showButtonLoading(this)">
+                                                            <div id="buttonText">Aktuální závazky</div>
+                                                            <div id="buttonLoading" class="spinner-grow text-light" role="status" hidden></div>
+                                                        </button>
+{{--                                                         <input class="btn btn-warning buttonsDivItem" type="submit" value="Aktuální závazky">--}}
                                                     </form>
                                                 @endif
 
                                                 @if( $permition[0]->edit_item == 1)
-{{--                                                    <form action="{{'/item/' . $item->id . '/changeItemAvailability'}}" method="POST" class="buttonsDivItem">--}}
-{{--                                                         @csrf--}}
-
-{{--                                                        <input type="text" class="d-none" name="itemId" value="{{$item->id}}">--}}
-{{--                                                        <input type="text" class="d-none" name="availability" value="{{$item->availability}}">--}}
-{{--                                                        @if($item->availability  == 1 )--}}
-{{--                                                            <input class="btn btn-success buttonsDivItem" type="submit" bool="1" value="Viditelné: ANO"  onmouseover="hoverChange2(this)" onmouseleave="hoverChangeEnd2(this)" onclick="changeItemAvailability(ele,)">--}}
-{{--                                                        @else--}}
-{{--                                                            <input class="btn btn-danger buttonsDivItem" type="submit" bool="0" value="Viditelné: NE" >--}}
-{{--                                                        @endif--}}
-{{--                                                    </form>--}}
 
                                                     <div class="buttonsDivItem">
                                                         <button type="submit button" class="btn
@@ -221,7 +212,7 @@
                                                                 @else
                                                                 bool="0"
                                                                 @endif
-                                                        >
+                                          +              >
                                                             <div id="buttonText">
                                                                 @if($item->availability  == 1 )
                                                                 Viditelné: ANO

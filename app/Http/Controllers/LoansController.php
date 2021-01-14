@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\loans_histories;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\loans;
@@ -47,7 +48,7 @@ class LoansController extends Controller
         $borrow->rent_to = $request->rent_to;
         $check = $borrow->save();
 
-        return back()->withInput(array('saveCheck' => $check ? '1' : '0'));
+        return $check;
 
     }
 
@@ -57,7 +58,35 @@ class LoansController extends Controller
 
         $check = 0;
         foreach ($arr as $loan){
+            $loanBackup = $activeLoans = DB::table('loans')->Join('users', 'loans.user', '=', 'users.id')->Join('items', 'loans.item', '=', 'items.id')->Join('categories', 'items.categories', '=', 'categories.id')->orderBy('categories.name', 'asc')->orderBy('items.id', 'asc')->select('users.id as userId', 'users.nick as userNick', 'users.name as userName', 'users.surname as userSurname','users.phone as userPhone', 'users.email as userEmail',  'categories.id as categoryId', 'categories.name as categoryName',  'items.id as itemId', 'items.name as itemName', 'items.note', 'items.place' ,'items.inventory_number' , 'loans.id', 'loans.rent_from', 'loans.rent_to', 'loans.status')->where('loans.id', "=", $loan->id)->get();
+
+//            ('users.id as userId', 'users.nick as userNick', 'users.name as userName', 'users.surname as userSurname','users.phone as userPhone', 'users.email as userEmail',  'categories.id as categoryId', 'categories.name as categoryName',  'items.id as itemId', 'items.name as itemName', 'items.note', 'items.place' ,'items.inventory_number' , 'loans.id', 'loans.rent_from', 'loans.rent_to', 'loans.status')
+            $loanHistory = new loans_histories;
+            $loanHistory->userId = $loanBackup[0]->userId;
+            $loanHistory->nick = $loanBackup[0]->userNick;
+            $loanHistory->name = $loanBackup[0]->userName;
+            $loanHistory->surname = $loanBackup[0]->userSurname;
+            $loanHistory->phone = $loanBackup[0]->userPhone;
+            $loanHistory->email = $loanBackup[0]->userEmail;
+
+            $loanHistory->categoryId = $loanBackup[0]->categoryId;
+            $loanHistory->categories = $loanBackup[0]->categoryName;
+
+            $loanHistory->itemId = $loanBackup[0]->itemId;
+            $loanHistory->item = $loanBackup[0]->itemName;
+            $loanHistory->note = $loanBackup[0]->note;
+            $loanHistory->place = $loanBackup[0]->place;
+            $loanHistory->inventory_number = $loanBackup[0]->inventory_number;
+
+            $loanHistory->rent_from = $loanBackup[0]->rent_from;
+            $loanHistory->rent_to = $loanBackup[0]->rent_to;
+
+            $loanHistory->created = \Carbon\Carbon::now()->toDateTimeString();
+
+            $check = $loanHistory->save() == true ? 0 : 1;
+
             $check += DB::table('loans')->where('id', $loan->id)->delete() == true ? 0 : 1;
+
         }
 
         return $check != 0 ? false : true;

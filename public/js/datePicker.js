@@ -23,7 +23,7 @@ function changeFrom(input) {
 
 
     let currentValue = input.value;
-    let elemnts = document.getElementsByClassName("reserveTo");
+    let elemnts = document.getElementsByClassName("reserveToInput");
     let elementTo;
     for (let i = 0; i < elemnts.length; i++) {
         if (elemnts[i].getAttribute('nameDB') == input.getAttribute('nameDB')) {
@@ -44,7 +44,7 @@ function changeTo(input) {
 
 
     let currentValue = input.value;
-    let elemnts = document.getElementsByClassName("reserveFrom");
+    let elemnts = document.getElementsByClassName("reserveFromInput");
     let elementFrom;
     for (let i = 0; i < elemnts.length; i++) {
         if (elemnts[i].getAttribute('nameDB') == input.getAttribute('nameDB')) {

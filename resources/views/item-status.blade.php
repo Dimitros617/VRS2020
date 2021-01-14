@@ -30,9 +30,8 @@
 
                 <div class="list-group">
 
-                    @if(count($users) == 0)
-                        <div class="emptyElementLoans"> Tato položka není vypůjčená ani rezervovaná</div>
-                    @endif
+                    <div class="emptyElementLoans" @if(count($users) != 0) hidden @endif> Tato položka není vypůjčená ani rezervovaná</div>
+
 
                     @foreach($users as $user)
                         <div class="user">

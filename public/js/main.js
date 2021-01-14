@@ -43,6 +43,11 @@ function hoverChangeEnd(ele, atributeBool, textTrue, textFalse, classBefore, cla
 
 }
 
+function showButtonLoading(ele){
+    ele.querySelectorAll("div[id='buttonText']")[0].setAttribute("hidden","");
+    ele.querySelectorAll("div[id='buttonLoading']")[0].removeAttribute("hidden");
+}
+
 setTimeout(function () {
     $('#autoHide').fadeOut('fast');
 }, 5000); // <-- čas v millisekundách

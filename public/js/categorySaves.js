@@ -30,12 +30,55 @@ function saveItemData(ele, id, catId, availability){
                 ele.setAttribute("hidden","");
                 ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = "Uložit změny";
             },1000,ele);
-
         },
-
     });
-
 }
+
+
+function saveItemLoansData(ele){
+
+    let dataElements = ele.parentNode.parentNode.parentNode.querySelectorAll("form[id='form']")[0];
+    let token = dataElements.querySelectorAll("input[name='_token']")[0].value;
+    let itemId = dataElements.querySelectorAll("input[name='itemId']")[0].value;
+    let rent_from = dataElements.querySelectorAll("input[name='rent_from']")[0].value.trim();
+    let rent_to = dataElements.querySelectorAll("input[name='rent_to']")[0].value.trim();
+
+    if(rent_from == "" || rent_to == ""){
+        dataElements.querySelectorAll("input[id='newLoanFormSubmit']")[0].click();
+        return;
+    }
+
+    ele.querySelectorAll("div[id='buttonText']")[0].setAttribute("hidden","");
+    ele.querySelectorAll("div[id='buttonLoading']")[0].removeAttribute("hidden");
+
+    $.ajax({
+        method: "POST",
+        url: '/item/' + itemId + '/saveItemLoansData',
+        data: { _token: token, itemId: itemId, rent_from: rent_from, rent_to: rent_to},
+        success: function (response){
+
+            dataElements.querySelectorAll("input[name='rent_from']")[0].value = "";
+            dataElements.querySelectorAll("input[name='rent_to']")[0].value = "";
+
+
+            ele.querySelectorAll("div[id='buttonText']")[0].removeAttribute("hidden");
+            ele.querySelectorAll("div[id='buttonLoading']")[0].setAttribute("hidden", "");
+
+            if(response == "1"){
+                ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = 'Vypůjčeno  <b>&#10003;</b> ';
+            }else{
+                ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = '<b>&#x2715;</b>';
+            }
+
+            setTimeout(function (ele){
+                ele.querySelectorAll("div[id='buttonLoading']")[0].setAttribute("hidden", "");
+                ele.querySelectorAll("div[id='buttonText']")[0].removeAttribute("hidden");
+                ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = "Vypůjčit";
+            },1000,ele);
+        },
+    });
+}
+
 
 function changeItemAvailability(ele, id){
 
