@@ -22,13 +22,11 @@
                     @endif
                 @endif
             </div>
-            <div class="">
-                <input name="userId" value="{{ $user[0]->userId }}" hidden>
-                <!-- toto neupravuješ :-) nevidíš, nehrab :-D -->
-            </div>
 
             <div class="pageTitle"> Aktuální výpůjčky uživatele {{ $user[0]->userNick }}</div>
-
+                                @if(count($loans)==0)
+                                    <div class="emptyElementLoans">Uživatel nemá žádné aktivní výpůjčky</div>
+                                @endif
             @php
             $lastCategory = -1;
             $lastItem = -1;
