@@ -51,36 +51,54 @@ class LoansController extends Controller
 
     }
 
+    function removeLoans($arr){
+
+        Log::info('LoansController:removeLoans');
+
+        $check = 0;
+        foreach ($arr as $loan){
+            $check += DB::table('loans')->where('id', $loan->id)->delete() == true ? 0 : 1;
+        }
+
+        return $check != 0 ? false : true;
+    }
+
     function showItemLoans($id)
     {
 
-        Log::info('LoansController:showItemStatus');
+        Log::info('LoansController:showItemLoans');
 
 
         $item = items::find($id);
-        $users = DB::table('loans')->join('users', 'loans.user', '=', 'users.id')->where('item', $id)->select('users.id', 'users.name', 'users.surname', 'loans.rent_from', 'loans.rent_to', 'loans.id as loanId')->get();
+        $users = DB::table('loans')->join('users', 'loans.user', '=', 'users.id')->where('item', $id)->select('users.id', 'users.name', 'users.surname', 'loans.rent_from', 'loans.rent_to', 'loans.id as loanId', 'loans.status')->get();
 
         return view('item-status', ['item' => $item, 'users' => $users]);
 
     }
 
-    function itemLoansReturn(Request $request){
+    function itemLoansReturn($id){
 
         Log::info('LoansController:itemLoansReturn');
 
+        $status = 0;
         if(Auth::permition()->return_verification == 1){
 
-            $check = DB::table('loans')->where('id', $request->loanId)->delete();
+
+            //$check = DB::table('loans')->where('id', $id)->delete();
+            $check = $this->removeLoans(DB::table('loans')->where('id', $id)->get());
         }
         else
         {
-            $loan = loans::find($request->loanId);
-            $loan->status = $loan->status == 1 ? 2 : 1;
+            $loan = loans::find($id);
+            $status = $loan->status == 1 ? 2 : 1;
+            $loan->status = $status;
             $check = $loan->save();
 
         }
 
-            return back()->withInput(array('saveCheck' => $check ? '1' : '0'));
+        $check = $check == true || $check == "1" ? "1": "0";
+
+        return array("return" => $check, "status" => $status);
 
     }
 

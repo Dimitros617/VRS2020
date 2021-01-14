@@ -6,6 +6,8 @@
 
     <script src="/js/main.js"></script>
     <script src="/js/datePicker.js"></script>
+    <script src="/js/returnLoan.js"></script>
+
     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8">
 
         <div class="container p-6">
@@ -34,7 +36,8 @@
 
                     @foreach($users as $user)
                         <div class="user">
-                            <form action="{{'/loans/' . $user->loanId .'/return'}}" method="POST" class="loanRecordBox">
+{{--                            action="{{'/loans/' . $user->loanId .'/return'}}" method="POST"--}}
+                            <form  class="loanRecordBox">
                                 @csrf
                                 <input type="text" class="d-none" name="loanId"
                                        value="{{$user->loanId}}">
@@ -94,27 +97,48 @@
                                 <label class="rent_to">{{$user->rent_to}}</label>
                             </div>
 
-                            @if($user->id == 1)
+
                                 <div class="submitButtonDiv">
-                                <button type="submit button" class="btn btn-success submitButton"
-                                        onmouseover="hoverChange(this,'status','Probíhá','Zrušit rezervaci','btn-success','btn-danger')"
-                                        @if(Auth::permition()->return_verification == 1)
-                                        onclick=" return confirm('Opravdu to chcete?');"
+                                <button type="button"  class="btn submitButton
+                                @if($user->status == 1)
+                                    btn-success
+                                @else
+                                    btn-warning
+                                @endif
+
+                                @if($user->id == Auth::user()->id)
+                                    buttonOwner
+                                @endif
+                                "
+
+                                   @if($user->id == Auth::user()->id || Auth::permition()->return_verification == 1)
+                                        @if($user->status == 1)
+                                            onmouseover="hoverChange(this,'status','Probíhá','Zrušit rezervaci','btn-success','btn-danger')"
+                                        @else
+                                            @if(Auth::permition()->return_verification == 1)
+                                                onmouseover="hoverChange(this,'status','Čekání na schválení','Potvrdit odevzdání','btn-warning','btn-success')"
+                                            @else
+                                                onmouseover="hoverChange(this,'status','Čekání na schválení','Zrušit odevzdání','btn-warning','btn-danger')"
+                                            @endif
+                                        @endif
+
+                                        onclick=" returnLoan(this, '{{$user->loanId}}')"
+
                                     @endif>
-                                    Probíhá
+
+                                    <div id="buttonText">
+                                    @if($user->status == 1)
+                                        Probíhá
+                                    @else
+                                        Čekání na schválení
+                                    @endif
+                                    </div>
+
+                                    <div id="buttonLoading" class="spinner-grow text-light" role="status" hidden></div>
+
                                 </button>
                                 </div>
-                            @else
-                                <div class="submitButtonDiv">
-                                <button type="submit button" class="btn btn-warning submitButton"
-                                        onmouseover="hoverChange(this,'status','Čekání na schválení','Potvrdit odevzdání','btn-warning','btn-success')"
-                                        @if(Auth::permition()->return_verification == 1)
-                                        onclick=" return confirm('Opravdu to chcete?');"
-                                    @endif>
-                                    Čekání na schválení
-                                </button>
-                                </div>
-                            @endif
+
                             </form>
                         </div>
 

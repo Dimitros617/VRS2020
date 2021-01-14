@@ -7,7 +7,9 @@
 <x-app-layout>
 
     <x-slot name="header"></x-slot>
+
     <script src="/js/main.js"></script>
+    <script src="/js/returnLoan.js"></script>
 
     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8">
 
@@ -67,7 +69,7 @@
             @endif
             @endif
 
-            <form action="{{'/loans/' . $loan->id .'/return'}}" method="POST" class="loanRecordBox">
+            <form class="loanRecordBox">
                 @csrf
 
                 <div class="icon"
@@ -123,24 +125,48 @@
         <input type="text" class="d-none" name="loanId"
                value="{{$loan->id}}">
 
-        @if($loan->status == 1)
-            <div class="submitButtonDiv">
-            <button type="submit button" class="btn btn-success submitButton"
+
+        <div class="submitButtonDiv">
+            <button type="button"  class="btn submitButton
+                                @if($loan->status == 1)
+                                    btn-success
+                    @else
+                                    btn-warning
+                    @endif
+
+
+                                    buttonOwner
+
+                "
+
+                    @if(true)
+                    @if($loan->status == 1)
+                    onmouseover="hoverChange(this,'status','Probíhá','Zrušit rezervaci','btn-success','btn-danger')"
+                    @else
                     @if(Auth::permition()->return_verification == 1)
-                    onclick=" return confirm('Opravdu to chcete?');"
-                @endif>Vrátit
-            </button>
-            </div>
-        @else
-            <div class="submitButtonDiv">
-            <button type="submit button" class="btn btn-warning submitButton"
-                    onmouseover="hoverChange(this,'status','Čekání na schválení','Zrušit odevzdání','btn-warning','btn-danger')"@if(Auth::permition()->return_verification == 1)
-                    onclick=" return confirm('Opravdu to chcete?');"
+                    onmouseover="hoverChange(this,'status','Čekání na schválení','Potvrdit odevzdání','btn-warning','btn-success')"
+                    @else
+                    onmouseover="hoverChange(this,'status','Čekání na schválení','Zrušit odevzdání','btn-warning','btn-danger')"
+                    @endif
+                    @endif
+
+                    onclick=" returnLoan(this, '{{$loan->id}}')"
+
                 @endif>
-                Čekání na schválení
+
+                <div id="buttonText">
+                    @if($loan->status == 1)
+                        Probíhá
+                    @else
+                        Čekání na schválení
+                    @endif
+                </div>
+
+                <div id="buttonLoading" class="spinner-grow text-light" role="status" hidden></div>
+
             </button>
-            </div>
-            @endif
+        </div>
+
             </form>
             @php
                 $lastCategory = $loan->categoryId;

@@ -67,15 +67,16 @@ Route::get('/categories/categoriesFind/{find?}', [CategoryController::class,'cat
 //Itemy
 Route::post('/item/addNewItem', [ItemsController::class,'addNewItem']);
 Route::post('/item/{id:id}/saveItemData', [ItemsController::class,'saveItem']);
-Route::get('/item/{id:id}/changeItemAvailability', [ItemsController::class,'changeItemAvailability']);
 Route::post('/item/{id:id}/removeItemHard', [ItemsController::class,'removeItemHard']);
 Route::get('/item/{id:id}/removeItem', [ItemsController::class,'removeItem']);
+Route::get('/item/{id:id}/changeItemAvailability', [ItemsController::class,'changeItemAvailability']);
+
 
 //Vůpůjčky
 //Route::post('/item/{id:id}/activeLoans', [LoansController::class,'showItemLoans']);
 //Route::post('/categories/{id:id}/activeLoans', [LoansController::class,'showCategoryLoans']);
 Route::post('/item/{id:id}/saveItemLoansData', [LoansController::class,'saveItemLoans']);
-Route::post('/loans/{id:id}/return', [LoansController::class,'itemLoansReturn']);
+Route::get('/loans/{id:id}/return', [LoansController::class,'itemLoansReturn']);
 
 
 

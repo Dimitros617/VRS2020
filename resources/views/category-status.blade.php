@@ -5,6 +5,7 @@
 
     <x-slot name="header"></x-slot>
     <script src="/js/main.js"></script>
+    <script src="/js/returnLoan.js"></script>
 
     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8">
 
@@ -53,7 +54,7 @@
         @endif
 
         @if(!is_null($category->rent_from))
-            <form action="{{'/loans/' . $category->id .'/return'}}" method="POST" class="loanRecordBox" >
+            <form  class="loanRecordBox" >
                 @csrf
                 <input type="text" class="d-none" name="loanId"
                        value="{{$category->id}}">
@@ -110,27 +111,47 @@
     <label class="rent_to">{{$category->rent_to}}</label>
         </div>
 
-    @if($category->status == 1)
-            <div class="submitButtonDiv">
-        <button type="submit button" method="POST" class="btn btn-success submitButton"
-                onmouseover="hoverChange(this,'status','Probíhá','Zrušit rezervaci','btn-success','btn-danger')"
-                @if(Auth::permition()->return_verification == 1)
-                onclick=" return confirm('Opravdu to chcete?');"
-            @endif>
-            Probíhá
-        </button>
-            </div>
-    @else
-            <div class="submitButtonDiv">
-        <button type="submit button" method="POST" class="btn btn-warning submitButton"
-                onmouseover="hoverChange(this,'status','Čekání na schválení','Potvrdit odevzdání','btn-warning','btn-success')"
-                @if(Auth::permition()->return_verification == 1)
-                onclick=" return confirm('Opravdu to chcete?');"
-            @endif>
-            Čekání na schválení
-        </button>
-            </div>
-        @endif
+        <div class="submitButtonDiv">
+            <button type="button"  class="btn submitButton
+                                @if($category->status == 1)
+                                    btn-success
+                    @else
+                                    btn-warning
+                    @endif
+
+                                @if($category->userId == Auth::user()->id)
+                                    buttonOwner
+                    @endif
+                                    "
+
+                    @if($category->userId == Auth::user()->id || Auth::permition()->return_verification == 1)
+                    @if($category->status == 1)
+                    onmouseover="hoverChange(this,'status','Probíhá','Zrušit rezervaci','btn-success','btn-danger')"
+                    @else
+                    @if(Auth::permition()->return_verification == 1)
+                    onmouseover="hoverChange(this,'status','Čekání na schválení','Potvrdit odevzdání','btn-warning','btn-success')"
+                    @else
+                    onmouseover="hoverChange(this,'status','Čekání na schválení','Zrušit odevzdání','btn-warning','btn-danger')"
+                    @endif
+                    @endif
+
+                    onclick=" returnLoan(this, '{{$category->id}}')"
+
+                @endif>
+
+                <div id="buttonText">
+                    @if($category->status == 1)
+                        Probíhá
+                    @else
+                        Čekání na schválení
+                    @endif
+                </div>
+
+                <div id="buttonLoading" class="spinner-grow text-light" role="status" hidden></div>
+
+            </button>
+        </div>
+
         </form>
         <br>
         @else

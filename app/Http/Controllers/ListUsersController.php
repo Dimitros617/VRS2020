@@ -50,7 +50,7 @@ class ListUsersController extends Controller
         $data = DB::table('users')->where('users.id', $id['id'])->select('users.id as userId', 'users.name as userName', 'users.surname as userSurname','users.nick as userNick')->get();
         $dataLoans = DB::table('loans')->Join('items', 'loans.item', '=', 'items.id')->Join('categories', 'items.categories', '=', 'categories.id')->orderBy('categories.name', 'asc')->orderBy('items.id', 'asc')->select('categories.id as categoryId', 'categories.name as categoryName',  'items.id as itemId', 'items.name as itemName', 'items.note', 'items.place' ,'items.inventory_number' , 'loans.id', 'loans.rent_from', 'loans.rent_to', 'loans.status')->where('loans.user', $id['id'])->get();
 
-        return view('singleLoans',['user' => $data,'loans'=> $dataLoans]);
+        return view('user-loans',['user' => $data,'loans'=> $dataLoans]);
     }
 
     function saveUserData(Request $request) //request pracuje s name ve formuláři

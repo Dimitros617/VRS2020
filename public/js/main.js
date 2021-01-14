@@ -4,14 +4,18 @@ function hoverChange(ele, atributeBool, textTrue, textFalse, classBefore, classA
 
 
     ele.addEventListener("mouseleave", hoverChangeEnd.bind(null, ele, atributeBool, textTrue, textFalse, classBefore, classAfter))
+    ele.removeEventListener("mouseleave", hoverChangeEnd, false);
+
+    ele.classList.remove("btn-success");
+    ele.classList.remove("btn-danger");
+    ele.classList.remove("btn-warning");
 
     if (ele.getAttribute(atributeBool) == 1) {
-        ele.innerHTML = textTrue;
-        ele.classList.remove(classBefore);
+        ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = textTrue;
         ele.classList.add(classAfter);
     }
     else {
-        ele.innerHTML = textFalse;
+        ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = textFalse;
         ele.classList.remove(classBefore);
         ele.classList.add(classAfter);
     }
@@ -20,17 +24,23 @@ function hoverChange(ele, atributeBool, textTrue, textFalse, classBefore, classA
 
 function hoverChangeEnd(ele, atributeBool, textTrue, textFalse, classBefore, classAfter) {
 
+    ele.classList.remove("btn-success");
+    ele.classList.remove("btn-danger");
+    ele.classList.remove("btn-warning");
 
     if (ele.getAttribute(atributeBool) != 1) {
-        ele.innerHTML = textTrue;
+        ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = textTrue;
         ele.classList.remove(classAfter);
         ele.classList.add(classBefore);
     }
     else {
-        ele.innerHTML = textFalse;
+        ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = textFalse;
         ele.classList.remove(classBefore);
         ele.classList.add(classAfter);
     }
+
+
+
 }
 
 setTimeout(function () {
