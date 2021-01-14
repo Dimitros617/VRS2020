@@ -7,7 +7,7 @@
 
     {{--        <title>{{ config('app.name', 'Laravel') }}</title>--}}
     <title>VRS - @yield('title')</title>
-
+    <link rel="icon" href="{{ URL::asset('img/logo_icon.png') }}">
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
