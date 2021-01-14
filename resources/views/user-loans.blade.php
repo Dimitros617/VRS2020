@@ -113,7 +113,7 @@
                                         btn-warning
                                     @endif
                                         "
-                                     @if (true)
+                                     @if (Auth::permition()->return_verification == 1)
                                             @if ($loan->status == 1)
                                                 onmouseover="hoverChange(this,'status','Probíhá','Zrušit rezervaci','btn-success','btn-danger')"
                                             @else

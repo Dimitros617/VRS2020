@@ -24,6 +24,7 @@ class CategoryController extends Controller
         $data = DB::table('categories')->leftJoin('items', 'categories.id', '=', 'items.categories')->select('categories.id','categories.name', 'categories.description', 'items.availability', DB::raw('COUNT(items.categories) as count'))->groupByRaw('categories.name, categories.description, items.availability, categories.id')->get();
         $permition = DB::table('users')->join('permition', 'users.permition', '=', 'permition.id')->where('users.id', Auth::id())->select('permition.edit_item', 'permition.possibility_renting')->get();
 
+        //return $data    ;
         return view('categories', ['categories' => $data, 'permition' => $permition]);
 
 

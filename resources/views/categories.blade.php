@@ -67,48 +67,56 @@
                                 {{$categories[$i]->description}}
                             </div>
                             </div>
-<div class="d-table me-auto ms-auto float-sm-end ms-sm-0 me-sm-0 ">
+                     <div class="d-table me-auto ms-auto float-sm-end ms-sm-0 me-sm-0 ">
+
                             @if($categories[$i]->availability == 1 || is_null($categories[$i]->availability) )
                                 <div class="badge badge-success badge-pill m-1 ">
                                     {{$categories[$i]->count}}
                                 </div>
-                            @endif
 
-                            @if($categories[$i]->availability == 0 && !is_null($categories[$i]->availability))
+                             @if(Auth::permition()->edit_item == 1)
+                                 <div class="badge badge-danger badge-pill ">
+
+                                     0
+                                 </div>
+                             @endif
+
+                            @else
                                 @if($i+1 < count($categories) && $categories[$i]->name == $categories[$i+1]->name)
 
 
-                                <div class="badge badge-success badge-pill m-1">
-                                        {{$categories[$i+=1]->count}}
-                                    </div>
-                                    @if(Auth::permition()->edit_item == 1)
-                                        <div class="badge badge-danger badge-pill ">
-
-                                            {{$categories[$i-1]->count}}
+                                        <div class="badge badge-success badge-pill m-1">
+                                            {{$categories[$i+=1]->count}}
                                         </div>
-                                    @else
-                                        <div class="hidden">{{$i++}}</div>
-                                    @endif
+
+                                        @if(Auth::permition()->edit_item == 1)
+                                            <div class="badge badge-danger badge-pill ">
+
+                                                {{$categories[$i-1]->count}}
+                                            </div>
+                                        @endif
+{{--                                            @php $i++; @endphp--}}
+
                                 @else
-                                    @if(Auth::permition()->edit_item == 1)
+                                        @if(Auth::permition()->edit_item == 1)
 
-                                        <div class="badge badge-success badge-pill m-1">
+                                            <div class="badge badge-success badge-pill m-1">
 
-                                            0
-                                        </div>
-                                        <div class="badge badge-danger badge-pill ">
+                                                0
+                                            </div>
+                                            <div class="badge badge-danger badge-pill ">
 
-                                            {{$categories[$i]->count}}
-                                        </div>
-                                    @else
-                                        <div class="badge badge-success badge-pill m-1">
+                                                {{$categories[$i]->count}}
+                                            </div>
+                                        @else
+                                            <div class="badge badge-success badge-pill m-1">
 
-                                            0
-                                        </div>
-                                    @endif
+                                                0
+                                            </div>
+                                        @endif
                                 @endif
                             @endif
-</div>
+                    </div>
                            <div class="d-flex justify-content-center justify-content-sm-end my-2 buttonsDiv">
                                @if(Auth::permition()->edit_item == 1)
                                 <div class="buttonsDivItem">
