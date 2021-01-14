@@ -20,9 +20,9 @@
                                 @endif
                                 @endif
                             </div>
-
+            <div class="pageTitle"> Aktuální závazky položek z kategorie {{$category[0]->categoryName}}</div>
             @if(count($categories) != 0)
-                <div class="pageTitle"> Aktuální závazky položek z kategorie {{$categories[0]->categoryName}}</div>
+
                 @php
                     $lastCategory = -1;
                     $lastItem = -1;
@@ -34,7 +34,7 @@
     </div>
     @endif
     <div class="categoryDiv bg-light mb-4 ">
-        <div class="h4">{{$category->categoryName}}</div>
+
 
         @endif
 
@@ -43,61 +43,65 @@
         @if($lastItem != -1 && $category->categoryId == $lastCategory)
     </div>
     @endif
-    <div class="itemDiv">
-        <div class="itemName mt-4">
-            @if($category->itemName == "")
-                Nepojmenovaná položka č. {{$category->itemId}}
-            @else
-                {{$category->itemName}}
-            @endif
-        </div>
-        @endif
 
-        @if(!is_null($category->rent_from))
-            <form  class="loanRecordBox" >
-                @csrf
-                <input type="text" class="d-none" name="loanId"
-                       value="{{$category->id}}">
 
-                <div class="icon"
-            @php
-                $start = strtotime($category->rent_from);
-                $end = strtotime($category->rent_to);
-                $now = strtotime("now");
 
-                if($now < $start){
-                    echo 'title="Výpůjčka zatím není aktivní"';
-                }elseif ($now >= $start && $now <= $end){
-                    echo 'title="Výpůjčka je právě aktivní"';
-                }else{
-                    echo 'title="Již je po termínu, měly by jste položku vrátit"';
-                }
+            <div class="itemDiv">
+                <div class="itemName mt-4">
+                    @if($category->itemName == "")
+                        Nepojmenovaná položka č. {{$category->itemId}}
+                    @else
+                        {{$category->itemName}}
+                    @endif
+                </div>
+                @endif
 
-            echo ">";
+                @if(!is_null($category->rent_from))
+                    <form  class="loanRecordBox" >
+                        @csrf
+                        <input type="text" class="d-none" name="loanId"
+                               value="{{$category->id}}">
 
-                if($now < $start){
-                    echo '
-                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi- iconSvg" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
-                </svg>';
-                }elseif ($now >= $start && $now <= $end){
-                    echo '
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-clock iconSvg" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm8-7A8 8 0 1 1 0 8a8 8 0 0 1 16 0z"/>
-                      <path fill-rule="evenodd" d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z"/>
-                    </svg>
-                    ';
-                }else{
-                    echo '
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-exclamation-diamond-fill iconSvg" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd" d="M9.05.435c-.58-.58-1.52-.58-2.1 0L.436 6.95c-.58.58-.58 1.519 0 2.098l6.516 6.516c.58.58 1.519.58 2.098 0l6.516-6.516c.58-.58.58-1.519 0-2.098L9.05.435zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-                    </svg>
-                    ';
-                }
+                        <div class="icon"
+                    @php
+                        $start = strtotime($category->rent_from);
+                        $end = strtotime($category->rent_to);
+                        $now = strtotime("now");
 
-            @endphp
+                        if($now < $start){
+                            echo 'title="Výpůjčka zatím není aktivní"';
+                        }elseif ($now >= $start && $now <= $end){
+                            echo 'title="Výpůjčka je právě aktivní"';
+                        }else{
+                            echo 'title="Již je po termínu, měly by jste položku vrátit"';
+                        }
 
-    </div>
+                    echo ">";
+
+                        if($now < $start){
+                            echo '
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi- iconSvg" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+                        </svg>';
+                        }elseif ($now >= $start && $now <= $end){
+                            echo '
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-clock iconSvg" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm8-7A8 8 0 1 1 0 8a8 8 0 0 1 16 0z"/>
+                              <path fill-rule="evenodd" d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z"/>
+                            </svg>
+                            ';
+                        }else{
+                            echo '
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-exclamation-diamond-fill iconSvg" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" d="M9.05.435c-.58-.58-1.52-.58-2.1 0L.436 6.95c-.58.58-.58 1.519 0 2.098l6.516 6.516c.58.58 1.519.58 2.098 0l6.516-6.516c.58-.58.58-1.519 0-2.098L9.05.435zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                            </svg>
+                            ';
+                        }
+
+                    @endphp
+
+            </div>
+
 
     <a href="/users/{{$category->userId}}" class="userNameLink">
         <label class="cursor-pointer">{{$category->name}} {{$category->surname}} : </label>
@@ -155,7 +159,7 @@
         </form>
         <br>
         @else
-            Pro tuto položku nejsou zaznamenány zádné závazky
+            <div class="emptyElementLoans">Tato položka není vypůjčená ani rezervovaná</div>
             @endif
             @php
                 $lastCategory = $category->categoryId;
@@ -169,7 +173,8 @@
             </div>
 
             @else
-                <div class="h1"> V této kategorii nejsou žádné položky</div>
+
+        <div class="emptyElementLoans">Kategorie neobsahuje žádné položky, nejsou tedy žádné závazky</div>
                 @endif
                 </div>
                 </div>

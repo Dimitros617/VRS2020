@@ -104,12 +104,12 @@ class LoansController extends Controller
 
     function showCategoryLoans($id)
     {
-        Log::info('CategoryControler:removeCategory');
+        Log::info('LoansControler:showCategoryLoans');
 
         $data = DB::table('items')->leftJoin('loans', 'items.id', '=', 'loans.item')->leftJoin('Users', 'loans.user', '=', 'Users.id')->Join('categories', 'items.categories', '=', 'categories.id')->orderBy('categories.name', 'asc')->orderBy('items.id', 'asc')->select('Users.id as userId', 'Users.name', 'Users.surname','categories.id as categoryId', 'categories.name as categoryName',  'items.id as itemId', 'items.name as itemName' , 'loans.id', 'loans.status', 'loans.rent_from', 'loans.rent_to')->where('categories.id', $id)->get();
-
-//        return count($data);
-        return view('category-status', ['categories' => $data]);
+        $name = DB::table('categories')->where('categories.id', $id)->select('name as categoryName')->get();
+        //return $data;
+        return view('category-status', ['categories' => $data, 'category' => $name]);
 
     }
 

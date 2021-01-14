@@ -27,8 +27,10 @@
                                 @endif
                             </div>
 
-                            <div class="pageTitle"> Moje aktuální výpůjčky :</div>
-
+                            <div class="pageTitle"> Moje aktuální výpůjčky:</div>
+                            @if(count($loans)==0)
+                                <div class="emptyElementLoans">Nemáte žádné aktivní výpůjčky</div>
+                            @endif
                             @php
                                 $lastCategory = -1;
                                 $lastItem = -1;
