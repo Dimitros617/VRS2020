@@ -160,7 +160,7 @@
         <br>
         @else
             <div class="emptyElementLoans">Tato položka není vypůjčená ani rezervovaná</div>
-            @endif
+        @endif
             @php
                 $lastCategory = $category->categoryId;
                 $lastItem = $category->itemId;

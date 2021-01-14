@@ -47,6 +47,15 @@ function returnLoan(ele, id){
                     setTimeout(function (ele) {
                         ele.parentNode.parentNode.setAttribute("hidden", "");
 
+                        let allLoans = document.getElementsByClassName("loanRecordBox");
+                        let count = 0;
+                        for (let i = 0 ; i < allLoans.length ; i++){
+                            count += allLoans[i].getAttribute("hidden") == null ? 1 : 0 ;
+                        }
+                        if(count == 0){
+                            document.getElementsByClassName("emptyElementLoans")[0].removeAttribute("hidden");
+                        }
+
                     }, 1000, ele);
 
                 }else {
