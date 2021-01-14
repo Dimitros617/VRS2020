@@ -99,6 +99,7 @@ class CategoryController extends Controller
     {
         Log::info('CategoryControler:removeCategoryHard');
 
+        $loansController = new LoansController;
         $check1 = DB::table('loans')->Join('items','loans.item', '=', 'items.id')->where('items.categories', $request->categoryId)->delete();
         $check2 = DB::table('items')->where('categories', $request->categoryId)->delete();
         $check3 = DB::table('categories')->where('id', $request->categoryId)->delete();

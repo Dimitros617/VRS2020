@@ -208,7 +208,7 @@
 
                     </div>
         </div>
-
+    </div></div>
 
         {{--    Copie codu jako předtím, poze se změní v foreachy pole ze kterého se načítají data--}}
         <div class="collapse" id="activeLoans">

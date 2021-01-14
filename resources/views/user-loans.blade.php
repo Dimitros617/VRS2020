@@ -107,17 +107,20 @@
 
                                 <div class="submitButtonDiv">
                                     <button type="button" class="btn submitButton
+                                    @if($loan->status == 1)
+                                        btn-success
+                                    @else
+                                        btn-warning
+                                    @endif
+                                        "
                                      @if (true)
                                             @if ($loan->status == 1)
-                                                onmouseover="hoverChange(this,'status','Probíhá','Zrušit
-                                                rezervaci','btn-success','btn-danger')"
+                                                onmouseover="hoverChange(this,'status','Probíhá','Zrušit rezervaci','btn-success','btn-danger')"
                                             @else
                                                 @if (Auth::permition()->return_verification == 1)
-                                                    onmouseover="hoverChange(this,'status','Čekání na schválení','Potvrdit
-                                                    odevzdání','btn-warning','btn-success')"
+                                                    onmouseover="hoverChange(this,'status','Čekání na schválení','Potvrdit odevzdání','btn-warning','btn-success')"
                                                 @else
-                                                    onmouseover="hoverChange(this,'status','Čekání na schválení','Zrušit
-                                                    odevzdání','btn-warning','btn-danger')"
+                                                    onmouseover="hoverChange(this,'status','Čekání na schválení','Zrušit odevzdání','btn-warning','btn-danger')"
                                                 @endif
                                             @endif
 

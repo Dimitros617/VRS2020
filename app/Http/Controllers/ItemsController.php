@@ -79,8 +79,11 @@ class ItemsController extends Controller
         Log::info('CategoryControler:removeItemHard');
 
         $item = DB::table('items')->join('categories', 'items.categories', '=', 'categories.id')->where('items.id', $request->itemId)->select('categories.name')->get();
-        DB::table('loans')->where('item', $request->itemId)->delete();
-        DB::table('items')->where('id', $request->itemId)->delete();
+
+        $loansController = new LoansController;
+        $loansController->removeLoans(DB::table('loans')->where('item', $request->itemId)->get());
+        $loansController->removeLoans(DB::table('items')->where('id', $request->itemId)->get());
+
 
         return redirect('categories/' . $item[0]->name);
 
