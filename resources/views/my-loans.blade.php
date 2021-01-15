@@ -1,6 +1,5 @@
 @section('title',"Moje výpůjčky")
 
-@section('css2', URL::asset('css/all-loans.css'))
 @section('css', URL::asset('css/my-loans.css'))
 
 

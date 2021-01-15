@@ -121,7 +121,7 @@ button.flex-fill.rounded-0 {
 
 .userData {
     float: left;
-    width: 70%;
+    width: 60%;
     margin-top: 0.5rem;
 }
 
@@ -144,7 +144,7 @@ a.userNameLink {
     color: #002e40;
 }
 
-@media (max-width: 780px) {
+@media (max-width: 767px) {
 
     .userData {
         width: 90%;
@@ -153,7 +153,7 @@ a.userNameLink {
     }
 
     .loanRecordBox {
-        height: 11rem;
+        height: 13.5rem;
     }
 
     .submitButtonDiv {
@@ -165,6 +165,25 @@ a.userNameLink {
         margin-left: -1rem;
     }
 
+    .icon {
+        float: none;
+        height: 0px;
+        width: 100%;
+        text-align: center;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 3rem;
+    }
+    .iconSvg {
+        width: 2rem;
+        height: 3rem;
+        margin-top: 10px;
+        color: #002e40;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -0.5rem;
+        margin-bottom: 0rem;
+    }
 }
 
 @media (max-width: 576px) {
