@@ -10,37 +10,52 @@
     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8">
     <div class="container">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            {{--  Sekce pro Admin, verifiedUser  --}}
+
+            @if (Auth::permition()->possibility_renting == 1)
+
+                <div class="hlavicka">
+                    <a href="/categories">
+                        <button class="btn btn-primary text-vrs-ylight flex-fill rounded-0" type="button">Nová výpůjčka</button>
+                    </a>
+                </div>
+            @endif
 
                 <div class="align-content-center d-sm-flex rounded-4 overflow-hidden flex-flow-column flex-sm-flow-row mb-4">
 
                     @if (Auth::permition()->possibility_renting == 1)
-                        <a @if(Auth::permition()->new_user == 1) href="/all-loans" @else href="/loans" @endif>
-                            <button class="btn btn-warning align-content- text-center flex-fill rounded-0" type="button">
-                                @if (Auth::permition()->new_user == 1)
-                                    Čekající na schválení: {{ $schvaleni_pocet }}
-                                @else
-                                    Čekající na schválení vrácení: {{ $vraceni_pocet }}
-                                @endif
-                            </button>
-                        </a>
 
-                        <a href="/loans">
-                            <button class="btn btn-success flex-fill rounded-0" type="button">
-                                Mé aktivní výpůjčky a rezervace: {{ $vypujcky_pocet }}
-                            </button>
-                        </a>
+                        <div class="">
+                            <a @if(Auth::permition()->new_user == 1) href="/all-loans" @else href="/loans" @endif>
+                                <button class="btn btn-warning align-content- text-center flex-fill rounded-0" type="button">
+                                    @if (Auth::permition()->new_user == 1)
+                                        Čekající na schválení: {{ $schvaleni_pocet }}
+                                    @else
+                                        Čekající na vrácení: {{ $vraceni_pocet }}
+                                    @endif
+                                </button>
+                            </a>
+                        </div>
+
+                        <div class="">
+                            <a href="/loans">
+                                <button class="btn btn-success flex-fill rounded-0" type="button">
+                                    Moje výpůjčky: {{ $vypujcky_pocet }}
+                                </button>
+                            </a>
+                        </div>
                     @endif
 
-                        <a href="/users">
-                            <button class="btn btn-danger flex-fill rounded-0" type="button">
-                                @if (Auth::permition()->new_user == 1)
-                                    Všichni uživatelé: {{$users_pocet}}
-                                @else
-                                    Seznam uživatelů
-                                @endif
-                            </button>
-                        </a>
+                        <div class="">
+                            <a href="/users">
+                                <button class="btn btn-danger flex-fill rounded-0" type="button">
+                                    @if (Auth::permition()->new_user == 1)
+                                        Seznam uživatelů: {{$users_pocet}}
+                                    @else
+                                        Seznam uživatelů
+                                    @endif
+                                </button>
+                            </a>
+                        </div>
 
                 </div>
 
@@ -63,15 +78,31 @@
                     Nyní nemáte právo zapůjčovat položky. Můžete pouze:
                     <ul style="list-style-type:circle">
                         <li>Změnit své osobní údaje v záložce "Nastavení".</li>
+                        <li>Posílat zprávy uživatelům, jejich seznam naleznete v záložce "Seznam uživatelů". Podle jména i oprávnění můžete vyhledat jistého uživatele (například admina) a poslat mu zprávu.</li>
                         <li>Pokud jste si již dříve něco půjčil a výpůjčku jste stále nevrátil, jejich seznam najdete v záložce "Moje výpůjčky".</li>
-                        <li>Posílat zprávy SÁM SOBĚ! či jinému uživateli, jehož přezdívku znáte.</li>
                         <li>Odhlásit se.</li>
                     </ul>
 
                     @elseif(Auth::permition()->new_user == 0){{-- verified --}}
-                        Sekce pro verified user. Bla bla věci JAK si vypůjčit v sekci Nová výpůjčka, JAK vrátit výpůjčku a PROČ je tam čekání na schválení, ikonky upozornění...
+                        Vše, co potřebujete, naleznete po kliknutí na nabídku, ke které máte přístup na každé stránce.
+                    <ul style="list-style-type:circle">
+                        <li>Své osobní údaje změníte v záložce "Nastavení".</li>
+                        <li>V záložce "Seznam uživatelů" vidíte všechny uživatele právě zaregistrované k systému.</li>
+                        <li>Pokud si chcete něco vypůjčit, v záložce "Nová výpůjčka" uvidíte souhrn všech kategorií, které můžete dále rozkliknout a zvolit požadovaný předmět.</li>
+                        <li>Záložka "Moje výpůjčky" vám ukáže souhrn vašich aktivních výpůjček a rezervací.</li>
+                        <li>Nezapomeňte se ze systému převážně na cizích počítačích odhlašovat prostředníctvím odkazu "Odhlásit se".</li>
+                    </ul>
+
                     @elseif(Auth::permition()->new_user == 1)
-                        Sekce pro Admin. Stručný manuál, možná by stálo za to udělat další blade, na kterém bude podrobnější návod pro Admina, na něj odtud odkaz.
+                        Vše, co potřebujete, naleznete po kliknutí na nabídku, ke které máte přístup na každé stránce.
+                        <ul style="list-style-type:circle">
+                            <li>Své osobní údaje změníte v záložce "Nastavení profilu".</li>
+                            <li>V záložce "Seznam uživatelů" vidíte všechny uživatele právě zaregistrované k systému.</li>
+                            <li>V záložce "Nová výpůjčka" uvidíte souhrn všech kategorií, které můžete dále rozkliknout a zvolit požadovaný předmět. Zde můžete zapůjčované artikly spravovat i si sám předměty zapůjčit.</li>
+                            <li>Záložka "Moje výpůjčky" vám ukáže souhrn vašich aktivních výpůjček a rezervací.</li>
+                            <li>Souhrnný přehled nad všemi výpůjčkami naleznete v záložce "Všechny výpůjčky".</li>
+                            <li>Nezapomeňte se ze systému převážně na cizích počítačích odhlašovat prostředníctvím odkazu "Odhlásit se".</li>
+                        </ul>
                     @endif
                 </div>
             </div>
@@ -84,11 +115,70 @@
                 <div class="">
                     <ul style="list-style-type:circle">
                         <li>S největší pravděpodobností jste nový uživatel Výpůjčního a rezervačního systému. Musíte počkat, než vás schválí a ověří administrátor.</li>
-                        <li>Pokud jste již jednou schváleni byli a nyní se vám neobjevuje záložka "Nová výpůjčka", bylo vám právo půjčovat si věci odebráno - ať již z důvodu nevrácení výpůjčky včas či jiných problémů. Pro více informací se zeptejte správce systému, administrátora.</li>
+                        <li>Pokud jste již jednou schváleni byli a nyní se vám neobjevuje záložka "Nová výpůjčka", bylo vám právo půjčovat si věci odebráno - ať již z důvodu nevrácení výpůjčky včas či jiných problémů. Pro více informací se zeptejte správce systému, administrátora. Můžete jej vyhledat v Seznamu uživatelů a zaslat mu zde krátké připomenutí.</li>
                     </ul>
                 </div>
             </div>
             @endif
+
+            <br>
+            {{--  Sekce pro ověřené uživatele a admin  --}}
+            @if (Auth::permition()->possibility_renting == 1)
+                @if(Auth::permition()->new_user == 1)
+                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                        <h2 class="">Seznam uživatelů</h2>
+                        <div class="">
+                            V Seznamu uživatelů vidíte všechny právě zaregistrované uživatele.
+                            <br>
+                            V hlavičce se nachází vyhledávač. Uživatele můžete filtrovat podle jména, příjmení, přezdívky i oprávnění (unverifiedUser, verifiedUser, Admin).
+                            <br>
+                            <ul style="list-style-type:circle">
+                                <li>Každého jednotlivého uživatele snadno kontaktujete v rámci systému přes tlačítko "Poslat zprávu". Pokud se jedná o vážnější problém, využijte e-mail, který je u každého uživatele uveden.</li>
+                                <li>Pod tlačítkem "Závazky uživatele" vidíte, jaké předměty má uživatel právě půjčené či zarezervované.
+                                    <ul style="list-style-type:disc">
+                                        <li>Zde můžete, v případě že má uživatel něco půjčeno, spravovat jeho výpůjčky - zrušit ji či reagovat na jejich žádost o schválení vrácení.</li>
+                                    </ul>
+                                </li>
+                                <li>Jako administrátor máte právo uživatele upravovat - "Upravit uživatele".
+                                    <ul style="list-style-type:disc">
+                                        <li>Po kliknutí na jeho jméno, příjmení, přezdívku, telefon a e-mail můžete v případě potřeby tyto údaje upravit.</li>
+                                        <li>Můžete změnit jeho roli, aktuální role je přednastavena. Vyberte, jakou roli chcete uživateli nastavit.</li>
+                                    </ul>
+                                    Nezapomeňte všechny změny uložit.
+                                    <br>
+                                </li>
+                            </ul>
+                            Pokud potřebujete akutně vyřešit problém s uživatelem, využijte jeho telefonní číslo. Pro řešení vážnějšího problému využívejte jeho e-mail, zprávy v systému slouží spíše pro upozornění.
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                        <h2 class="">Nová výpůjčka a úprava kategorií a předmětů</h2>
+                        <div class="">
+                            Zde si můžete půjčit předmět z vybrané kategorie, zároveň zde spravujete viditelnost předmětů, kategorií a přidáváte či odstraňujete je.
+                            <ul style="list-style-type:circle">
+                                <li>Pokud se zde nic nenachází, přidejte novou kategorii.</li>
+                                <li>Kategorii můžete smazat. Pokud bude mít někdo zapůjčenou či rezervovanou položku z dané kategorie, vyskočí vám upozornění.</li>
+                                <li>Po kliknutí na "Aktuální závazky" vidíte, kdo má položky z dané kategorie zapůjčené či rezervované. Můžete zde tyto výpůjčky spravovat -  zrušit je či reagovat na jejich žádost o schválení vrácení.</li>
+                                <li>Počet viditelných položek v dané kategorii poté vidíte v podobě levé bublinky s číslem na souhrnu všech kategorií. Pravá bublinka udává číslo skrytých položek.</li>
+                                <li>Kliknutím na box kategorie se vám rozevře celá kategorie, zde můžete upravit její název a pod názvem se nachází textové pole, kam můžete napsat popisek kategorie.</li>
+                                <li>Podobně jako se přidává kategorie, můžete vkládat nové položky k zapůjčení.
+                                    <ul style="list-style-type:disc">
+                                        Všechny informace (název, poznámka, místo, inventární číslo) snadno upravíte.
+                                        <li>Po zadání data počátku výpůjčky do pole "Od:" a konce do pole "Do:" si položku klikem na "Vypůjčit" zapůjčíte na daný časový interval.</li>
+                                        <li>Položku můžete i smazat. Pokud ji bude mít někdo zapůjčenou či rezervovanou, vyskočí vám upozornění.</li
+                                        <li>Po kliknutí na "Aktuální závazky" vidíte, kdo má tento předmět zapůjčený či rezervovaný. Můžete zde tyto výpůjčky spravovat -  zrušit je či reagovat na jejich žádost o schválení vrácení.</li>
+                                        <li>Nastavte zviditelnění či skrytí položky pro běžné uživatele.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                @endif
+            @endif
         </div>
+    </div>
     </div>
 </x-app-layout>

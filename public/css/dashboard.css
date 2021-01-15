@@ -2,3 +2,15 @@ button.flex-fill.rounded-0 {
     width: -webkit-fill-available;
 }
 
+.hlavicka {
+    width: 100%;
+    /* background: aqua; */
+    display: inline-flex;
+    display: inline-block;
+    padding-bottom: 1rem;
+    border-bottom: 10px solid #fa9702;
+    margin-top: 30px;
+    margin-bottom: 2rem;
+    /* flex-flow: wrap; */
+    /* height: -webkit-fill-available; */
+}
