@@ -57,6 +57,20 @@ function saveItemLoansData(ele){
         data: { _token: token, itemId: itemId, rent_from: rent_from, rent_to: rent_to},
         success: function (response){
 
+            let from = new Date(rent_from.replace( /(\d{2})-(\d{2})-(\d{4})/, "$2/$1/$3"));
+            let to = new Date(rent_to.replace( /(\d{2})-(\d{2})-(\d{4})/, "$2/$1/$3"));
+
+
+            let addon = String(from.getDate()).padStart(2, '0') + "-" + String(from.getMonth() + 1).padStart(2, '0') + "-" + from.getFullYear() + "/";
+
+            while(from < to){
+                from.setDate(from.getDate()+1);
+                addon += String(from.getDate()).padStart(2, '0') + "-" + String(from.getMonth() + 1).padStart(2, '0') + "-" + from.getFullYear() + "/";
+            }
+
+
+            let dataElement = dataElements.querySelectorAll("input[name='rent_from']")[0].parentNode.parentNode;
+            dataElement.setAttribute("data",dataElement.getAttribute("data") + addon);
             dataElements.querySelectorAll("input[name='rent_from']")[0].value = "";
             dataElements.querySelectorAll("input[name='rent_to']")[0].value = "";
 

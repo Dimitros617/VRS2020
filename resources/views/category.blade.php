@@ -138,23 +138,25 @@
                                                 <div class="dateReservation" data="{{$text}}">
                                                     <div class="reserveFromDiv">
                                                         <label>Od:</label>
-                                                        <input class="date reserveFromInput" type="text"
-                                                               class="reserveFrom"
+                                                        <input class="date reserveFromInput rent{{$item->id}}"
+                                                               type="text"
                                                                name="rent_from" nameDB="{{$item->name}}"
                                                                autocomplete="off"
+                                                               itemId="{{$item->id}}"
                                                                onchange="changeFrom(this)"
-                                                               onclick="showDate(this)"
+                                                               onload="initDate(this)"
                                                         required>
                                                     </div>
 
                                                     <div class="reserveToDiv">
                                                         <label>Do:</label>
-                                                        <input class="date reserveToInput" type="text"
-                                                               class="reserveTo"
+                                                        <input class="date reserveToInput rent{{$item->id}}"
+                                                               type="text"
                                                                name="rent_to" nameDB="{{$item->name}}"
                                                                autocomplete="off"
+                                                               itemId="{{$item->id}}"
                                                                onchange="changeTo(this)"
-                                                               onclick="showDate(this)"
+{{--                                                               onload="initDate(this)"--}}
                                                         required>
                                                     </div>
                                                 </div>

@@ -23,13 +23,8 @@ function changeFrom(input) {
 
 
     let currentValue = input.value;
-    let elemnts = document.getElementsByClassName("reserveToInput");
-    let elementTo;
-    for (let i = 0; i < elemnts.length; i++) {
-        if (elemnts[i].getAttribute('nameDB') == input.getAttribute('nameDB')) {
-            elementTo = elemnts[i];
-        }
-    }
+    //let elemnts = document.getElementsByClassName("reserveToInput");
+    let elementTo = input.parentNode.parentNode.getElementsByClassName("reserveToInput")[0];
 
     elementTo.setAttribute("min", input.value);
     $("elementTo").datepicker({
@@ -44,13 +39,9 @@ function changeTo(input) {
 
 
     let currentValue = input.value;
-    let elemnts = document.getElementsByClassName("reserveFromInput");
-    let elementFrom;
-    for (let i = 0; i < elemnts.length; i++) {
-        if (elemnts[i].getAttribute('nameDB') == input.getAttribute('nameDB')) {
-            elementFrom = elemnts[i];
-        }
-    }
+    //let elemnts = document.getElementsByClassName("reserveFromInput");
+    let elementFrom = input.parentNode.parentNode.getElementsByClassName("reserveFromInput")[0];
+
     let newValue = elementFrom.value
     let newValuestring = newValue;
 
@@ -78,14 +69,17 @@ function changeTo(input) {
 
 }
 
-function showDate(input) {
+function initDate(input) {
     var min = input.getAttribute("min");
     if (min == null) {
         min = "today";
     }
 
-    disableddates = input.parentElement.parentElement.getAttribute("data").split("/")
-    $(".date").datepicker({
+    disableddates = input.parentElement.parentElement.getAttribute("data").split("/");
+
+    let clss = ".rent" + input.getAttribute("itemId");
+
+    $(clss).datepicker({
         beforeShowDay: DisableSpecificDates,
         dateFormat: "dd-mm-yy",
         minDate: "min"
@@ -93,8 +87,12 @@ function showDate(input) {
 }
 
 function DisableSpecificDates(date) {
+    disableddates = event.target.parentElement.parentElement.getAttribute("data").split("/");
     var string = jQuery.datepicker.formatDate('dd-mm-yy', date);
     return [disableddates.indexOf(string) == -1];
 }
 
+$(function(){
+    $('.date[onload]').trigger('onload');
+});
 
