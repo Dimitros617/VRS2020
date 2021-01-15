@@ -81,7 +81,7 @@ function initDate(input) {
 
     $(clss).datepicker({
         beforeShowDay: DisableSpecificDates,
-        dateFormat: "dd-mm-yy",
+        dateFormat: "dd. mm. yy",
         minDate: "min"
     });
 }

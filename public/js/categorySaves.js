@@ -40,8 +40,8 @@ function saveItemLoansData(ele){
     let dataElements = ele.parentNode.parentNode.parentNode.querySelectorAll("form[id='form']")[0];
     let token = dataElements.querySelectorAll("input[name='_token']")[0].value;
     let itemId = dataElements.querySelectorAll("input[name='itemId']")[0].value;
-    let rent_from = dataElements.querySelectorAll("input[name='rent_from']")[0].value.trim();
-    let rent_to = dataElements.querySelectorAll("input[name='rent_to']")[0].value.trim();
+    let rent_from = dataElements.querySelectorAll("input[name='rent_from']")[0].value.trim().replaceAll(". ","-");
+    let rent_to = dataElements.querySelectorAll("input[name='rent_to']")[0].value.trim().replaceAll(". ","-");
 
     if(rent_from == "" || rent_to == ""){
         dataElements.querySelectorAll("input[id='newLoanFormSubmit']")[0].click();
