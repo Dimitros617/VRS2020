@@ -269,7 +269,7 @@
                         @endphp
 
 
-
+</div></div>
                         @endforeach
 
 
