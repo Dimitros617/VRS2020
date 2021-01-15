@@ -9,7 +9,10 @@
     height: 30px;
 }
 
-
+.created {
+    float: right;
+    margin-top: 3rem;
+}
 
 
 button.flex-fill.rounded-0 {
@@ -145,6 +148,13 @@ a.userNameLink {
 }
 
 @media (max-width: 767px) {
+
+    .created {
+        float: right;
+        width: 100%;
+        text-align: center;
+        margin-top: 3rem;
+    }
 
     .userData {
         width: 90%;

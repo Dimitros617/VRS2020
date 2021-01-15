@@ -1,7 +1,8 @@
 .txx-area{
-    height: 50px;
+    height: 5rem;
     width: 90%;
     overflow: hidden;
+    font-weight: 500;
 }
 .h-6p{
     height: 60px;

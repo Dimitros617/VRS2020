@@ -32,6 +32,7 @@
 .vrs-h2 {
     float: left;
     font-size: xx-large;
+    display: contents;
     font-weight: 600;
 }
 
