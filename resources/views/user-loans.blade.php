@@ -8,6 +8,7 @@
 
         <script src="/js/main.js"></script>
         <script src="/js/returnLoan.js"></script>
+        <script src="/js/loans-search.js"></script>
 
         <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8">
 
@@ -23,7 +24,33 @@
                 @endif
             </div>
 
-            <div class="pageTitle"> Aktuální výpůjčky uživatele {{ $user[0]->userNick }}</div>
+                                <div class="hlavicka pt-4">
+                                    <div class="pageTitleSearch mb-4 w-lg-50">Aktuální výpůjčky uživatele {{ $user[0]->userNick }}</div>
+                                    <div class="search">
+                                        <div class="bg-gray-100 rounded-3 modal-open">
+                                            <div class="card-body row no-gutters align-items-center h-4rem">
+
+                                                <div class="col">
+                                                    <input class="form-control-borderless mt--1" id="search" type="search" placeholder="Zadejte hledaný výraz">
+
+                                                </div>
+
+                                                <div class="col-auto">
+                                                    <div class="spinner-border text-vrs-yellow searchSpinner mt--1" id="search-spinner" role="status" hidden></div>
+                                                </div>
+
+
+                                                <div class="col-auto searchButtonDiv">
+
+                                                    <button class="btn btn-lg btn-success searchButton" type="submit" onclick="loanFind(this)">Najít</button>
+                                                    <button class="btn btn-lg btn-primary searchButton" data-sort="none" sort="desc" onclick="loansSort(this, 'loansData')">&#8681;</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 @if(count($loans)==0)
                                     <div class="emptyElementLoans">Uživatel nemá žádné aktivní výpůjčky</div>
                                 @endif
@@ -31,6 +58,7 @@
             $lastCategory = -1;
             $lastItem = -1;
             @endphp
+                                <div id="loansData">
             @foreach ($loans as $loan)
 
                 @if ($loan->categoryId != $lastCategory) {{--
@@ -39,8 +67,8 @@
         </div>
         </div>
         @endif
-        <div class="categoryDiv bg-light mb-4 ">
-            <div class="h4">{{ $loan->categoryName }}</div>
+        <div class="categoryDiv bg-light mb-4 " categoryID="{{$loan->categoryId}}">
+            <div class="h4 categoryName">{{ $loan->categoryName }}</div>
 
             @endif
 
@@ -148,7 +176,7 @@
             @endphp
 
             @endforeach
-
+            </div>
         </div>
         </div>
     </x-app-layout>

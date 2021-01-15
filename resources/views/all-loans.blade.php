@@ -44,7 +44,7 @@
                                                 <div class="col-auto searchButtonDiv">
 
                                                     <button class="btn btn-lg btn-success searchButton" type="submit" onclick="loanFind(this)">Najít</button>
-                                                    <button class="btn btn-lg btn-primary searchButton" data-sort="none" sort="desc" onclick="loanSort(this)">&#8681;</button>
+                                                    <button class="btn btn-lg btn-primary searchButton" data-sort="none" sort="desc" onclick="loansSort(this, 'waitingLoans', 'activeLoans', 'historyLoans')">&#8681;</button>
                                                 </div>
 
                                             </div>
@@ -99,7 +99,7 @@
 
 
                             <div class="collapse" id="waitingLoans">
-                                <div class="mb-2">
+
 
                                     @php
                                         $lastCategory = -1;
@@ -116,8 +116,8 @@
                                 @if($lastCategory != -1)
                                     </div></div>
                                 @endif
-                                <div class="categoryDiv">
-                                <div class="h4 categoryName">{{$loan->categoryName}}</div>
+                                <div class="categoryDiv" categoryID="{{$loan->categoryId}}">
+                                <div class="h4 categoryName" >{{$loan->categoryName}}</div>
 
                             @endif
 
@@ -272,13 +272,13 @@
 
                         @endforeach
 
-                    </div>
+
         </div>
 
 
         {{--    Copie codu jako předtím, poze se změní v foreachy pole ze kterého se načítají data--}}
         <div class="collapse" id="activeLoans">
-            <div class="mb-2">
+
 
                 @php
                     $lastCategory = -1;
@@ -294,9 +294,9 @@
             </div>
         </div>
         @endif
-        <div class="categoryDiv">
+        <div class="categoryDiv" categoryID="{{$loan->categoryId}}">
 
-            <div class="h4 categoryName">{{$loan->categoryName}}</div>
+            <div class="h4 categoryName" >{{$loan->categoryName}}</div>
 
             @endif
 
@@ -448,12 +448,12 @@
 
         @endforeach
 
-    </div>
+
     </div> </div> </div>
 
     {{--  Historie výpůjček  --}}
     <div class="collapse" id="historyLoans">
-        <div class="mb-2">
+
 
             @php
                 $lastCategory = -1;
@@ -469,9 +469,9 @@
         </div>
     </div>
     @endif
-    <div class="categoryDiv">
+    <div class="categoryDiv" categoryID="{{$loan->categoryId}}">
 
-        <div class="h4 categoryName">{{$loan->categoryName}}</div>
+        <div class="h4 categoryName" >{{$loan->categoryName}}</div>
 
         @endif
 
@@ -537,7 +537,7 @@
 
     @endforeach
 
-    </div>
+
     </div>
 
     </div>

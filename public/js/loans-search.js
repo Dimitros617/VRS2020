@@ -16,7 +16,7 @@ function loanFind(){
         return;
     }
 
-    let categories = document.querySelectorAll("div[class='categoryDiv']");
+    let categories = document.getElementsByClassName('categoryDiv');
 
     for (let i = 0; i < categories.length ; i++){
 
@@ -46,8 +46,8 @@ function loanFind(){
 
             for (let k = 0; k < loans.length ; k++){
 
-                let user_name = loans[k].getElementsByClassName("userName")[0].innerHTML.toLowerCase();
-                let user_surname = loans[k].getElementsByClassName("userSurname")[0].innerHTML.toLowerCase();
+                let user_name =  loans[k].getElementsByClassName("userName").length != 0 ? loans[k].getElementsByClassName("userName")[0].innerHTML.toLowerCase(): "";
+                let user_surname = loans[k].getElementsByClassName("userSurname").length != 0 ? loans[k].getElementsByClassName("userSurname")[0].innerHTML.toLowerCase() : "";
 
                 if(user_name == find_value || user_surname == find_value || (user_name + " " + user_surname) == find_value ){
                     loans_count++;
@@ -70,5 +70,53 @@ function loanFind(){
         }
 
     }
+
+}
+
+function loansSort(ele) {
+
+    let sort_value = ele.getAttribute("sort");
+
+    var sortClasesDiv = arguments;
+
+    if(sort_value == "asc"){
+        ele.setAttribute("sort","desc");
+        ele.innerHTML = "&#8681";
+    }else{
+        ele.setAttribute("sort","asc");
+        ele.innerHTML = "&#8679;";
+    }
+    document.getElementById("search-spinner").removeAttribute("hidden");
+
+    $.ajax({
+        url: '/categories/categoriesSort/' + sort_value,
+        method: "GET",
+        success: function (response) {
+
+            for (let o = 1 ; o < sortClasesDiv.length ; o++ ) {
+
+                let liveCategories = document.getElementsByClassName("categoryDiv");
+                let categories = new Array();
+                for (let i = 0; i < liveCategories.length; i++) {
+                    categories[i] = liveCategories[i].cloneNode(true);
+                }
+
+                let a = sortClasesDiv[o];
+                document.getElementById(sortClasesDiv[o]).innerHTML = "";
+
+
+                for (let i = 0; i < response.length; i++) {
+                    for (let j = 0; j < categories.length; j++) {
+                        if (response[i]["id"] == categories[j].getAttribute("categoryID")) {
+                            document.getElementById(sortClasesDiv[o]).appendChild(categories[j]);
+                            break;
+                        }
+                    }
+                }
+            }
+            document.getElementById("search-spinner").setAttribute("hidden","");
+
+        }
+    });
 
 }

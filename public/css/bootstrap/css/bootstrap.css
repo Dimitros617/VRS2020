@@ -8230,6 +8230,11 @@ a.badge-dark:focus, a.badge-dark.focus {
   }
 }
 @media (min-width: 768px) {
+
+    .w-md-50 {
+        width: 50% !important;
+    }
+
   .float-md-start {
     float: left !important;
   }
@@ -8881,6 +8886,11 @@ a.badge-dark:focus, a.badge-dark.focus {
   }
 }
 @media (min-width: 992px) {
+
+    .w-lg-50 {
+        width: 50% !important;
+    }
+
   .float-lg-start {
     float: left !important;
   }
