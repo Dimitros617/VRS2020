@@ -1,4 +1,4 @@
-@section('title',"Moje výpůjčky")
+@section('title',"Všechny výpůjčky")
 @section('css', URL::asset('css/all-loans.css'))
 
 <x-app-layout>
@@ -26,7 +26,7 @@
 
 
                                 <div class="hlavicka pt-4">
-                                    <div class="pageTitleSearch mb-4">Všechny aktuální výpůjčky</div>
+                                    <div class="pageTitleSearch mb-4 w-lg-50">Všechny výpůjčky</div>
                                     <div class="search">
                                         <div class="bg-gray-100 rounded-3 modal-open">
                                             <div class="card-body row no-gutters align-items-center h-4rem">
@@ -526,7 +526,7 @@
 
     </div>
     <div class="created text-vrs-cyan">
-        <b>Smazáno: </b> {{date("d. m. Y H:m", strtotime($loan->created))}}
+        <b>Archivováno: </b> {{date("d. m. Y", strtotime($loan->created))}}
     </div>
 
 

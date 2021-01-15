@@ -2,6 +2,10 @@ button.flex-fill.rounded-0 {
     width: -webkit-fill-available;
 }
 
+overflow-hidden.shadow-xl.sm:rounded-lg {
+    /* Tyhle boxíky, tak ať text v nich je dále od krajů */
+}
+
 .hlavicka {
     width: 100%;
     /* background: aqua; */
@@ -13,4 +17,8 @@ button.flex-fill.rounded-0 {
     margin-bottom: 2rem;
     /* flex-flow: wrap; */
     /* height: -webkit-fill-available; */
+}
+
+body {
+    text-align: justify;
 }
