@@ -429,8 +429,89 @@
     <div class="collapse" id="historyLoans">
         <div class="mb-2">
 
-            <div class="emptyElementLoans">Aktuálně tu nemáme žádné záznamy</div>
+            @php
+                $lastCategory = -1;
+                $lastItem = -1;
+            @endphp
+            @if(count($historyLoans)==0)
+                <div class="emptyElementLoans">Aktuálně tu nemáme žádné záznamy</div>
+            @endif
+            @foreach($historyLoans as $loan)
+
+                @if($loan->categoryId != $lastCategory) {{-- Začátek Divu kategorie--}}
+                @if($lastCategory != -1)
         </div>
+    </div>
+    @endif
+    <div class="categoryDiv">
+
+        <div class="h4">{{$loan->categoryName}}</div>
+
+        @endif
+
+
+        @if($loan->itemId != $lastItem) {{-- Začátek Divu Itemu--}}
+        @if($lastItem != -1 && $loan->categoryId == $lastCategory)
+    </div>
+    @endif
+    <div class="itemDiv ">
+        <label class="title font-weight-bold" for="itemName"> Název :</label>
+        <div class="itemName">{{$loan->itemName}}</div>
+
+        @if($loan->note != "")
+            <label class="title font-weight-bold" for="itemNote"> Poznámka :</label>
+            <div class="itemNote">{{$loan->note}}</div>
+        @endif
+
+        @if($loan->place != "")
+            <label class="title font-weight-bold" for="itemPlace"> Místo :</label>
+            <div class="itemPlace">{{$loan->place}}</div>
+        @endif
+
+        @if($loan->inventory_number != "")
+            <label class="title font-weight-bold" for="itemInventory_number"> Inventární číslo
+                :</label>
+            <div class="itemInventory_number">{{$loan->inventory_number}}</div>
+        @endif
+        @endif
+
+        <form  class="loanRecordBox">
+
+
+
+
+    <div class="userData">
+        <a href="/users/{{$loan->userId}}" class="userNameLink">
+            <label class="font-weight-bold userName">{{$loan->userName}}</label>
+
+            <label class="font-weight-bold userSurname">{{$loan->userSurname}} </label>
+
+        </a>
+
+        <div class="rentFromDiv">
+            <label for="rent_from" class="font-weight-bold">OD: </label>
+            <label class="rent_from">{{$loan->rent_from}}</label>
+        </div>
+        <div class="rentToDiv">
+            <label for="rent_to" class="font-weight-bold">DO: </label>
+            <label class="rent_to">{{$loan->rent_to}}</label>
+        </div>
+        <br>
+
+    </div>
+
+
+    </form>
+    @php
+        $lastCategory = $loan->categoryId;
+        $lastItem = $loan->itemId
+    @endphp
+
+
+
+    @endforeach
+
+    </div>
     </div>
 
     </div>
