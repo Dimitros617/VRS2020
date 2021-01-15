@@ -19,6 +19,10 @@ overflow-hidden.shadow-xl.sm:rounded-lg {
     /* height: -webkit-fill-available; */
 }
 
+.paticka {
+    margin-bottom: 2rem;
+}
+
 body {
     text-align: justify;
 }

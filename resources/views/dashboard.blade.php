@@ -117,7 +117,7 @@
             @endif
 
 
-            <button class="btn btn-warning align-content- text-center flex-fill rounded-0" type="button"
+            <button class="btn btn-warning align-content- text-center flex-fill rounded-0 paticka" type="button"
                     data-bs-toggle="collapse" data-bs-target="#moreInfo" aria-expanded="false"
                     aria-controls="moreInfo">
                 Více informací
