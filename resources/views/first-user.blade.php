@@ -1,4 +1,4 @@
-@section('title','Výpůjční a rezervační systém')
+@section('title','Výpůjční a rezervační systém - Vítej první uživateli!')
 @section('css', URL::asset('css/dashboard.css'))
 
 <x-app-layout>

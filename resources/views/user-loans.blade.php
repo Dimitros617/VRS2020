@@ -79,21 +79,21 @@
         </div>
         @endif
         <div class="itemDiv">
-            <label class="title font-weight-bold" for="itemName"> Název :</label>
+            <label class="title font-weight-bold" for="itemName">Název: </label>
             <div class="itemName">{{ $loan->itemName }}</div>
 
             @if ($loan->note != '')
-                <label class="title font-weight-bold" for="itemNote"> Poznámka :</label>
+                <label class="title font-weight-bold" for="itemNote">Poznámka: </label>
                 <div class="itemNote">{{ $loan->note }}</div>
             @endif
 
             @if ($loan->place != '')
-                <label class="title font-weight-bold" for="itemPlace"> Místo :</label>
+                <label class="title font-weight-bold" for="itemPlace">Místo: </label>
                 <div class="itemPlace">{{ $loan->place }}</div>
             @endif
 
             @if ($loan->inventory_number != '')
-                <label class="title font-weight-bold" for="itemInventory_number"> Inventární číslo :</label>
+                <label class="title font-weight-bold" for="itemInventory_number">Inventární číslo: </label>
                 <div class="itemInventory_number">{{ $loan->inventory_number }}</div>
             @endif
             @endif
@@ -104,9 +104,9 @@
                     $end = strtotime($loan->rent_to);
                     $now = strtotime("now");
 
-                    if($now < $start){ echo 'title="Výpůjčka zatím není aktivní."' ; }elseif ($now>= $start && $now <=
-                            $end){ echo 'title="Výpůjčka je právě aktivní."' ; }else{
-                            echo 'title="Již je po termínu, co nejdříve výpůjčku vrátí."' ; } echo ">" ; if($now < $start){
+                    if($now < $start){ echo 'title="Výpůjčka zatím není aktivní"' ; }elseif ($now>= $start && $now <=
+                            $end){ echo 'title="Výpůjčka je právě aktivní"' ; }else{
+                            echo 'title="Již je po termínu!"' ; } echo ">" ; if($now < $start){
                             echo '
                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check iconSvg" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>

@@ -12,7 +12,7 @@
 
             <form action="{{'/categories/' . $categories[0]->categoryId . '/removeCategoryHard'}}" method="POST" class="removeVerify text-center">
                 @csrf
-                <div class="vrs-h2 text-vrs-cyan d-content"> Opravdu ?</div>
+                <div class="vrs-h2 text-vrs-cyan d-content"> Jste si jistý?</div>
                 <div class=""> V dané kategorii se nachází položky, které mohou být v závazku vůči uživatelům, přejete si spolu s kategorií odstranit všechny položky a jejich závazky?</div>
                 <input type="text" class="d-none text-vrs-cyan mb-2" name="categoryId" value="{{$categories[0]->categoryId}}">
                 <br>
@@ -63,7 +63,7 @@
                                 }elseif ($now >= $start && $now <= $end){
                                     echo 'title="Výpůjčka je právě aktivní"';
                                 }else{
-                                    echo 'title="Již je po termínu, měly by jste položku vrátit"';
+                                    echo 'title="Již je po termínu!"';
                                 }
 
                             echo ">";

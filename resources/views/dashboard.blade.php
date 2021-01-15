@@ -161,21 +161,61 @@
                             <ul style="list-style-type:circle">
                                 <li>Pokud se zde nic nenachází, přidejte novou kategorii.</li>
                                 <li>Kategorii můžete smazat. Pokud bude mít někdo zapůjčenou či rezervovanou položku z dané kategorie, vyskočí vám upozornění.</li>
-                                <li>Po kliknutí na "Aktuální závazky" vidíte, kdo má položky z dané kategorie zapůjčené či rezervované. Můžete zde tyto výpůjčky spravovat -  zrušit je či reagovat na jejich žádost o schválení vrácení.</li>
-                                <li>Počet viditelných položek v dané kategorii poté vidíte v podobě levé bublinky s číslem na souhrnu všech kategorií. Pravá bublinka udává číslo skrytých položek.</li>
+                                <li>Po kliknutí na "Aktuální závazky" vidíte, kdo má položky z dané kategorie zapůjčené či rezervované. Můžete zde tyto výpůjčky spravovat -
+                                    zrušit je či reagovat na jejich žádost o schválení vrácení.</li>
+                                <li>Počet viditelných položek v dané kategorii poté vidíte v podobě levé modré bublinky s číslem na souhrnu všech kategorií. Pravá oranžová bublinka udává číslo skrytých položek.</li>
                                 <li>Kliknutím na box kategorie se vám rozevře celá kategorie, zde můžete upravit její název a pod názvem se nachází textové pole, kam můžete napsat popisek kategorie.</li>
                                 <li>Podobně jako se přidává kategorie, můžete vkládat nové položky k zapůjčení.
                                     <ul style="list-style-type:disc">
                                         Všechny informace (název, poznámka, místo, inventární číslo) snadno upravíte.
                                         <li>Po zadání data počátku výpůjčky do pole "Od:" a konce do pole "Do:" si položku klikem na "Vypůjčit" zapůjčíte na daný časový interval.</li>
                                         <li>Položku můžete i smazat. Pokud ji bude mít někdo zapůjčenou či rezervovanou, vyskočí vám upozornění.</li
-                                        <li>Po kliknutí na "Aktuální závazky" vidíte, kdo má tento předmět zapůjčený či rezervovaný. Můžete zde tyto výpůjčky spravovat -  zrušit je či reagovat na jejich žádost o schválení vrácení.</li>
+                                        <li>Po kliknutí na "Aktuální závazky" vidíte, kdo má tento předmět zapůjčený či rezervovaný. Můžete zde tyto výpůjčky spravovat -
+                                            zrušit je či reagovat na jejich žádost o schválení vrácení.</li>
                                         <li>Nastavte zviditelnění či skrytí položky pro běžné uživatele.</li>
                                     </ul>
                                 </li>
                             </ul>
                         </div>
                     </div>
+
+                    <br>
+                        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                            <h2 class="">Moje výpůjčky</h2>
+                            <div class="">
+                                Vše, co jste si zarezervoval či vypůjčil, najdete zde.
+                                <ul style="list-style-type:circle">
+                                    <li>Souhrnně vidíte položky ze stejných kategorií u sebe.</li>
+                                    <li>Po přejetí na tlačítko "Probíhá" se ukáže možnost "Zrušít rezervaci", kterou zrušíte svou výpůjčku.</li>
+                                    <li>Všimněte si v levé části boxu, který uvádí detaily výpůjčky, ikonky.
+                                        <ul style="list-style-type:disc">
+                                            <li>
+                                                 Ikonka odškrtnutí znázorňuje, že "Výpůjčka zatím není aktivní".
+                                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check iconSvg" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+                                                </svg>
+                                            </li>
+                                            <li>
+                                                Ikonka ciferníku znázorňuje, že "Výpůjčka je právě aktivni".
+                                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-clock iconSvg" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm8-7A8 8 0 1 1 0 8a8 8 0 0 1 16 0z"/>
+                                                    <path fill-rule="evenodd" d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z"/>
+                                                </svg>
+                                            </li>
+                                            <li>
+                                                Ikonka s vykřičníkem dáva na vědomí, že "Již je po termínu, měli byste položku vrátit".
+                                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-exclamation-diamond-fill iconSvg" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M9.05.435c-.58-.58-1.52-.58-2.1 0L.436 6.95c-.58.58-.58 1.519 0 2.098l6.516 6.516c.58.58 1.519.58 2.098 0l6.516-6.516c.58-.58.58-1.519 0-2.098L9.05.435zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                                                </svg>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                Podobně, jako vypadá tato stránka, vypadají souhrny výpůjček u jednotlivých uživatelů i jednotlivých kategorií a položek. U nich však vidíte i možnost "Čekání na schválení",
+                                která se po přejetí změní na "Potvrdit odevzdání". Tím přijmete buďto zrušení rezervace nebo vrácení předmětu. Přijímejte vrácení předmětu až ve chvíli, kdy jste si jisti,
+                                že je předmět bezpečně vrácen na místo, odkud si jej uživatel půjčil.
+                            </div>
+                        </div>
                 @endif
             @endif
         </div>

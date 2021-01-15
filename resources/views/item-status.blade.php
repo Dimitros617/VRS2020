@@ -26,11 +26,11 @@
             <div class="allLoans">
 
 
-                <div class="pageTitle"> Položka {{$item->name}} je v závazku s těmito uživateli:</div>
+                <div class="pageTitle">Položka {{$item->name}} je v závazku s těmito uživateli:</div>
 
                 <div class="list-group">
 
-                    <div class="emptyElementLoans" @if(count($users) != 0) hidden @endif> Tato položka není vypůjčená ani rezervovaná</div>
+                    <div class="emptyElementLoans" @if(count($users) != 0) hidden @endif>Tato položka není vypůjčená ani rezervovaná</div>
 
 
                     @foreach($users as $user)
@@ -53,7 +53,7 @@
                                 }elseif ($now >= $start && $now <= $end){
                                     echo 'title="Výpůjčka je právě aktivní"';
                                 }else{
-                                    echo 'title="Již je po termínu, měli by jste položku vrátit"';
+                                    echo 'title="Již je po termínu!"';
                                 }
 
                             echo ">";

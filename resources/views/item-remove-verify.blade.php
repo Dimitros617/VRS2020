@@ -11,8 +11,8 @@
 
             <form action="{{'/item/' . $item->id . '/removeItemHard'}}" method="POST" class="removeVerify text-center">
                 @csrf
-                <div class="vrs-h2 text-vrs-cyan d-content"> Opravdu ?</div>
-                <div class=""> k dané položce jsme našly probíhající rezervace. Přejete si smazat položku včetně všech probíhajících rezervací ?</div>
+                <div class="vrs-h2 text-vrs-cyan d-content"> Jste si jistý?</div>
+                <div class="">K dané položce jsme našli probíhající rezervace či výpůjčky. Přejete si smazat položku včetně všech probíhajících rezervací?</div>
                 <input type="text" class="d-none" name="itemId" value="{{$item->id}}">
                 <br>
                 <input class="btn btn-danger" type="submit" value="Smazat položku {{$item->name}} a všechny závazky">
@@ -22,7 +22,7 @@
 
             <div class="allLoans">
 
-                <div class="pageTitle"> Položka {{$item->name}} je v závazku s těmito uživately:</div>
+                <div class="pageTitle"> Položka {{$item->name}} je v závazku s těmito uživateli:</div>
 
                 <div class="list-group">
                     @foreach($users as $user)
@@ -40,7 +40,7 @@
         }elseif ($now >= $start && $now <= $end){
             echo 'title="Výpůjčka je právě aktivní"';
         }else{
-            echo 'title="Již je po termínu, měly by jste položku vrátit"';
+            echo 'title="Již je po termínu!"';
         }
 
     echo ">";

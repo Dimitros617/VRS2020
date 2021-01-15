@@ -26,7 +26,7 @@
 
 
                                 <div class="hlavicka pt-4">
-                                    <div class="pageTitleSearch mb-4"> Aktuální výpůjčky:</div>
+                                    <div class="pageTitleSearch mb-4">Aktuální výpůjčky</div>
                                     <div class="search">
                                         <div class="bg-gray-100 rounded-3 modal-open">
                                             <div class="card-body row no-gutters align-items-center h-4rem">
@@ -162,7 +162,7 @@
                                 }elseif ($now >= $start && $now <= $end){
                                     echo 'title="Výpůjčka je právě aktivní"';
                                 }else{
-                                    echo 'title="Již je po termínu, měly by jste položku vrátit"';
+                                    echo 'title="Již je po termínu!"';
                                 }
 
                             echo ">";

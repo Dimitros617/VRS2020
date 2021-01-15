@@ -23,7 +23,7 @@
                             </div>
 
                         <div class="hlavicka">
-            <div class="pageTitleSearch mb-4"> Seznam kategorií:</div>
+            <div class="pageTitleSearch mb-4">Seznam kategorií</div>
                             <div class="search">
                                 <div class="bg-gray-100 rounded-3 modal-open">
                                     <div class="card-body row no-gutters align-items-center h-4rem">
@@ -143,7 +143,7 @@
                     @endfor
                 </div>
             @else
-                <div class="display-4 pt-4 pb-4">Nebyly nalezeny žádné kategorie</div>
+                <div class="emptyElementLoans">Nebyly nalezeny žádné kategorie</div>
             @endif
             @if( $permition[0]->edit_item == 1)
                 <div class="item">

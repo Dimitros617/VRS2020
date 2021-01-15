@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-jet-authentication-card>
 
-        <div class="">
+        <div class="" style="margin: auto;">
             <div style="">
                 {{--            <x-jet-authentication-card-logo />--}}
                 <a href="/"><x-jet-application-logo class="block h-9 w-auto " /></a>
