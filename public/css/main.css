@@ -51,6 +51,11 @@
     display: block;
 }
 
+.vrs-d-none{
+    display: none;
+}
+
+
 .emptyElementLoans {
     color: #002e40;
     font-weight: 700;

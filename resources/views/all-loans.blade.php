@@ -6,6 +6,7 @@
     <x-slot name="header"></x-slot>
     <script src="/js/main.js"></script>
     <script src="/js/returnLoan.js"></script>
+    <script src="/js/loans-search.js"></script>
 
     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8">
 
@@ -24,7 +25,32 @@
                     @endif
 
 
-                            <div class="pageTitle"> Aktuální výpůjčky :</div>
+                                <div class="hlavicka pt-4">
+                                    <div class="pageTitleSearch mb-4"> Aktuální výpůjčky:</div>
+                                    <div class="search">
+                                        <div class="bg-gray-100 rounded-3 modal-open">
+                                            <div class="card-body row no-gutters align-items-center h-4rem">
+
+                                                <div class="col">
+                                                    <input class="form-control-borderless mt--1" id="search" type="search" placeholder="Zadejte hledaný výraz">
+
+                                                </div>
+
+                                                <div class="col-auto">
+                                                    <div class="spinner-border text-vrs-yellow searchSpinner mt--1" id="search-spinner" role="status" hidden></div>
+                                                </div>
+
+
+                                                <div class="col-auto searchButtonDiv">
+
+                                                    <button class="btn btn-lg btn-success searchButton" type="submit" onclick="loanFind(this)">Najít</button>
+                                                    <button class="btn btn-lg btn-primary searchButton" data-sort="none" sort="desc" onclick="loanSort(this)">&#8681;</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
 
                             <div class="align-content-center d-sm-flex rounded-4 overflow-hidden flex-flow-column flex-sm-flow-row mb-4">
@@ -91,7 +117,7 @@
                                     </div></div>
                                 @endif
                                 <div class="categoryDiv">
-                                <div class="h4">{{$loan->categoryName}}</div>
+                                <div class="h4 categoryName">{{$loan->categoryName}}</div>
 
                             @endif
 
@@ -270,7 +296,7 @@
         @endif
         <div class="categoryDiv">
 
-            <div class="h4">{{$loan->categoryName}}</div>
+            <div class="h4 categoryName">{{$loan->categoryName}}</div>
 
             @endif
 
@@ -445,7 +471,7 @@
     @endif
     <div class="categoryDiv">
 
-        <div class="h4">{{$loan->categoryName}}</div>
+        <div class="h4 categoryName">{{$loan->categoryName}}</div>
 
         @endif
 
