@@ -129,8 +129,8 @@ function getMessageDiv(user_from, text, priority, id){
 
     let cross = document.createElement('div');
     cross.setAttribute('class','messageCross');
-    div.setAttribute('onclick','removeMessage(this)');
-    cross.innerHTML = '&#x2715;';
+    cross.setAttribute('onclick','removeMessage(this)');
+    cross.innerHTML = '<b>&#x2715;</b>';
 
     let removingLoading = document.createElement('div');
     removingLoading.setAttribute('class','messageCrossLoading');
@@ -170,15 +170,15 @@ function checkPriority(ele){
 
 function removeMessage(ele){
 
-        ele.getElementsByClassName("messageCross")[0].setAttribute("hidden","");
-        ele.getElementsByClassName("messageCrossLoading")[0].removeAttribute("hidden");
+        ele.setAttribute("hidden","");
+        ele.parentNode.getElementsByClassName("messageCrossLoading")[0].removeAttribute("hidden");
         $.ajax({
-            url: '/removeMessage/' + ele.getAttribute('mess_id'),
+            url: '/removeMessage/' + ele.parentNode.getAttribute('mess_id'),
             method: "GET",
             success: function () {
-                ele.setAttribute("hidden","");
+                ele.parentNode.setAttribute("hidden","");
 
-                let mess = document.getElementsByClassName("message");
+                let mess = ele.parentNode.parentNode.getElementsByClassName("message");
                 let count = 0;
                 for(let i =0; i<mess.length; i++){
                     count += mess[i].getAttribute("hidden") == null ? 1 : 0 ;
