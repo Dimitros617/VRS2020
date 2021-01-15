@@ -18,7 +18,7 @@
                 <div class="list-group pt-4 pb-4">
 
                     <div class="hlavicka">
-                        <div class="pageTitleSearch"> Seznam uživatelů:</div>
+                        <div class="pageTitleSearch">Seznam uživatelů</div>
                         <div class="search">
                             <div class="bg-gray-100 rounded-3 modal-open">
                                 <div class="card-body row no-gutters align-items-center h-4rem">
@@ -73,9 +73,9 @@
                                     </a>
                             @endif
                             @if(Auth::permition()->possibility_renting == 1)
-                                <a href="{{url()->current().'/'.$user -> userId.'/loans'}}" class="p-0 buttonsDivItem">
-                                    <button class="btn btn-warning w-200p buttonsDivItem">Závazky uživatele</button>
-                                </a>
+                                    <a href="{{url()->current().'/'.$user -> userId.'/loans'}}" class="p-0 buttonsDivItem">
+                                        <button class="btn btn-warning w-200p buttonsDivItem">Závazky uživatele</button>
+                                    </a>
                             @endif
                             @if(Auth::permition()->new_user == 1)
                                 <a href="{{url()->current().'/'.$user -> userId}}" class="p-0 buttonsDivItem">
@@ -90,7 +90,7 @@
                     </div>
                 </div>
             @else
-                <div class="display-4 pt-4 pb-4">Nebyli nalezeni žádní uživatelé</div>
+                <div class="display-4 pt-4 pb-4">Nebyli nalezeni žádní uživatelé. Pokud i přesto, že jste v systému, vidíte tuto hlášku, tak je něco hoooodně špatně. :-)</div>
             @endif
 
         </div>

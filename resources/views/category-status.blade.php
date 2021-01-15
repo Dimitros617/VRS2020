@@ -20,7 +20,7 @@
                                 @endif
                                 @endif
                             </div>
-            <div class="pageTitle"> Aktuální závazky položek z kategorie {{$category[0]->categoryName}}</div>
+            <div class="pageTitle">Aktuální závazky položek z kategorie {{$category[0]->categoryName}}</div>
             @if(count($categories) != 0)
 
                 @php
@@ -73,7 +73,7 @@
                         }elseif ($now >= $start && $now <= $end){
                             echo 'title="Výpůjčka je právě aktivní"';
                         }else{
-                            echo 'title="Již je po termínu, měly by jste položku vrátit"';
+                            echo 'title="Již je po termínu!"';
                         }
 
                     echo ">";

@@ -4,39 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:main" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </select>
+    <expand />
+    <select />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee11485e-be3d-4401-963f-6d84bd64f0f9" name="Revert &quot;First Commit&quot;" comment="Revert &quot;First Commit&quot;&#10;&#10;This reverts commit 7389926d">
-      <change afterPath="$PROJECT_DIR$/resources/views/first-user.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ListUsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ListUsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/bootstrap/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/category-backup.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/category.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/category.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/all-loans.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/all-loans.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/categories.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/category-remove-verify.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/category-remove-verify.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/category-status.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/category-status.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/first-user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/first-user.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/item-remove-verify.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/item-remove-verify.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/item-status.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/item-status.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/my-loans.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/my-loans.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user-loans.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user-loans.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcomeOld.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcomeOld.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +222,6 @@
     <hideBySeverity>
       <option value="300" />
     </hideBySeverity>
-    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="1iyF5qs0lSbGXT3k5VutWjZW3Xp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -253,7 +241,6 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -261,15 +248,13 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Xamp\htdocs\VRS\resources\views" />
-      <recent name="D:\Xamp\htdocs\VRS\public\SPCMZ\LIST" />
-      <recent name="D:\Xamp\htdocs\VRS\public\SPCMZ\REMOVE" />
-      <recent name="D:\Xamp\htdocs\VRS\public\SPCMZ\ADD" />
       <recent name="D:\Xamp\htdocs\VRS\resources\views\profile" />
+      <recent name="D:\Xamp\htdocs\VRS\resources\lang\cz" />
+      <recent name="D:\Xamp\htdocs\VRS\resources\lang" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Xamp\htdocs\VRS\public\Img" />
-      <recent name="D:\Xamp\htdocs\VRS\public\SPCMZ\GET" />
       <recent name="D:\Xamp\htdocs\VRS\resources\views" />
+      <recent name="D:\Xamp\htdocs\VRS\public\Img" />
       <recent name="D:\Xamp\htdocs\VRS\public" />
       <recent name="D:\Xamp\htdocs\VRS\resources\Img" />
     </key>
@@ -299,7 +284,7 @@
     </configuration>
     <configuration name="Unnamed" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" nameIsGenerated="true" server_name="Localhost">
       <method v="2">
-        <option name="RunConfigurationTask" enabled="true" run_configuration_name="Laravel Debuger" run_configuration_type="LaravelStorm_run_conf_serve" />
+        <option name="RunConfigurationTask" enabled="true" />
       </method>
     </configuration>
     <list>
@@ -311,8 +296,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.localhost:80" />
         <item itemvalue="JavaScript Debug.localhost:8000" />
+        <item itemvalue="JavaScript Debug.localhost:80" />
         <item itemvalue="JavaScript Debug.localhost:8000" />
         <item itemvalue="JavaScript Debug.localhost:80" />
       </list>
@@ -365,17 +350,13 @@
       <workItem from="1607684908809" duration="30137000" />
       <workItem from="1607730764769" duration="963000" />
       <workItem from="1607775130569" duration="4012000" />
-      <workItem from="1607803232223" duration="778000" />
-      <workItem from="1607812557854" duration="324000" />
-      <workItem from="1607812942175" duration="1811000" />
-      <workItem from="1607898534366" duration="16950000" />
-      <workItem from="1608069824892" duration="754000" />
-      <workItem from="1608554555775" duration="648000" />
-      <workItem from="1609327346764" duration="308000" />
-      <workItem from="1609671153064" duration="11167000" />
-      <workItem from="1610032415002" duration="21613000" />
-      <workItem from="1610114788748" duration="37688000" />
-      <workItem from="1610195997725" duration="17075000" />
+      <workItem from="1610312369266" duration="4215000" />
+      <workItem from="1610360530858" duration="8950000" />
+      <workItem from="1610400961986" duration="2734000" />
+      <workItem from="1610553838724" duration="6555000" />
+      <workItem from="1610628093331" duration="11069000" />
+      <workItem from="1610652205916" duration="11372000" />
+      <workItem from="1610715241776" duration="5978000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1602874504350</created>
@@ -622,68 +603,68 @@
       <option name="project" value="LOCAL" />
       <updated>1607731057179</updated>
     </task>
-    <task id="LOCAL-00036" summary="Upraveny stránky pro HTTP response status codes, a přidáno linkování css pro Kačku">
-      <created>1607803414507</created>
+    <task id="LOCAL-00036" summary="Vyhledávání uživatelů podle role, pravopisná úprava u first user">
+      <created>1610289271694</created>
       <option name="number" value="00036" />
       <option name="presentableId" value="LOCAL-00036" />
       <option name="project" value="LOCAL" />
-      <updated>1607803414507</updated>
+      <updated>1610289271694</updated>
     </task>
-    <task id="LOCAL-00037" summary="Přidáno zobrazování notifikací/zpráv pro uživatele">
-      <created>1610046245163</created>
+    <task id="LOCAL-00037" summary="Upraveno pass rule">
+      <created>1610291088634</created>
       <option name="number" value="00037" />
       <option name="presentableId" value="LOCAL-00037" />
       <option name="project" value="LOCAL" />
-      <updated>1610046245163</updated>
+      <updated>1610291088634</updated>
     </task>
-    <task id="LOCAL-00038" summary="Přidáno zobrazení nových zpráv, asynchronní synchronizace">
-      <created>1610134330715</created>
+    <task id="LOCAL-00038" summary="Odkazy na dashboardu, zobrazení výpůjček u jednotlivých uživatelů, itemů, kategorií pro všechny s possibility_renting">
+      <created>1610314839804</created>
       <option name="number" value="00038" />
       <option name="presentableId" value="LOCAL-00038" />
       <option name="project" value="LOCAL" />
-      <updated>1610134330715</updated>
+      <updated>1610314839804</updated>
     </task>
-    <task id="LOCAL-00039" summary="Doděláno posílání a správa zpráv. Přidán Nick a možnost loginu přes něj, upraven user seting. feat Viol">
-      <created>1610152089656</created>
+    <task id="LOCAL-00039" summary="Redirect na vlastní výpůjčky v seznamu uživatelů a bez odkazu na poslání zprávy sám sobě, prázdná hláška v category.blade.php">
+      <created>1610380270094</created>
       <option name="number" value="00039" />
       <option name="presentableId" value="LOCAL-00039" />
       <option name="project" value="LOCAL" />
-      <updated>1610152089656</updated>
+      <updated>1610380270094</updated>
     </task>
-    <task id="LOCAL-00040" summary="Oveřování prázdných zpráv při odesílání">
-      <created>1610153850076</created>
+    <task id="LOCAL-00040" summary="Úprava categories.blade.php - Aktuální závazky">
+      <created>1610396531772</created>
       <option name="number" value="00040" />
       <option name="presentableId" value="LOCAL-00040" />
       <option name="project" value="LOCAL" />
-      <updated>1610153850076</updated>
+      <updated>1610396531772</updated>
     </task>
-    <task id="LOCAL-00041" summary="Přidáno refrešování zpráv i při vnitřním překliknutí">
-      <created>1610154287534</created>
+    <task id="LOCAL-00041" summary="Dodána hláška, když uživatel nemá žádné výpůjčky">
+      <created>1610639841284</created>
       <option name="number" value="00041" />
       <option name="presentableId" value="LOCAL-00041" />
       <option name="project" value="LOCAL" />
-      <updated>1610154287534</updated>
+      <updated>1610639841284</updated>
     </task>
-    <task id="LOCAL-00042" summary="Přidáno ověřování selhání poslílání zpráv">
-      <created>1610154938174</created>
+    <task id="LOCAL-00042" summary="#27 Snad vše upraveno; dodán jiný font">
+      <created>1610641849674</created>
       <option name="number" value="00042" />
       <option name="presentableId" value="LOCAL-00042" />
       <option name="project" value="LOCAL" />
-      <updated>1610154938174</updated>
+      <updated>1610641849674</updated>
     </task>
-    <task id="LOCAL-00043" summary="Opraveno Klonování zpráv #20">
-      <created>1610197339740</created>
+    <task id="LOCAL-00043" summary="Postupné doplňování dashboardu - sekce admin">
+      <created>1610709004134</created>
       <option name="number" value="00043" />
       <option name="presentableId" value="LOCAL-00043" />
       <option name="project" value="LOCAL" />
-      <updated>1610197339740</updated>
+      <updated>1610709004134</updated>
     </task>
-    <task id="LOCAL-00044" summary="Opraveno Scrollování zpráv #21 + dodělaná responzivní hlavička">
-      <created>1610208030049</created>
+    <task id="LOCAL-00044" summary="Typografická úprava all-loans">
+      <created>1610720688537</created>
       <option name="number" value="00044" />
       <option name="presentableId" value="LOCAL-00044" />
       <option name="project" value="LOCAL" />
-      <updated>1610208030049</updated>
+      <updated>1610720688537</updated>
     </task>
     <option name="localTasksCounter" value="45" />
     <servers />
@@ -694,6 +675,31 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -711,6 +717,11 @@
             </State>
           </value>
         </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1" value="TOOL_WINDOW" />
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
@@ -732,17 +743,35 @@
     <MESSAGE value="Zpracována issue: Značení stavu výpůjčky #8" />
     <MESSAGE value="Přidán kompletní systém pro schvalování výpůjček, + update bootstrapu na v5" />
     <MESSAGE value="Zhezkání controllerů" />
-    <MESSAGE value="Upraveny stránky pro HTTP response status codes, a přidáno linkování css pro Kačku" />
-    <MESSAGE value="Přidáno vyhledávání a filtrování kategorií" />
-    <MESSAGE value="Přidáno zobrazování notifikací/zpráv pro uživatele" />
-    <MESSAGE value="Přidáno zobrazení nových zpráv, asynchronní synchronizace" />
-    <MESSAGE value="Doděláno posílání a správa zpráv. Přidán Nick a možnost loginu přes něj, upraven user seting. feat Viol" />
-    <MESSAGE value="Oveřování prázdných zpráv při odesílání" />
-    <MESSAGE value="Přidáno refrešování zpráv i při vnitřním překliknutí" />
-    <MESSAGE value="Přidáno ověřování selhání poslílání zpráv" />
-    <MESSAGE value="Opraveno Klonování zpráv #20" />
-    <MESSAGE value="Opraveno Scrollování zpráv #21 + dodělaná responzivní hlavička" />
-    <option name="LAST_COMMIT_MESSAGE" value="Opraveno Scrollování zpráv #21 + dodělaná responzivní hlavička" />
+    <MESSAGE value="Vyhledávání uživatelů podle role, pravopisná úprava u first user a easter eggu" />
+    <MESSAGE value="Vyhledávání uživatelů podle role, pravopisná úprava u first user" />
+    <MESSAGE value="Upraveno pass rule" />
+    <MESSAGE value="Odkazy na dashboardu, zobrazení výpůjček u jednotlivých uživatelů, itemů, kategorií pro všechny s possibility_renting" />
+    <MESSAGE value="Redirect na vlastní výpůjčky v seznamu uživatelů a bez odkazu na poslání zprávy sám sobě, prázdná hláška v category.blade.php" />
+    <MESSAGE value="Úprava categories.blade.php - Aktuální závazky" />
+    <MESSAGE value="Dodána hláška, když uživatel nemá žádné výpůjčky" />
+    <MESSAGE value="#27 Snad vše upraveno; dodán jiný font" />
+    <MESSAGE value="Postupné doplňování dashboardu - sekce admin" />
+    <MESSAGE value="Typografická úprava all-loans" />
+    <option name="LAST_COMMIT_MESSAGE" value="Typografická úprava all-loans" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="15" y="353" width="1182" height="365" maximized="true" key="DiffContextDialog" timestamp="1610395995569">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="15" y="353" width="1182" height="365" maximized="true" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1610395995569" />
+    <state x="488" y="257" key="VCS.ChangelistChooser" timestamp="1610311408612">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="257" key="VCS.ChangelistChooser/0.0.1366.728@0.0.1366.728" timestamp="1610311408612" />
+    <state x="364" y="101" key="Vcs.Push.Dialog.v2" timestamp="1610720694313">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="364" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1610720694313" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1610704543753">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1610704543753" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -754,7 +783,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/navigation-dropdown.blade.php</url>
-          <line>102</line>
+          <line>65</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">

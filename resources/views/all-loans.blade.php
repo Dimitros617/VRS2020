@@ -26,7 +26,7 @@
 
 
                                 <div class="hlavicka pt-4">
-                                    <div class="pageTitleSearch mb-4"> Aktuální výpůjčky:</div>
+                                    <div class="pageTitleSearch mb-4">Všechny aktuální výpůjčky</div>
                                     <div class="search">
                                         <div class="bg-gray-100 rounded-3 modal-open">
                                             <div class="card-body row no-gutters align-items-center h-4rem">
@@ -66,7 +66,7 @@
                                         <path fill-rule="evenodd"
                                               d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z"/>
                                     </svg>
-                                    Čekající na schválení
+                                    Čekající na schválení: {{count($waitingLoans)}}
                                 </button>
 
                                 <button class="btn btn-success flex-fill rounded-0 text-white" type="button" data-bs-toggle="collapse"
@@ -79,7 +79,7 @@
                                               d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
                                     </svg>
 
-                                    Všechny aktivní
+                                    Všechny aktivní: {{count($activeLoans)}}
                                 </button>
 
                                 <button class="btn btn-danger flex-fill rounded-0" type="button" data-bs-toggle="collapse"
@@ -91,7 +91,7 @@
                                             d="M2 1.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1-.5-.5zm2.5.5v1a3.5 3.5 0 0 0 1.989 3.158c.533.256 1.011.791 1.011 1.491v.702s.18.149.5.149.5-.15.5-.15v-.7c0-.701.478-1.236 1.011-1.492A3.5 3.5 0 0 0 11.5 3V2h-7z"/>
                                     </svg>
 
-                                    Historie Výpůjček
+                                    Historie výpůjček: {{count($historyLoans)}}
                                 </button>
 
                             </div>
@@ -162,7 +162,7 @@
                                 }elseif ($now >= $start && $now <= $end){
                                     echo 'title="Výpůjčka je právě aktivní"';
                                 }else{
-                                    echo 'title="Již je po termínu, měly by jste položku vrátit"';
+                                    echo 'title="Již je po termínu!"';
                                 }
 
                             echo ">";

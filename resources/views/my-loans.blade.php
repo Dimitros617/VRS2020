@@ -28,7 +28,7 @@
                             </div>
 
                             <div class="hlavicka pt-4">
-                                <div class="pageTitleSearch mb-4"> Moje aktuální výpůjčky:</div>
+                                <div class="pageTitleSearch mb-4">Moje aktuální výpůjčky</div>
                                 <div class="search">
                                     <div class="bg-gray-100 rounded-3 modal-open">
                                         <div class="card-body row no-gutters align-items-center h-4rem">
@@ -54,7 +54,7 @@
                                 </div>
                             </div>
                             @if(count($loans)==0)
-                                <div class="emptyElementLoans">Nemáte žádné aktivní výpůjčky</div>
+                                <div class="emptyElementLoans">Nemáte žádné aktivní výpůjčky či rezervace</div>
                             @endif
                             @php
                                 $lastCategory = -1;
@@ -79,21 +79,21 @@
         </div>
         @endif
         <div class="itemDiv">
-            <label class="title font-weight-bold" for="itemName"> Název :</label>
+            <label class="title font-weight-bold" for="itemName">Název: </label>
             <div class="itemName">{{$loan->itemName}}</div>
 
             @if($loan->note != "")
-                <label class="title font-weight-bold" for="itemNote"> Poznámka :</label>
+                <label class="title font-weight-bold" for="itemNote">Poznámka: </label>
                 <div class="itemNote">{{$loan->note}}</div>
             @endif
 
             @if($loan->place != "")
-                <label class="title font-weight-bold" for="itemPlace"> Místo :</label>
+                <label class="title font-weight-bold" for="itemPlace">Místo: </label>
                 <div class="itemPlace">{{$loan->place}}</div>
             @endif
 
             @if($loan->inventory_number != "")
-                <label class="title font-weight-bold" for="itemInventory_number"> Inventární číslo :</label>
+                <label class="title font-weight-bold" for="itemInventory_number">Inventární číslo: </label>
                 <div class="itemInventory_number">{{$loan->inventory_number}}</div>
             @endif
             @endif
@@ -112,7 +112,7 @@
                 }elseif ($now >= $start && $now <= $end){
                     echo 'title="Výpůjčka je právě aktivní"';
                 }else{
-                    echo 'title="Již je po termínu, měly by jste položku vrátit"';
+                    echo 'title="Již je po termínu!"';
                 }
 
             echo ">";
