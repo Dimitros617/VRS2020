@@ -3,10 +3,10 @@ function saveItemData(ele, id, catId, availability){
 
     let dataElements = ele.parentNode;
     let token = dataElements.querySelectorAll("input[name='_token']")[0].value;
-    let name = dataElements.querySelectorAll("input[name='name']")[0].value;
-    let note = dataElements.querySelectorAll("input[name='note']")[0].value;
-    let place = dataElements.querySelectorAll("input[name='place']")[0].value;
-    let inventory_number = dataElements.querySelectorAll("input[name='inventory_number']")[0].value;
+    let name = dataElements.querySelectorAll("div[name='name']")[0].innerHTML;
+    let note = dataElements.querySelectorAll("div[name='note']")[0].innerHTML;
+    let place = dataElements.querySelectorAll("div[name='place']")[0].innerHTML;
+    let inventory_number = dataElements.querySelectorAll("div[name='inventory_number']")[0].innerHTML;
 
     ele.querySelectorAll("div[id='buttonText']")[0].setAttribute("hidden","");
     ele.querySelectorAll("div[id='buttonLoading']")[0].removeAttribute("hidden");

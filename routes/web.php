@@ -72,6 +72,7 @@ Route::post('/item/{id:id}/saveItemData', [ItemsController::class,'saveItem']);
 Route::post('/item/{id:id}/removeItemHard', [ItemsController::class,'removeItemHard']);
 Route::get('/item/{id:id}/removeItem', [ItemsController::class,'removeItem']);
 Route::get('/item/{id:id}/changeItemAvailability', [ItemsController::class,'changeItemAvailability']);
+Route::get('/categories/itemsSort/{sort?}', [ItemsController::class,'itemsSort']);
 
 
 //Vůpůjčky

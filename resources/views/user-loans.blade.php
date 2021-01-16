@@ -25,7 +25,7 @@
             </div>
 
                                 <div class="hlavicka pt-4">
-                                    <div class="pageTitleSearch mb-4 w-lg-50">Aktuální výpůjčky uživatele {{ $user[0]->userNick }}</div>
+                                    <div class="pageTitleSearch w-lg-50">Aktuální výpůjčky </div>
                                     <div class="search">
                                         <div class="bg-gray-100 rounded-3 modal-open">
                                             <div class="card-body row no-gutters align-items-center h-4rem">
@@ -49,6 +49,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="pageDescriptinoSearch mb-4">{{ $user[0]->userNick }} | {{ $user[0]->userName }} {{ $user[0]->userSurname }}</div>
                                 </div>
 
                                 @if(count($loans)==0)

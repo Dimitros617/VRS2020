@@ -111,6 +111,15 @@
     float: left;
 }
 
+.pageDescriptinoSearch {
+    width: 100%;
+    padding-left: 3rem;
+    font-weight: 700 !important;
+    font-size: x-large;
+    color: #2a5769;
+    float: left;
+}
+
 input#search {
     height: 3rem;
     background: transparent !important;
@@ -247,7 +256,6 @@ a.block.px-4.py-2.text-sm.leading-5.text-gray-700 {
     margin-right: 2rem;
     border-radius: 5px;
     overflow: hidden;
-    height: 2.7rem;
     display: flex;
     margin-top: 2rem;
 }
@@ -282,10 +290,11 @@ svg.h-6.w-6 {
 @media (max-width: 576px) {
 
     .buttonsDiv {
-        float: none;
         width: 100%;
 
     }
+
+
 
     .headLogoMobile {
         transform: scale(2);
@@ -339,6 +348,10 @@ svg.h-6.w-6 {
     .buttonsDiv {
         width: 100%;
         margin-right: 0 !important;
+    }
+
+    .buttonsDivItem {
+        height: 3.7rem;
     }
 
     .search {

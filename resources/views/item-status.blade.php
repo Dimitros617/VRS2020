@@ -27,7 +27,9 @@
             <div class="allLoans">
 
                 <div class="hlavicka pt-4">
-                    <div class="pageTitleSearch mb-4 w-lg-50">Položka {{$item->name}} je v závazku s těmito uživateli:</div>
+                    <div class="pageTitleSearch w-lg-50">Závazky položky</div>
+
+
                     <div class="search">
                         <div class="bg-gray-100 rounded-3 modal-open">
                             <div class="card-body row no-gutters align-items-center h-4rem">
@@ -51,6 +53,7 @@
                             </div>
                         </div>
                     </div>
+                    <div class="pageDescriptinoSearch mb-4">{{$item->name}}</div>
                 </div>
 
 
