@@ -1,5 +1,6 @@
 @section('title',"Všechny výpůjčky")
-@section('css', URL::asset('css/all-loans.css'))
+@section('css', URL::asset('css/loans-default.css'))
+@section('css2', URL::asset('css/loans-button-name.css'))
 
 <x-app-layout>
 
@@ -192,14 +193,13 @@
 
                         </div>
 
-                        <div class="userData">
-                        <a href="/users/{{$loan->userId}}" class="userNameLink">
-                            <label class="font-weight-bold userName cursor-pointer">{{$loan->userName}}</label>
 
-                            <label class="font-weight-bold userSurname cursor-pointer">{{$loan->userSurname}} </label>
+                        <a href="/users/{{$loan->userId}}" class="userNameLink">
+                            <label class="font-weight-bold userNameLabel cursor-pointer">{{$loan->userName}} {{$loan->userSurname}}</label>
 
                         </a>
 
+                        <div class="userData">
                         <div class="rentFromDiv">
                             <label for="rent_from" class="font-weight-bold">OD: </label>
                             <label class="rent_from">{{date("d. m. Y", strtotime($loan->rent_from))}}</label>
@@ -381,14 +381,12 @@
 
         </div>
 
-        <div class="userData">
+
             <a href="/users/{{$loan->userId}}" class="userNameLink">
-                <label class="font-weight-bold userName">{{$loan->userName}}</label>
-
-                <label class="font-weight-bold userSurname">{{$loan->userSurname}} </label>
-
+                <label class="font-weight-bold userNameLabel">{{$loan->userName}} {{$loan->userSurname}}</label>
             </a>
 
+    <div class="userData">
             <div class="rentFromDiv">
                 <label for="rent_from" class="font-weight-bold">OD: </label>
                 <label class="rent_from">{{date("d. m. Y", strtotime($loan->rent_from))}}</label>
@@ -527,14 +525,12 @@
 
 
 
-    <div class="userData">
+
         <a href="/users/{{$loan->userId}}" class="userNameLink">
-            <label class="font-weight-bold userName">{{$loan->userName}}</label>
-
-            <label class="font-weight-bold userSurname">{{$loan->userSurname}} </label>
-
+            <label class="font-weight-bold userNameLabel">{{$loan->userName}} {{$loan->userSurname}}</label>
         </a>
 
+            <div class="userData">
         <div class="rentFromDiv">
             <label for="rent_from" class="font-weight-bold">OD: </label>
             <label class="rent_from">{{date("d. m. Y", strtotime($loan->rent_from))}}</label>

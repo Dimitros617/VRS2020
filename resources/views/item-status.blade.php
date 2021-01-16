@@ -1,5 +1,6 @@
 @section('title',$item->name)
-@section('css', URL::asset('css/item-status.css'))
+@section('css', URL::asset('css/loans-default.css'))
+@section('css2', URL::asset('css/loans-button-name.css'))
 
 <x-app-layout>
     <x-slot name="header"></x-slot>
@@ -115,12 +116,12 @@
 
 
                     <a href="/users/{{$user->id}}" class="userNameLink">
-                        <label class="font-weight-bold userName cursor-pointer">{{$user->name}}</label>
+                        <label class="font-weight-bold userNameLabel cursor-pointer">{{$user->name}} {{$user->surname}}</label>
 
-                        <label class="font-weight-bold userSurname cursor-pointer">{{$user->surname}} </label>
 
                     </a>
 
+                    <div class="userData">
                     <div class="rentFromDiv">
                         <label for="rent_from" class="font-weight-bold">OD: </label>
                         <label class="rent_from">{{date("d. m. Y", strtotime($user->rent_from))}}</label>
@@ -129,7 +130,7 @@
                         <label for="rent_to" class="font-weight-bold">DO: </label>
                         <label class="rent_to">{{date("d. m. Y", strtotime($user->rent_to))}}</label>
                     </div>
-
+                    </div>
                                 <div class="submitButtonDiv">
                                 <button type="button"  class="btn submitButton
                                 @if($user->status == 1)

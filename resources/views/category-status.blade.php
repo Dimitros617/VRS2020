@@ -1,5 +1,6 @@
 @section('title',$category[0]->categoryName)
-@section('css', URL::asset('css/category-status.css'))
+@section('css', URL::asset('css/loans-default.css'))
+@section('css2', URL::asset('css/loans-button-name.css'))
 
 <x-app-layout>
 
@@ -135,9 +136,10 @@
 
 
     <a href="/users/{{$category->userId}}" class="userNameLink">
-        <label class="cursor-pointer">{{$category->name}} {{$category->surname}} : </label>
+        <label class="cursor-pointer userNameLabel">{{$category->name}} {{$category->surname}}</label>
     </a>
 
+        <div class="userData">
         <div class="rentFromDiv">
             <label for="rent_from" class="font-weight-bold">OD: </label>
             <label class="rent_from">{{date("d. m. Y", strtotime($category->rent_from))}}</label>
@@ -145,6 +147,7 @@
         <div class="rentToDiv">
             <label for="rent_to" class="font-weight-bold">DO: </label>
             <label class="rent_to">{{date("d. m. Y", strtotime($category->rent_to))}}</label>
+        </div>
         </div>
 
         <div class="submitButtonDiv">

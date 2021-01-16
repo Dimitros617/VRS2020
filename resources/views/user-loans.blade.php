@@ -1,7 +1,8 @@
 @section('title', $user[0]->userSurname . ' ' . $user[0]->userName)
 
-@section('css2', URL::asset('css/all-loans.css'))
-@section('css', URL::asset('css/my-loans.css'))
+@section('css', URL::asset('css/loans-default.css'))
+@section('css2', URL::asset('css/loans-button.css'))
+
     <x-app-layout>
 
         <x-slot name="header"></x-slot>
@@ -122,6 +123,7 @@
                         </svg>
                         ' ; } @endphp </div>
 
+                    <div class="userData">
                                 <div class="rentFromDiv">
                                     <label for="rent_from" class="font-weight-bold">OD: </label>
                                     <label class="rent_from">{{date("d. m. Y", strtotime($loan->rent_from))}}</label>
@@ -130,7 +132,7 @@
                                     <label for="rent_to" class="font-weight-bold">DO: </label>
                                     <label class="rent_to">{{date("d. m. Y", strtotime($loan->rent_to))}}</label>
                                 </div>
-                                <br>
+                                </div>
 
                                 <input type="text" class="d-none" name="loanId" value="{{ $loan->id }}">
 
