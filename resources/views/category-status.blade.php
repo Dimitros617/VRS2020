@@ -152,7 +152,7 @@
                 </div>
 
                 <div id="buttonHoverText">
-                    @if($loan->status == 1)
+                    @if($category->status == 1)
                         kliknutím zrušíte rezervaci
                     @else
                         @if(Auth::permition()->return_verification == 1)
