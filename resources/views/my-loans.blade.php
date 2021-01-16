@@ -190,6 +190,18 @@
                         Čekání na schválení
                     @endif
                 </div>
+                <div id="buttonHoverText">
+                    @if($loan->status == 1)
+                        kliknutím zrušíte rezervaci
+                    @else
+                        @if(Auth::permition()->return_verification == 1)
+                            kliknutím potvrdíte odevzdání
+                        @else
+                            kliknutím zrušíte odevzdání
+                        @endif
+
+                    @endif
+                </div>
 
                 <div id="buttonLoading" class="spinner-grow text-light" role="status" hidden></div>
 

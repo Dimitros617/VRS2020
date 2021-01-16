@@ -2,6 +2,7 @@
 function returnLoan(ele, id){
 
     ele.querySelectorAll("div[id='buttonText']")[0].setAttribute("hidden","");
+    ele.querySelectorAll("div[id='buttonHoverText']")[0].setAttribute("hidden","");
     ele.querySelectorAll("div[id='buttonLoading']")[0].removeAttribute("hidden");
 
     $.ajax({
@@ -12,12 +13,14 @@ function returnLoan(ele, id){
             let lastClass = 0;
             let actualClass = 0;
             let actualText = "";
+            let actualHover = "";
             let onmouseover = "";
             if(response["status"] == "1"){
 
                 lastClass = "btn-warning";
                 actualClass = "btn-success";
                 actualText = "Probíhá";
+                actualHover = "kliknutím zrušíte rezervaci"
                 onmouseover = "hoverChange(this,'status','Probíhá','Zrušit rezervaci','btn-success','btn-danger')";
 
             }else if(response["status"] == "2"){
@@ -25,6 +28,7 @@ function returnLoan(ele, id){
                 lastClass = "btn-success";
                 actualClass = "btn-warning";
                 actualText = "Čekání na schválení";
+                actualHover = "kliknutím zrušíte odevzdání"
                 onmouseover = "hoverChange(this,'status','Čekání na schválení','Zrušit odevzdání','btn-warning','btn-danger')";
 
             }else{
@@ -38,6 +42,8 @@ function returnLoan(ele, id){
 
                 ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = '<b>&#10003;</b>';
                 ele.querySelectorAll("div[id='buttonText']")[0].removeAttribute("hidden");
+                ele.querySelectorAll("div[id='buttonHoverText']")[0].innerHTML = actualHover;
+                ele.querySelectorAll("div[id='buttonHoverText']")[0].removeAttribute("hidden");
                 ele.querySelectorAll("div[id='buttonLoading']")[0].setAttribute("hidden", "");
                 ele.onmouseover = null;
                 ele.setAttribute("onmouseover", onmouseover);
@@ -69,6 +75,7 @@ function returnLoan(ele, id){
             }else{
                 ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = '<b>&#x2715;</b>';
                 ele.querySelectorAll("div[id='buttonText']")[0].removeAttribute("hidden");
+                ele.querySelectorAll("div[id='buttonHoverText']")[0].removeAttribute("hidden");
                 ele.querySelectorAll("div[id='buttonLoading']")[0].setAttribute("hidden", "");
 
                 setTimeout(function (ele, actualText){
