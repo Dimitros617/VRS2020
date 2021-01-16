@@ -6,7 +6,7 @@
 
     <script src="/js/main.js"></script>
     <script src="/js/datePicker.js"></script>
-    <script src="/js/category-search.js"></script>
+    <script src="/js/item-search.js"></script>
     <script src="/js/categorySaves.js"></script>
     <script src="/js/remove.js"></script>
     <script>
@@ -30,6 +30,31 @@
             @endif
                    </div>
                             {{--  Pokud má uživatel oprávnění upravovat itemy--}}
+                            <div class="hlavicka pt-4 border-0">
+                                <div class="search">
+                                    <div class="bg-gray-100 rounded-3 modal-open">
+                                        <div class="card-body row no-gutters align-items-center h-4rem">
+
+                                            <div class="col">
+                                                <input class="form-control-borderless mt--1" id="search" type="search" placeholder="Zadejte hledaný výraz">
+
+                                            </div>
+
+                                            <div class="col-auto">
+                                                <div class="spinner-border text-vrs-yellow searchSpinner mt--1" id="search-spinner" role="status" hidden></div>
+                                            </div>
+
+
+                                            <div class="col-auto searchButtonDiv">
+
+                                                <button class="btn btn-lg btn-success searchButton" type="submit" onclick="itemFind(this)">Najít</button>
+                                                <button class="btn btn-lg btn-primary searchButton" data-sort="none" sort="desc" onclick="itemsSort(this, 'waitingLoans', 'activeLoans', 'historyLoans')">&#8681;</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                             @if( $permition[0]->edit_item == 1)
                                 <form action="{{'/saveCategoryData'}}" method="POST" class="categoryData d-flow-root">
