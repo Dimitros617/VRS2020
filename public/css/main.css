@@ -129,6 +129,7 @@ input#search {
     /* margin-left: 3rem; */
     float: right;
     width: 50%;
+    display: inherit;
 }
 
 input#search {

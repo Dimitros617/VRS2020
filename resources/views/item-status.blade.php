@@ -29,7 +29,7 @@
 
                 <div class="hlavicka pt-4">
                     <div class="pageTitleSearch w-lg-50">Závazky položky</div>
-
+                    <div class="pageDescriptinoSearch mb-4 text-center d-block d-lg-none ps-0">{{$item->name}}</div>
 
                     <div class="search">
                         <div class="bg-gray-100 rounded-3 modal-open">
@@ -54,7 +54,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="pageDescriptinoSearch mb-4">{{$item->name}}</div>
+                    <div class="pageDescriptinoSearch mb-4 d-none d-lg-block">{{$item->name}}</div>
                 </div>
 
 
