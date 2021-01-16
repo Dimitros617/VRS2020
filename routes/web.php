@@ -42,6 +42,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/users', [ListUsersControl
 Route::middleware(['auth:sanctum', 'verified', 'permition:new_user'])->get('/users/{id:id}', [ListUsersController::class,'showUser']);
 Route::middleware(['auth:sanctum', 'verified'])->get('/users/{id:id}/loans', [ListUsersController::class,'showLoans']);
 
+Route::get('/clearLoansHistory', [LoansController::class,'clearHistory']);
+
 //Zprávy
 Route::get('/newMessages', [MessagesController::class,'countNewMessages']);
 Route::get('/allMessages', [MessagesController::class,'showAllMessages']);

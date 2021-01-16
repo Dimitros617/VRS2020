@@ -1,4 +1,4 @@
-@section('title',"Všechny výpůjčky")
+@section('title',"Moje výpůjčky")
 @section('css', URL::asset('css/all-loans.css'))
 
 <x-app-layout>
@@ -7,6 +7,7 @@
     <script src="/js/main.js"></script>
     <script src="/js/returnLoan.js"></script>
     <script src="/js/loans-search.js"></script>
+    <script src="/js/cleare-loans-history.js"></script>
 
     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8">
 
@@ -26,7 +27,7 @@
 
 
                                 <div class="hlavicka pt-4">
-                                    <div class="pageTitleSearch mb-4 w-lg-50">Všechny výpůjčky</div>
+                                    <div class="pageTitleSearch mb-4">Všechny aktuální výpůjčky</div>
                                     <div class="search">
                                         <div class="bg-gray-100 rounded-3 modal-open">
                                             <div class="card-body row no-gutters align-items-center h-4rem">
@@ -525,15 +526,15 @@
         <br>
 
     </div>
-    <div class="created text-vrs-cyan">
-        <b>Archivováno: </b> {{date("d. m. Y", strtotime($loan->created))}}
+    <div class="created text-vrs-cyan" date="{{$loan->created}}">
+        <b>Smazáno: </b> {{date("d. m. Y H:m", strtotime($loan->created))}}
     </div>
 
 
     </form>
     @php
         $lastCategory = $loan->categoryId;
-        $lastItem = $loan->itemId
+        $lastItem = $loan->itemId;
     @endphp
 
 
@@ -542,8 +543,16 @@
 
 
     </div>
-
     </div>
+
+
+    <button type="submit" class="btn btn-light w-100 text-center align-middle mb-5 mt-1 pt-4 pb-4 fw-bolder text-vrs-clight " onclick="clearLoansHistory(this,'&#8722;','/clearLoansHistory')">
+        <span class="d-block w-100 ">Smazat záznamy starší 30 dní</span>
+        <div id="buttonText" >&#8722;</div>
+        <div class="spinner-grow text-vrs-cyan mb-4 mt-4" id="buttonLoading" hidden></div>
+    </button>
+
+
     </div>
 
 

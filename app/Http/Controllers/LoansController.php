@@ -93,6 +93,20 @@ class LoansController extends Controller
         return $check != 0 ? false : true;
     }
 
+    function clearHistory(Request $request){
+
+
+        $count = $request["count"];
+        if($count == ""){
+            $count = "30";
+        }
+
+        $check = DB::table('loans_histories')->whereDate('created', '>', \Carbon\Carbon::now()->addDays($count))->delete();
+
+        return $check >= 0 ? 1 : 0;
+    }
+
+
     function showItemLoans($id)
     {
 
