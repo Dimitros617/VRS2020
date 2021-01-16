@@ -13,11 +13,12 @@ overflow-hidden.shadow-xl.sm:rounded-lg {
     display: inline-block;
     padding-bottom: 1rem;
     border-bottom: 10px solid #fa9702;
-    margin-top: 30px;
+    margin-top: 2rem;
     margin-bottom: 2rem;
     /* flex-flow: wrap; */
     /* height: -webkit-fill-available; */
 }
+
 
 .paticka {
     margin-bottom: 2rem;
