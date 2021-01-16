@@ -117,15 +117,15 @@
                         <label class="font-weight-bold userSurname cursor-pointer">{{$user->surname}} </label>
 
                     </a>
-                            <div class="rentFromDiv">
-                                <label for="rent_from" class="font-weight-bold">OD: </label>
-                                <label class="rent_from">{{$user->rent_from}}</label>
-                            </div>
-                            <div class="rentToDiv">
-                                <label for="rent_to" class="font-weight-bold">DO: </label>
-                                <label class="rent_to">{{$user->rent_to}}</label>
-                            </div>
 
+                    <div class="rentFromDiv">
+                        <label for="rent_from" class="font-weight-bold">OD: </label>
+                        <label class="rent_from">{{date("d. m. Y", strtotime($loan->rent_from))}}</label>
+                    </div>
+                    <div class="rentToDiv">
+                        <label for="rent_to" class="font-weight-bold">DO: </label>
+                        <label class="rent_to">{{date("d. m. Y", strtotime($loan->rent_to))}}</label>
+                    </div>
 
                                 <div class="submitButtonDiv">
                                 <button type="button"  class="btn submitButton
