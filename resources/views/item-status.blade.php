@@ -7,6 +7,7 @@
     <script src="/js/main.js"></script>
     <script src="/js/datePicker.js"></script>
     <script src="/js/returnLoan.js"></script>
+    <script src="/js/loans-search.js"></script>
 
     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8">
 
@@ -25,16 +26,42 @@
 
             <div class="allLoans">
 
+                <div class="hlavicka pt-4">
+                    <div class="pageTitleSearch mb-4 w-lg-50">Položka {{$item->name}} je v závazku s těmito uživateli:</div>
+                    <div class="search">
+                        <div class="bg-gray-100 rounded-3 modal-open">
+                            <div class="card-body row no-gutters align-items-center h-4rem">
 
-                <div class="pageTitle">Položka {{$item->name}} je v závazku s těmito uživateli:</div>
+                                <div class="col">
+                                    <input class="form-control-borderless mt--1" id="search" type="search" placeholder="Zadejte hledaný výraz">
 
-                <div class="list-group">
+                                </div>
+
+                                <div class="col-auto">
+                                    <div class="spinner-border text-vrs-yellow searchSpinner mt--1" id="search-spinner" role="status" hidden></div>
+                                </div>
+
+
+                                <div class="col-auto searchButtonDiv">
+
+                                    <button class="btn btn-lg btn-success searchButton" type="submit" onclick="loanFind(this)">Najít</button>
+                                    <button class="btn btn-lg btn-primary searchButton" data-sort="none" sort="desc" onclick="loansSort(this, 'waitingLoans', 'activeLoans', 'historyLoans')">&#8681;</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="categoryDiv ">
+                <div class="itemDiv">
 
                     <div class="emptyElementLoans" @if(count($users) != 0) hidden @endif>Tato položka není vypůjčená ani rezervovaná</div>
 
 
                     @foreach($users as $user)
-                        <div class="user">
+
 {{--                            action="{{'/loans/' . $user->loanId .'/return'}}" method="POST"--}}
                             <form  class="loanRecordBox">
                                 @csrf
@@ -83,10 +110,13 @@
                         </div>
 
 
-                        <a href="/users/{{$user->id}}" class="userNameLink">
 
-                            <label class="cursor-pointer">{{$user->name}} {{$user->surname}}</label>
-                        </a>
+                    <a href="/users/{{$user->id}}" class="userNameLink">
+                        <label class="font-weight-bold userName cursor-pointer">{{$user->name}}</label>
+
+                        <label class="font-weight-bold userSurname cursor-pointer">{{$user->surname}} </label>
+
+                    </a>
                             <div class="rentFromDiv">
                                 <label for="rent_from" class="font-weight-bold">OD: </label>
                                 <label class="rent_from">{{$user->rent_from}}</label>
@@ -152,14 +182,14 @@
                                 </div>
 
                             </form>
-                        </div>
+
 
 
                     @endforeach
                 </div>
 
             </div>
-
+                    </div>
         </div>
     </div>
 

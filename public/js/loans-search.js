@@ -20,14 +20,14 @@ function loanFind(){
 
     for (let i = 0; i < categories.length ; i++){
 
-        let name = categories[i].getElementsByClassName("categoryName")[0].innerHTML.toLowerCase();
+        let name = categories[i].getElementsByClassName("categoryName").length != 0 ? categories[i].getElementsByClassName("categoryName")[0].innerHTML.toLowerCase(): "";
 
         if(name.includes(find_value)){
             continue;
         }
 
         let item_count = 0;
-        let items = categories[i].getElementsByClassName('itemDiv');
+        let items =  categories[i].getElementsByClassName('itemDiv');
 
         for (let j = 0; j < items.length ; j++){
 

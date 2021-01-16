@@ -59,7 +59,7 @@ function returnLoan(ele, id){
                             count += allLoans[i].getAttribute("hidden") == null ? 1 : 0 ;
                         }
                         if(count == 0){
-                            document.getElementsByClassName("emptyElementLoans")[0].removeAttribute("hidden");
+                            ele.parentNode.getElementsByClassName("emptyElementLoans")[0].removeAttribute("hidden");
                         }
 
                     }, 1000, ele);

@@ -6,6 +6,7 @@
     <x-slot name="header"></x-slot>
     <script src="/js/main.js"></script>
     <script src="/js/returnLoan.js"></script>
+    <script src="/js/loans-search.js"></script>
 
     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8">
 
@@ -20,7 +21,36 @@
                                 @endif
                                 @endif
                             </div>
-            <div class="pageTitle">Aktuální závazky položek z kategorie {{$category[0]->categoryName}}</div>
+
+                            <div class="hlavicka pt-4">
+                                <div class="pageTitleSearch mb-4 w-lg-50">Aktuální závazky položek z kategorie {{$category[0]->categoryName}}</div>
+                                <div class="search">
+                                    <div class="bg-gray-100 rounded-3 modal-open">
+                                        <div class="card-body row no-gutters align-items-center h-4rem">
+
+                                            <div class="col">
+                                                <input class="form-control-borderless mt--1" id="search" type="search" placeholder="Zadejte hledaný výraz">
+
+                                            </div>
+
+                                            <div class="col-auto">
+                                                <div class="spinner-border text-vrs-yellow searchSpinner mt--1" id="search-spinner" role="status" hidden></div>
+                                            </div>
+
+
+                                            <div class="col-auto searchButtonDiv">
+
+                                                <button class="btn btn-lg btn-success searchButton" type="submit" onclick="loanFind(this)">Najít</button>
+                                                <button class="btn btn-lg btn-primary searchButton" data-sort="none" sort="desc" onclick="loansSort(this, 'waitingLoans', 'activeLoans', 'historyLoans')">&#8681;</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
             @if(count($categories) != 0)
 
                 @php
@@ -171,6 +201,7 @@
 
         </form>
         <br>
+            <div class="emptyElementLoans" hidden>Tato položka není vypůjčená ani rezervovaná</div>
         @else
             <div class="emptyElementLoans">Tato položka není vypůjčená ani rezervovaná</div>
         @endif

@@ -6,7 +6,7 @@
 
     <script src="/js/main.js"></script>
     <script src="/js/datePicker.js"></script>
-    <script src="/js/categoryGets.js"></script>
+    <script src="/js/category-search.js"></script>
     <script src="/js/categorySaves.js"></script>
     <script src="/js/remove.js"></script>
     <script>
