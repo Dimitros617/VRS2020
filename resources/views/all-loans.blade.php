@@ -569,11 +569,14 @@
     </div>
 
 
-    <button type="submit" class="btn btn-light w-100 text-center align-middle mb-5 mt-1 pt-4 pb-4 fw-bolder text-vrs-clight " onclick="clearLoansHistory(this,'&#8722;','/clearLoansHistory')">
-        <span class="d-block w-100 ">Smazat záznamy starší 30 dní</span>
-        <div id="buttonText" >&#8722;</div>
-        <div class="spinner-grow text-vrs-cyan mb-4 mt-4" id="buttonLoading" hidden></div>
-    </button>
+    @if(count($historyLoans)!=0)
+        <button type="submit" class="btn btn-light w-100 text-center align-middle mb-5 mt-1 pt-4 pb-4 fw-bolder text-vrs-clight " onclick="clearLoansHistory(this,'&#8722;','/clearLoansHistory')">
+            <span class="d-block w-100 ">Smazat záznamy starší 30 dní</span>
+            <div id="buttonText" >&#8722;</div>
+            <div class="spinner-grow text-vrs-cyan mb-4 mt-4" id="buttonLoading" hidden></div>
+        </button>
+    @endif
+
 
 
     </div>
