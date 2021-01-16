@@ -550,7 +550,7 @@
 
     </div>
     <div class="created text-vrs-cyan" date="{{$loan->created}}">
-        <b>Smazáno: </b> {{date("d. m. Y H:m", strtotime($loan->created))}}
+        <b>Smazáno: </b> {{date("d. m. Y", strtotime($loan->created))}}
     </div>
 
 
