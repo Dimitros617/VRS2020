@@ -18,6 +18,15 @@
                         <button class="btn btn-primary text-vrs-ylight flex-fill rounded-0" type="button">Nová výpůjčka</button>
                     </a>
                 </div>
+
+            @else
+                <div class="hlavicka">
+                    <a href="/users">
+                        <button class="btn btn-danger flex-fill rounded-0" type="button">
+                            Seznam uživatelů
+                        </button>
+                    </a>
+                </div>
             @endif
 
                 <div class="align-content-center d-sm-flex rounded-4 overflow-hidden flex-flow-column flex-sm-flow-row mb-4">
@@ -43,7 +52,7 @@
                                 </button>
                             </a>
                         </div>
-                    @endif
+
 
                         <div class="">
                             <a href="/users">
@@ -56,6 +65,8 @@
                                 </button>
                             </a>
                         </div>
+
+                    @endif
 
                 </div>
 
@@ -71,7 +82,7 @@
                     Nyní nemáte právo zapůjčovat položky. Můžete pouze:
                     <ul style="list-style-type:circle">
                         <li>Změnit své osobní údaje v záložce "Nastavení".</li>
-                        <li>Posílat zprávy uživatelům, jejich seznam naleznete v záložce "Seznam uživatelů". Podle jména i oprávnění můžete vyhledat jistého uživatele (například admina) a poslat mu zprávu.</li>
+                        <li>Posílat zprávy uživatelům, jejich seznam naleznete v záložce "Seznam uživatelů". Podle jména i oprávnění můžete vyhledat jistého uživatele (například administrátora) a poslat mu zprávu.</li>
                         <li>Pokud jste si již dříve něco půjčil a výpůjčku jste stále nevrátil, jejich seznam najdete v záložce "Moje výpůjčky".</li>
                         <li>Odhlásit se.</li>
                     </ul>
@@ -110,24 +121,26 @@
                     <ul style="list-style-type:circle">
                         <li>S největší pravděpodobností jste nový uživatel Výpůjčního a rezervačního systému. Musíte počkat, než vás schválí a ověří administrátor.</li>
                         <li><b>Pokud jste již jednou schváleni byli a nyní se vám neobjevuje záložka "Nová výpůjčka", bylo vám právo půjčovat si věci odebráno - ať již z důvodu nevrácení výpůjčky včas či jiných problémů.
-                                Pro více informací se zeptejte správce systému, administrátora. Můžete jej vyhledat v Seznamu uživatelů a zaslat mu zde krátké připomenutí, doporučujeme však za ním pokud možno zajít osobně a řešit to více oficiálně, abyste zjistili, co nastalo za problém a jak se mu příště vyvarovat.</b></li>
+                                Pro více informací se zeptejte správce systému, administrátora. Můžete jej vyhledat v "Seznamu uživatelů" a zaslat mu zde krátké připomenutí, doporučujeme však za ním pokud možno zajít osobně a řešit to více oficiálně, abyste zjistili, co nastalo za problém a jak se mu příště vyvarovat.</b></li>
                     </ul>
                 </div>
             </div>
+            <br>
             @endif
 
 
-            <button class="btn btn-warning align-content- text-center flex-fill rounded-0 paticka" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#moreInfo" aria-expanded="false"
-                    aria-controls="moreInfo">
-                Více informací
-            </button>
-            <br>
-
-            <div class="collapse" id="moreInfo">
-                <br>
             {{--  Sekce pro ověřené uživatele a admin  --}}
             @if (Auth::permition()->possibility_renting == 1)
+                    <button class="btn btn-warning align-content- text-center flex-fill rounded-0 paticka" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#moreInfo" aria-expanded="false"
+                            aria-controls="moreInfo">
+                        Více informací
+                    </button>
+                    <br>
+
+                    <div class="collapse" id="moreInfo">
+                        <br>
+
                 @if(Auth::permition()->new_user == 1)
                     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                         <h2 class="">Seznam uživatelů</h2>
@@ -238,7 +251,7 @@
                                 <br>
                                 U každého tlačítka vidíte počet záznamů výpůjček, které čekají na vaše schválení, které jsou aktuálně vypůjčené či rezervované nebo které jsou uloženy v historii. Po kliku na ně se vám rozbalí všechny tyto záznamy utřízené podle kategorií a položek v nich.
                                 <ul style="list-style-type:circle">
-                                    <li>Po kliku na  "Čekajících na schválení" se rozbalí výčet výpůjček či rezervací, které chce uživatel vrátit. Zkontrolujte si osobně, zda je opravdu vrátil, jinak je neschvalujte.</li>
+                                    <li>Po kliku na "Čekajících na schválení" se rozbalí výčet výpůjček či rezervací, které chce uživatel vrátit. Zkontrolujte si osobně, zda je opravdu vrátil, jinak je neschvalujte.</li>
                                     <li>Po kliku na "Všechny aktivní" se rozbalí výčet výpůjček či rezervací, které uživatelé zadali. Můžete je kdykoli zrušit, pokud ke zrušení máte důvod - klikem na tlačítko "Probíhá", které se změní na tlačítko "Zrušit rezervaci".</li>
                                     <li>Po kliku na "Historie výpůjček" se rozbalí výčet archivovaných a tedy již zrušených výpůjček či rezervací. V pravé části vidíte, kdy byl záznam smazán.</li>
 

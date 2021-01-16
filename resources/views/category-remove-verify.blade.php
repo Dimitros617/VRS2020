@@ -1,4 +1,4 @@
-@section('title',"Moje výpůjčky")
+@section('title',$categories[0]->categoryName)
 @section('css', URL::asset('css/category-remove-verify.css'))
 
 <x-app-layout>

@@ -11,7 +11,7 @@
 
             <form action="{{'/item/' . $item->id . '/removeItemHard'}}" method="POST" class="removeVerify text-center">
                 @csrf
-                <div class="vrs-h2 text-vrs-cyan d-content"> Jste si jistý?</div>
+                <div class="vrs-h2 text-vrs-cyan d-content">Jste si jistý?</div>
                 <div class="">K dané položce jsme našli probíhající rezervace či výpůjčky. Přejete si smazat položku včetně všech probíhajících rezervací?</div>
                 <input type="text" class="d-none" name="itemId" value="{{$item->id}}">
                 <br>
