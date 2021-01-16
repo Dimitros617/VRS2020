@@ -14,7 +14,7 @@ class ItemsController extends Controller
 
     function addNewItem(Request $request)
     {
-        Log::info('CategoryControler:addNewItem');
+        Log::info('ItemsController:addNewItem');
 
         $item = new items;
         $item->name = "Nepojmenováno";
@@ -27,7 +27,7 @@ class ItemsController extends Controller
 
     function saveItem(Request $request)
     {
-        Log::info('CategoryControler:saveItem');
+        Log::info('ItemsController:saveItem');
 
         $item = items::find($request->itemId);
         $item->name = is_null($request->name) ? "": $request->name;
@@ -42,7 +42,7 @@ class ItemsController extends Controller
 
     function changeItemAvailability(Request $request)
     {
-        Log::info('CategoryControler:changeItemAvailability');
+        Log::info('ItemsController:changeItemAvailability');
 
         $item = items::find($request->id);
         $item->availability = (($request->availability + 1) % 2);
@@ -55,7 +55,7 @@ class ItemsController extends Controller
 
     function removeItem(Request $request)
     {
-        Log::info('CategoryControler:removeItem' . $request->id);
+        Log::info('ItemsController:removeItem' . $request->id);
 
         $loans = DB::table('loans')->where('item', $request->id)->count();
 
@@ -76,7 +76,7 @@ class ItemsController extends Controller
 
     function removeItemHard(Request $request)
     {
-        Log::info('CategoryControler:removeItemHard');
+        Log::info('ItemsController:removeItemHard');
 
         $item = DB::table('items')->join('categories', 'items.categories', '=', 'categories.id')->where('items.id', $request->itemId)->select('categories.name')->get();
 
@@ -86,6 +86,15 @@ class ItemsController extends Controller
 
 
         return redirect('categories/' . $item[0]->name);
+
+    }
+
+    public function itemsSort($sort){
+
+        Log::info('ItemsController:itemsSort');
+
+        $data = DB::table('items')->orderBy('name', $sort)->get();
+        return $data;
 
     }
 

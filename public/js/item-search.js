@@ -49,3 +49,44 @@ function itemFind(){
             }
         }
 }
+
+function itemsSort(ele) {
+    let sort_value = ele.getAttribute("sort");
+
+    if(sort_value == "asc"){
+        ele.setAttribute("sort","desc");
+        ele.innerHTML = "&#8681";
+    }else{
+        ele.setAttribute("sort","asc");
+        ele.innerHTML = "&#8679;";
+    }
+    document.getElementById("search-spinner").removeAttribute("hidden");
+
+    $.ajax({
+        url: '/categories/itemsSort/' + sort_value,
+        method: "GET",
+        success: function (response) {
+
+            let liveItems = document.getElementsByClassName("item");
+            let items = new Array();
+            for (let i = 0; i< liveItems.length; i++){
+                items[i] = liveItems[i].cloneNode(true);
+            }
+
+            document.getElementById("data").innerHTML = "";
+
+
+            for (let i = 0; i< response.length; i++){
+                for (let j = 0; j< items.length; j++){
+                    if(response[i]["id"] == items[j].getAttribute("itemID")){
+                        document.getElementById("data").appendChild(items[j]);
+                        break;
+                    }
+                }
+            }
+
+            document.getElementById("search-spinner").setAttribute("hidden","");
+        }
+    });
+
+}
