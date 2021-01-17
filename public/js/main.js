@@ -93,5 +93,53 @@ let messageRefresh = 0;
 
 }
 
+var confirmation = null;
 
+function modalNotification(text) {
 
+    let notificationModal = document.getElementById('notificationModal');
+    notificationModal.removeAttribute('hidden');
+    let informationArea = document.createElement('div');
+    informationArea.setAttribute('id','informationArea');
+
+    let content = document.createTextNode(text);
+    informationArea.appendChild(content);
+
+    let foot = document.createElement('div');
+    foot.setAttribute('id','foot');
+    let buttonArea = document.createElement('div');
+    buttonArea.setAttribute('id','buttonArea');
+
+    let yesOption = document.createElement('button');
+    yesOption.setAttribute('id','yesOption');
+    yesOption.innerHTML = "ANO";
+    yesOption.onclick = function () {
+        confirmation = true;
+        notificationModal.removeChild(foot);
+        notificationModal.removeChild(informationArea);
+        notificationModal.setAttribute('hidden','true');
+        return confirmation;
+    }
+
+    let noOption = document.createElement('button');
+    noOption.setAttribute('id','noOption');
+    noOption.innerHTML = "NE";
+    noOption.onclick = function () {
+        confirmation = false;
+        notificationModal.removeChild(foot);
+        notificationModal.removeChild(informationArea);
+        notificationModal.setAttribute('hidden','true');
+        return confirmation;
+    }
+
+    buttonArea.appendChild(yesOption);
+    buttonArea.appendChild(noOption);
+    foot.appendChild(buttonArea);
+    notificationModal.appendChild(informationArea);
+    notificationModal.appendChild(foot);
+
+    while(confirmation === null)
+    {
+
+    }
+}
