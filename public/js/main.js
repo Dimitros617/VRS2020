@@ -100,7 +100,7 @@ function vrsNotify(text, fce) {
 
     let notify = document.createElement('div');
     notify.setAttribute('id','notify');
-    let informationArea = document.createElement('dialog');
+    let informationArea = document.createElement('div');
     informationArea.setAttribute('id','informationArea');
 
     let content = document.createTextNode(text);

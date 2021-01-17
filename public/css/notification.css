@@ -1,0 +1,44 @@
+div#notify {
+    background: #002e40;
+    color: #ffffff;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+    padding: 3rem 1rem;
+    border-radius: 10px;
+    box-shadow: 2px 2px 20px 0px #0000003d;
+    border-bottom: 15px solid #fa9600;
+}
+
+div#informationArea {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+div#buttonArea {
+    align-items: center;
+    display: flex;
+    flex-flow: nowrap;
+    justify-content: center;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+#yesOption, #noOption {
+    margin: 0;
+    padding: 1rem;
+    width: 10vw;
+}
+
+button#noOption {
+    width: 5vw;
+    background: #002e40;
+    border: none;
+}
+
