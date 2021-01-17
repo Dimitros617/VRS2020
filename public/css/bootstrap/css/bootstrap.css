@@ -4736,12 +4736,17 @@ a.badge-dark:focus, a.badge-dark.focus {
 }
 
 .alert-success {
-  color: #0f5132;
-  background-color: #d1e7dd;
-  border-color: #badbcc;
+    color: #002e40;
+    font-weight: 600;
+    font-size: larger;
+    background-color: #fabd4a;
+    border-color: #badbcc;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 3rem;
 }
 .alert-success .alert-link {
-  color: #0c4128;
+  color: #002e40;
 }
 
 .alert-info {

@@ -66,7 +66,7 @@ class ListUsersController extends Controller
         $user -> permition = $request -> selectPermition;
         $check = $user -> save();
 
-        return back()->withInput(array('saveCheck' => $check ? '1' : '0'));
+        return $check ? "1" : "0";
     }
 
     public function usersSort($sort){

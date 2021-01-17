@@ -60,6 +60,10 @@
     display: none;
 }
 
+button.submit {
+    min-height: 55px;
+}
+
 .emptyElementLoans {
     color: #002e40;
     font-weight: 700;
