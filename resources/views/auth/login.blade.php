@@ -20,7 +20,7 @@
 
                 <div>
                 <!-- <x-jet-label for="email" value="{{ __('E-mail woe') }}" /> -->
-                    <x-jet-input id="email" class="block mt-2 w-full" type="email" name="email" placeholder="E-mail" :value="old('email')" required autofocus />
+                    <x-jet-input id="email" class="block mt-1 w-full"  name="nick" placeholder="E-mail nebo přezdívka" :value="old('email')"  autofocus />
                 </div>
 
                 <div class="mt-4">
