@@ -98,6 +98,8 @@ function vrsNotify(text) {
 
     let notificationModal = document.getElementById('notificationModal');
 
+    let notify = document.createElement('div');
+    notify.setAttribute('id','notify');
     let informationArea = document.createElement('div');
     informationArea.setAttribute('id','informationArea');
 
@@ -111,29 +113,32 @@ function vrsNotify(text) {
 
     let yesOption = document.createElement('button');
     yesOption.setAttribute('id','yesOption');
+    yesOption.setAttribute('class','btn');
+    yesOption.classList.add('btn-primary');
     yesOption.innerHTML = "ANO";
     yesOption.onclick = function () {
         window.confirmation = true;
-        notificationModal.removeChild(foot);
-        notificationModal.removeChild(informationArea);
+        notificationModal.removeChild(notify);
         notificationModal.setAttribute('hidden','true');
     }
 
     let noOption = document.createElement('button');
     noOption.setAttribute('id','noOption');
+    noOption.setAttribute('class','btn');
+    noOption.classList.add('btn-danger');
     noOption.innerHTML = "NE";
     noOption.onclick = function () {
         window.confirmation = false;
-        notificationModal.removeChild(foot);
-        notificationModal.removeChild(informationArea);
+        notificationModal.removeChild(notify);
         notificationModal.setAttribute('hidden','true');
     }
 
     buttonArea.appendChild(yesOption);
     buttonArea.appendChild(noOption);
     foot.appendChild(buttonArea);
-    notificationModal.appendChild(informationArea);
-    notificationModal.appendChild(foot);
+    notify.appendChild(informationArea);
+    notify.appendChild(foot);
+    notificationModal.appendChild(notify);
     notificationModal.removeAttribute('hidden');
 
     window.confirmation = null;
