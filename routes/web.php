@@ -8,6 +8,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ListUsersController;
 use App\Http\Controllers\MessagesController;
+use App\Http\Controllers\PermitionController;
 use App\Models\categories;
 use App\Models\ListUsers;
 /*
@@ -41,6 +42,8 @@ Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting'])
 Route::middleware(['auth:sanctum', 'verified'])->get('/users', [ListUsersController::class,'showAllUsers']);
 Route::middleware(['auth:sanctum', 'verified', 'permition:new_user'])->get('/users/{id:id}', [ListUsersController::class,'showUser']);
 Route::middleware(['auth:sanctum', 'verified'])->get('/users/{id:id}/loans', [ListUsersController::class,'showLoans']);
+
+Route::middleware(['auth:sanctum', 'verified', 'permition:edit_permitions'])->get('/permitions', [PermitionController::class,'showPermissions']);
 
 Route::get('/clearLoansHistory', [LoansController::class,'clearHistory']);
 
@@ -80,6 +83,10 @@ Route::get('/categories/itemsSort/{sort?}', [ItemsController::class,'itemsSort']
 //Route::post('/categories/{id:id}/activeLoans', [LoansController::class,'showCategoryLoans']);
 Route::post('/item/{id:id}/saveItemLoansData', [LoansController::class,'saveItemLoans']);
 Route::get('/loans/{id:id}/return', [LoansController::class,'itemLoansReturn']);
+
+
+//Oprávnění
+Route::post('/addPermition', [PermitionController::class,'addPermition']);
 
 
 
