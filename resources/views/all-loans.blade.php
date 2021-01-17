@@ -290,6 +290,9 @@
 
         {{--    Copie codu jako předtím, poze se změní v foreachy pole ze kterého se načítají data--}}
         <div class="collapse" id="activeLoans">
+            <div class="collapse pageTitle" id="waitingLoans">
+                Všechny aktivní
+            </div>
 
 
                 @php
@@ -473,6 +476,9 @@
 
     {{--  Historie výpůjček  --}}
     <div class="collapse" id="historyLoans">
+        <div class="collapse pageTitle" id="activeLoans">
+            Historie výpůjček
+        </div>
 
 
             @php
