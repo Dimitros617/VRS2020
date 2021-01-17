@@ -155,7 +155,11 @@
                                             @endif
                                         @endif
 
-                                        onclick=" returnLoan(this, '{{$user->loanId}}')"
+                                        @if(Auth::permition()->return_verification == 1)
+                                        onclick="vrsNotify('Opravdu chcete zrušit rezervaci?',returnLoan, this,'{{$user->loanId}}' ); return false"
+                                        @else
+                                        onclick="returnLoan(this, '{{$user->loanId}}')"
+                                        @endif
 
                                     @endif>
 

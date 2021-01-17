@@ -1,5 +1,4 @@
 
-
 function hoverChange(ele, atributeBool, textTrue, textFalse, classBefore, classAfter) {
 
 
@@ -114,7 +113,7 @@ function vrsNotify(text, fce) {
     let yesOption = document.createElement('button');
     yesOption.setAttribute('id','yesOption');
     yesOption.setAttribute('class','btn');
-    yesOption.classList.add('btn-primary');
+    yesOption.classList.add('btn-danger');
     yesOption.innerHTML = "ANO";
 
     let arr = new Array();
@@ -126,7 +125,7 @@ function vrsNotify(text, fce) {
     let noOption = document.createElement('button');
     noOption.setAttribute('id','noOption');
     noOption.setAttribute('class','btn');
-    noOption.classList.add('btn-danger');
+    noOption.classList.add('btn-success');
     noOption.innerHTML = "NE";
     noOption.onclick = function () {
         let notificationModal = document.getElementById('notificationModal');
@@ -149,4 +148,42 @@ function yes(call_fce,call_arg){
     notificationModal.innerHTML = "";
     notificationModal.setAttribute('hidden','true');
     call_fce.apply(null, call_arg);
+}
+
+function vrsAlert(text) {
+
+    let notificationModal = document.getElementById('notificationModal');
+
+    let notify = document.createElement('div');
+    notify.setAttribute('id','notify');
+    let informationArea = document.createElement('div');
+    informationArea.setAttribute('id','informationArea');
+
+    let content = document.createTextNode(text);
+    informationArea.appendChild(content);
+
+    let foot = document.createElement('div');
+    foot.setAttribute('id','foot');
+    let buttonArea = document.createElement('div');
+    buttonArea.setAttribute('id','buttonArea');
+
+    let okOption = document.createElement('button');
+    okOption.setAttribute('id','yesOption');
+    okOption.setAttribute('class','btn');
+    okOption.classList.add('btn-danger');
+    okOption.innerHTML = "OK";
+
+    okOption.onclick = function () {
+        let notificationModal = document.getElementById('notificationModal');
+        notificationModal.innerHTML = "";
+        notificationModal.setAttribute('hidden','true');
+    }
+
+    buttonArea.appendChild(okOption);
+    foot.appendChild(buttonArea);
+    notify.appendChild(informationArea);
+    notify.appendChild(foot);
+    notificationModal.appendChild(notify);
+    notificationModal.removeAttribute('hidden');
+
 }

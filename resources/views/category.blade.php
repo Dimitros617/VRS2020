@@ -209,7 +209,7 @@
                                                 @if( $permition[0]->edit_item == 1)
 
                                                     <div class="buttonsDivItem">
-                                                        <button type="submit button" class="btn btn-danger w-200p buttonsDivItem" onclick="removeItem(this, '{{$item->id}}'); return false;">
+                                                        <button type="submit button" class="btn btn-danger w-200p buttonsDivItem" onclick="vrsNotify('Opravdu chcete položku smazat?',removeItem, this,'{{$item->id}}' ); return false">
                                                             <div id="removeText">Smazat</div>
                                                             <div id="removeLoading" class="spinner-grow text-light" role="status" hidden></div>
                                                         </button>

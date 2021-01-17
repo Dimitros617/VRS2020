@@ -1,7 +1,6 @@
 
 function removeCategory(ele, id){
 
-
     ele.children[0].setAttribute("hidden","");
     ele.children[1].removeAttribute("hidden");
 
@@ -25,16 +24,11 @@ function removeCategory(ele, id){
                 ele.children[0].innerHTML = '<b>&#10003</b>';
             }
 
-
-
-
-
         }
     });
 }
 
 function removeItem(ele, id){
-    confirm('Opravdu to chcete smazat?');
 
     ele.children[0].setAttribute("hidden","");
     ele.children[1].removeAttribute("hidden");
