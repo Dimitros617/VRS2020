@@ -13,11 +13,6 @@
 
             @if (Auth::permition()->possibility_renting == 1)
 
-                <div class="hlavicka">
-                    <a href="/categories">
-                        <button class="btn btn-primary text-vrs-ylight flex-fill rounded-0" type="button">Nová výpůjčka</button>
-                    </a>
-                </div>
 
             @else
                 <div class="hlavicka">
@@ -29,13 +24,19 @@
                 </div>
             @endif
 
-                <div class="align-content-center d-sm-flex rounded-4 overflow-hidden flex-flow-column flex-sm-flow-row mb-4">
+                <div class="buttonsDiv">
+
+                    <div class="buttonsDivItem">
+                        <a href="/categories">
+                            <button class="buttonsDivItem btn-primary text-vrs-ylight " type="button">Nová výpůjčka</button>
+                        </a>
+                    </div>
 
                     @if (Auth::permition()->possibility_renting == 1)
 
-                        <div class="">
+                        <div class="buttonsDivItem">
                             <a @if(Auth::permition()->new_user == 1) href="/all-loans" @else href="/loans" @endif>
-                                <button class="btn btn-warning align-content- text-center flex-fill rounded-0" type="button">
+                                <button class="btn btn-warning justify-content-center text-center flex-fill rounded-0" type="button">
                                     @if (Auth::permition()->new_user == 1)
                                         Čekající na schválení: {{ $schvaleni_pocet }}
                                     @else
@@ -45,7 +46,7 @@
                             </a>
                         </div>
 
-                        <div class="">
+                        <div class="buttonsDivItem">
                             <a href="/loans">
                                 <button class="btn btn-success flex-fill rounded-0" type="button">
                                     Moje výpůjčky: {{ $vypujcky_pocet }}
@@ -74,8 +75,8 @@
 
             {{--  Sekce pro VŠECHNY  --}}
 
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <h2 class="">Jak to funguje?</h2>
+            <div class="textyDash">
+                <h2 class="nadpisyDash">Jak to funguje?</h2>
 
                 <div class="">
                     @if (Auth::permition()->possibility_renting != 1)
@@ -115,8 +116,8 @@
 
             {{--  Sekce pro unverifiedUser  --}}
             @if (Auth::permition()->possibility_renting != 1)
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <h2 class="">Proč si nemohu nic půjčit?</h2>
+            <div class="textyDash">
+                <h2 class="nadpisyDash">Proč si nemohu nic půjčit?</h2>
                 <div class="">
                     <ul style="list-style-type:circle">
                         <li>S největší pravděpodobností jste nový uživatel Výpůjčního a rezervačního systému. Musíte počkat, než vás schválí a ověří administrátor.</li>
@@ -131,7 +132,7 @@
 
             {{--  Sekce pro ověřené uživatele a admin  --}}
             @if (Auth::permition()->possibility_renting == 1)
-                    <button class="btn btn-warning align-content- text-center flex-fill rounded-0 paticka" type="button"
+                    <button class="alert-link bg-white btn text-vrs-yellow align-content- text-center flex-fill rounded-0 paticka" type="button"
                             data-bs-toggle="collapse" data-bs-target="#moreInfo" aria-expanded="false"
                             aria-controls="moreInfo">
                         Více informací
@@ -142,8 +143,8 @@
                         <br>
 
                 @if(Auth::permition()->new_user == 1)
-                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                        <h2 class="">Seznam uživatelů</h2>
+                    <div class="textyDash">
+                        <h2 class="nadpisyDash">Seznam uživatelů</h2>
                         <div class="">
                             V Seznamu uživatelů vidíte všechny právě zaregistrované uživatele.
                             <br>
@@ -176,8 +177,8 @@
 
                     <br>
 
-                        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                            <h2 class="">Moje výpůjčky</h2>
+                        <div class="textyDash">
+                            <h2 class="nadpisyDash">Moje výpůjčky</h2>
                             <div class="">
                                 Vše, co jste si zarezervoval či vypůjčil, najdete zde.
                                 <ul style="list-style-type:circle">
@@ -216,8 +217,8 @@
 
                         <br>
 
-                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                        <h2 class="">Nová výpůjčka a úprava kategorií a předmětů</h2>
+                    <div class="textyDash">
+                        <h2 class="nadpisyDash">Nová výpůjčka a úprava kategorií a předmětů</h2>
                         <div class="">
                             Zde si můžete půjčit předmět z vybrané kategorie, zároveň zde spravujete viditelnost předmětů, kategorií a přidáváte či odstraňujete je.
                             <ul style="list-style-type:circle">
@@ -244,8 +245,8 @@
 
                     <br>
 
-                        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                            <h2 class="">Všechny výpůjčky</h2>
+                        <div class="textyDash">
+                            <h2 class="nadpisyDash">Všechny výpůjčky</h2>
                             <div class="">
                                 Souhrnný přehled všech výpůjček, které čekají na vaše schválení, všech právě v systému zadaných výpůjček i rezervací a historie všech ukončených výpůjček či ukončených zadaných rezervací.
                                 <br>
@@ -263,8 +264,8 @@
                     <br>
 
                 @else
-                        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                            <h2 class="">Seznam uživatelů</h2>
+                        <div class="textyDash">
+                            <h2 class="nadpisyDash">Seznam uživatelů</h2>
                             <div class="">
                                 V Seznamu uživatelů vidíte všechny právě zaregistrované uživatele.
                                 <br>
@@ -288,8 +289,8 @@
 
                         <br>
 
-                        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                            <h2 class="">Moje výpůjčky</h2>
+                        <div class="textyDash">
+                            <h2 class="nadpisyDash">Moje výpůjčky</h2>
                             <div class="">
                                 Vše, co jste si zarezervoval či vypůjčil, najdete zde.
                                 <ul style="list-style-type:circle">
@@ -326,8 +327,8 @@
 
                         <br>
 
-                        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                            <h2 class="">Nová výpůjčka</h2>
+                        <div class="textyDash">
+                            <h2 class="nadpisyDash">Nová výpůjčka</h2>
                             <div class="">
                                 Zde si můžete půjčit předmět z vybrané kategorie.
                                 <ul style="list-style-type:circle">

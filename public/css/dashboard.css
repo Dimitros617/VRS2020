@@ -24,6 +24,33 @@ overflow-hidden.shadow-xl.sm:rounded-lg {
     margin-bottom: 2rem;
 }
 
-body {
+.body {
     text-align: justify;
+}
+
+.buttonsDiv {
+    width: 100%;
+    float: none;
+    height: 82px;
+
+}
+.buttonsDivItem {
+    height: 38px;
+}
+
+.textyDash {
+    background: #f4f5f7;
+    margin-bottom: 1.5rem;
+    display: flow-root;
+    border-radius: 10px;
+    border-bottom: 10px solid #e0e0e0;
+    padding: 1rem 1rem;
+}
+
+.nadpisyDash {
+    float: left;
+    font-size: xx-large;
+    display: contents;
+    font-weight: 600;
+
 }
