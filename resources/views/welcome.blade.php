@@ -7,7 +7,7 @@
         <title>Výpůjční a rezervační systém</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" type="text/css" href="css/welcomeDefault.css">
         <link rel="stylesheet" type="text/css" href="css/welcome.css">
