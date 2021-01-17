@@ -2,7 +2,7 @@
     <div>
     </div>
 
-    <div class="h-75 w-20 mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+    <div class="h-75 w-19 mt-6 px-4 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg rounded">
         {{ $slot }}
     </div>
 </div>
