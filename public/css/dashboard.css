@@ -2,24 +2,6 @@ button.flex-fill.rounded-0 {
     width: -webkit-fill-available;
 }
 
-overflow-hidden.shadow-xl.sm:rounded-lg {
-    /* Tyhle boxíky, tak ať text v nich je dále od krajů */
-}
-
-.hlavicka {
-    width: 100%;
-    /* background: aqua; */
-    display: inline-flex;
-    display: inline-block;
-    padding-bottom: 1rem;
-    border-bottom: 10px solid #fa9702;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    /* flex-flow: wrap; */
-    /* height: -webkit-fill-available; */
-}
-
-
 .paticka {
     margin-bottom: 2rem;
     border-bottom: 5px solid #fa9600 !important;
