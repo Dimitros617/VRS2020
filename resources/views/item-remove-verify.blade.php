@@ -11,7 +11,7 @@
 
             <form action="{{'/item/' . $item->id . '/removeItemHard'}}" method="POST" class="removeVerify text-center">
                 @csrf
-                <div class="vrs-h2 text-vrs-cyan d-content"> Jste si jistý?</div>
+                <div class="vrs-h2 text-vrs-cyan d-content">Jste si jistý?</div>
                 <div class="">K dané položce jsme našli probíhající rezervace či výpůjčky. Přejete si smazat položku včetně všech probíhajících rezervací?</div>
                 <input type="text" class="d-none" name="itemId" value="{{$item->id}}">
                 <br>
@@ -77,11 +77,11 @@
 
                         <div class="rentFromDiv">
                             <label for="rent_from" class="font-weight-bold">OD: </label>
-                            <label class="rent_from">{{$user->rent_from}}</label>
+                            <label class="rent_from">{{date("d. m. Y", strtotime($user->rent_from))}}</label>
                         </div>
                         <div class="rentToDiv">
                             <label for="rent_to" class="font-weight-bold">DO: </label>
-                            <label class="rent_to">{{$user->rent_to}}</label>
+                            <label class="rent_to">{{date("d. m. Y", strtotime($user->rent_to))}}</label>
                         </div>
 
 </div>

@@ -1,11 +1,13 @@
-@section('title',"Moje výpůjčky")
-@section('css', URL::asset('css/category-status.css'))
+@section('title',$category[0]->categoryName)
+@section('css', URL::asset('css/loans-default.css'))
+@section('css2', URL::asset('css/loans-button-name.css'))
 
 <x-app-layout>
 
     <x-slot name="header"></x-slot>
     <script src="/js/main.js"></script>
     <script src="/js/returnLoan.js"></script>
+    <script src="/js/loans-search.js"></script>
 
     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8">
 
@@ -20,7 +22,38 @@
                                 @endif
                                 @endif
                             </div>
-            <div class="pageTitle">Aktuální závazky položek z kategorie {{$category[0]->categoryName}}</div>
+
+                            <div class="hlavicka pt-4">
+                                <div class="pageTitleSearch w-lg-50">Aktuální závazky </div>
+                                <div class="pageDescriptinoSearch mb-4 text-center d-block d-lg-none ps-0">Kategorie: {{$category[0]->categoryName}}</div>
+                                <div class="search">
+                                    <div class="bg-gray-100 rounded-3 modal-open">
+                                        <div class="card-body row no-gutters align-items-center h-4rem">
+
+                                            <div class="col">
+                                                <input class="form-control-borderless mt--1" id="search" type="search" placeholder="Zadejte hledaný výraz">
+
+                                            </div>
+
+                                            <div class="col-auto">
+                                                <div class="spinner-border text-vrs-yellow searchSpinner mt--1" id="search-spinner" role="status" hidden></div>
+                                            </div>
+
+
+                                            <div class="col-auto searchButtonDiv">
+
+                                                <button class="btn btn-lg btn-success searchButton" type="submit" onclick="loanFind(this)">Najít</button>
+                                                <button class="btn btn-lg btn-primary searchButton" data-sort="none" sort="desc" onclick="loansSort(this, 'waitingLoans', 'activeLoans', 'historyLoans')">&#8681;</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pageDescriptinoSearch mb-4 d-none d-lg-block">Kategorie: {{$category[0]->categoryName}}</div>
+                            </div>
+
+
+
             @if(count($categories) != 0)
 
                 @php
@@ -104,15 +137,18 @@
 
 
     <a href="/users/{{$category->userId}}" class="userNameLink">
-        <label class="cursor-pointer">{{$category->name}} {{$category->surname}} : </label>
+        <label class="cursor-pointer userNameLabel">{{$category->name}} {{$category->surname}}</label>
     </a>
+
+        <div class="userData">
         <div class="rentFromDiv">
-    <label for="rent_from" class="font-weight-bold">OD: </label>
-    <label class="rent_from">{{$category->rent_from}}</label>
+            <label for="rent_from" class="font-weight-bold">OD: </label>
+            <label class="rent_from">{{date("d. m. Y", strtotime($category->rent_from))}}</label>
         </div>
         <div class="rentToDiv">
-    <label for="rent_to" class="font-weight-bold">DO: </label>
-    <label class="rent_to">{{$category->rent_to}}</label>
+            <label for="rent_to" class="font-weight-bold">DO: </label>
+            <label class="rent_to">{{date("d. m. Y", strtotime($category->rent_to))}}</label>
+        </div>
         </div>
 
         <div class="submitButtonDiv">
@@ -151,6 +187,19 @@
                     @endif
                 </div>
 
+                <div id="buttonHoverText">
+                    @if($category->status == 1)
+                        kliknutím zrušíte rezervaci
+                    @else
+                        @if(Auth::permition()->return_verification == 1)
+                            kliknutím potvrdíte odevzdání
+                        @else
+                            kliknutím zrušíte odevzdání
+                        @endif
+
+                    @endif
+                </div>
+
                 <div id="buttonLoading" class="spinner-grow text-light" role="status" hidden></div>
 
             </button>
@@ -158,6 +207,7 @@
 
         </form>
         <br>
+            <div class="emptyElementLoans" hidden>Tato položka není vypůjčená ani rezervovaná</div>
         @else
             <div class="emptyElementLoans">Tato položka není vypůjčená ani rezervovaná</div>
         @endif

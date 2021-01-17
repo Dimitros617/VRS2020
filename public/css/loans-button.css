@@ -1,0 +1,173 @@
+.loanRecordBox {
+    background: #fabd4a;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    color: black;
+    overflow: hidden;
+    height: 6rem;
+}
+
+.icon {
+    float: left;
+    /* height: initial; */
+    height: 60px;
+    width: 5%;
+    text-align: center;
+    margin-left: 1rem;
+    margin-right: 5px;
+}
+
+.iconSvg {
+    width: 2rem;
+    height: 3rem;
+    margin-top: 10px;
+    color: #002e40;
+}
+
+.rentFromDiv, .rentToDiv {
+    color: #002e40;
+}
+
+.submitButton {
+    height: 100%;
+    width: 100%;
+    font-weight: bolder;
+}
+
+.submitButtonDiv {
+    float: right;
+    /* background: aqua; */
+    width: 10rem;
+    height: -webkit-fill-available;
+    margin-top: -15px;
+    margin-bottom: -15px;
+    margin-right: -15px;
+    font-weight: bolder;
+}
+
+.userData {
+    margin-left: 20px;
+    float: left;
+    width: fit-content;
+    display: flex;
+    flex-flow: column;
+    margin-top: 0.5rem;
+}
+
+
+
+@media (max-width: 760px) {
+
+    /*.loanRecordBox {*/
+    /*    height: 13.5rem !important;*/
+    /*}*/
+
+    /*.icon {*/
+    /*    float: none !important;*/
+    /*    height: 60px;*/
+    /*    width: 100% !important;*/
+    /*    text-align: center;*/
+    /*    display: block;*/
+    /*    margin-left: auto !important;*/
+    /*    margin-right: auto !important;*/
+    /*}*/
+    /*.iconSvg {*/
+    /*    width: 3rem !important;*/
+    /*    height: 3rem;*/
+    /*    margin-top: 0px !important;*/
+    /*    color: #002e40;*/
+    /*    margin-left: auto !important;*/
+    /*    margin-right: auto !important;*/
+    /*    margin-bottom: 1rem !important;*/
+    /*}*/
+
+    /*.rentFromDiv, .rentToDiv {*/
+    /*    float: none !important;*/
+    /*    margin: 0 !important;*/
+    /*    text-align: center !important;*/
+    /*}*/
+
+    /*.submitButtonDiv {*/
+    /*    float: none !important;*/
+    /*    width: 112% !important;*/
+    /*    height: 5rem !important;*/
+    /*    margin-top: -0.5rem;*/
+    /*    margin-bottom: -3rem;*/
+    /*    display: block;*/
+    /*    margin-left: -1rem;*/
+    /*    box-shadow: none !important;*/
+    /*}*/
+
+    /*.submitButton {*/
+    /*    margin-bottom: -15rem !important;*/
+    /*}*/
+
+}
+
+@media (max-width: 575px) {
+
+    .loanRecordBox {
+        height: unset;
+    }
+
+    .icon {
+        float: none;
+        height: 0px;
+        width: 100%;
+        text-align: center;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 3rem;
+    }
+
+    .iconSvg {
+        width: 2rem;
+        height: 3rem;
+        margin-top: 10px;
+        color: #002e40;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -0.5rem;
+        margin-bottom: 0rem;
+    }
+
+    .userData {
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+        width: fit-content;
+        display: flex;
+        flex-flow: column;
+        margin-top: 0.5rem;
+    }
+
+    /*.rentFromDiv, .rentToDiv {*/
+    /*    float: none !important;*/
+    /*    color: #002e40;*/
+    /*    margin-left: auto;*/
+    /*    margin-right: auto;*/
+    /*    display: block;*/
+    /*}*/
+
+    /*.rentFromDiv {*/
+    /*    margin-top: 0.6rem !important;*/
+    /*}*/
+
+    .submitButtonDiv {
+        float: none;
+        width: -webkit-fill-available;
+        height: unset;
+        margin-top: 1rem;
+        margin-bottom: -15px;
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    button.btn.submitButton {
+        padding: 1rem 0;
+    }
+
+}
+
+

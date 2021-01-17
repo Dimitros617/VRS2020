@@ -53,9 +53,16 @@
 }
 
 .vrs-d-none{
+    display: none !important;
+}
+
+#buttonHoverText {
     display: none;
 }
 
+button.submit {
+    min-height: 55px;
+}
 
 .emptyElementLoans {
     color: #002e40;
@@ -108,6 +115,15 @@
     float: left;
 }
 
+.pageDescriptinoSearch {
+    width: 100%;
+    padding-left: 3rem;
+    font-weight: 700 !important;
+    font-size: x-large;
+    color: #2a5769;
+    float: left;
+}
+
 input#search {
     height: 3rem;
     background: transparent !important;
@@ -117,6 +133,7 @@ input#search {
     /* margin-left: 3rem; */
     float: right;
     width: 50%;
+    display: inherit;
 }
 
 input#search {
@@ -174,12 +191,10 @@ a.block.px-4.py-2.text-sm.leading-5.text-gray-700 {
 }
 
 .autocomplete-items {
-    position: absolute;
+    position: fixed;
     border: 1px solid #d4d4d4;
     border-bottom: none;
     z-index: 99;
-    top: 40%;
-    top: 30%;
     min-width: 200px;
     width: 20%;
 }
@@ -246,7 +261,6 @@ a.block.px-4.py-2.text-sm.leading-5.text-gray-700 {
     margin-right: 2rem;
     border-radius: 5px;
     overflow: hidden;
-    height: 2.7rem;
     display: flex;
     margin-top: 2rem;
 }
@@ -281,10 +295,11 @@ svg.h-6.w-6 {
 @media (max-width: 576px) {
 
     .buttonsDiv {
-        float: none;
         width: 100%;
 
     }
+
+
 
     .headLogoMobile {
         transform: scale(2);
@@ -315,6 +330,11 @@ svg.h-6.w-6 {
 
 @media (max-width: 768px) {
 
+    #buttonHoverText {
+        font-weight: 400;
+        display: block;
+    }
+
     .vrs-h2 {
         float: none;
         text-align: center;
@@ -333,6 +353,10 @@ svg.h-6.w-6 {
     .buttonsDiv {
         width: 100%;
         margin-right: 0 !important;
+    }
+
+    .buttonsDivItem {
+        height: 3.7rem;
     }
 
     .search {

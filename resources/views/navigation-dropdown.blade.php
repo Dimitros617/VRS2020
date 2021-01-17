@@ -19,7 +19,9 @@
         </div>
         <div id="messagesBox">
             <div class="autocomplete" >
+                <div>
                 <input id="userNameTo" type="text"  autocomplete="off" placeholder="Přezdívka příjemce:">
+                </div>
                 <textarea id="messageText" placeholder="Text zprávy pro příjemce, maximálně 3000 znaků."></textarea>
                 <button type="button" class="btn btn-success float-end mt-3 " onclick="sendMessage(this)">Odeslat</button>
                 <div id="httpRequestMessage" class="float-end mt-4 mr-3" hidden>Odesláno</div>
@@ -28,6 +30,8 @@
     </div>
 
 </div>
+
+<div id="notificationModal" hidden></div>
 
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100 shadow-lg p-3 mb-5">
     <!-- Primary Navigation Menu -->

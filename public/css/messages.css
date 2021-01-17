@@ -18,7 +18,7 @@ img.notificationSVG {
     top: -125px;
     cursor: pointer;
 }
-#messageModal {
+#messageModal, #notificationModal {
     background: #00000073;
     width: 100%;
     height: 100%;
@@ -45,7 +45,6 @@ img.notificationSVG {
 
 .messageBackground {
     width: 90%;
-    height: 66%;
     margin-top: 4%;
     padding-bottom: 20px;
     border-bottom: 15px solid white;

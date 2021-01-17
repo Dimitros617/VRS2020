@@ -6,7 +6,7 @@
 
     <script src="/js/main.js"></script>
     <script src="/js/datePicker.js"></script>
-    <script src="/js/categoryGets.js"></script>
+    <script src="/js/item-search.js"></script>
     <script src="/js/categorySaves.js"></script>
     <script src="/js/remove.js"></script>
     <script>
@@ -14,7 +14,7 @@
     </script>
 
 
-    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="bg-white overflow-hidden shadow-xl p-3 sm:rounded-lg max-w-7xl mx-auto sm:px-8 lg:px-8">
 
         <div class="container p-6">
 
@@ -31,6 +31,7 @@
                    </div>
                             {{--  Pokud má uživatel oprávnění upravovat itemy--}}
 
+
                             @if( $permition[0]->edit_item == 1)
                                 <form action="{{'/saveCategoryData'}}" method="POST" class="categoryData d-flow-root">
                                     @csrf
@@ -39,8 +40,10 @@
 
                                     <input type="text" class="pageTitle" value="{{$category['name']}}"
                                            name="categoryName" onchange="categoryNameChange(this)" oninput="showButton(this)" required>
-                                    <br>                                    <textarea class="vrs-h3 text-vrs-yellow w-100 text-center p-3" name="categoryDescription" method="POST"
-                                              oninput="showButton(this)">{{$category['description']}}</textarea>
+                                    <br>
+                                    <input type="text" name="categoryDescription" method="POST" id="hiddenTextArea" hidden>
+                                    <div contenteditable class="vrs-h3 text-vrs-yellow w-100 text-center p-3" name="categoryDescription" method="POST"
+                                              oninput="showButton(this); document.getElementById('hiddenTextArea').value = this.innerHTML">{{$category['description']}}</div>
                                     <br>
                                     <input class="btn btn-primary float-end p-2 me-4-5 w-10rem" type="submit"  value="Uložit změny"  hidden>
 
@@ -53,17 +56,43 @@
                                 <br>
                             @endif
 
+                            <div class="hlavicka border-0 mb-0 mt-4">
+                                <div class="search">
+                                    <div class="bg-gray-100 rounded-3 modal-open">
+                                        <div class="card-body row no-gutters align-items-center h-4rem">
+
+                                            <div class="col">
+                                                <input class="form-control-borderless mt--1" id="search" type="search" placeholder="Zadejte hledaný výraz">
+
+                                            </div>
+
+                                            <div class="col-auto">
+                                                <div class="spinner-border text-vrs-yellow searchSpinner mt--1" id="search-spinner" role="status" hidden></div>
+                                            </div>
+
+
+                                            <div class="col-auto searchButtonDiv">
+
+                                                <button class="btn btn-lg btn-success searchButton" type="submit" onclick="itemFind(this)">Najít</button>
+                                                <button class="btn btn-lg btn-primary searchButton" data-sort="none" sort="desc" onclick="itemsSort(this, 'waitingLoans', 'activeLoans', 'historyLoans')">&#8681;</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
 
 
 
                             @if(sizeof($items) != 0)
-                                <div class="data">
+                                <div class="data" id="data">
                                 @foreach($items as $item)
 
                                     {{--                Pokud má item nastaveno availability na 1 zoobrazí se, pokud ne z nemožní se sním práce pro uživatel--}}
 
                                     @if($item->availability  == 1 )
-                                            <div class="item" >
+                                            <div class="item" itemId="{{$item->id}}">
                                     @else
                                         @if($permition[0]->edit_item == 1)
                                                         <div class="item hiddenItem ">
@@ -76,30 +105,30 @@
 
                                                 <div class="itemDataDivRow">
                                                 <label class="title font-weight-bold" for="name">Název: </label>
-                                                <input class="name" value="{{$item->name}}" name="name"
+                                                <div contenteditable class="name" value="{{$item->name}}" name="name"
                                                        @if( $permition[0]->edit_item != 1) disabled @endif
-                                                       oninput="showButton(this)" required>
-                                                </div>
+                                                       oninput="showButton(this)" required>{{$item->name}}
+                                                </div></div>
 
                                                 <div class="itemDataDivRow">
                                                 <label class="title font-weight-bold" for="note">Poznámka: </label>
-                                                <input class="note" value="{{$item->note}}" name="note"
+                                                <div contenteditable class="note" value="{{$item->note}}" name="note"
                                                        @if( $permition[0]->edit_item != 1) disabled @endif
-                                                       oninput="showButton(this)">
-                                                </div>
+                                                       oninput="showButton(this)">{{$item->note}}
+                                                </div></div>
                                                     <div class="itemDataDivRow">
                                                 <label class="title font-weight-bold" for="place">Místo: </label>
-                                                <input class="place" value="{{$item->place}}" name="place"
+                                                <div contenteditable class="place" value="{{$item->place}}" name="place"
                                                        @if( $permition[0]->edit_item != 1) disabled @endif
-                                                       oninput="showButton(this)">
-                                                    </div>
+                                                       oninput="showButton(this)">{{$item->place}}
+                                                    </div></div>
                                                         <div class="itemDataDivRow">
                                                 <label class="title font-weight-bold" for="inventory_number">Inventární číslo: </label>
-                                                <input class="inventory_number" name="inventory_number"
+                                                <div contenteditable class="inventory_number" name="inventory_number"
                                                        value="{{$item->inventory_number}}"
                                                        @if( $permition[0]->edit_item != 1) disabled @endif
-                                                       oninput="showButton(this)">
-                                                        </div>
+                                                       oninput="showButton(this)">{{$item->inventory_number}}
+                                                        </div></div>
 
 
 

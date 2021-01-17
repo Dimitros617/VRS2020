@@ -1,22 +1,5 @@
 
 
-function categoryNameChange(ele) {
-    let input_value = ele.value;
-    if (input_value != window.categoryName) {
-        $.ajax({
-            url: '/categories/checkCategoryNameExist/' + input_value,
-            method: "GET",
-            success: function (response) {
-
-                if (response == "true") {
-                    alert("Bohužel kategorie s tímto názvem již existuje");
-                    document.getElementsByClassName("categoryName")[0].value = window.categoryName;
-                }
-            }
-        });
-    }
-}
-
 function categorySort(ele) {
     let sort_value = ele.getAttribute("sort");
 

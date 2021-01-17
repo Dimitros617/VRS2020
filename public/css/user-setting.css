@@ -1,0 +1,23 @@
+
+.userData {
+    padding-bottom: 1rem;
+    border-bottom: 10px solid #fa9702;
+    margin-bottom: 4rem;
+}
+
+.nick {
+    float: right;
+    margin-right: 2rem;
+    color: #2a5769;
+    padding: 0.5rem 0rem;
+    font-size: xx-large;
+    font-weight: 700;
+    text-align: right;
+}
+
+.name {
+    font-size: xxx-large;
+    font-weight: 700;
+    width: 14%;
+    color: #002e40;
+}

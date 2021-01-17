@@ -1,7 +1,8 @@
 @section('title', $user[0]->userSurname . ' ' . $user[0]->userName)
 
-@section('css2', URL::asset('css/all-loans.css'))
-@section('css', URL::asset('css/my-loans.css'))
+@section('css', URL::asset('css/loans-default.css'))
+@section('css2', URL::asset('css/loans-button.css'))
+
     <x-app-layout>
 
         <x-slot name="header"></x-slot>
@@ -25,7 +26,8 @@
             </div>
 
                                 <div class="hlavicka pt-4">
-                                    <div class="pageTitleSearch mb-4 w-lg-50">Aktuální výpůjčky uživatele {{ $user[0]->userNick }}</div>
+                                    <div class="pageTitleSearch w-lg-50">Aktuální výpůjčky </div>
+                                    <div class="pageDescriptinoSearch mb-4 w-100 text-center d-block d-lg-none ps-0">{{ $user[0]->userNick }} | {{ $user[0]->userName }} {{ $user[0]->userSurname }}</div>
                                     <div class="search">
                                         <div class="bg-gray-100 rounded-3 modal-open">
                                             <div class="card-body row no-gutters align-items-center h-4rem">
@@ -49,6 +51,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="pageDescriptinoSearch mb-4 d-none d-lg-block">{{ $user[0]->userNick }} | {{ $user[0]->userName }} {{ $user[0]->userSurname }}</div>
                                 </div>
 
                                 @if(count($loans)==0)
@@ -121,15 +124,17 @@
                         </svg>
                         ' ; } @endphp </div>
 
+                    <div class="userData">
                                 <div class="rentFromDiv">
                                     <label for="rent_from" class="font-weight-bold">OD: </label>
-                                    <label class="rent_from">{{ $loan->rent_from }}</label>
+                                    <label class="rent_from">{{date("d. m. Y", strtotime($loan->rent_from))}}</label>
                                 </div>
                                 <div class="rentToDiv">
                                     <label for="rent_to" class="font-weight-bold">DO: </label>
-                                    <label class="rent_to">{{ $loan->rent_to }}</label>
+                                    <label class="rent_to">{{date("d. m. Y", strtotime($loan->rent_to))}}</label>
                                 </div>
-                                <br>
+                                </div>
+
                                 <input type="text" class="d-none" name="loanId" value="{{ $loan->id }}">
 
 
@@ -161,6 +166,18 @@
                                                 Probíhá
                                             @else
                                                 Čekání na schválení
+                                            @endif
+                                        </div>
+                                        <div id="buttonHoverText">
+                                            @if($loan->status == 1)
+                                                kliknutím zrušíte rezervaci
+                                            @else
+                                                @if(Auth::permition()->return_verification == 1)
+                                                    kliknutím potvrdíte odevzdání
+                                                @else
+                                                    kliknutím zrušíte odevzdání
+                                                @endif
+
                                             @endif
                                         </div>
 

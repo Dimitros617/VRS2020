@@ -20,6 +20,7 @@
 
         <!-- Delete User Confirmation Modal -->
         <x-jet-dialog-modal wire:model="confirmingUserDeletion">
+
             <x-slot name="title">
                 {{ __('Smazat účet') }}
             </x-slot>
@@ -47,5 +48,7 @@
                 </x-jet-danger-button>
             </x-slot>
         </x-jet-dialog-modal>
+
+
     </x-slot>
 </x-jet-action-section>

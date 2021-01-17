@@ -1,5 +1,6 @@
 @section('title',"Všechny výpůjčky")
-@section('css', URL::asset('css/all-loans.css'))
+@section('css', URL::asset('css/loans-default.css'))
+@section('css2', URL::asset('css/loans-button-name.css'))
 
 <x-app-layout>
 
@@ -7,6 +8,7 @@
     <script src="/js/main.js"></script>
     <script src="/js/returnLoan.js"></script>
     <script src="/js/loans-search.js"></script>
+    <script src="/js/cleare-loans-history.js"></script>
 
     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8">
 
@@ -26,7 +28,7 @@
 
 
                                 <div class="hlavicka pt-4">
-                                    <div class="pageTitleSearch mb-4 w-lg-50">Všechny výpůjčky</div>
+                                    <div class="pageTitleSearch mb-4">Všechny výpůjčky</div>
                                     <div class="search">
                                         <div class="bg-gray-100 rounded-3 modal-open">
                                             <div class="card-body row no-gutters align-items-center h-4rem">
@@ -127,22 +129,21 @@
                         </div>
                         @endif
                         <div class="itemDiv">
-                            <label class="title font-weight-bold" for="itemName"> Název :</label>
+                            <label class="title font-weight-bold" for="itemName">Název: </label>
                             <div class="itemName">{{$loan->itemName}}</div>
 
                             @if($loan->note != "")
-                                <label class="title font-weight-bold" for="itemNote"> Poznámka :</label>
+                                <label class="title font-weight-bold" for="itemNote">Poznámka: </label>
                                 <div class="itemNote">{{$loan->note}}</div>
                             @endif
 
                             @if($loan->place != "")
-                                <label class="title font-weight-bold" for="itemPlace"> Místo :</label>
+                                <label class="title font-weight-bold" for="itemPlace">Místo: </label>
                                 <div class="itemPlace">{{$loan->place}}</div>
                             @endif
 
                             @if($loan->inventory_number != "")
-                                <label class="title font-weight-bold" for="itemInventory_number"> Inventární číslo
-                                    :</label>
+                                <label class="title font-weight-bold" for="itemInventory_number">Inventární číslo: </label>
                                 <div class="itemInventory_number">{{$loan->inventory_number}}</div>
                             @endif
                             @endif
@@ -192,22 +193,21 @@
 
                         </div>
 
-                        <div class="userData">
-                        <a href="/users/{{$loan->userId}}" class="userNameLink">
-                            <label class="font-weight-bold userName cursor-pointer">{{$loan->userName}}</label>
 
-                            <label class="font-weight-bold userSurname cursor-pointer">{{$loan->userSurname}} </label>
+                        <a href="/users/{{$loan->userId}}" class="userNameLink">
+                            <label class="font-weight-bold userNameLabel cursor-pointer">{{$loan->userName}} {{$loan->userSurname}}</label>
 
                         </a>
 
-                            <div class="rentFromDiv">
-                        <label for="rent_from" class="font-weight-bold">OD: </label>
-                        <label class="rent_from">{{$loan->rent_from}}</label>
-                            </div>
-                            <div class="rentToDiv">
-                        <label for="rent_to" class="font-weight-bold">DO: </label>
-                        <label class="rent_to">{{$loan->rent_to}}</label>
-                            </div>
+                        <div class="userData">
+                        <div class="rentFromDiv">
+                            <label for="rent_from" class="font-weight-bold">OD: </label>
+                            <label class="rent_from">{{date("d. m. Y", strtotime($loan->rent_from))}}</label>
+                        </div>
+                        <div class="rentToDiv">
+                            <label for="rent_to" class="font-weight-bold">DO: </label>
+                            <label class="rent_to">{{date("d. m. Y", strtotime($loan->rent_to))}}</label>
+                        </div>
                         <br>
                         <input type="text" class="d-none" name="loanId"
                                value="{{$loan->id}}">
@@ -246,6 +246,18 @@
                                                 Čekání na schválení
                                             @endif
                                         </div>
+                                        <div id="buttonHoverText">
+                                            @if($loan->status == 1)
+                                                kliknutím zrušíte rezervaci
+                                            @else
+                                                @if(Auth::permition()->return_verification == 1)
+                                                    kliknutím potvrdíte odevzdání
+                                                @else
+                                                    kliknutím zrušíte odevzdání
+                                                @endif
+
+                                            @endif
+                                        </div>
 
                                         <div id="buttonLoading" class="spinner-grow text-light" role="status" hidden></div>
 
@@ -278,6 +290,9 @@
 
         {{--    Copie codu jako předtím, poze se změní v foreachy pole ze kterého se načítají data--}}
         <div class="collapse" id="activeLoans">
+            <div class="collapse pageTitle" id="waitingLoans">
+                Všechny aktivní
+            </div>
 
 
                 @php
@@ -306,22 +321,21 @@
         </div>
         @endif
         <div class="itemDiv ">
-            <label class="title font-weight-bold" for="itemName"> Název :</label>
+            <label class="title font-weight-bold" for="itemName">Název: </label>
             <div class="itemName">{{$loan->itemName}}</div>
 
             @if($loan->note != "")
-                <label class="title font-weight-bold" for="itemNote"> Poznámka :</label>
+                <label class="title font-weight-bold" for="itemNote">Poznámka: </label>
                 <div class="itemNote">{{$loan->note}}</div>
             @endif
 
             @if($loan->place != "")
-                <label class="title font-weight-bold" for="itemPlace"> Místo :</label>
+                <label class="title font-weight-bold" for="itemPlace">Místo: </label>
                 <div class="itemPlace">{{$loan->place}}</div>
             @endif
 
             @if($loan->inventory_number != "")
-                <label class="title font-weight-bold" for="itemInventory_number"> Inventární číslo
-                    :</label>
+                <label class="title font-weight-bold" for="itemInventory_number">Inventární číslo: </label>
                 <div class="itemInventory_number">{{$loan->inventory_number}}</div>
             @endif
             @endif
@@ -340,7 +354,7 @@
                 }elseif ($now >= $start && $now <= $end){
                     echo 'title="Výpůjčka je právě aktivní"';
                 }else{
-                    echo 'title="Již je po termínu, měly by jste položku vrátit"';
+                    echo 'title="Již je po termínu!"';
                 }
 
             echo ">";
@@ -370,21 +384,19 @@
 
         </div>
 
-        <div class="userData">
+
             <a href="/users/{{$loan->userId}}" class="userNameLink">
-                <label class="font-weight-bold userName">{{$loan->userName}}</label>
-
-                <label class="font-weight-bold userSurname">{{$loan->userSurname}} </label>
-
+                <label class="font-weight-bold userNameLabel">{{$loan->userName}} {{$loan->userSurname}}</label>
             </a>
 
+    <div class="userData">
             <div class="rentFromDiv">
                 <label for="rent_from" class="font-weight-bold">OD: </label>
-                <label class="rent_from">{{$loan->rent_from}}</label>
+                <label class="rent_from">{{date("d. m. Y", strtotime($loan->rent_from))}}</label>
             </div>
             <div class="rentToDiv">
                 <label for="rent_to" class="font-weight-bold">DO: </label>
-                <label class="rent_to">{{$loan->rent_to}}</label>
+                <label class="rent_to">{{date("d. m. Y", strtotime($loan->rent_to))}}</label>
             </div>
             <br>
             <input type="text" class="d-none" name="loanId"
@@ -423,7 +435,18 @@
                         Čekání na schválení
                     @endif
                 </div>
+                <div id="buttonHoverText">
+                    @if($loan->status == 1)
+                        kliknutím zrušíte rezervaci
+                    @else
+                        @if(Auth::permition()->return_verification == 1)
+                            kliknutím potvrdíte odevzdání
+                        @else
+                            kliknutím zrušíte odevzdání
+                        @endif
 
+                    @endif
+                </div>
                 <div id="buttonLoading" class="spinner-grow text-light" role="status" hidden></div>
 
             </button>
@@ -453,6 +476,9 @@
 
     {{--  Historie výpůjček  --}}
     <div class="collapse" id="historyLoans">
+        <div class="collapse pageTitle" id="activeLoans">
+            Historie výpůjček
+        </div>
 
 
             @php
@@ -481,22 +507,21 @@
     </div>
     @endif
     <div class="itemDiv ">
-        <label class="title font-weight-bold" for="itemName"> Název :</label>
+        <label class="title font-weight-bold" for="itemName">Název: </label>
         <div class="itemName">{{$loan->itemName}}</div>
 
         @if($loan->note != "")
-            <label class="title font-weight-bold" for="itemNote"> Poznámka :</label>
+            <label class="title font-weight-bold" for="itemNote">Poznámka: </label>
             <div class="itemNote">{{$loan->note}}</div>
         @endif
 
         @if($loan->place != "")
-            <label class="title font-weight-bold" for="itemPlace"> Místo :</label>
+            <label class="title font-weight-bold" for="itemPlace">Místo: </label>
             <div class="itemPlace">{{$loan->place}}</div>
         @endif
 
         @if($loan->inventory_number != "")
-            <label class="title font-weight-bold" for="itemInventory_number"> Inventární číslo
-                :</label>
+            <label class="title font-weight-bold" for="itemInventory_number">Inventární číslo: </label>
             <div class="itemInventory_number">{{$loan->inventory_number}}</div>
         @endif
         @endif
@@ -506,14 +531,12 @@
 
 
 
-    <div class="userData">
+
         <a href="/users/{{$loan->userId}}" class="userNameLink">
-            <label class="font-weight-bold userName">{{$loan->userName}}</label>
-
-            <label class="font-weight-bold userSurname">{{$loan->userSurname}} </label>
-
+            <label class="font-weight-bold userNameLabel">{{$loan->userName}} {{$loan->userSurname}}</label>
         </a>
 
+            <div class="userData">
         <div class="rentFromDiv">
             <label for="rent_from" class="font-weight-bold">OD: </label>
             <label class="rent_from">{{date("d. m. Y", strtotime($loan->rent_from))}}</label>
@@ -525,7 +548,7 @@
         <br>
 
     </div>
-    <div class="created text-vrs-cyan">
+    <div class="created text-vrs-cyan" date="{{$loan->created}}">
         <b>Archivováno: </b> {{date("d. m. Y", strtotime($loan->created))}}
     </div>
 
@@ -533,7 +556,7 @@
     </form>
     @php
         $lastCategory = $loan->categoryId;
-        $lastItem = $loan->itemId
+        $lastItem = $loan->itemId;
     @endphp
 
 
@@ -542,8 +565,19 @@
 
 
     </div>
-
     </div>
+
+
+    @if(count($historyLoans)!=0)
+        <button type="submit" class="btn btn-light w-100 text-center align-middle mb-5 mt-1 pt-4 pb-4 fw-bolder text-vrs-clight " onclick="clearLoansHistory(this,'&#8722;','/clearLoansHistory')">
+            <span class="d-block w-100 ">Smazat záznamy starší 30 dní</span>
+            <div id="buttonText" >&#8722;</div>
+            <div class="spinner-grow text-vrs-cyan mb-4 mt-4" id="buttonLoading" hidden></div>
+        </button>
+    @endif
+
+
+
     </div>
 
 

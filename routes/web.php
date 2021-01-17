@@ -42,6 +42,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/users', [ListUsersControl
 Route::middleware(['auth:sanctum', 'verified', 'permition:new_user'])->get('/users/{id:id}', [ListUsersController::class,'showUser']);
 Route::middleware(['auth:sanctum', 'verified'])->get('/users/{id:id}/loans', [ListUsersController::class,'showLoans']);
 
+Route::get('/clearLoansHistory', [LoansController::class,'clearHistory']);
+
 //Zprávy
 Route::get('/newMessages', [MessagesController::class,'countNewMessages']);
 Route::get('/allMessages', [MessagesController::class,'showAllMessages']);
@@ -70,6 +72,7 @@ Route::post('/item/{id:id}/saveItemData', [ItemsController::class,'saveItem']);
 Route::post('/item/{id:id}/removeItemHard', [ItemsController::class,'removeItemHard']);
 Route::get('/item/{id:id}/removeItem', [ItemsController::class,'removeItem']);
 Route::get('/item/{id:id}/changeItemAvailability', [ItemsController::class,'changeItemAvailability']);
+Route::get('/categories/itemsSort/{sort?}', [ItemsController::class,'itemsSort']);
 
 
 //Vůpůjčky

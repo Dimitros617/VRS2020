@@ -73,7 +73,7 @@ class CategoryController extends Controller
         Log::info('CategoryControler:addNewCategory');
 
         $category = new categories;
-        $category->name = 'ZZZ - Nová kategorie';
+        $category->name = 'Abecedně seřazená NOVÁ KATEGORIE';
         $check = $category->save();
 
         return back()->withInput(array('saveCheck' => $check ? '1' : '0'));

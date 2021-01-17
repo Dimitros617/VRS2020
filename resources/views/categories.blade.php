@@ -3,7 +3,7 @@
 <x-app-layout>
 
     <x-slot name="header"></x-slot>
-    <script src="/js/categoryGets.js"></script>
+    <script src="/js/category-search.js"></script>
     <script src="/js/remove.js"></script>
 {{--    <link rel="stylesheet" href="{{ URL::asset('css/categories.css') }}">--}}
 

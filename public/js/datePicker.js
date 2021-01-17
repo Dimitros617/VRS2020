@@ -1,4 +1,5 @@
 var disableddates = [];
+var lastElement = null;
 
 function hoverChange2(ele) {
 
@@ -81,13 +82,19 @@ function initDate(input) {
 
     $(clss).datepicker({
         beforeShowDay: DisableSpecificDates,
-        dateFormat: "dd. mm. yy",
+        dateFormat: "dd-mm-yy",
         minDate: "min"
     });
 }
 
 function DisableSpecificDates(date) {
-    disableddates = event.target.parentElement.parentElement.getAttribute("data").split("/");
+    if(event.target.tagName == "INPUT"){
+        disableddates = event.target.parentElement.parentElement.getAttribute("data").split("/");
+        lastElement = event.target.parentElement.parentElement;
+    }else{
+        disableddates = lastElement.getAttribute("data").split("/");
+    }
+
     var string = jQuery.datepicker.formatDate('dd-mm-yy', date);
     return [disableddates.indexOf(string) == -1];
 }

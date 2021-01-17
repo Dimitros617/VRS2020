@@ -1,6 +1,112 @@
+
+.buttonsDiv {
+    margin-top: 4.6rem;
+}
+
+.pageTitle{
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 5px solid #fa9600;
+    padding: 3px 4rem;
+    font-weight: 700 !important;
+    margin-bottom: 1rem !important;
+    font-size: xxx-large;
+    color: #002e40;
+}
+
 .item {
     display: flow-root;
-    background: aqua;
-    margin: 2rem 0rem;
+    background: #f4f5f7;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-bottom: 10px solid #e0e0e0;
+}
+
+.itemDataDiv {
+    /* background: aqua; */
+    width: 100%;
+    display: inherit;
+    margin-bottom: 1rem;
+}
+
+[for=name],[for=note],[for=place],[for=inventory_number] {
+    font-weight: 700;
+    margin-right: 1rem;
+    color: #002e40;
+    font-size: large;
+    white-space: pre;
+}
+
+[for=name] {
+    display: none;
+}
+
+
+.name, .note, .place, .inventory_number{
+    border: none;
+    color: #002e40;
+    background: #ffffff00;
+    width: inherit;
+}
+
+.name {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.itemDataDivRow {
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid #002e4021;
+    margin-bottom: 1rem;
+}
+
+.dateReservation {
+    background: #e0e0e0;
+    float: left;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.reserveFromDiv, .reserveToDiv {
+    margin: 0.5rem;
+    color: #002e40;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.reserveFromInput, .reserveToInput {
+    background: #ffffff;
+    border: none !important;
+    border-radius: 5px;
+    margin-left: 10px;
+    padding: 5px;
+    padding-left: 15px;
+}
+
+@media (max-width: 576px) {
+    .dateReservation {
+        background: #e0e0e0;
+        float: none;
+        padding: 1rem;
+        border-radius: 10px;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .pageTitle {
+        font-size: xx-large;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .buttonsDiv {
+        margin-top: 1.6rem;
+    }
 
 }

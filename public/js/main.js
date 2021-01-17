@@ -43,6 +43,32 @@ function hoverChangeEnd(ele, atributeBool, textTrue, textFalse, classBefore, cla
 
 }
 
+function buttonLink(ele,text,url){
+
+    ele.querySelectorAll("div[id='buttonText']")[0].setAttribute("hidden","");
+    ele.querySelectorAll("div[id='buttonLoading']")[0].removeAttribute("hidden");
+
+    $.ajax({
+        method: "GET",
+        url: url,
+        success: function (response){
+
+            ele.querySelectorAll("div[id='buttonText']")[0].removeAttribute("hidden");
+            ele.querySelectorAll("div[id='buttonLoading']")[0].setAttribute("hidden", "");
+
+            if(response == "1"){
+                ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = '<b>&#10003;</b>';
+            }else{
+                ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = '<b>&#x2715;</b>';
+            }
+
+            setTimeout(function (ele){
+                ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = text;
+            },1000,ele);
+        },
+    });
+}
+
 function showButtonLoading(ele){
     ele.querySelectorAll("div[id='buttonText']")[0].setAttribute("hidden","");
     ele.querySelectorAll("div[id='buttonLoading']")[0].removeAttribute("hidden");
@@ -61,11 +87,66 @@ $(function(){
     $('span[onload]').trigger('onload');
 });
 
-function setPasivRefresh(){
+function setPasiveRefresh(){
 
 let messageRefresh = 0;
 
 }
 
 
+function vrsNotify(text) {
 
+    let notificationModal = document.getElementById('notificationModal');
+
+    let notify = document.createElement('div');
+    notify.setAttribute('id','notify');
+    let informationArea = document.createElement('div');
+    informationArea.setAttribute('id','informationArea');
+
+    let content = document.createTextNode(text);
+    informationArea.appendChild(content);
+
+    let foot = document.createElement('div');
+    foot.setAttribute('id','foot');
+    let buttonArea = document.createElement('div');
+    buttonArea.setAttribute('id','buttonArea');
+
+    let yesOption = document.createElement('button');
+    yesOption.setAttribute('id','yesOption');
+    yesOption.setAttribute('class','btn');
+    yesOption.classList.add('btn-primary');
+    yesOption.innerHTML = "ANO";
+    yesOption.onclick = function () {
+        window.confirmation = true;
+        notificationModal.removeChild(notify);
+        notificationModal.setAttribute('hidden','true');
+    }
+
+    let noOption = document.createElement('button');
+    noOption.setAttribute('id','noOption');
+    noOption.setAttribute('class','btn');
+    noOption.classList.add('btn-danger');
+    noOption.innerHTML = "NE";
+    noOption.onclick = function () {
+        window.confirmation = false;
+        notificationModal.removeChild(notify);
+        notificationModal.setAttribute('hidden','true');
+    }
+
+    buttonArea.appendChild(yesOption);
+    buttonArea.appendChild(noOption);
+    foot.appendChild(buttonArea);
+    notify.appendChild(informationArea);
+    notify.appendChild(foot);
+    notificationModal.appendChild(notify);
+    notificationModal.removeAttribute('hidden');
+
+    window.confirmation = null;
+
+    while(window.confirmation === null)
+    {
+
+    }
+
+    return window.confirmation;
+}
