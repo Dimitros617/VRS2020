@@ -8,7 +8,7 @@ function categoryNameChange(ele) {
             success: function (response) {
 
                 if (response == "true") {
-                    alert("Bohužel kategorie s tímto názvem již existuje");
+                    vrsAlert("Bohužel kategorie s tímto názvem již existuje, zvolte jiný!");
                     document.getElementsByClassName("categoryName")[0].value = window.categoryName;
                 }
             }
