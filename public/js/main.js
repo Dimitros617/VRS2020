@@ -94,13 +94,13 @@ let messageRefresh = 0;
 }
 
 
-function vrsNotify(text) {
+function vrsNotify(text, fce) {
 
     let notificationModal = document.getElementById('notificationModal');
 
     let notify = document.createElement('div');
     notify.setAttribute('id','notify');
-    let informationArea = document.createElement('div');
+    let informationArea = document.createElement('dialog');
     informationArea.setAttribute('id','informationArea');
 
     let content = document.createTextNode(text);
@@ -116,11 +116,12 @@ function vrsNotify(text) {
     yesOption.setAttribute('class','btn');
     yesOption.classList.add('btn-primary');
     yesOption.innerHTML = "ANO";
-    yesOption.onclick = function () {
-        window.confirmation = true;
-        notificationModal.removeChild(notify);
-        notificationModal.setAttribute('hidden','true');
+
+    let arr = new Array();
+    for (let i = 2; i < arguments.length ; i++){
+        arr.push(arguments[i]);
     }
+    yesOption.addEventListener('click', yes.bind(null,fce,arr),false);
 
     let noOption = document.createElement('button');
     noOption.setAttribute('id','noOption');
@@ -128,8 +129,8 @@ function vrsNotify(text) {
     noOption.classList.add('btn-danger');
     noOption.innerHTML = "NE";
     noOption.onclick = function () {
-        window.confirmation = false;
-        notificationModal.removeChild(notify);
+        let notificationModal = document.getElementById('notificationModal');
+        notificationModal.innerHTML = "";
         notificationModal.setAttribute('hidden','true');
     }
 
@@ -141,12 +142,11 @@ function vrsNotify(text) {
     notificationModal.appendChild(notify);
     notificationModal.removeAttribute('hidden');
 
-    window.confirmation = null;
+}
 
-    while(window.confirmation === null)
-    {
-
-    }
-
-    return window.confirmation;
+function yes(call_fce,call_arg){
+    let notificationModal = document.getElementById('notificationModal');
+    notificationModal.innerHTML = "";
+    notificationModal.setAttribute('hidden','true');
+    call_fce.apply(null, call_arg);
 }

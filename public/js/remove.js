@@ -1,6 +1,6 @@
 
 function removeCategory(ele, id){
-    confirm('Opravdu to chcete smazat?');
+
 
     ele.children[0].setAttribute("hidden","");
     ele.children[1].removeAttribute("hidden");

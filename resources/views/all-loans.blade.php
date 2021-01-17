@@ -413,18 +413,23 @@
 
                 "
 
-                    @if($loan->userId == Auth::user()->id || Auth::permition()->return_verification == 1)
+                @if($loan->userId == Auth::user()->id || Auth::permition()->return_verification == 1)
                     @if($loan->status == 1)
                     onmouseover="hoverChange(this,'status','Probíhá','Zrušit rezervaci','btn-success','btn-danger')"
                     @else
-                    @if(Auth::permition()->return_verification == 1)
-                    onmouseover="hoverChange(this,'status','Čekání na schválení','Potvrdit odevzdání','btn-warning','btn-success')"
-                    @else
-                    onmouseover="hoverChange(this,'status','Čekání na schválení','Zrušit odevzdání','btn-warning','btn-danger')"
-                    @endif
+                        @if(Auth::permition()->return_verification == 1)
+                        onmouseover="hoverChange(this,'status','Čekání na schválení','Potvrdit odevzdání','btn-warning','btn-success')"
+                        @else
+                        onmouseover="hoverChange(this,'status','Čekání na schválení','Zrušit odevzdání','btn-warning','btn-danger')"
+                        @endif
                     @endif
 
-                    onclick=" returnLoan(this, '{{$loan->id}}')"
+                    @if(Auth::permition()->return_verification == 1)
+                    onclick="vrsNotify('Opravdu chcete zrišit rezervaci?',returnLoan, this,'{{$loan->id}}' ); return false"
+                    @else
+                    onclick="returnLoan(this, '{{$loan->id}}')"
+                    @endif
+
 
                 @endif>
 

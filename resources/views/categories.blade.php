@@ -120,7 +120,8 @@
                            <div class="d-flex justify-content-center justify-content-sm-end my-2 buttonsDiv">
                                @if(Auth::permition()->edit_item == 1)
                                 <div class="buttonsDivItem">
-                                    <button type="submit button" class="btn btn-danger w-200p buttonsDivItem" onclick="removeCategory(this, '{{$categories[$i]->id}}'); return false">
+{{--                                    removeCategory(this, '{{$categories[$i]->id}}'--}}
+                                    <button type="submit button" class="btn btn-danger w-200p buttonsDivItem" onclick="vrsNotify('opravdu to chcete smazat',removeCategory, this,'{{$categories[$i]->id}}' ); return false">
                                         <div id="removeText">Smazat</div>
                                         <div id="removeLoading" class="spinner-grow text-light" role="status" hidden></div>
                                     </button>
