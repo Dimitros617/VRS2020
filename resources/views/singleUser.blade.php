@@ -61,10 +61,10 @@
     <div class="md:grid md:grid-cols-3 md:gap-6">
         <div class="md:col-span-1">
             <div class="px-4 sm:px-0">
-                <h1 class="text-lg font-medium text-vrs-yellow h3">Informace o uživateli</h1>
+                <h1 class="text-lg font-medium text-vrs-yellow h3">Informace o uživateli {{$user[0] -> userName.' '. $user[0] -> userSurname}}</h1>
 
                 <p class="mt-1 text-md text-white">
-                    Pozor zde upravujete osobní informace jiného uživatele!
+                    Pozor, zde upravujete osobní informace jiného uživatele!
                 </p>
             </div>
         </div>
@@ -151,7 +151,7 @@
                     </div>
 
                     <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6">
-                                        <button type="submit button" class="submit btn btn-danger w-200p float-end p-2 me-4-5 w-10rem text-white" >
+                                        <button type="submit button" class="btn btn-danger w-200p float-end p-2 w-10rem text-white px-4 py-2" >
                                             <div id="buttonText">Uložit změny</div>
                                             <div id="buttonLoading" class="spinner-grow text-light" role="status" hidden></div>
                                         </button>

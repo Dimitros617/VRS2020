@@ -1,4 +1,6 @@
+
 <x-jet-form-section submit="updateProfileInformation">
+
     <x-slot name="title">
         {{ __('Informace o uživateli') }}
     </x-slot>
@@ -53,6 +55,7 @@
     @endif
 
     <!-- Name -->
+
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="name" value="{{ __('Jméno') }}" />
             <x-jet-input id="name" type="text" class="mt-1 block w-full" wire:model.defer="state.name" autocomplete="name" />
@@ -89,12 +92,12 @@
     </x-slot>
 
     <x-slot name="actions">
-        <x-jet-action-message class="mr-3" on="saved">
-            {{ __('Uloženo.') }}
-        </x-jet-action-message>
-
-        <x-jet-button wire:loading.attr="disabled" wire:target="photo">
-            {{ __('Uložit') }}
-        </x-jet-button>
+        <button type="submit button" class="btn btn-danger w-200p float-end p-2 w-10rem text-white px-4 py-2" >
+            <div id="buttonText">Uložit změny</div>
+            <x-jet-action-message class="mr-3" on="saved">
+                <b>&#10003;</b>
+            </x-jet-action-message>
+            <div id="buttonLoading" class="spinner-grow text-light" role="status" hidden></div>
+        </button>
     </x-slot>
 </x-jet-form-section>

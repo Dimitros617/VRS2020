@@ -243,7 +243,7 @@
                                                                 @else
                                                                 bool="0"
                                                                 @endif
-                                          +              >
+                                                        >
                                                             <div id="buttonText">
                                                                 @if($item->availability  == 1 )
                                                                 Viditelné: ANO
