@@ -22,7 +22,13 @@ overflow-hidden.shadow-xl.sm:rounded-lg {
 
 .paticka {
     margin-bottom: 2rem;
+    border-bottom: 5px solid #fa9600 !important;
+    transition-duration: 2s !important;
 }
+
+.paticka:hover {
+    border-bottom: 10px solid #fa9600 !important;
+    }
 
 .body {
     text-align: justify;
@@ -31,11 +37,11 @@ overflow-hidden.shadow-xl.sm:rounded-lg {
 .buttonsDiv {
     width: 100%;
     float: none;
-    height: 82px;
+
 
 }
 .buttonsDivItem {
-    height: 38px;
+    height: 5rem;
 }
 
 .textyDash {
@@ -44,13 +50,18 @@ overflow-hidden.shadow-xl.sm:rounded-lg {
     display: flow-root;
     border-radius: 10px;
     border-bottom: 10px solid #e0e0e0;
-    padding: 1rem 1rem;
+    padding: 3rem 3rem;
 }
 
 .nadpisyDash {
-    float: left;
     font-size: xx-large;
-    display: contents;
+    display: block;
     font-weight: 600;
+    margin-bottom: 1rem;
 
 }
+.btn:focus {
+    box-shadow:none !important;
+}
+
+

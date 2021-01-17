@@ -11,19 +11,6 @@
     <div class="container">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
-            @if (Auth::permition()->possibility_renting == 1)
-
-
-            @else
-                <div class="hlavicka">
-                    <a href="/users">
-                        <button class="btn btn-danger flex-fill rounded-0" type="button">
-                            Seznam uživatelů
-                        </button>
-                    </a>
-                </div>
-            @endif
-
                 <div class="buttonsDiv">
 
                     <div class="buttonsDivItem">
@@ -36,7 +23,7 @@
 
                         <div class="buttonsDivItem">
                             <a @if(Auth::permition()->new_user == 1) href="/all-loans" @else href="/loans" @endif>
-                                <button class="btn btn-warning justify-content-center text-center flex-fill rounded-0" type="button">
+                                <button class="buttonsDivItem btn btn-warning justify-content-center text-center  rounded-0" type="button">
                                     @if (Auth::permition()->new_user == 1)
                                         Čekající na schválení: {{ $schvaleni_pocet }}
                                     @else
@@ -48,16 +35,16 @@
 
                         <div class="buttonsDivItem">
                             <a href="/loans">
-                                <button class="btn btn-success flex-fill rounded-0" type="button">
+                                <button class="buttonsDivItem btn btn-success  rounded-0" type="button">
                                     Moje výpůjčky: {{ $vypujcky_pocet }}
                                 </button>
                             </a>
                         </div>
 
 
-                        <div class="">
+                        <div class="buttonsDivItem">
                             <a href="/users">
-                                <button class="btn btn-danger flex-fill rounded-0" type="button">
+                                <button class="buttonsDivItem btn btn-danger  rounded-0" type="button">
                                     @if (Auth::permition()->new_user == 1)
                                         Seznam uživatelů: {{$users_pocet}}
                                     @else
@@ -132,7 +119,7 @@
 
             {{--  Sekce pro ověřené uživatele a admin  --}}
             @if (Auth::permition()->possibility_renting == 1)
-                    <button class="alert-link bg-white btn text-vrs-yellow align-content- text-center flex-fill rounded-0 paticka" type="button"
+                    <button class="alert-link border-bottom-Dash bg-white btn text-vrs-yellow align-content- text-center flex-fill rounded-0 paticka" type="button"
                             data-bs-toggle="collapse" data-bs-target="#moreInfo" aria-expanded="false"
                             aria-controls="moreInfo">
                         Více informací
