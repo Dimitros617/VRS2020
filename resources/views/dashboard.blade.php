@@ -63,7 +63,7 @@
             {{--  Sekce pro VŠECHNY  --}}
 
             <div class="textyDash">
-                <h2 class="nadpisyDash">Jak to funguje?</h2>
+                <h2 class="nadpisyDash ">Jak to funguje?</h2>
 
                 <div class="">
                     @if (Auth::permition()->possibility_renting != 1)

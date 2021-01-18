@@ -19,9 +19,8 @@ button.flex-fill.rounded-0 {
 .buttonsDiv {
     width: 100%;
     float: none;
+ }
 
-
-}
 .buttonsDivItem {
     height: 5rem;
 }
@@ -45,7 +44,23 @@ button.flex-fill.rounded-0 {
 .btn:focus {
     box-shadow:none !important;
 }
+@media (max-width: 576px) {
+    .textyDash {
+        padding: 1rem 1rem !important;
+        padding-left: 1.5em !important;
+    }
+    .buttonsDiv {
+        flex-flow:column !important;
+     /*   padding: 1rem 1rem !important;*/
 
+    }
+   /* .buttonsDivItem {
+        border-radius: 15px !important;
+    }*/
+
+
+
+}
 /*@media (max-width: 992px) {*/
 /*    .buttonsDiv {*/
 /*        flex-flow: column;*/
