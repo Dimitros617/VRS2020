@@ -45,6 +45,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/users/{id:id}/loans', [Li
 
 Route::middleware(['auth:sanctum', 'verified', 'permition:edit_permitions'])->get('/permitions', [PermitionController::class,'showPermissions']);
 
+
 Route::get('/clearLoansHistory', [LoansController::class,'clearHistory']);
 
 //Zprávy
