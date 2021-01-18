@@ -67,6 +67,13 @@ function removePermition(ele, id){
                     document.getElementsByClassName("active")[0].setAttribute("hidden", "");
                 },1000,ele);
 
+            }else if(response == "2"){
+                ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = '<b>&#x2715;</b>';
+                vrsAlert('Nemůžete smazat roly, pokud je někomu přiřazena.' );
+                setTimeout(function (ele){
+                    ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = "Smazat oprávnění";
+
+                },1000,ele);
             }else{
                 ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = '<b>&#x2715;</b>';
                 setTimeout(function (ele){

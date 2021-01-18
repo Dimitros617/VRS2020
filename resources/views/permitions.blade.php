@@ -1,4 +1,4 @@
-@section('title',"Všechny výpůjčky")
+@section('title',"Uživatelská oprávnění")
 @section('css', URL::asset('css/permition.css'))
 
 
@@ -30,7 +30,7 @@
 
                 @foreach($permitions as $permition)
 
-                <a class="list-group-item list-group-item-action list-name my-list-group-item" id="list-{{$permition->id}}" permitionId="{{$permition->id}}" data-toggle="list" role="tab" onclick="showPanel({{$permition->id}})">{{$permition->name}}</a>
+                <a class="list-group-item list-group-item-action list-name my-list-group-item" id="list-{{$permition->id}}" permitionId="{{$permition->id}}" data-toggle="list" role="tab" onclick="showPanel({{$permition->id}})">{{$permition->name}} <div class="float-end">{{$permition->count}}</div></a>
 
                 @endforeach
                     <form action="/addPermition" method="POST" id="addPermitionForm">
