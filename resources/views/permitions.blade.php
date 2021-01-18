@@ -24,7 +24,7 @@
                                 @endif
                             </div>
 
-            <div class="pageTitle"> Uživatelská oprávnění</div>
+            <div class="pageTitle">Uživatelská oprávnění</div>
 
             <div class="list-group my-list-group" id="myList permitionList" role="tablist">
 
@@ -56,7 +56,7 @@
                     <div class="my_row">
                         <input type="text" id="possibility_renting{{$permition->id}}" name="renting" value="{{$permition->possibility_renting}}" hidden>
                         <input name="possibility_renting" type="checkbox" data-width="150"  data-toggle="toggle" data-onstyle="danger" data-on=" ANO " data-off=" NE " @if($permition->possibility_renting == 1) checked @endif onchange="changeSwitch(this, 'possibility_renting{{$permition->id}}')">
-                        <label for="possibility_renting">Možnost vypůjčky</label>
+                        <label for="possibility_renting">Možnost výpůjčky</label>
                     </div>
 
                     <div class="my_row">
