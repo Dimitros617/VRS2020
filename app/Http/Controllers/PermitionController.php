@@ -62,16 +62,15 @@ class PermitionController extends Controller
 
         if ($dataC == 0)
         {
-            return  "1";
+            $check = DB::table('permition')->where('id', $request->id)->delete();
+
         }
         elseif ($dataC > 0)
         {
             return "2";
         }
-        else
-        {
-            return "0";
-        }
+
+        return $check ? "1" : "0";
 
 
     }
