@@ -53,12 +53,25 @@ class PermitionController extends Controller
 
     }
 
-    function removePermition($id){
+    function removePermition(Request $request){
 
         Log::info('PermitionController:removePermition');
 
+        $data = DB::table('users')->where('permition',$request->id)->get();
+        $dataC = count($data);
 
-        return "1";
+        if ($dataC == 0)
+        {
+            $check = DB::table('permition')->where('id', $request->id)->delete();
+
+        }
+        elseif ($dataC > 0)
+        {
+            return "2";
+        }
+
+        return $check ? "1" : "0";
+
 
     }
 }
