@@ -69,7 +69,7 @@ function removePermition(ele, id){
 
             }else if(response == "2"){
                 ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = '<b>&#x2715;</b>';
-                vrsAlert('Nemůžete smazat roly, pokud je někomu přiřazena.' );
+                vrsAlert('Nemůžete smazat roli, pokud je někomu přiřazena!' );
                 setTimeout(function (ele){
                     ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = "Smazat oprávnění";
 
