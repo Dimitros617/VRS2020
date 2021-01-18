@@ -18,6 +18,5 @@ function showPanel(id){
 }
 
 function changeSwitch(ele, id){
-    let a = document.getElementById(id);
-    let b = "";
+    document.getElementById(id).value = ele.checked ? 1 : 0;
 }

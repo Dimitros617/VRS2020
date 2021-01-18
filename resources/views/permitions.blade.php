@@ -30,7 +30,7 @@
 
                 @foreach($permitions as $permition)
 
-                <a class="list-group-item list-group-item-action list-name my-list-group-item" permitionId="{{$permition->id}}" data-toggle="list" role="tab" onclick="showPanel({{$permition->id}})">{{$permition->name}}</a>
+                <a class="list-group-item list-group-item-action list-name my-list-group-item" id="list-{{$permition->id}}" permitionId="{{$permition->id}}" data-toggle="list" role="tab" onclick="showPanel({{$permition->id}})">{{$permition->name}}</a>
 
                 @endforeach
                     <form action="/addPermition" method="POST" id="addPermitionForm">
@@ -46,41 +46,40 @@
 
                 <div class="tab-pane" id="panel-{{$permition->id}}" role="tabpanel">
 
-                    <form action="/savePermitionData" method="POST" id="savePermitionData">
+                    <form action="/savePermitionData" method="POST" id="savePermitionData-{{$permition->id}}">
                         @csrf
-                    <div  class="vrs-h2 text-vrs-cyan" contenteditable>
-                        {{$permition->name}}
-                        <input type="text" name="permition_name" value="{{$permition->name}}" hidden>
-                    </div>
+
+                        <input type="text" class="vrs-h2 text-vrs-cyan w-100 bg-transparent permition-name" name="name" value="{{$permition->name}}">
+                        <input type="text" name="id" value="{{$permition->id}}" hidden>
 
 
                     <div class="my_row">
-                        <input type="text" id="possibility_renting{{$permition->id}}" name="possibility_renting" value="{{$permition->possibility_renting}}" hidden>
+                        <input type="text" id="possibility_renting{{$permition->id}}" name="renting" value="{{$permition->possibility_renting}}" hidden>
                         <input name="possibility_renting" type="checkbox" data-width="150"  data-toggle="toggle" data-onstyle="danger" data-on=" ANO " data-off=" NE " @if($permition->possibility_renting == 1) checked @endif onchange="changeSwitch(this, 'possibility_renting{{$permition->id}}')">
                         <label for="possibility_renting">Možnost vypůjčky</label>
                     </div>
 
                     <div class="my_row">
-                        <input type="text" id="new_user{{$permition->id}}" name="new_user" value="{{$permition->new_user}}" hidden>
-                        <input name="new_user" type="checkbox" data-width="150"  data-toggle="toggle" data-onstyle="danger" data-on=" ANO " data-off=" NE " @if($permition->new_user == 1) checked @endif >
+                        <input type="text" id="new_user{{$permition->id}}" name="user" value="{{$permition->new_user}}" hidden>
+                        <input name="new_user" type="checkbox" data-width="150"  data-toggle="toggle" data-onstyle="danger" data-on=" ANO " data-off=" NE " @if($permition->new_user == 1) checked @endif onchange="changeSwitch(this, 'new_user{{$permition->id}}')">
                         <label for="new_user">Schvalování nových uživatelů</label>
                     </div>
 
                     <div class="my_row">
-                        <input type="text" id="return_verification{{$permition->id}}" name="return_verification" value="{{$permition->return_verification}}" hidden>
-                        <input name="return_verification" type="checkbox" data-width="150"  data-toggle="toggle" data-onstyle="danger" data-on=" ANO " data-off=" NE " @if($permition->return_verification == 1) checked @endif >
+                        <input type="text" id="return_verification{{$permition->id}}" name="return" value="{{$permition->return_verification}}" hidden>
+                        <input name="return_verification" type="checkbox" data-width="150"  data-toggle="toggle" data-onstyle="danger" data-on=" ANO " data-off=" NE " @if($permition->return_verification == 1) checked @endif onchange="changeSwitch(this, 'return_verification{{$permition->id}}')">
                         <label for="return_verification">Schvalování výpůjček</label>
                     </div>
 
                     <div class="my_row">
-                        <input type="text" id="edit_item{{$permition->id}}" name="edit_item" value="{{$permition->edit_item}}" hidden>
-                        <input name="edit_item" type="checkbox" data-width="150"  data-toggle="toggle" data-onstyle="danger" data-on=" ANO " data-off=" NE " @if($permition->edit_item == 1) checked @endif >
+                        <input type="text" id="edit_item{{$permition->id}}" name="edit" value="{{$permition->edit_item}}" hidden>
+                        <input name="edit_item" type="checkbox" data-width="150"  data-toggle="toggle" data-onstyle="danger" data-on=" ANO " data-off=" NE " @if($permition->edit_item == 1) checked @endif onchange="changeSwitch(this, 'edit_item{{$permition->id}}')">
                         <label for="edit_item">Správa položek a kategorií</label>
                     </div>
 
                     <div class="my_row">
-                        <input type="text" id="edit_permitions{{$permition->id}}" name="edit_permitions" value="{{$permition->edit_permitions}}" hidden>
-                        <input name="edit_permitions" type="checkbox" data-width="150"  data-toggle="toggle" data-onstyle="danger" data-on=" ANO " data-off=" NE " @if($permition->edit_permitions == 1) checked @endif >
+                        <input type="text" id="edit_permitions{{$permition->id}}" name="permition" value="{{$permition->edit_permitions}}" hidden>
+                        <input name="edit_permitions" type="checkbox" data-width="150"  data-toggle="toggle" data-onstyle="danger" data-on=" ANO " data-off=" NE " @if($permition->edit_permitions == 1) checked @endif onchange="changeSwitch(this, 'edit_permitions{{$permition->id}}')">
                         <label for="edit_permitions">Správa ověření</label>
                     </div>
 
@@ -89,14 +88,14 @@
                     <div class="button-row">
                         <div class="buttonsDiv">
                             <div class="buttonsDivItem">
-                                <button type="submit button" class="buttonsDivItem submit btn btn-danger w-200p float-end p-2  w-10rem text-white" >
+                                <button type="submit button" class="buttonsDivItem submit btn btn-danger w-200p float-end p-2  w-10rem text-white" onclick="vrsNotify('Opravdu chcete oprávnění smazat?',removePermition, this,'{{$permition->id}}' ); return false">
                                     <div id="buttonText">Smazat oprávnění</div>
                                     <div id="buttonLoading" class="spinner-grow text-light" role="status" hidden></div>
                                 </button>
                             </div>
 
                             <div class="buttonsDivItem">
-                                <button type="submit button" class="buttonsDivItem submit btn btn-primary w-200p float-end p-2 w-10rem text-white" onclick="savePermitionData(this)">
+                                <button type="submit button" class="buttonsDivItem submit btn btn-primary w-200p float-end p-2 w-10rem text-white" onclick="savePermitionData(this, '{{$permition->id}}' )">
                                     <div id="buttonText">Uložit změny</div>
                                     <div id="buttonLoading" class="spinner-grow text-light" role="status" hidden></div>
                                 </button>

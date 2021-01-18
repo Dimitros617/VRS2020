@@ -87,6 +87,8 @@ Route::get('/loans/{id:id}/return', [LoansController::class,'itemLoansReturn']);
 
 //Oprávnění
 Route::post('/addPermition', [PermitionController::class,'addPermition']);
+Route::post('/savePermitionData', [PermitionController::class,'savePermitionData']);
+Route::get('/removePermition/{id:id}', [PermitionController::class,'removePermition']);
 
 
 

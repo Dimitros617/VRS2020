@@ -35,4 +35,30 @@ class PermitionController extends Controller
 
         return back()->withInput(array('saveCheck' => $check ? '1' : '0'));
     }
+
+    function savePermitionData(Request $request){
+
+        Log::info('PermitionController:savePermitionData');
+
+        $permition = permition::find($request->id);
+        $permition->name = $request->name;
+        $permition->possibility_renting = $request->renting;
+        $permition->new_user = $request->user;
+        $permition->return_verification = $request->return;
+        $permition->edit_item = $request->edit;
+        $permition->edit_permitions = $request->permition;
+        $check = $permition->save();
+
+        return $check ? "1" : "0";
+
+    }
+
+    function removePermition($id){
+
+        Log::info('PermitionController:removePermition');
+
+
+        return "1";
+
+    }
 }
