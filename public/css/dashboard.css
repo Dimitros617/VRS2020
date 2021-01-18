@@ -46,4 +46,16 @@ button.flex-fill.rounded-0 {
     box-shadow:none !important;
 }
 
+@media (max-width: 992px) {
+    .buttonsDiv {
+        width: 100%;
+        margin-right: 0 !important;
+        flex-flow: column;
+    }
+}
 
+@media (max-width: 768px) {
+    .textyDash {
+        padding: 3rem 2rem;
+    }
+}
