@@ -6556,8 +6556,8 @@ a.badge-dark:focus, a.badge-dark.focus {
   border-width: 5px !important;
 }
 
-.w-19 {
-    width: 19rem !important;
+.w-20rem {
+    width: 20rem !important;
 }
 
 .w-25 {
@@ -6610,6 +6610,10 @@ a.badge-dark:focus, a.badge-dark.focus {
 
 .h-6rem {
     height: 6rem !important;
+}
+
+.h-36rem {
+    height: 36rem !important;
 }
 
 .h-25 {
