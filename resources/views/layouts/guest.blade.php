@@ -6,7 +6,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>Výpůjční a rezervační systém</title>
-        <link rel="icon" href="{{ URL::asset('img/logo_mini.ico') }}">
+        <link rel="icon" href="{{ URL::asset('img/logo_icon_old3.png') }}">
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
