@@ -126,6 +126,12 @@
                             </x-jet-dropdown-link>
                         @endif
 
+                        @if(Auth::permition()->edit_permitions == 1)
+                            <x-jet-dropdown-link href="/permitions">
+                                {{ __('Uživatelská oprávnění') }}
+                            </x-jet-dropdown-link>
+                        @endif
+
 
                         @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                             <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
@@ -260,6 +266,12 @@
                 @if(Auth::permition()->return_verification == 1)
                     <x-jet-responsive-nav-link href="/all-loans">
                         {{ __('Všechny výpůjčky') }}
+                    </x-jet-responsive-nav-link>
+                @endif
+
+                @if(Auth::permition()->edit_permitions == 1)
+                    <x-jet-responsive-nav-link href="/all-loans">
+                        {{ __('Uživatelská oprávnění') }}
                     </x-jet-responsive-nav-link>
                 @endif
 
