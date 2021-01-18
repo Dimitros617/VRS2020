@@ -25,7 +25,7 @@ App::setLocale('cs');
 
 Route::get('/', function () {    return view('welcome');});
 
-Route::get('/dashboardNew', function () {    return view('dashboardNew');});
+//Route::get('/dashboardNew', function () {    return view('dashboardNew');});
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [DashboardController::class,'show']) ->name('dashboard');
 
@@ -89,8 +89,6 @@ Route::get('/loans/{id:id}/return', [LoansController::class,'itemLoansReturn']);
 Route::post('/addPermition', [PermitionController::class,'addPermition']);
 Route::post('/savePermitionData', [PermitionController::class,'savePermitionData']);
 Route::get('/removePermition/{id:id}', [PermitionController::class,'removePermition']);
-
-
 
 
 
