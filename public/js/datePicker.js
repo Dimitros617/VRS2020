@@ -54,7 +54,8 @@ function changeTo(input) {
 
 
     if (new_end_date < new_start_date) {
-        alert("Termín ukončení nemůže být před termínem začátku!");
+        vrsAlert("Termín ukončení nemůže být před termínem začátku!");
+
         input.value = newValuestring;
     }
 
@@ -63,7 +64,7 @@ function changeTo(input) {
     for (let i = 0; i< data.length; i++){
         let now = new Date(data[i].split("-")[2], data[i].split("-")[1], data[i].split("-")[0]);
         if(now >= new_start_date && now <= new_end_date){
-            alert("V tomto intervalu se již nachází jiná výpůjčka");
+            vrsAlert("V tomto intervalu se již nachází jiná výpůjčka!");
             input.value = newValuestring;
         }
     }

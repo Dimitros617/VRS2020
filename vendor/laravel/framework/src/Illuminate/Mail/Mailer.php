@@ -239,7 +239,7 @@ class Mailer implements MailerContract, MailQueueContract
         // be used when sending an e-mail. We will extract both of them out here.
         [$view, $plain, $raw] = $this->parseView($view);
 
-        $data['messages'] = $this->createMessage();
+        $data['message'] = $this->createMessage();
 
         return $this->renderView($view ?: $plain, $data);
     }
@@ -263,7 +263,7 @@ class Mailer implements MailerContract, MailQueueContract
         // be used when sending an e-mail. We will extract both of them out here.
         [$view, $plain, $raw] = $this->parseView($view);
 
-        $data['messages'] = $message = $this->createMessage();
+        $data['message'] = $message = $this->createMessage();
 
         // Once we have retrieved the view content for the e-mail we will set the body
         // of this messages using the HTML type, which will provide a simple wrapper
@@ -484,7 +484,7 @@ class Mailer implements MailerContract, MailQueueContract
      */
     protected function createMessage()
     {
-        $message = new Message($this->swift->createMessage('messages'));
+        $message = new Message($this->swift->createMessage('message'));
 
         // If a global from address has been specified we will set it on every messages
         // instance so the developer does not have to repeat themselves every time

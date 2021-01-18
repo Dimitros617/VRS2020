@@ -1,4 +1,4 @@
-@component('mail::messages')
+@component('mail::message')
 {{-- Greeting --}}
 @if (! empty($greeting))
 # {{ $greeting }}
@@ -51,8 +51,8 @@
 @isset($actionText)
 @slot('subcopy')
 @lang(
-    "If you’re having trouble clicking the \":actionText\" button, copy and paste the URL below\n".
-    'into your web browser:',
+    "Pokud máte potíže s \":actionText\" tlačítkem, zkopírujte a vložte následují adresu\n".
+    'do svého prohlížeče:',
     [
         'actionText' => $actionText,
     ]

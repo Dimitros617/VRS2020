@@ -1,7 +1,7 @@
 div#notify {
     background: #002e40;
     color: #ffffff;
-    width: 30%;
+    width: 50vw;
     margin-left: auto;
     margin-right: auto;
     margin-top: 15%;
@@ -40,5 +40,56 @@ button#noOption {
     width: 5vw;
     background: #002e40;
     border: none;
+}
+
+@media (max-width: 992px) {
+    div#notify {
+        width: 70vw;
+    }
+
+    #yesOption, #noOption {
+        margin: 0;
+        padding: 1rem;
+        width: 20vw;
+    }
+
+    button#noOption {
+        width: 10vw;
+        background: #002e40;
+        border: none;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    div#notify {
+        width: 90%;
+    }
+
+    #yesOption, #noOption {
+        width: 30vw;
+    }
+
+    button#noOption {
+        width: 20vw;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    div#notify {
+        width: 95%;
+    }
+
+    #yesOption, #noOption {
+        width: 80%;
+    }
+
+    button#noOption {
+        width: 60vw;
+    }
+
 }
 

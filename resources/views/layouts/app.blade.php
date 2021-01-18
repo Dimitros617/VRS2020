@@ -7,7 +7,7 @@
 
     {{--        <title>{{ config('app.name', 'Laravel') }}</title>--}}
     <title>VRS - @yield('title')</title>
-    <link rel="icon" href="{{ URL::asset('img/logo_icon.png') }}">
+    <link rel="icon" href="{{ URL::asset('img/logo_icon_old3.png') }}">
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -19,7 +19,11 @@
     <link href="http://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
     <script src="{{ URL::asset('css/bootstrap/js/bootstrap.bundle.js') }}"></script>
+    <script src="{{ URL::asset('css/bootstrap/js/bootstrap.esm.js') }}"></script>
+    <script src="{{ URL::asset('css/bootstrap/js/bootstrap.js') }}"></script>
     <script src="{{ URL::asset('js/main.js') }}"></script>
     <script src="{{ URL::asset('js/messages.js') }}"></script>
 
@@ -39,6 +43,8 @@
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/bootstrap/css/bootstrap-grid.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/bootstrap/css/bootstrap-reboot.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/bootstrap/css/bootstrap-utilities.css') }}">
+
+
 
 
 

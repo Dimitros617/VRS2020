@@ -13,13 +13,14 @@
 
                 <div class="buttonsDiv">
 
-                    <div class="buttonsDivItem">
-                        <a href="/categories">
-                            <button class="buttonsDivItem btn-primary text-vrs-ylight " type="button">Nová výpůjčka</button>
-                        </a>
-                    </div>
 
                     @if (Auth::permition()->possibility_renting == 1)
+
+                        <div class="buttonsDivItem">
+                            <a href="/categories">
+                                <button class="buttonsDivItem btn-primary text-vrs-ylight " type="button">Nová výpůjčka</button>
+                            </a>
+                        </div>
 
                         <div class="buttonsDivItem">
                             <a @if(Auth::permition()->new_user == 1) href="/all-loans" @else href="/loans" @endif>
@@ -41,6 +42,7 @@
                             </a>
                         </div>
 
+                    @endif
 
                         <div class="buttonsDivItem">
                             <a href="/users">
@@ -53,8 +55,6 @@
                                 </button>
                             </a>
                         </div>
-
-                    @endif
 
                 </div>
 

@@ -8,6 +8,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ListUsersController;
 use App\Http\Controllers\MessagesController;
+use App\Http\Controllers\PermitionController;
 use App\Models\categories;
 use App\Models\ListUsers;
 /*
@@ -24,7 +25,7 @@ App::setLocale('cs');
 
 Route::get('/', function () {    return view('welcome');});
 
-Route::get('/dashboardNew', function () {    return view('dashboardNew');});
+//Route::get('/dashboardNew', function () {    return view('dashboardNew');});
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [DashboardController::class,'show']) ->name('dashboard');
 
@@ -41,6 +42,8 @@ Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting'])
 Route::middleware(['auth:sanctum', 'verified'])->get('/users', [ListUsersController::class,'showAllUsers']);
 Route::middleware(['auth:sanctum', 'verified', 'permition:new_user'])->get('/users/{id:id}', [ListUsersController::class,'showUser']);
 Route::middleware(['auth:sanctum', 'verified'])->get('/users/{id:id}/loans', [ListUsersController::class,'showLoans']);
+
+Route::middleware(['auth:sanctum', 'verified', 'permition:edit_permitions'])->get('/permitions', [PermitionController::class,'showPermissions']);
 
 Route::get('/clearLoansHistory', [LoansController::class,'clearHistory']);
 
@@ -82,6 +85,10 @@ Route::post('/item/{id:id}/saveItemLoansData', [LoansController::class,'saveItem
 Route::get('/loans/{id:id}/return', [LoansController::class,'itemLoansReturn']);
 
 
+//Oprávnění
+Route::post('/addPermition', [PermitionController::class,'addPermition']);
+Route::post('/savePermitionData', [PermitionController::class,'savePermitionData']);
+Route::get('/removePermition/{id:id}', [PermitionController::class,'removePermition']);
 
 
 

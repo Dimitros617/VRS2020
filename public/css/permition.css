@@ -1,0 +1,119 @@
+
+.vrs-h2 {
+    float: none;
+    font-size: xx-large;
+    display: block;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+label.btn.toggle-on {
+    font-weight: 400;
+}
+
+.list-group {
+    width: 30%;
+    float: left;
+}
+
+.tab-content {
+    width: 65%;
+    float: right;
+}
+
+.my_row {
+    display: flow-root;
+    margin-bottom: 1rem;
+}
+
+.toggle.btn {
+    margin-right: 1rem;
+    height: 2.5rem !important;
+}
+
+.tab-pane {
+    background: #f4f5f7;
+    padding: 2rem;
+    border-radius: 10px;
+    border-bottom: 10px solid #e0e0e0;
+}
+
+.button-row {
+    display: flow-root;
+}
+
+.buttonsDiv {
+    margin-right: 0;
+    margin-top: 0;
+}
+
+.buttonsDivItem {
+    height: unset;
+}
+
+.my-list-group-item {
+    border: 0 !important;
+    background: #f4f5f7 !important;
+    border-left: 5px solid #fa9600 !important;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #002e40 !important;
+    cursor: pointer;
+}
+
+.my-list-group-item-add {
+    border-left: 0 !important;
+    text-align: center !important;
+    font-weight: 400;
+}
+
+.my-list-group-item:hover {
+    background: #e0e0e0 !important;
+}
+
+@media (max-width: 992px) {
+
+    .my-list-group {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        margin-bottom: 2rem !important;
+    }
+    .tab-content {
+        width: 100%;
+        float: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+
+}
+
+@media (max-width: 576px) {
+
+    .my-list-group {
+        width: 100%;
+    }
+
+    .my_row {
+        display: grid;
+        text-align: center;
+    }
+
+    .toggle.btn {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .my_row {
+        display: flex;
+        flex-flow: column-reverse;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+}
+

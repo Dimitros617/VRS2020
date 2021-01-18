@@ -28,12 +28,12 @@
                     <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" placeholder="Heslo" required autocomplete="current-password" />
                 </div>
 
-                <div class="mb-55px block mt-4">
-                    <label for="remember_me" class="flex items-center">
-                        <input id="remember_me" type="checkbox" class="form-checkbox" name="remember">
-                        <span class="ml-2 text-sm text-gray-600">{{ __('Zapamatovat si mě?') }}</span>
-                    </label>
-                </div>
+{{--                <div class="mb-55px block mt-4">--}}
+{{--                    <label for="remember_me" class="flex items-center">--}}
+{{--                        <input id="remember_me" type="checkbox" class="form-checkbox" name="remember">--}}
+{{--                        <span class="ml-2 text-sm text-gray-600">{{ __('Zapamatovat si mě?') }}</span>--}}
+{{--                    </label>--}}
+{{--                </div>--}}
 
                 <div class="flex items-center justify-end ">
                     <x-jet-button class="h6">
