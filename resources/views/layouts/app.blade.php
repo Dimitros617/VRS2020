@@ -5,7 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    {{--        <title>{{ config('app.name', 'Laravel') }}</title>--}}
+    <!--
+
+     -----------------------------------------------
+
+
+     Tento systém vytvořily:
+
+     -Dominik Frolík = vedoucí týmu a backend
+     -Viola Vrbová = sexy člen týmu a backend
+     -Kateřina Bartáková = databázová podpora
+     -Kateřina Zábranská = Zheskávající člen týmu celý náš systém ale i tým
+
+
+     -----------------------------------------------
+
+
+     -->
+
     <title>VRS - @yield('title')</title>
     <link rel="icon" href="{{ URL::asset('img/logo_icon_old3.png') }}">
 

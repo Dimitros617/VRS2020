@@ -24,6 +24,7 @@ use App\Models\ListUsers;
 App::setLocale('cs');
 
 Route::get('/', function () {    return view('welcome');});
+Route::get('/credentials', function () {    return view('credentials');});
 
 //Route::get('/dashboardNew', function () {    return view('dashboardNew');});
 

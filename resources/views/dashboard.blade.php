@@ -119,9 +119,7 @@
 
             {{--  Sekce pro ověřené uživatele a admin  --}}
             @if (Auth::permition()->possibility_renting == 1)
-                    <button class="alert-link border-bottom-Dash bg-white btn text-vrs-yellow align-content- text-center flex-fill rounded-0 paticka" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#moreInfo" aria-expanded="false"
-                            aria-controls="moreInfo">
+                    <button class="alert-link border-bottom-Dash bg-white btn text-vrs-yellow align-content- text-center flex-fill rounded-0 paticka" type="button" expand="0" onclick="if(this.getAttribute('expand')==0){document.getElementById('moreInfo').classList.add('show');this.setAttribute('expand','1')}else{document.getElementById('moreInfo').classList.remove('show');this.setAttribute('expand','0')}">
                         Více informací
                     </button>
                     <br>
