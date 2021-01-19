@@ -84,6 +84,14 @@ function returnLoan(ele, id){
                 },1000,ele, actualText);
             }
 
+        },
+        error: function (response){
+            ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = '<b>&#x2715;</b>';
+
+            setTimeout(function (ele){
+                //ele.getElementsByClassName('submit')[0].setAttribute("hidden","");
+                ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = "Chyba!";
+            },1000,ele);
         }
     });
 
