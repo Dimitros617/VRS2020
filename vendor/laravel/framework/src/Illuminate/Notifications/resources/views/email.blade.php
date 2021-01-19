@@ -4,9 +4,9 @@
 # {{ $greeting }}
 @else
 @if ($level === 'error')
-# @lang('Whoops!')
+# @lang('Jejda!')
 @else
-# @lang('Hello!')
+# @lang('Krásný den!')
 @endif
 @endif
 
@@ -43,8 +43,8 @@
 @if (! empty($salutation))
 {{ $salutation }}
 @else
-@lang('Regards'),<br>
-{{ config('app.name') }}
+@lang('S pozdravem'),<br>
+Výpůjční a rezervační systém
 @endif
 
 {{-- Subcopy --}}
