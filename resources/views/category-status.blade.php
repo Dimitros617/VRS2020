@@ -173,16 +173,14 @@
                         onclick="returnLoan(this, '{{$category->id}}')"
                         @endif
                     @else
-                        @if(Auth::permition()->return_verification == 1)
+
                             @if(Auth::permition()->return_verification == 1)
                             onclick="vrsNotify('Opravdu chcete potvrdit odevzdání?',returnLoan, this,'{{$category->id}}' ); return false"
                             @else
                             onclick="returnLoan(this, '{{$category->id}}')"
                             @endif
                         onmouseover="hoverChange(this,'status','Čekání na schválení','Potvrdit odevzdání','btn-warning','btn-success')"
-                        @else
-                        onmouseover="hoverChange(this,'status','Čekání na schválení','Zrušit odevzdání','btn-warning','btn-danger')"
-                        @endif
+
                     @endif
 
                 @endif>
