@@ -84,11 +84,7 @@ button#noOption {
     }
 
     #yesOption, #noOption {
-        width: 80%;
-    }
-
-    button#noOption {
-        width: 60vw;
+        width: 40vw;
     }
 
 }
