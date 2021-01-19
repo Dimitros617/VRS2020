@@ -270,7 +270,7 @@
                 @endif
 
                 @if(Auth::permition()->edit_permitions == 1)
-                    <x-jet-responsive-nav-link href="/all-loans">
+                    <x-jet-responsive-nav-link href="/permitions">
                         {{ __('Uživatelská oprávnění') }}
                     </x-jet-responsive-nav-link>
                 @endif
