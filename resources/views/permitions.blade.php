@@ -16,7 +16,7 @@
             @if(old('saveCheck'))
                 @if(old('saveCheck') == 1)
                     <div id="autoHide" class="alert-success">
-                        Změna proběhla úspěšně
+                        Role byla úspěšně vytvořena
                         @else
                             <div id="autoHide" class="alert-danger">
                                 Ups... Došlo k chybě při ukládání
@@ -30,12 +30,12 @@
 
                 @foreach($permitions as $permition)
 
-                <a class="list-group-item list-group-item-action list-name my-list-group-item" id="list-{{$permition->id}}" permitionId="{{$permition->id}}" data-toggle="list" role="tab" onclick="showPanel({{$permition->id}})">{{$permition->name}} <div class="float-end">{{$permition->count}}</div></a>
+                <a class="list-group-item list-group-item-action list-name my-list-group-item" id="list-{{$permition->id}}" permitionId="{{$permition->id}}" data-toggle="list" role="tab" onclick="showPanel({{$permition->id}})">{{$permition->name}} <div class="float-end roleCount" >{{$permition->count}}</div></a>
 
                 @endforeach
                     <form action="/addPermition" method="POST" id="addPermitionForm">
                         @csrf
-                <a type="submit" metod="POST" class="list-group-item list-group-item-action list-name my-list-group-item my-list-group-item-add" data-toggle="list" role="tab" onclick="document.getElementById('addPermitionForm').submit()">Přidat nové oprávnění +</a>
+                        <a type="submit" metod="POST" class="list-group-item list-group-item-action list-name my-list-group-item my-list-group-item-add" data-toggle="list" role="tab" onclick="this.getElementsByClassName('plus')[0].setAttribute('hidden','');this.getElementsByClassName('buttonLoading')[0].removeAttribute('hidden');  document.getElementById('addPermitionForm').submit()">Přidat novou roly <span class="plus">+</span> <div id="buttonLoading" class="spinner-grow buttonLoading spinner-grow-sm text-vrs-cyan" role="status" hidden></div></a>
                     </form>
 
             </div>
@@ -80,7 +80,7 @@
                     <div class="my_row">
                         <input type="text" id="edit_permitions{{$permition->id}}" name="permition" value="{{$permition->edit_permitions}}" hidden>
                         <input name="edit_permitions" type="checkbox" data-width="150"  data-toggle="toggle" data-onstyle="danger" data-on=" ANO " data-off=" NE " @if($permition->edit_permitions == 1) checked @endif onchange="changeSwitch(this, 'edit_permitions{{$permition->id}}')">
-                        <label for="edit_permitions">Správa ověření</label>
+                        <label for="edit_permitions">Správa oprávnění</label>
                     </div>
 
                     </form>
@@ -88,8 +88,8 @@
                     <div class="button-row">
                         <div class="buttonsDiv">
                             <div class="buttonsDivItem">
-                                <button type="submit button" class="buttonsDivItem submit btn btn-danger w-200p float-end p-2  w-10rem text-white" onclick="vrsNotify('Opravdu chcete oprávnění smazat?',removePermition, this,'{{$permition->id}}' ); return false">
-                                    <div id="buttonText">Smazat oprávnění</div>
+                                <button type="submit button" class="buttonsDivItem submit btn btn-danger w-200p float-end p-2  w-10rem text-white" onclick="vrsNotify('Opravdu chcete roly smazat?',removePermition, this,'{{$permition->id}}' ); return false">
+                                    <div id="buttonText">Smazat roly</div>
                                     <div id="buttonLoading" class="spinner-grow text-light" role="status" hidden></div>
                                 </button>
                             </div>

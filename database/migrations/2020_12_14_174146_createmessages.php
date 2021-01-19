@@ -17,7 +17,7 @@ class Createmessages extends Migration
 
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('from_user_id');
+            $table->unsignedBigInteger('from_user_id')->nullable();
             $table->string('messages',3000)->default('');
             $table->tinyInteger('priority',)->default('0');
 

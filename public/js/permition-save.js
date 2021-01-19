@@ -18,8 +18,23 @@ let a = $('#savePermitionData-' + id).serialize();
             ele.querySelectorAll("div[id='buttonLoading']")[0].setAttribute("hidden", "");
 
             if(response == "1"){
+
                 ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = '<b>&#10003;</b>';
+                let roleCount = document.getElementById("list-"+id).getElementsByClassName("roleCount")[0].cloneNode(true);
                 document.getElementById("list-"+id).innerHTML = document.getElementById("panel-" + id).getElementsByClassName("permition-name")[0].value;
+                document.getElementById("list-"+id).appendChild(roleCount);
+
+            }else if(response == "-1"){
+
+                vrsAlert('Nemůžete odebrat oprávnění "správa oprávění", alespoň jedna role, musí toto oprávnění mít přiřazené !' );
+                ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = '<b>&#x2715;</b>';
+                let input = document.getElementById("edit_permitions"+id).parentNode
+                let a = input.getElementsByClassName("toggle-off")[0].click();
+
+                let roleCount = document.getElementById("list-"+id).getElementsByClassName("roleCount")[0].cloneNode(true);
+                document.getElementById("list-"+id).innerHTML = document.getElementById("panel-" + id).getElementsByClassName("permition-name")[0].value;
+                document.getElementById("list-"+id).appendChild(roleCount);
+
             }else{
                 ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = '<b>&#x2715;</b>';
             }

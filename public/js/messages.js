@@ -103,7 +103,7 @@ function showMessages(){
 
                 let b = response[0];
                 let c = response[0]['messages'];
-                document.getElementById("messagesBox").appendChild(getMessageDiv(response[i]['nick'], response[i]['messages'], response[i]['priority'], response[i]['id']));
+                document.getElementById("messagesBox").appendChild(getMessageDiv(response[i]['nick']== null ? "Systém" : response[i]['nick'], response[i]['messages'], response[i]['priority'], response[i]['id']));
             }
         }
     });

@@ -49,6 +49,14 @@ class PermitionController extends Controller
         $permition->edit_permitions = $request->permition;
         $check = $permition->save();
 
+        $check_edit_permitions = DB::table('permition')->select('edit_permitions')->groupByRaw('edit_permitions')->get();
+        if(count($check_edit_permitions) == 1){
+            $permition = permition::find($request->id);
+            $permition->edit_permitions = 1;
+            $check2 = $permition->save();
+            return $check2 ? "-1" : "0";
+        }
+
         return $check ? "1" : "0";
 
     }

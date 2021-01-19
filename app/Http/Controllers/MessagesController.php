@@ -32,9 +32,9 @@ class MessagesController extends Controller
 
     function showAllMessages(){
 
-        Log::info('MessagesController:showAllMessages');;
+        Log::info('MessagesController:showAllMessages');
 
-        $data = DB::table('messages')->join('users', 'messages.from_user_id', '=', 'users.id')->select("users.nick","messages.messages","messages.priority","messages.id as id")->where('user_id', Auth::user()->id)->get();
+        $data = DB::table('messages')->leftJoin('users', 'messages.from_user_id', '=', 'users.id')->select("users.nick","messages.messages","messages.priority","messages.id as id")->where('user_id', Auth::user()->id)->get();
 
         return $data;
     }
