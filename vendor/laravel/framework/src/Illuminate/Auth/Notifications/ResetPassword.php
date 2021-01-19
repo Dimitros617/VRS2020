@@ -84,11 +84,11 @@ class ResetPassword extends Notification
     protected function buildMailMessage($url)
     {
         return (new MailMessage)
-            ->subject(Lang::get('Reset Password Notification'))
-            ->line(Lang::get('You are receiving this email because we received a password reset request for your account.'))
-            ->action(Lang::get('Reset Password'), $url)
-            ->line(Lang::get('This password reset link will expire in :count minutes.', ['count' => config('auth.passwords.'.config('auth.defaults.passwords').'.expire')]))
-            ->line(Lang::get('If you did not request a password reset, no further action is required.'));
+            ->subject(Lang::get('Obnovení hesla'))
+            ->line(Lang::get('Dostáváte tento e-mail, protože jsme obdrželi žádost o obnovu hesla pro váš účet ve Výpůjčním a rezervačním systému.'))
+            ->action(Lang::get('Obnovit heslo'), $url)
+            ->line(Lang::get('Tento odkaz na obnovu hesla vyprší za :count minut.', ['count' => config('auth.passwords.'.config('auth.defaults.passwords').'.expire')]))
+            ->line(Lang::get('Pokud jste nežádal o obnovu hesla, nic nedělejte.'));
     }
 
     /**

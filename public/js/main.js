@@ -113,6 +113,8 @@ function vrsNotify(text, fce) {
 
     let notify = document.createElement('div');
     notify.setAttribute('id','notify');
+    notify.setAttribute('class','hide');
+
     let informationArea = document.createElement('div');
     informationArea.setAttribute('id','informationArea');
 
@@ -142,9 +144,12 @@ function vrsNotify(text, fce) {
     noOption.classList.add('btn-success');
     noOption.innerHTML = "NE";
     noOption.onclick = function () {
-        let notificationModal = document.getElementById('notificationModal');
-        notificationModal.innerHTML = "";
-        notificationModal.setAttribute('hidden','true');
+        document.getElementById('notify').classList.add('hide');
+        setTimeout(() => {
+            let notificationModal = document.getElementById('notificationModal');
+            notificationModal.innerHTML = "";
+            notificationModal.setAttribute('hidden','true');
+        }, 100);
     }
 
     buttonArea.appendChild(yesOption);
@@ -154,14 +159,20 @@ function vrsNotify(text, fce) {
     notify.appendChild(foot);
     notificationModal.appendChild(notify);
     notificationModal.removeAttribute('hidden');
+    setTimeout(() => {
+        document.getElementById("notify").classList.remove("hide");
+    }, 100);
 
 }
 
 function yes(call_fce,call_arg){
-    let notificationModal = document.getElementById('notificationModal');
-    notificationModal.innerHTML = "";
-    notificationModal.setAttribute('hidden','true');
-    call_fce.apply(null, call_arg);
+    document.getElementById('notify').classList.add('hide');
+    setTimeout(() => {
+        let notificationModal = document.getElementById('notificationModal');
+        notificationModal.innerHTML = "";
+        notificationModal.setAttribute('hidden','true');
+        call_fce.apply(null, call_arg);
+    }, 100);
 }
 
 function vrsAlert(text) {
@@ -170,6 +181,8 @@ function vrsAlert(text) {
 
     let notify = document.createElement('div');
     notify.setAttribute('id','notify');
+    notify.setAttribute('class','hide');
+
     let informationArea = document.createElement('div');
     informationArea.setAttribute('id','informationArea');
 
@@ -188,9 +201,13 @@ function vrsAlert(text) {
     okOption.innerHTML = "OK";
 
     okOption.onclick = function () {
-        let notificationModal = document.getElementById('notificationModal');
-        notificationModal.innerHTML = "";
-        notificationModal.setAttribute('hidden','true');
+        document.getElementById('notify').classList.add('hide');
+        setTimeout(() => {
+            let notificationModal = document.getElementById('notificationModal');
+            notificationModal.innerHTML = "";
+            notificationModal.setAttribute('hidden','true');
+        }, 100);
+
     }
 
     buttonArea.appendChild(okOption);
@@ -199,5 +216,8 @@ function vrsAlert(text) {
     notify.appendChild(foot);
     notificationModal.appendChild(notify);
     notificationModal.removeAttribute('hidden');
+    setTimeout(() => {
+        document.getElementById("notify").classList.remove("hide");
+    }, 100);
 
 }

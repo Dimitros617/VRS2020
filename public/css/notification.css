@@ -9,6 +9,11 @@ div#notify {
     border-radius: 10px;
     box-shadow: 2px 2px 20px 0px #0000003d;
     border-bottom: 15px solid #fa9600;
+    transition-duration: 0.3s;
+}
+
+div#notify.hide {
+    margin-top: -105%;
 }
 
 div#informationArea {
