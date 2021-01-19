@@ -9,6 +9,8 @@
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
 
         <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/bootstrap/css/bootstrap.css') }}">
@@ -22,7 +24,7 @@
 
         <style>
             body {
-                font-family: 'Nunito';
+                font-family: 'Roboto', sans-serif;
             }
         </style>
     </head>
