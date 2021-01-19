@@ -57,9 +57,7 @@
 
                             <div class="align-content-center d-sm-flex rounded-4 overflow-hidden flex-flow-column flex-sm-flow-row mb-4">
 
-                                <button class="btn btn-warning align-content- text-center flex-fill rounded-0" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#waitingLoans" aria-expanded="false"
-                                        aria-controls="waitingLoans">
+                                <button class="btn btn-warning align-content- text-center flex-fill rounded-0" type="button" onclick="showCard('waitingLoans','show')">
 
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="iconSvg bi bi-clock"
                                          fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -71,8 +69,8 @@
                                     Čekající na schválení: {{count($waitingLoans)}}
                                 </button>
 
-                                <button class="btn btn-success flex-fill rounded-0 text-white" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#activeLoans" aria-expanded="false" aria-controls="activeLoans">
+                                <button class="btn btn-success flex-fill rounded-0 text-white" type="button" onclick="showCard('activeLoans','show')">
+
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class=" iconSvg bi bi-check-circle text-white"
                                          fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd"
@@ -84,9 +82,7 @@
                                     Všechny aktivní: {{count($activeLoans)}}
                                 </button>
 
-                                <button class="btn btn-danger flex-fill rounded-0" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#historyLoans" aria-expanded="false"
-                                        aria-controls="historyLoans">
+                                <button class="btn btn-danger flex-fill rounded-0" type="button" onclick="showCard('historyLoans','show')">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                          class="bi bi-hourglass-bottom iconSvg" viewBox="0 0 16 16">
                                         <path
@@ -100,7 +96,7 @@
 
 
 
-                            <div class="collapse" id="waitingLoans">
+                            <div class="collapse waitingLoans" id="waitingLoans">
 
 
                                     @php
@@ -283,11 +279,7 @@
 
 
         {{--    Copie codu jako předtím, poze se změní v foreachy pole ze kterého se načítají data--}}
-        <div class="collapse" id="activeLoans">
-            <div class="collapse pageTitle" id="waitingLoans">
-                Všechny aktivní
-            </div>
-
+        <div class="collapse activeLoans" id="activeLoans">
 
                 @php
                     $lastCategory = -1;
@@ -466,10 +458,7 @@
     </div> </div> </div>
 
     {{--  Historie výpůjček  --}}
-    <div class="collapse" id="historyLoans">
-        <div class="collapse pageTitle" id="activeLoans">
-            Historie výpůjček
-        </div>
+    <div class="collapse historyLoans" id="historyLoans">
 
 
             @php

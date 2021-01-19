@@ -68,6 +68,20 @@ function buttonLink(ele,text,url){
     });
 }
 
+function showCard(clss, setclss){
+
+    let elements = document.getElementsByClassName(setclss);
+    for (let i = 0; i < elements.length; i++){
+        elements[i].classList.remove(setclss);
+    }
+
+    elements = document.getElementsByClassName(clss);
+    for (let i = 0; i < elements.length; i++){
+        elements[i].classList.add(setclss);
+    }
+
+}
+
 function showButtonLoading(ele){
     ele.querySelectorAll("div[id='buttonText']")[0].setAttribute("hidden","");
     ele.querySelectorAll("div[id='buttonLoading']")[0].removeAttribute("hidden");
