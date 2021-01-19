@@ -164,21 +164,25 @@
                     @endif
                                     "
 
-                    @if($category->userId == Auth::user()->id || Auth::permition()->return_verification == 1)
-                        @if($category->status == 1)
-                        onmouseover="hoverChange(this,'status','Probíhá','Zrušit rezervaci','btn-success','btn-danger')"
-                        @else
+                @if($category->userId == Auth::user()->id || Auth::permition()->return_verification == 1)
+                    @if($category->status == 1)
+                    onmouseover="hoverChange(this,'status','Probíhá','Zrušit rezervaci','btn-success','btn-danger')"
                         @if(Auth::permition()->return_verification == 1)
+                        onclick="vrsNotify('Opravdu chcete zrušit rezervaci?',returnLoan, this,'{{$category->id}}' ); return false"
+                        @else
+                        onclick="returnLoan(this, '{{$category->id}}')"
+                        @endif
+                    @else
+                        @if(Auth::permition()->return_verification == 1)
+                            @if(Auth::permition()->return_verification == 1)
+                            onclick="vrsNotify('Opravdu chcete potvrdit odevzdání?',returnLoan, this,'{{$category->id}}' ); return false"
+                            @else
+                            onclick="returnLoan(this, '{{$category->id}}')"
+                            @endif
                         onmouseover="hoverChange(this,'status','Čekání na schválení','Potvrdit odevzdání','btn-warning','btn-success')"
                         @else
                         onmouseover="hoverChange(this,'status','Čekání na schválení','Zrušit odevzdání','btn-warning','btn-danger')"
                         @endif
-                    @endif
-
-                    @if(Auth::permition()->return_verification == 1)
-                    onclick="vrsNotify('Opravdu chcete zrušit rezervaci?',returnLoan, this,'{{$category->id}}' ); return false"
-                    @else
-                    onclick="returnLoan(this, '{{$category->id}}')"
                     @endif
 
                 @endif>
