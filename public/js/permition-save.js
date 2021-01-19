@@ -26,7 +26,7 @@ let a = $('#savePermitionData-' + id).serialize();
 
             }else if(response == "-1"){
 
-                vrsAlert('Nemůžete odebrat oprávnění "správa oprávění", alespoň jedna role, musí toto oprávnění mít přiřazené !' );
+                vrsAlert('Alespoň jedna role musí mít možnost "Správy oprávnění"!' );
                 ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = '<b>&#x2715;</b>';
                 let input = document.getElementById("edit_permitions"+id).parentNode
                 let a = input.getElementsByClassName("toggle-off")[0].click();

@@ -13,8 +13,13 @@
         </div>
 
         @php
-            $data = Illuminate\Support\Facades\DB::table('loans')->where('user',Auth::user()->id)->get();
-            $dataC = count($data);
+            try {
+                    $data = Illuminate\Support\Facades\DB::table('loans')->where('user',Auth::user()->id)->get();
+                    $dataC = count($data);
+
+                } catch (\Throwable $e) {
+                                            $dataC = 0;
+                                        }
         @endphp
 
         @if($dataC != 0)
