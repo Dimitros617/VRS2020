@@ -35,7 +35,7 @@
                 @endforeach
                     <form action="/addPermition" method="POST" id="addPermitionForm">
                         @csrf
-                        <a type="submit" metod="POST" class="list-group-item list-group-item-action list-name my-list-group-item my-list-group-item-add" data-toggle="list" role="tab" onclick="this.getElementsByClassName('plus')[0].setAttribute('hidden','');this.getElementsByClassName('buttonLoading')[0].removeAttribute('hidden');  document.getElementById('addPermitionForm').submit()">Přidat novou roly <span class="plus">+</span> <div id="buttonLoading" class="spinner-grow buttonLoading spinner-grow-sm text-vrs-cyan" role="status" hidden></div></a>
+                        <a type="submit" metod="POST" class="list-group-item list-group-item-action list-name my-list-group-item my-list-group-item-add" data-toggle="list" role="tab" onclick="this.getElementsByClassName('plus')[0].setAttribute('hidden','');this.getElementsByClassName('buttonLoading')[0].removeAttribute('hidden');  document.getElementById('addPermitionForm').submit()">Přidat novou roli <span class="plus">+</span> <div id="buttonLoading" class="spinner-grow buttonLoading spinner-grow-sm text-vrs-cyan" role="status" hidden></div></a>
                     </form>
 
             </div>
@@ -88,8 +88,8 @@
                     <div class="button-row">
                         <div class="buttonsDiv">
                             <div class="buttonsDivItem">
-                                <button type="submit button" class="buttonsDivItem submit btn btn-danger w-200p float-end p-2  w-10rem text-white" onclick="vrsNotify('Opravdu chcete roly smazat?',removePermition, this,'{{$permition->id}}' ); return false">
-                                    <div id="buttonText">Smazat roly</div>
+                                <button type="submit button" class="buttonsDivItem submit btn btn-danger w-200p float-end p-2  w-10rem text-white" onclick="vrsNotify('Opravdu chcete roli smazat?',removePermition, this,'{{$permition->id}}' ); return false">
+                                    <div id="buttonText">Smazat roli</div>
                                     <div id="buttonLoading" class="spinner-grow text-light" role="status" hidden></div>
                                 </button>
                             </div>

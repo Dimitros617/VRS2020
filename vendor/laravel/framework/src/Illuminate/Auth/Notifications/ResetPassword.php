@@ -85,7 +85,7 @@ class ResetPassword extends Notification
     {
         return (new MailMessage)
             ->subject(Lang::get('Obnovení hesla'))
-            ->line(Lang::get('Dostáváte tento e-mail, protože jsme obdrželi žádost o obnovu hesla pro váš účet ve Výpůjčním a rezervačním systému.'))
+            ->line(Lang::get('Tento e-mail vám přišel, protože jsme obdrželi žádost o obnovu hesla pro váš účet ve Výpůjčním a rezervačním systému.'))
             ->action(Lang::get('Obnovit heslo'), $url)
             ->line(Lang::get('Tento odkaz na obnovu hesla vyprší za :count minut.', ['count' => config('auth.passwords.'.config('auth.defaults.passwords').'.expire')]))
             ->line(Lang::get('Pokud jste nežádal o obnovu hesla, nic nedělejte.'));

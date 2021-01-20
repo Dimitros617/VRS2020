@@ -51,7 +51,7 @@ Výpůjční a rezervační systém
 @isset($actionText)
 @slot('subcopy')
 @lang(
-    "Pokud máte potíže s \":actionText\" tlačítkem, zkopírujte a vložte následují adresu\n".
+    "Pokud máte potíže s \":actionText\" tlačítkem, zkopírujte a vložte následující adresu\n".
     'do svého prohlížeče:',
     [
         'actionText' => $actionText,
