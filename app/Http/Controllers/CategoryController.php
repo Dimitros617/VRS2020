@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\categories;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Foundation\Exceptions;
+
 
 
 
@@ -20,12 +22,17 @@ class CategoryController extends Controller
 
         echo "<script>console.log('Debug Objects: CategoryController' );</script>";
         Log::info('CategoryControler:showCategories');
+        if(Auth::permition()->return_verification == 1 || Auth::permition()->possibility_renting == 1 || Auth::permition()->edit_item == 1) {
 
-        $data = DB::table('categories')->leftJoin('items', 'categories.id', '=', 'items.categories')->select('categories.id','categories.name', 'categories.description', 'items.availability', DB::raw('COUNT(items.categories) as count'))->groupByRaw('categories.name, categories.description, items.availability, categories.id')->get();
-        $permition = DB::table('users')->join('permition', 'users.permition', '=', 'permition.id')->where('users.id', Auth::id())->select('permition.edit_item', 'permition.possibility_renting')->get();
+            $data = DB::table('categories')->leftJoin('items', 'categories.id', '=', 'items.categories')->select('categories.id', 'categories.name', 'categories.description', 'items.availability', DB::raw('COUNT(items.categories) as count'))->groupByRaw('categories.name, categories.description, items.availability, categories.id')->get();
+            $permition = DB::table('users')->join('permition', 'users.permition', '=', 'permition.id')->where('users.id', Auth::id())->select('permition.edit_item', 'permition.possibility_renting')->get();
 
-        //return $data    ;
-        return view('categories', ['categories' => $data, 'permition' => $permition]);
+            //return $data    ;
+            return view('categories', ['categories' => $data, 'permition' => $permition]);
+        }
+        else{
+            return "0"; //sem dát view 403.blade
+        }
 
 
     }

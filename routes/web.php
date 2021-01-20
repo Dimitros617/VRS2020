@@ -37,7 +37,7 @@ Route::middleware(['auth:sanctum', 'verified', 'permition:return_verification'])
 Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting'])->get('/item/{id:id}/activeLoans', [LoansController::class,'showItemLoans']);
 Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting'])->get('/categories/{id:id}/activeLoans', [LoansController::class,'showCategoryLoans']);
 
-Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting'])->get('/categories', [CategoryController::class,'showCategories']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/categories', [CategoryController::class,'showCategories']);
 Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting'])->get('/categories/{name:name}', [CategoryController::class,'showItem']) ->name('item');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/users', [ListUsersController::class,'showAllUsers']);
