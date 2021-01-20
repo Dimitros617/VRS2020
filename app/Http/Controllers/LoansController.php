@@ -33,7 +33,7 @@ class LoansController extends Controller
         $activeLoans = DB::table('loans')->Join('users', 'loans.user', '=', 'users.id')->Join('items', 'loans.item', '=', 'items.id')->Join('categories', 'items.categories', '=', 'categories.id')->orderBy('categories.name', 'asc')->orderBy('items.id', 'asc')->select('users.id as userId', 'users.name as userName', 'users.surname as userSurname',  'categories.id as categoryId', 'categories.name as categoryName',  'items.id as itemId', 'items.name as itemName', 'items.note', 'items.place' ,'items.inventory_number' , 'loans.id', 'loans.rent_from', 'loans.rent_to', 'loans.status')->where('loans.status', 1)->get();
         $historyLoans = DB::table('loans_histories')->orderBy('name', 'asc')->orderBy('id', 'asc')->select('userId', 'name as userName', 'surname as userSurname',  'categoryId as categoryId', 'categories as categoryName',  'itemId as itemId', 'item as itemName', 'note', 'place' ,'inventory_number' , 'rent_from', 'rent_to', 'created')->get();
 
-        //        return $waitingLoans;
+        //return $waitingLoans;
         return view('all-loans', ['waitingLoans' => $waitingLoans, 'activeLoans' => $activeLoans, 'historyLoans' => $historyLoans]);
 
     }
@@ -60,6 +60,13 @@ class LoansController extends Controller
         $check = 0;
         foreach ($arr as $loan){
             $loanBackup = $activeLoans = DB::table('loans')->Join('users', 'loans.user', '=', 'users.id')->Join('items', 'loans.item', '=', 'items.id')->Join('categories', 'items.categories', '=', 'categories.id')->orderBy('categories.name', 'asc')->orderBy('items.id', 'asc')->select('users.id as userId', 'users.nick as userNick', 'users.name as userName', 'users.surname as userSurname','users.phone as userPhone', 'users.email as userEmail',  'categories.id as categoryId', 'categories.name as categoryName',  'items.id as itemId', 'items.name as itemName', 'items.note', 'items.place' ,'items.inventory_number' , 'loans.id', 'loans.rent_from', 'loans.rent_to', 'loans.status')->where('loans.id', "=", $loan->id)->get();
+
+            $mess = new MessagesController;
+            if($loanBackup[0]->status == 1){
+                $mess->sendMessage($loanBackup[0]->userNick,"Vaše rezervace položky " . $loanBackup[0]->itemName . " z kategorie " . $loanBackup[0]->categoryName . ", kterou jste měl rezervovanou od " . $loanBackup[0]->rent_from . " do " . $loanBackup[0]->rent_to . ", byla zrušena administrátorem.", false);
+            }else{
+                $mess->sendMessage($loanBackup[0]->userNick,"Váš požadavek o vrácení položky " . $loanBackup[0]->itemName . " z kategorie " . $loanBackup[0]->categoryName . ", kterou jste měl rezervovanou od " . $loanBackup[0]->rent_from . " do " . $loanBackup[0]->rent_to . ", byl schválen administrátorem.", false);
+            }
 
 //            ('users.id as userId', 'users.nick as userNick', 'users.name as userName', 'users.surname as userSurname','users.phone as userPhone', 'users.email as userEmail',  'categories.id as categoryId', 'categories.name as categoryName',  'items.id as itemId', 'items.name as itemName', 'items.note', 'items.place' ,'items.inventory_number' , 'loans.id', 'loans.rent_from', 'loans.rent_to', 'loans.status')
             $loanHistory = new loans_histories;

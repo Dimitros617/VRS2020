@@ -61,7 +61,7 @@ class MessagesController extends Controller
         return;
     }
 
-    function sendMessage($nick, $text){
+    function sendMessage($nick, $text, $from = true){
 
         Log::info('MessagesController:removeMessage');
 
@@ -69,7 +69,7 @@ class MessagesController extends Controller
 
         $message = new messages();
         $message->user_id = DB::table('users')->where('nick', $nick)->get()[0]->id;
-        $message->from_user_id = Auth::user()->id;
+        $message->from_user_id = $from ? Auth::user()->id : null;
         $message->messages = $text;;
         $message->priority = 0;
         $message->save();

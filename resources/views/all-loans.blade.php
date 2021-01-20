@@ -110,8 +110,9 @@
 
                         @foreach($waitingLoans as $loan)
 
+{{--                            aktuální kategorie není stejná jako poslední--}}
                             @if($loan->categoryId != $lastCategory) {{-- Začátek Divu kategorie--}}
-                                @if($lastCategory != -1)
+                                @if($lastCategory != -1)  {{-- Poslední kategorie není -1 pro první záznam--}}
                                     </div></div>
                                 @endif
                                 <div class="categoryDiv" categoryID="{{$loan->categoryId}}">
@@ -120,35 +121,37 @@
                             @endif
 
 
-                            @if($loan->itemId != $lastItem) {{-- Začátek Divu Itemu--}}
-                            @if($lastItem != -1 && $loan->categoryId == $lastCategory)
-                        </div>
+                        @if($loan->itemId != $lastItem) {{-- Začátek Divu Itemu--}}
+
+                                @if($lastItem != -1 && $lastCategory != -1 && $loan->categoryId != $lastCategory)
+                                    </div>
+                                @endif
+
+                                <div class="itemDiv">
+                                <label class="title font-weight-bold" for="itemName">Název: </label>
+                                <div class="itemName">{{$loan->itemName}}</div>
+
+                                @if($loan->note != "")
+                                    <label class="title font-weight-bold" for="itemNote">Poznámka: </label>
+                                    <div class="itemNote">{{$loan->note}}</div>
+                                @endif
+
+                                @if($loan->place != "")
+                                    <label class="title font-weight-bold" for="itemPlace">Místo: </label>
+                                    <div class="itemPlace">{{$loan->place}}</div>
+                                @endif
+
+                                @if($loan->inventory_number != "")
+                                    <label class="title font-weight-bold" for="itemInventory_number">Inventární číslo: </label>
+                                    <div class="itemInventory_number">{{$loan->inventory_number}}</div>
+                                @endif
                         @endif
-                        <div class="itemDiv">
-                            <label class="title font-weight-bold" for="itemName">Název: </label>
-                            <div class="itemName">{{$loan->itemName}}</div>
 
-                            @if($loan->note != "")
-                                <label class="title font-weight-bold" for="itemNote">Poznámka: </label>
-                                <div class="itemNote">{{$loan->note}}</div>
-                            @endif
-
-                            @if($loan->place != "")
-                                <label class="title font-weight-bold" for="itemPlace">Místo: </label>
-                                <div class="itemPlace">{{$loan->place}}</div>
-                            @endif
-
-                            @if($loan->inventory_number != "")
-                                <label class="title font-weight-bold" for="itemInventory_number">Inventární číslo: </label>
-                                <div class="itemInventory_number">{{$loan->inventory_number}}</div>
-                            @endif
-                            @endif
-
-                            <form action="{{'/loans/' . $loan->id .'/return'}}" method="POST"
+                    <form action="{{'/loans/' . $loan->id .'/return'}}" method="POST"
                                   class="loanRecordBox loan">
                                 @csrf
 
-                                <div class="icon"
+                        <div class="icon"
                             @php
                                 $start = strtotime($loan->rent_from);
                                 $end = strtotime($loan->rent_to);
@@ -185,8 +188,6 @@
                                 }
 
                             @endphp
-
-
                         </div>
 
 
@@ -209,8 +210,7 @@
                                value="{{$loan->id}}">
                         </div>
 
-
-                                <div class="submitButtonDiv">
+                        <div class="submitButtonDiv">
                                     <button type="button"  class="btn submitButton
                                 @if($loan->status == 1)
                                         btn-success
@@ -267,16 +267,16 @@
                                     </button>
                                 </div>
 
-                        </form>
+                    </form>
                         @php
                             $lastCategory = $loan->categoryId;
                             $lastItem = $loan->itemId;
                         @endphp
 
 
-</div></div>
-                        @endforeach
 
+                        @endforeach
+        </div></div>
 
         </div>
 
