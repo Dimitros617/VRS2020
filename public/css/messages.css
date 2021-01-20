@@ -39,7 +39,7 @@ img.notificationSVG {
 #messagesBox{
     /*overflow: scroll;*/
     overflow-x: hidden;
-    height: 75%;
+    height: 30vw;
     padding-right: 15px;
 }
 
