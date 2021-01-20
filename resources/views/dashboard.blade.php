@@ -22,17 +22,17 @@
                             </a>
                         </div>
 
-                        <div class="buttonsDivItem">
-                            <a @if(Auth::permition()->new_user == 1) href="/all-loans" @else href="/loans" @endif>
-                                <button class="buttonsDivItem btn btn-warning justify-content-center text-center  rounded-0" type="button">
-                                    @if (Auth::permition()->new_user == 1)
-                                        Čekající na schválení: {{ $schvaleni_pocet }}
-                                    @else
-                                        Čekající na vrácení: {{ $vraceni_pocet }}
-                                    @endif
-                                </button>
-                            </a>
-                        </div>
+                            <div class="buttonsDivItem">
+                                <a @if(Auth::permition()->return_verification == 1) href="/all-loans" @else href="/loans" @endif>
+                                    <button class="buttonsDivItem btn btn-warning justify-content-center text-center  rounded-0" type="button">
+                                        @if (Auth::permition()->return_verification == 1)
+                                            Čekající na schválení: {{ $schvaleni_pocet }}
+                                        @else
+                                            Čekající na vrácení: {{ $vraceni_pocet }}
+                                        @endif
+                                    </button>
+                                </a>
+                            </div>
 
                         <div class="buttonsDivItem">
                             <a href="/loans">
@@ -129,7 +129,7 @@
                             <br>
                             <ul style="list-style-type:circle">
                                 <li>Každého jednotlivého uživatele snadno kontaktujete v rámci systému přes tlačítko "Poslat zprávu". Pokud se jedná o vážnější problém, využijte e-mail, který je u každého uživatele uveden.</li>
-                                @if(Auth::permition()->return_verification == 1 OR Auth::permition()->possibility_renting == 1 OR Auth::permition()->Auth::permition()->edit_item == 1)
+                                @if(Auth::permition()->return_verification == 1 || Auth::permition()->possibility_renting == 1 || Auth::permition()->edit_item == 1)
                                     <li>Pod tlačítkem "Závazky uživatele" vidíte, jaké předměty má uživatel právě půjčené či zarezervované.
                                          @if(Auth::permition()->return_verification == 1)
                                             <ul style="list-style-type:disc">
@@ -149,7 +149,7 @@
                                 </li>
                                 @endif
                             </ul>
-                            @if(Auth::permition()->new_user == 1 OR Auth::permition()->return_verification == 1)Pro řešení vážnějšího problému využívejte jeho e-mail, zprávy v systému slouží spíše pro upozornění.
+                            @if(Auth::permition()->new_user == 1 || Auth::permition()->return_verification == 1)Pro řešení vážnějšího problému využívejte jeho e-mail, zprávy v systému slouží spíše pro upozornění.
                                 @if(Auth::permition()->new_user == 1) Pro akutní problémy využijte telefonní číslo. @endif @endif
                             <br>
                             Příchozí zprávy vidíte po kliku na obálku. Číslo u ní říká počet nepřečtených zpráv. I zde můžete po překliku na "Nová zpráva" poslat zprávu uživateli, stačí zadat jeho přezdívku. Je zde k dispozici i našeptávač.
@@ -190,7 +190,7 @@
                                         </ul>
                                     </li>
                                 </ul>
-                                @if(Auth::permition()->return_verification == 1 || Auth::permition()->possibility_renting == 1 || Auth::permition()->Auth::permition()->edit_item == 1)
+                                @if(Auth::permition()->return_verification == 1 || Auth::permition()->possibility_renting == 1 || Auth::permition()->edit_item == 1)
                                     Podobně, jako vypadá tato stránka, vypadají souhrny výpůjček ("Aktuální závazky" či "Závazky uživatele") u jednotlivých uživatelů i jednotlivých kategorií a položek. U nich však vidíte i možnost "Čekání na schválení".
                                     @if(Auth::permition()->return_verification == 1)
                                         Ta se po přejetí a kliknutí změní na "Potvrdit odevzdání". Tím přijmete buďto zrušení rezervace nebo vrácení předmětu. Přijímejte vrácení předmětu až ve chvíli, kdy jste si jisti,
