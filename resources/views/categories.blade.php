@@ -127,7 +127,7 @@
                                     </button>
                                 </div>
                                @endif
-                               @if(Auth::permition()->possibility_renting == 1)
+                               @if(Auth::permition()->return_verification == 1 || Auth::permition()->possibility_renting == 1 || Auth::permition()->edit_item == 1)
                                 {{--   Form protože nemuže být a v a--}}
                                 <form action="{{'/categories/' . $categories[$i]->id .'/activeLoans'}}"
                                       class=" p-0 buttonsDivItem">

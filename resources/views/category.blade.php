@@ -216,7 +216,7 @@
                                                     </div>
                                                 @endif
 
-                                                @if( $permition[0]->possibility_renting == 1)
+                                                @if(Auth::permition()->return_verification == 1 || Auth::permition()->possibility_renting == 1 || Auth::permition()->edit_item == 1)
                                                     <form action="{{'/item/' . $item->id . '/activeLoans'}}"  class="buttonsDivItem">
                                                         <button type="submit button" class="btn btn-warning w-200p buttonsDivItem" onclick="showButtonLoading(this)">
                                                             <div id="buttonText">Aktuální závazky</div>

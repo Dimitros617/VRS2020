@@ -38,6 +38,7 @@
                             </div>
                     @endif
 
+                    @if(Auth::permition()->possibility_renting == 1)
                         <div class="buttonsDivItem">
                             <a href="/loans">
                                 <button class="buttonsDivItem btn btn-success  rounded-0" type="button">
@@ -45,6 +46,7 @@
                                 </button>
                             </a>
                         </div>
+                    @endif
 
 
 
@@ -103,7 +105,7 @@
                 <h2 class="nadpisyDash">Proč si nemohu nic půjčit?</h2>
                 <div class="">
                     <ul style="list-style-type:circle">
-                        <li>S největší pravděpodobností jste nový uživatel peVýpůjčního a rezervačního systému. Musíte počkat, než vás schválí a ověří administrátor.</li>
+                        <li>S největší pravděpodobností jste nový uživatel Výpůjčního a rezervačního systému. Musíte počkat, než vás schválí a ověří administrátor.</li>
                         <li><b>Pokud vás již dříve někdo schválil a nyní se vám neobjevuje záložka "Nová výpůjčka", bylo vám právo půjčovat si věci odebráno - ať již z důvodu nevrácení výpůjčky včas či jiných problémů.
                                 Pro více informací se zeptejte správce systému, který má na starosti ověřování uživatelů. Můžete jej vyhledat v "Seznamu uživatelů" a zaslat mu zde krátké připomenutí, doporučujeme však za ním pokud možno zajít osobně a řešit to více oficiálně, abyste zjistili, co nastalo za problém a jak se mu příště vyvarovat.</b></li>
                     </ul>

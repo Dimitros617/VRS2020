@@ -72,7 +72,7 @@
                             <button class="btn btn-primary w-200p buttonsDivItem" onclick="prefixNewMessage('{{$user -> userNick}}') ">Poslat zprávu</button>
                                     </a>
                             @endif
-                            @if(Auth::permition()->possibility_renting == 1)
+                            @if(Auth::permition()->return_verification == 1 || Auth::permition()->possibility_renting == 1 || Auth::permition()->edit_item == 1)
                                     <a href="{{url()->current().'/'.$user -> userId.'/loans'}}" class="p-0 buttonsDivItem">
                                         <button class="btn btn-warning w-200p buttonsDivItem">Závazky uživatele</button>
                                     </a>

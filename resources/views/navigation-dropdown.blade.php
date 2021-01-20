@@ -97,11 +97,7 @@
                         {{--                        </div>--}}
 
                         <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                            @if(Auth::permition()->new_user == 1)
-                                {{ __('Nastavení profilu') }}
-                            @else
                                 {{ __('Nastavení') }}
-                            @endif
                         </x-jet-dropdown-link>
 
                         {{--                        Přidané položkdy do menu a pozor musí se upravit 2x i pro mobilní verzi níže--}}
@@ -240,11 +236,7 @@
                 <!-- Account Management -->
                 <x-jet-responsive-nav-link href="{{ route('profile.show') }}"
                                            :active="request()->routeIs('profile.show')">
-                    @if(Auth::permition()->new_user == 1)
-                        {{ __('Nastavení profilu') }}
-                    @else
                         {{ __('Nastavení') }}
-                    @endif
                 </x-jet-responsive-nav-link>
 
                 {{--                Přidané položkdy do menu a pozor musí se upravit 2x i pro mobilní verzi níže--}}
