@@ -62,7 +62,7 @@
                     <div class="my_row">
                         <input type="text" id="new_user{{$permition->id}}" name="user" value="{{$permition->new_user}}" hidden>
                         <input name="new_user" type="checkbox" data-width="150"  data-toggle="toggle" data-onstyle="danger" data-on=" ANO " data-off=" NE " @if($permition->new_user == 1) checked @endif onchange="changeSwitch(this, 'new_user{{$permition->id}}')">
-                        <label for="new_user">Schvalování nových uživatelů</label>
+                        <label for="new_user">Správa uživatelů</label>
                     </div>
 
                     <div class="my_row">
