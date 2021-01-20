@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\items;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
 
@@ -15,6 +16,11 @@ class ItemsController extends Controller
     function addNewItem(Request $request)
     {
         Log::info('ItemsController:addNewItem');
+
+        if(Auth::permition()->edit_item != 1){
+            abort(403);
+            return "0";
+        }
 
         $item = new items;
         $item->name = "Nepojmenováno";
@@ -28,6 +34,10 @@ class ItemsController extends Controller
     function saveItem(Request $request)
     {
         Log::info('ItemsController:saveItem');
+
+        if(Auth::permiton()->edit_items != 1){
+            return "0";
+        }
 
         $item = items::find($request->itemId);
         $item->name = is_null($request->name) ? "": $request->name;
@@ -44,6 +54,11 @@ class ItemsController extends Controller
     {
         Log::info('ItemsController:changeItemAvailability');
 
+        if(Auth::permition()->edit_item != 1){
+            abort(403);
+            return array("return" => "0", "availability" => "1");
+        }
+
         $item = items::find($request->id);
         $item->availability = (($request->availability + 1) % 2);
         $check = $item->save();
@@ -56,6 +71,11 @@ class ItemsController extends Controller
     function removeItem(Request $request)
     {
         Log::info('ItemsController:removeItem' . $request->id);
+
+        if(Auth::permition()->edit_item != 1){
+            abort(403);
+            return "0";
+        }
 
         $loans = DB::table('loans')->where('item', $request->id)->count();
 
@@ -77,6 +97,11 @@ class ItemsController extends Controller
     function removeItemHard(Request $request)
     {
         Log::info('ItemsController:removeItemHard');
+
+        if(Auth::permition()->edit_item != 1){
+            abort(403);
+            return;
+        }
 
         $item = DB::table('items')->join('categories', 'items.categories', '=', 'categories.id')->where('items.id', $request->itemId)->select('categories.name')->get();
 

@@ -24,6 +24,11 @@ class PermitionController extends Controller
 
         Log::info('PermitionController:addPermition');
 
+        if(Auth::permition()->edit_permitions != 1){
+            abort(403);
+            return;
+        }
+
         $permition = new permition;
         $permition->name = 'Nové oprávnění';
         $permition->possibility_renting = 0;
@@ -39,6 +44,11 @@ class PermitionController extends Controller
     function savePermitionData(Request $request){
 
         Log::info('PermitionController:savePermitionData');
+
+        if(Auth::permition()->edit_permitions != 1){
+            abort(403);
+            return "0";
+        }
 
         $permition = permition::find($request->id);
         $permition->name = $request->name;
@@ -64,6 +74,11 @@ class PermitionController extends Controller
     function removePermition(Request $request){
 
         Log::info('PermitionController:removePermition');
+
+        if(Auth::permition()->edit_permitions != 1){
+            abort(403);
+            return;
+        }
 
         $data = DB::table('users')->where('permition',$request->id)->get();
         $dataC = count($data);

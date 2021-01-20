@@ -34,11 +34,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [DashboardCon
 Route::middleware(['auth:sanctum', 'verified'])->get('/loans',[LoansController::class,'showLoans'])->name('loans');
 Route::middleware(['auth:sanctum', 'verified', 'permition:return_verification'])->get('/all-loans',[LoansController::class,'showAllLoans']);
 
-Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting'])->get('/item/{id:id}/activeLoans', [LoansController::class,'showItemLoans']);
-Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting'])->get('/categories/{id:id}/activeLoans', [LoansController::class,'showCategoryLoans']);
+Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting,return_verification,edit_item,OR'])->get('/item/{id:id}/activeLoans', [LoansController::class,'showItemLoans']);
+Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting,return_verification,edit_item,OR'])->get('/categories/{id:id}/activeLoans', [LoansController::class,'showCategoryLoans']);
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/categories', [CategoryController::class,'showCategories']);
-Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting'])->get('/categories/{name:name}', [CategoryController::class,'showItem']) ->name('item');
+Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting,return_verification,edit_item,OR'])->get('/categories', [CategoryController::class,'showCategories']);
+Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting,return_verification,edit_item,OR'])->get('/categories/{name:name}', [CategoryController::class,'showItem']) ->name('item');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/users', [ListUsersController::class,'showAllUsers']);
 Route::middleware(['auth:sanctum', 'verified', 'permition:new_user'])->get('/users/{id:id}', [ListUsersController::class,'showUser']);
@@ -81,8 +81,6 @@ Route::get('/categories/itemsSort/{sort?}', [ItemsController::class,'itemsSort']
 
 
 //Vůpůjčky
-//Route::post('/item/{id:id}/activeLoans', [LoansController::class,'showItemLoans']);
-//Route::post('/categories/{id:id}/activeLoans', [LoansController::class,'showCategoryLoans']);
 Route::post('/item/{id:id}/saveItemLoansData', [LoansController::class,'saveItemLoans']);
 Route::get('/loans/{id:id}/return', [LoansController::class,'itemLoansReturn']);
 
