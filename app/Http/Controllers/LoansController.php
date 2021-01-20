@@ -63,9 +63,9 @@ class LoansController extends Controller
 
             $mess = new MessagesController;
             if($loanBackup[0]->status == 1){
-                $mess->sendMessage($loanBackup[0]->userNick,"Vaše rezervace položky " . $loanBackup[0]->itemName . " z kategorie " . $loanBackup[0]->categoryName . ", kterou jste měl rezervovanou od " . $loanBackup[0]->rent_from . " do " . $loanBackup[0]->rent_to . ", byla zrušena administrátorem.", false);
+                $mess->sendMessage($loanBackup[0]->userNick,"Vaše rezervace položky " . $loanBackup[0]->itemName . " z kategorie " . $loanBackup[0]->categoryName . ", která byla zapsaná od " . date("d. m. Y", strtotime($loanBackup[0]->rent_from)) . " do " . date("d. m. Y", strtotime($loanBackup[0]->rent_to)) . ", byla zrušena administrátorem.", false);
             }else{
-                $mess->sendMessage($loanBackup[0]->userNick,"Váš požadavek o vrácení položky " . $loanBackup[0]->itemName . " z kategorie " . $loanBackup[0]->categoryName . ", kterou jste měl rezervovanou od " . $loanBackup[0]->rent_from . " do " . $loanBackup[0]->rent_to . ", byl schválen administrátorem.", false);
+                $mess->sendMessage($loanBackup[0]->userNick,"Váš požadavek o vrácení položky " . $loanBackup[0]->itemName . " z kategorie " . $loanBackup[0]->categoryName . ", která byla rezervována od " . date("d. m. Y", strtotime($loanBackup[0]->rent_from)) . " do " . date("d. m. Y", strtotime($loanBackup[0]->rent_to)) . ", byl schválen administrátorem.", false);
             }
 
 //            ('users.id as userId', 'users.nick as userNick', 'users.name as userName', 'users.surname as userSurname','users.phone as userPhone', 'users.email as userEmail',  'categories.id as categoryId', 'categories.name as categoryName',  'items.id as itemId', 'items.name as itemName', 'items.note', 'items.place' ,'items.inventory_number' , 'loans.id', 'loans.rent_from', 'loans.rent_to', 'loans.status')
