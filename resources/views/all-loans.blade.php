@@ -276,7 +276,11 @@
 
 
                         @endforeach
+
+                        @if(count($waitingLoans)!=0)
         </div></div>
+                        @endif
+
 
         </div>
 
@@ -462,7 +466,10 @@
         @endforeach
 
 
-    </div> </div> </div>
+    @if(count($activeLoans)!=0)
+        </div></div>
+        @endif
+        </div>
 
     {{--  Historie výpůjček  --}}
     <div class="collapse historyLoans" id="historyLoans">
@@ -551,8 +558,10 @@
     @endforeach
 
 
-    </div>
-    </div>
+
+        @if(count($historyLoans)!=0)
+            </div></div>
+        @endif
 
 
     @if(count($historyLoans)!=0)
@@ -563,9 +572,9 @@
         </button>
     @endif
 
-
-
     </div>
+
+
 
 
 </x-app-layout>

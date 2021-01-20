@@ -67,10 +67,16 @@ class MessagesController extends Controller
 
         $this->checkUserDataPermition($nick, $text);
 
+        $text = str_replace("©-", ">", $text);
+        $text = str_replace("-©", "<", $text);
+        $text = str_replace("©©", "/", $text);
+
+        Log::info('Message after: ' . $text);
+
         $message = new messages();
         $message->user_id = DB::table('users')->where('nick', $nick)->get()[0]->id;
         $message->from_user_id = $from ? Auth::user()->id : null;
-        $message->messages = $text;;
+        $message->messages = $text;
         $message->priority = 0;
         $message->save();
 
