@@ -46,10 +46,17 @@ function loanFind(){
 
             for (let k = 0; k < loans.length ; k++){
 
-                let user_name =  loans[k].getElementsByClassName("userName").length != 0 ? loans[k].getElementsByClassName("userName")[0].innerHTML.toLowerCase(): "";
-                let user_surname = loans[k].getElementsByClassName("userSurname").length != 0 ? loans[k].getElementsByClassName("userSurname")[0].innerHTML.toLowerCase() : "";
 
-                if(user_name.includes(find_value) || user_surname.includes(find_value) || (user_name + " " + user_surname).includes(find_value) ){
+                let user_name =  loans[k].getElementsByClassName("userNameLabel").length != 0 ? loans[k].getElementsByClassName("userNameLabel")[0].innerHTML.toLowerCase(): "";
+
+                let from = loans[k].getElementsByClassName("rent_from")[0].innerHTML.toLowerCase().split(". ");
+                let to = loans[k].getElementsByClassName("rent_to")[0].innerHTML.toLowerCase().split(". ");
+
+                from = new Date(from[2] + "-" + from[1] + "-" + from[0]);
+                to = new Date(to[2] + "-" + to[1] + "-" + to[0]);
+
+
+                if(user_name.includes(find_value) || checkDateCommand(from, to, find_value) ){
                     loans_count++;
                 }else{
                     loans[k].classList.add("vrs-d-none");
@@ -70,6 +77,59 @@ function loanFind(){
         }
 
     }
+
+}
+
+
+function checkDateCommand(from, to, find_value){
+
+    let find = find_value.split(" ");
+
+    if (find.length < 2){
+        return false;
+    }
+
+    let variables = null;
+    let date = new Date();
+
+    let ret = false;
+
+    if(find[0] == "od"){
+        variables = from;
+    }else if(find[0] == "do"){
+        variables = to;
+    }else {
+        return false;
+    }
+
+    let newDate = null;
+    try {
+        newDate = new Date(find[2].split("/")[2] + "-" + find[2].split("/")[1] + "-" + find[2].split("/")[0]);
+    }
+    catch(err) {
+    }
+
+
+
+    if(newDate != null){
+        date = newDate;
+    }
+
+    if(find[1] == "<"){
+        ret = variables < date;
+    }else if(find[1] == "="){
+        ret = variables == date;
+    }else if(find[1] == ">"){
+        ret = variables > date;
+    }else if(find[1] == ">="){
+        ret = variables >= date;
+    }else if(find[1] == "<="){
+        ret = variables <= date;
+    }else{
+        return false;
+    }
+
+    return ret;
 
 }
 
