@@ -106,15 +106,21 @@
                             {{ __('Seznam uživatelů') }}
                         </x-jet-dropdown-link>
 
+                        <x-jet-dropdown-link href="/loans">
+                            {{ __('Moje výpůjčky') }}
+                        </x-jet-dropdown-link>
+
                         @if(Auth::permition()->possibility_renting == 1)
                         <x-jet-dropdown-link href="/categories">
                             {{ __('Nová výpůjčka') }}
                         </x-jet-dropdown-link>
                         @endif
 
-                        <x-jet-dropdown-link href="/loans">
-                            {{ __('Moje výpůjčky') }}
-                        </x-jet-dropdown-link>
+                        @if((Auth::permition()->return_verification == 1 || Auth::permition()->edit_item == 1) && Auth::permition()->possibility_renting != 1)
+                            <x-jet-dropdown-link href="/categories">
+                                {{ __('Kategorie, položky') }}
+                            </x-jet-dropdown-link>
+                        @endif
 
                         @if(Auth::permition()->return_verification == 1)
                             <x-jet-dropdown-link href="/all-loans">
@@ -245,15 +251,21 @@
                     {{ __('Seznam uživatelů') }}
                 </x-jet-responsive-nav-link>
 
+                <x-jet-responsive-nav-link href="/loans">
+                    {{ __('Moje výpůjčky') }}
+                </x-jet-responsive-nav-link>
+
                 @if(Auth::permition()->possibility_renting == 1)
                 <x-jet-responsive-nav-link href="/categories">
                     {{ __('Nová výpůjčka') }}
                 </x-jet-responsive-nav-link>
                 @endif
 
-                <x-jet-responsive-nav-link href="/loans">
-                    {{ __('Moje výpůjčky') }}
+                @if((Auth::permition()->return_verification == 1 || Auth::permition()->edit_item == 1) && Auth::permition()->possibility_renting != 1)
+                <x-jet-responsive-nav-link href="/categories">
+                    {{ __('Kategorie, položky') }}
                 </x-jet-responsive-nav-link>
+                @endif
 
                 @if(Auth::permition()->return_verification == 1)
                     <x-jet-responsive-nav-link href="/all-loans">

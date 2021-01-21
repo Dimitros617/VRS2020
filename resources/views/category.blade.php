@@ -159,6 +159,8 @@
                                                 @else
                                                 @endif
                                             @endforeach
+
+                                        @if( $permition[0]->possibility_renting == 1)
                                             <form  id="form" >
                                                 @csrf
                                                 <input type="text" class="d-none" name="itemId"
@@ -197,14 +199,17 @@
 
 
                                             </form>
+                                        @endif
+                                                <div class="buttonsDiv">
+                                                @if( $permition[0]->possibility_renting == 1)
 
-                                                            <div class="buttonsDiv">
                                                                 <div class="buttonsDivItem">
                                                                     <button type="submit button" class="btn btn-primary w-200p buttonsDivItem" onclick="saveItemLoansData(this); return false;">
                                                                         <div id="buttonText">Vypůjčit</div>
                                                                         <div id="buttonLoading" class="spinner-grow text-light" role="status" hidden></div>
                                                                     </button>
                                                                 </div>
+                                                @endif
 
                                                 @if( $permition[0]->edit_item == 1)
 

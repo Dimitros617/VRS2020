@@ -14,14 +14,20 @@
                 <div class="buttonsDiv">
 
 
-                    @if (Auth::permition()->possibility_renting == 1)
-
+                    @if(Auth::permition()->edit_item == 1 || Auth::permition()->return_verification == 1 || Auth::permition()->possibility_renting == 1)
                         <div class="buttonsDivItem">
                             <a href="/categories">
-                                <button class="buttonsDivItem btn-primary text-vrs-ylight " type="button">Nová výpůjčka</button>
+                                <button class="buttonsDivItem btn-primary text-vrs-ylight " type="button">
+                                    @if(Auth::permition()->possibility_renting == 1)
+                                        Nová výpůjčka
+                                    @elseif(Auth::permition()->edit_item == 1 || Auth::permition()->return_verification == 1)
+                                        Kategorie
+                                    @endif
+                                </button>
                             </a>
                         </div>
                     @endif
+
 
                     @if(Auth::permition()->possibility_renting == 1 || Auth::permition()->return_verification == 1)
 
@@ -97,25 +103,9 @@
                     </ul>
                 </div>
             </div>
-
-
-            {{--  Sekce pro unverifiedUser  --}}
-            @if (Auth::permition()->possibility_renting != 1)
-            <div class="textyDash">
-                <h2 class="nadpisyDash">Proč si nemohu nic půjčit?</h2>
-                <div class="">
-                    <ul style="list-style-type:circle">
-                        <li>S největší pravděpodobností jste nový uživatel Výpůjčního a rezervačního systému. Musíte počkat, než vás schválí a ověří administrátor.</li>
-                        <li><b>Pokud vás již dříve někdo schválil a nyní se vám neobjevuje záložka "Nová výpůjčka", bylo vám právo půjčovat si věci odebráno - ať již z důvodu nevrácení výpůjčky včas či jiných problémů.
-                                Pro více informací se zeptejte správce systému, který má na starosti ověřování uživatelů. Můžete jej vyhledat v "Seznamu uživatelů" a zaslat mu zde krátké připomenutí, doporučujeme však za ním pokud možno zajít osobně a řešit to více oficiálně, abyste zjistili, co nastalo za problém a jak se mu příště vyvarovat.</b></li>
-                    </ul>
-                </div>
-            </div>
             <br>
-            @endif
 
 
-            {{--  Sekce pro ověřené uživatele a admin  --}}
 
                     <button class="alert-link border-bottom-Dash bg-white btn text-vrs-yellow align-content- text-center flex-fill rounded-0 paticka" type="button" expand="0" onclick="if(this.getAttribute('expand')==0){document.getElementById('moreInfo').classList.add('show');this.setAttribute('expand','1')}else{document.getElementById('moreInfo').classList.remove('show');this.setAttribute('expand','0')}">
                         Více informací
@@ -123,6 +113,20 @@
                     <br>
 
                     <div class="collapse" id="moreInfo">
+
+                    @if (Auth::permition()->possibility_renting != 1)
+                        <div class="textyDash">
+                            <h2 class="nadpisyDash">Proč si nemohu nic půjčit?</h2>
+                            <div class="">
+                                <ul style="list-style-type:circle">
+                                    <li>S největší pravděpodobností jste nový uživatel Výpůjčního a rezervačního systému. Musíte počkat, než vás schválí a ověří administrátor.</li>
+                                    <li><b>Pokud vám již dříve někdo vypůjčování umožnil a nyní se vám neobjevuje záložka "Nová výpůjčka", bylo vám právo půjčovat si věci odebráno - ať již z důvodu nevrácení výpůjčky včas či jiných problémů.
+                                            <br>
+                                            Pro více informací se zeptejte správce systému, který má na starosti ověřování uživatelů. Můžete jej vyhledat v "Seznamu uživatelů" a zaslat mu zde krátké připomenutí, doporučujeme však za ním pokud možno zajít osobně a řešit to více oficiálně, abyste zjistili, co nastalo za problém a jak se mu příště vyvarovat.</b></li>
+                                </ul>
+                            </div>
+                        </div>
+                    @endif
 
                     <div class="textyDash">
                         <h2 class="nadpisyDash">Seznam uživatelů</h2>
@@ -133,12 +137,12 @@
 {{--                            načítat seznam oprávnění z databáze --}}
                             <br>
                             <ul style="list-style-type:circle">
-                                <li>Každého jednotlivého uživatele snadno kontaktujete v rámci systému přes tlačítko "Poslat zprávu". Pokud se jedná o vážnější problém, využijte e-mail, který je u každého uživatele uveden.</li>
+                                <li>Každého jednotlivého uživatele snadno kontaktujete v rámci systému přes tlačítko "Poslat zprávu".</li>
                                 @if(Auth::permition()->return_verification == 1 || Auth::permition()->possibility_renting == 1 || Auth::permition()->edit_item == 1)
                                     <li>Pod tlačítkem "Závazky uživatele" vidíte, jaké předměty má uživatel právě půjčené či zarezervované.
                                          @if(Auth::permition()->return_verification == 1)
                                             <ul style="list-style-type:disc">
-                                                <li>Zde můžete, v případě že má uživatel něco půjčeno, spravovat jeho výpůjčky - zrušit ji či reagovat na jejich žádost o schválení vrácení.</li>
+                                                <li>Zde můžete, pokud má uživatel něco půjčeno, spravovat jeho výpůjčky - zrušit je či reagovat na jejich žádost o schválení vrácení.</li>
                                             </ul>
                                          @endif
                                     </li>
@@ -207,28 +211,26 @@
                         </div>
 
 
-                    @if(Auth::permition()->possibility_renting == 1 || Auth::permition()->edit_item == 1)
+                    @if(Auth::permition()->possibility_renting == 1)
                     <div class="textyDash">
                         <h2 class="nadpisyDash">Nová výpůjčka
-                            @if(Auth::permition()->edit_item == 1)
-                            a úprava kategorií a předmětů
-                            @endif
                         </h2>
                         <div class="">
                             Zde si můžete půjčit předmět z vybrané kategorie.
                             @if(Auth::permition()->edit_item == 1)
-                                Zároveň zde spravujete viditelnost předmětů, kategorií a přidáváte či odstraňujete je.
+                                Zároveň zde kategorie i předměty upravujete.
                             @endif
                             <ul style="list-style-type:circle">
-                                @if(Auth::permition()->edit_item == 1)
-                                    <li>Pokud se zde nic nenachází, přidejte novou kategorii.</li>
+                                @if(Auth::permition()->edit_item == 1 && Auth::permition()->return_verification == 1)
+                                    <li>Pokud se zde nic nenachází, přidejte novou kategorii. Přidávat je samozřejmě můžete i dál, když už zde budou některé zadané. Stačí úplně dole kliknout a přidat.</li>
                                     <li>Kategorii můžete smazat. Pokud bude mít někdo zapůjčenou či rezervovanou položku z dané kategorie, vyskočí vám upozornění.</li>
                                     <li>Po kliknutí na "Aktuální závazky" vidíte, kdo má položky z dané kategorie zapůjčené či rezervované. Můžete zde tyto výpůjčky spravovat -
                                         zrušit je či reagovat na jejich žádost o schválení vrácení.</li>
                                     <li>Počet viditelných položek v dané kategorii poté vidíte v podobě levé modré bublinky s číslem na souhrnu všech kategorií. Pravá oranžová bublinka udává číslo skrytých položek.</li>
                                     <li>Kliknutím na box kategorie se vám rozevře celá kategorie, zde můžete upravit její název a pod názvem se nachází textové pole, kam můžete napsat popisek kategorie.
+                                        Vše uložíte klikem na tlačítko, které se po jakékoli změně objeví.
                                         Pozor, v souhrnu všech kategorií se ukazují pouze dva řádky popisku </li>
-                                    <li>Podobně jako se přidává kategorie, můžete vkládat nové položky k zapůjčení.
+                                    <li>Podobně, jako se přidává kategorie, můžete vkládat nové položky k zapůjčení.
                                         <ul style="list-style-type:disc">
                                             Všechny informace (název, poznámka, místo, inventární číslo) snadno upravíte.
                                             <li>Po zadání data počátku výpůjčky do pole "Od:" a konce do pole "Do:" si položku klikem na "Vypůjčit" zapůjčíte na daný časový interval.</li>
@@ -238,10 +240,40 @@
                                             <li>Nastavte zviditelnění či skrytí položky pro běžné uživatele tlačítkem "Viditelné: ANO" či "Viditelné: NE". Oceníte ve chvíli, kdy bude nějaká položka dočasně nedostupná k zapůjčení - nebudete ji muset mazat. Kliknutím nastavíte opak toho, co bylo původně nastaveno a na tlačítku napsáno.</li>
                                         </ul>
                                     </li>
-                                @else
+                                @elseif(Auth::permition()->edit_item == 1 && Auth::permition()->return_verification != 1)
+                                    <li>Pokud se zde nic nenachází, přidejte novou kategorii. Přidávat je samozřejmě můžete i dál, když už zde budou některé zadané. Stačí úplně dole kliknout a přidat.</li>
+                                    <li>Kategorii můžete smazat. Pokud bude mít někdo zapůjčenou či rezervovanou položku z dané kategorie, vyskočí vám upozornění.</li>
+                                    <li>Po kliknutí na "Aktuální závazky" vidíte, kdo má položky z dané kategorie zapůjčené či rezervované.</li>
+                                    <li>Počet viditelných položek v dané kategorii poté vidíte v podobě levé modré bublinky s číslem na souhrnu všech kategorií. Pravá oranžová bublinka udává číslo skrytých položek.</li>
+                                    <li>Kliknutím na box kategorie se vám rozevře celá kategorie, zde můžete upravit její název a pod názvem se nachází textové pole, kam můžete napsat popisek kategorie.
+                                        Vše uložíte klikem na tlačítko, které se po jakékoli změně objeví.
+                                        Pozor, v souhrnu všech kategorií se ukazují pouze dva řádky popisku </li>
+                                    <li>Podobně, jako se přidává kategorie, můžete vkládat nové položky k zapůjčení.
+                                        <ul style="list-style-type:disc">
+                                            Všechny informace (název, poznámka, místo, inventární číslo) snadno upravíte.
+                                            <li>Po zadání data počátku výpůjčky do pole "Od:" a konce do pole "Do:" si položku klikem na "Vypůjčit" zapůjčíte na daný časový interval.</li>
+                                            <li>Položku můžete i smazat. Pokud ji bude mít někdo zapůjčenou či rezervovanou, vyskočí vám upozornění.</li>
+                                            <li>Po kliknutí na "Aktuální závazky" vidíte, kdo má tento předmět zapůjčený či rezervovaný.</li>
+                                            <li>Nastavte zviditelnění či skrytí položky pro běžné uživatele tlačítkem "Viditelné: ANO" či "Viditelné: NE". Oceníte ve chvíli, kdy bude nějaká položka dočasně nedostupná k zapůjčení - nebudete ji muset mazat. Kliknutím nastavíte opak toho, co bylo původně nastaveno a na tlačítku napsáno.</li>
+                                        </ul>
+                                    </li>
+
+                                @elseif(Auth::permition()->edit_item != 1 && Auth::permition()->return_verification == 1)
+                                    <li>Po kliknutí na "Aktuální závazky" vidíte, kdo má položky z dané kategorie zapůjčené či rezervované. Můžete zde tyto výpůjčky spravovat -
+                                        zrušit je či reagovat na jejich žádost o schválení vrácení.</li>
+                                    <li>Počet viditelných položek v dané kategorii poté vidíte v podobě bublinky s číslem na souhrnu všech kategorií.</li>
+                                    <li>Kliknutím na box kategorie se vám rozevře celá kategorie.
+                                        <ul style="list-style-type:disc">
+                                            <li>Po zadání data počátku výpůjčky do pole "Od:" a konce do pole "Do:" si položku klikem na "Vypůjčit" zapůjčíte na daný časový interval.</li>
+                                            <li>Po kliknutí na "Aktuální závazky" vidíte, kdo má tento předmět zapůjčený či rezervovaný. Můžete zde tyto výpůjčky spravovat -
+                                                zrušit je či reagovat na jejich žádost o schválení vrácení.</li>
+                                        </ul>
+                                    </li>
+
+                                @elseif(Auth::permition()->edit_item != 1 && Auth::permition()->return_verification != 1)
                                     <li>Po kliknutí na "Aktuální závazky" vidíte, kdo má položky z dané kategorie zapůjčené či rezervované. </li>
                                     <li>Počet položek v dané kategorii poté vidíte v podobě bublinky s číslem na souhrnu všech kategorií.</li>
-                                    <li>Kliknutím na box kategorie se vám rozevře celá kategorie
+                                    <li>Kliknutím na box kategorie se vám rozevře celá kategorie.
                                         V souhrnu všech kategorií se ukazují pouze dva řádky popisku kategorie, po rozkliknutí kategorie vidíte již popisek celý.
                                         <br>
                                         Nyní již vidíte všechny položky v kategorii.
@@ -256,6 +288,73 @@
                     </div>
 
                     @endif
+
+                        @if((Auth::permition()->return_verification == 1 || Auth::permition()->edit_item == 1) && Auth::permition()->possibility_renting != 1)
+                            <div class="textyDash">
+                                <h2 class="nadpisyDash">
+                                    @if(Auth::permition()->edit_item == 1)
+                                        Kategorie, položky a jejich úprava
+                                    @else
+                                        Kategorie, položky
+                                    @endif
+                                </h2>
+                                <div class="">
+                                    Podívejte se na aktuální závazky u jednotlivých kategorií a položek.
+                                    @if(Auth::permition()->edit_item == 1)
+                                        Zde spravujete viditelnost předmětů, kategorií a přidáváte či odstraňujete je.
+                                    @endif
+                                    <ul style="list-style-type:circle">
+                                        @if(Auth::permition()->edit_item == 1 && Auth::permition()->return_verification == 1)
+                                            <li>Pokud se zde nic nenachází, přidejte novou kategorii. Přidávat je samozřejmě můžete i dál, když už zde budou některé zadané. Stačí úplně dole kliknout a přidat.</li>
+                                            <li>Kategorii můžete smazat. Pokud bude mít někdo zapůjčenou či rezervovanou položku z dané kategorie, vyskočí vám upozornění.</li>
+                                            <li>Po kliknutí na "Aktuální závazky" vidíte, kdo má položky z dané kategorie zapůjčené či rezervované. Můžete zde tyto výpůjčky spravovat -
+                                                zrušit je či reagovat na jejich žádost o schválení vrácení.</li>
+                                            <li>Počet viditelných položek v dané kategorii poté vidíte v podobě levé modré bublinky s číslem na souhrnu všech kategorií. Pravá oranžová bublinka udává číslo skrytých položek.</li>
+                                            <li>Kliknutím na box kategorie se vám rozevře celá kategorie, zde můžete upravit její název a pod názvem se nachází textové pole, kam můžete napsat popisek kategorie.
+                                                Vše uložíte klikem na tlačítko, které se po jakékoli změně objeví.
+                                                Pozor, v souhrnu všech kategorií se ukazují pouze dva řádky popisku </li>
+                                            <li>Podobně, jako se přidává kategorie, můžete vkládat nové položky k zapůjčení.
+                                                <ul style="list-style-type:disc">
+                                                    Všechny informace (název, poznámka, místo, inventární číslo) snadno upravíte.
+                                                    <li>Položku můžete i smazat. Pokud ji bude mít někdo zapůjčenou či rezervovanou, vyskočí vám upozornění.</li>
+                                                    <li>Po kliknutí na "Aktuální závazky" vidíte, kdo má tento předmět zapůjčený či rezervovaný. Můžete zde tyto výpůjčky spravovat -
+                                                        zrušit je či reagovat na jejich žádost o schválení vrácení.</li>
+                                                    <li>Nastavte zviditelnění či skrytí položky pro běžné uživatele tlačítkem "Viditelné: ANO" či "Viditelné: NE". Oceníte ve chvíli, kdy bude nějaká položka dočasně nedostupná k zapůjčení - nebudete ji muset mazat. Kliknutím nastavíte opak toho, co bylo původně nastaveno a na tlačítku napsáno.</li>
+                                                </ul>
+                                            </li>
+                                        @elseif(Auth::permition()->edit_item == 1 && Auth::permition()->return_verification != 1)
+                                            <li>Pokud se zde nic nenachází, přidejte novou kategorii. Přidávat je samozřejmě můžete i dál, když už zde budou některé zadané. Stačí úplně dole kliknout a přidat.</li>
+                                            <li>Kategorii můžete smazat. Pokud bude mít někdo zapůjčenou či rezervovanou položku z dané kategorie, vyskočí vám upozornění.</li>
+                                            <li>Po kliknutí na "Aktuální závazky" vidíte, kdo má položky z dané kategorie zapůjčené či rezervované.</li>
+                                            <li>Počet viditelných položek v dané kategorii poté vidíte v podobě levé modré bublinky s číslem na souhrnu všech kategorií. Pravá oranžová bublinka udává číslo skrytých položek.</li>
+                                            <li>Kliknutím na box kategorie se vám rozevře celá kategorie, zde můžete upravit její název a pod názvem se nachází textové pole, kam můžete napsat popisek kategorie.
+                                                Vše uložíte klikem na tlačítko, které se po jakékoli změně objeví.
+                                                Pozor, v souhrnu všech kategorií se ukazují pouze dva řádky popisku.</li>
+                                            <li>Podobně, jako se přidává kategorie, můžete vkládat nové položky k zapůjčení.
+                                                <ul style="list-style-type:disc">
+                                                    Všechny informace (název, poznámka, místo, inventární číslo) snadno upravíte.
+                                                    <li>Položku můžete i smazat. Pokud ji bude mít někdo zapůjčenou či rezervovanou, vyskočí vám upozornění.</li>
+                                                    <li>Po kliknutí na "Aktuální závazky" vidíte, kdo má tento předmět zapůjčený či rezervovaný.</li>
+                                                    <li>Nastavte zviditelnění či skrytí položky pro běžné uživatele tlačítkem "Viditelné: ANO" či "Viditelné: NE". Oceníte ve chvíli, kdy bude nějaká položka dočasně nedostupná k zapůjčení - nebudete ji muset mazat. Kliknutím nastavíte opak toho, co bylo původně nastaveno a na tlačítku napsáno.</li>
+                                                </ul>
+                                            </li>
+                                        @elseif(Auth::permition()->edit_item != 1 && Auth::permition()->return_verification == 1)
+                                            <li>Po kliknutí na "Aktuální závazky" vidíte, kdo má položky z dané kategorie zapůjčené či rezervované. Můžete zde tyto výpůjčky spravovat -
+                                                zrušit je či reagovat na jejich žádost o schválení vrácení.</li>
+                                            <li>Počet viditelných položek v dané kategorii poté vidíte v podobě bublinky s číslem na souhrnu všech kategorií.</li>
+                                            <li>Kliknutím na box kategorie se vám rozevře celá kategorie.
+                                                <ul style="list-style-type:disc">
+                                                    <li>Po kliknutí na "Aktuální závazky" vidíte, kdo má tento předmět zapůjčený či rezervovaný. Můžete zde tyto výpůjčky spravovat -
+                                                        zrušit je či reagovat na jejich žádost o schválení vrácení.</li>
+                                                </ul>
+                                            </li>
+                                        @endif
+                                    </ul>
+                                </div>
+                            </div>
+
+                        @endif
+
 
 
                     @if(Auth::permition()->return_verification == 1)
