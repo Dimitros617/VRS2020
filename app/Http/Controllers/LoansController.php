@@ -41,6 +41,10 @@ class LoansController extends Controller
     function saveItemLoans(Request $request)
     {
         Log::info('LoansController:saveItemLoans');
+        if(Auth::permition()->possibility_renting != 1){
+            abort(403);
+            return;
+        }
 
         $borrow = new loans;
         $borrow->user = Auth::id();
