@@ -2,7 +2,7 @@
     <x-jet-authentication-card>
 
         <div class="" style="margin: auto;">
-            <div style="">
+            <div class="mt-4 mb-5" style="">
                 {{--            <x-jet-authentication-card-logo />--}}
                 <a href="/"><x-jet-application-logo class="block h-9 w-auto" /></a>
             </div>
@@ -47,7 +47,7 @@
                     </a>
                 </div>
 
-                <div class="flex items-center justify-end mt-3">
+                <div class="flex items-center justify-end mt-1">
                     @if (Route::has('password.request'))
                         <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
                             {{ __('Zapomenuté heslo') }}

@@ -1,8 +1,8 @@
 <x-guest-layout>
     <x-jet-authentication-card>
 
-        <div class="">
-            <div style="">
+        <div class="" style="margin: auto;">
+            <div class="mt-4 mb-5" style="">
                 {{--            <x-jet-authentication-card-logo />--}}
                 <a href="/"><x-jet-application-logo class="block h-9 w-auto " /></a>
             </div>
@@ -27,8 +27,8 @@
                     <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" placeholder="E-mail" :value="old('email')" required autofocus />
                 </div>
 
-                <div class="flex items-center justify-end mt-4">
-                    <x-jet-button>
+                <div class=" flex items-center justify-end mt-4 ">
+                    <x-jet-button class="h6 mt-4">
                         {{ __('Resetovat heslo') }}
                     </x-jet-button>
                 </div>

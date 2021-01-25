@@ -1,8 +1,8 @@
 <x-guest-layout>
     <x-jet-authentication-card>
 
-        <div class="">
-            <div style="">
+        <div class="" style="margin: auto;">
+            <div class="mt-4 mb-5" style="">
                 {{--            <x-jet-authentication-card-logo />--}}
                 <a href="/"><x-jet-application-logo class="block h-9 w-auto " /></a>
             </div>
@@ -51,7 +51,7 @@
                 <div class="flex items-center justify-end mt-4">
 
 
-                    <x-jet-button class="ml-4">
+                    <x-jet-button class="ml-4 h6">
                         {{ __('Registrovat') }}
                     </x-jet-button>
                 </div>
