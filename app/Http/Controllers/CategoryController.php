@@ -87,6 +87,7 @@ class CategoryController extends Controller
 
         $category = new categories;
         $category->name = 'Abecedně seřazená NOVÁ KATEGORIE';
+        $category->description = 'Popisek kategorie';
         $check = $category->save();
 
         return back()->withInput(array('saveCheck' => $check ? '1' : '0'));

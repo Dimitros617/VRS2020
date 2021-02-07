@@ -67,6 +67,18 @@
     cursor: pointer;
 }
 
+.userName {
+    text-decoration: none;
+    float: left;
+    height: 4rem;
+    font-size: x-large;
+    font-weight: 700;
+    color: #002e40;
+    margin-top: 0.4rem;
+    padding: 0.5rem 0;
+
+}
+
 
 @media (max-width: 810px) {
 

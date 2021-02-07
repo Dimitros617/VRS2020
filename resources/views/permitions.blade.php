@@ -88,15 +88,15 @@
                     <div class="button-row">
                         <div class="buttonsDiv">
                             <div class="buttonsDivItem">
-                                <button type="submit button" class="buttonsDivItem submit btn btn-danger w-200p float-end p-2  w-10rem text-white" onclick="vrsNotify('Opravdu chcete roli smazat?',removePermition, this,'{{$permition->id}}' ); return false">
-                                    <div id="buttonText">Smazat roli</div>
+                                <button type="submit button" class="buttonsDivItem submit btn btn-primary w-200p float-end p-2 w-10rem text-white" onclick="savePermitionData(this, '{{$permition->id}}' )">
+                                    <div id="buttonText">Uložit změny</div>
                                     <div id="buttonLoading" class="spinner-grow text-light" role="status" hidden></div>
                                 </button>
                             </div>
 
                             <div class="buttonsDivItem">
-                                <button type="submit button" class="buttonsDivItem submit btn btn-primary w-200p float-end p-2 w-10rem text-white" onclick="savePermitionData(this, '{{$permition->id}}' )">
-                                    <div id="buttonText">Uložit změny</div>
+                                <button type="submit button" class="buttonsDivItem submit btn btn-danger w-200p float-end p-2  w-10rem text-white" onclick="vrsNotify('Opravdu chcete roli smazat?',removePermition, this,'{{$permition->id}}' ); return false">
+                                    <div id="buttonText">Smazat roli</div>
                                     <div id="buttonLoading" class="spinner-grow text-light" role="status" hidden></div>
                                 </button>
                             </div>

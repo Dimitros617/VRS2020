@@ -61,7 +61,7 @@
                             </div>
 
                             <div class="vrs-h4 text-vrs-cyan">
-                                @if(Auth::permition()->new_user == 1)
+                                @if(Auth::permition()->new_user == 1 || Auth::permition()->return_verification == 1)
                                     {{$user -> userEmail}}
                                 @endif
                             </div>

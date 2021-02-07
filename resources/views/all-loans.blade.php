@@ -191,10 +191,13 @@
                         </div>
 
 
-                        <a href="/users/{{$loan->userId}}" class="userNameLink">
-                            <label class="font-weight-bold userNameLabel cursor-pointer">{{$loan->userName}} {{$loan->userSurname}}</label>
-
-                        </a>
+                        @if(Auth::permition()->new_user == 1)
+                            <a href="/users/{{$loan->userId}}" class="userNameLink">
+                                <label class="font-weight-bold userNameLabel cursor-pointer ">{{$loan->userName}} {{$loan->userSurname}}</label>
+                            </a>
+                        @else
+                            <label class="font-weight-bold userNameLabel userName ">{{$loan->userName}} {{$loan->userSurname}}</label>
+                        @endif
 
                         <div class="userData">
                         <div class="rentFromDiv">
@@ -378,9 +381,13 @@
         </div>
 
 
+        @if(Auth::permition()->new_user == 1)
             <a href="/users/{{$loan->userId}}" class="userNameLink">
-                <label class="font-weight-bold userNameLabel">{{$loan->userName}} {{$loan->userSurname}}</label>
+                <label class="font-weight-bold userNameLabel cursor-pointer ">{{$loan->userName}} {{$loan->userSurname}}</label>
             </a>
+        @else
+            <label class="font-weight-bold userNameLabel userName ">{{$loan->userName}} {{$loan->userSurname}}</label>
+        @endif
 
     <div class="userData">
             <div class="rentFromDiv">
@@ -525,10 +532,13 @@
 
 
 
-
-        <a href="/users/{{$loan->userId}}" class="userNameLink">
-            <label class="font-weight-bold userNameLabel">{{$loan->userName}} {{$loan->userSurname}}</label>
-        </a>
+        @if(Auth::permition()->new_user == 1)
+            <a href="/users/{{$loan->userId}}" class="userNameLink">
+                <label class="font-weight-bold userNameLabel cursor-pointer ">{{$loan->userName}} {{$loan->userSurname}}</label>
+            </a>
+        @else
+            <label class="font-weight-bold userNameLabel userName ">{{$loan->userName}} {{$loan->userSurname}}</label>
+        @endif
 
             <div class="userData">
         <div class="rentFromDiv">

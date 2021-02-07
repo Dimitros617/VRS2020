@@ -114,12 +114,13 @@
                         </div>
 
 
-
-                    <a href="/users/{{$user->id}}" class="userNameLink">
-                        <label class="font-weight-bold userNameLabel cursor-pointer">{{$user->name}} {{$user->surname}}</label>
-
-
-                    </a>
+                    @if(Auth::permition()->new_user == 1)
+                        <a href="/users/{{$user->id}}" class="userNameLink">
+                            <label class="font-weight-bold userNameLabel cursor-pointer">{{$user->name}} {{$user->surname}}</label>
+                        </a>
+                    @else
+                        <label class="font-weight-bold userNameLabel userName">{{$user->name}} {{$user->surname}}</label>
+                    @endif
 
                     <div class="userData">
                     <div class="rentFromDiv">

@@ -104,26 +104,26 @@
                                                 @csrf
 
                                                 <div class="itemDataDivRow">
-                                                <label class="title font-weight-bold" for="name">Název: </label>
+                                                <label class="title font-weight-bold" for="name">Název:</label>
                                                 <div contenteditable class="name" value="{{$item->name}}" name="name"
                                                        @if( $permition[0]->edit_item != 1) disabled @endif
                                                        oninput="showButton(this)" required>{{$item->name}}
                                                 </div></div>
 
                                                 <div class="itemDataDivRow">
-                                                <label class="title font-weight-bold" for="note">Poznámka: </label>
+                                                <label class="title font-weight-bold" for="note">Poznámka:</label>
                                                 <div contenteditable class="note" value="{{$item->note}}" name="note"
                                                        @if( $permition[0]->edit_item != 1) disabled @endif
                                                        oninput="showButton(this)">{{$item->note}}
                                                 </div></div>
                                                     <div class="itemDataDivRow">
-                                                <label class="title font-weight-bold" for="place">Místo: </label>
+                                                <label class="title font-weight-bold" for="place">Místo:</label>
                                                 <div contenteditable class="place" value="{{$item->place}}" name="place"
                                                        @if( $permition[0]->edit_item != 1) disabled @endif
                                                        oninput="showButton(this)">{{$item->place}}
                                                     </div></div>
                                                         <div class="itemDataDivRow">
-                                                <label class="title font-weight-bold" for="inventory_number">Inventární číslo: </label>
+                                                <label class="title font-weight-bold" for="inventory_number">Inventární číslo:</label>
                                                 <div contenteditable class="inventory_number" name="inventory_number"
                                                        value="{{$item->inventory_number}}"
                                                        @if( $permition[0]->edit_item != 1) disabled @endif

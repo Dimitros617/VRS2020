@@ -15,7 +15,7 @@
      -Dominik Frolík = vedoucí týmu a backend
      -Viola Vrbová = sexy člen týmu a backend
      -Kateřina Bartáková = databázová podpora
-     -Kateřina Zábranská = Zheskávající člen týmu celý náš systém ale i tým
+     -Kateřina Zábranská = zhezkávající člen týmu - css
 
 
      -----------------------------------------------
@@ -23,7 +23,7 @@
 
      -->
 
-    <title>VRS - @yield('title')</title>
+    <title>@yield('title') | VRS</title>
     <link rel="icon" href="{{ URL::asset('img/logo_icon_old3.png') }}">
 
     <!-- Fonts -->

@@ -136,9 +136,13 @@
             </div>
 
 
-    <a href="/users/{{$category->userId}}" class="userNameLink">
-        <label class="cursor-pointer userNameLabel">{{$category->name}} {{$category->surname}}</label>
-    </a>
+        @if(Auth::permition()->new_user == 1)
+            <a href="/users/{{$category->userId}}" class="userNameLink">
+                <label class="cursor-pointer userNameLabel">{{$category->name}} {{$category->surname}}</label>
+            </a>
+        @else
+            <label class="userName userNameLabel">{{$category->name}} {{$category->surname}}</label>
+        @endif
 
         <div class="userData">
         <div class="rentFromDiv">

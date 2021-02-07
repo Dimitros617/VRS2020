@@ -144,7 +144,7 @@
 <section class="our-webcoderskull padding-lg">
     <div class="container">
         <div class="row heading heading-icon">
-            <h2 class="font-weight-bold text-center mb-0" style="color: #fa9702">Náš tým</h2>
+            <h2 class="font-weight-bold text-center mb-0" style="color: #fa9702">Náš tým,</h2>
             <h3 class="font-weight-bold text-center mb-5" style="color: #fa9702">který vytvořil celý systém</h3>
         </div>
         <ul class="row mt-5">
