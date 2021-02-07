@@ -35,7 +35,7 @@ class ItemsController extends Controller
     {
         Log::info('ItemsController:saveItem');
 
-        if(Auth::permiton()->edit_items != 1){
+        if(Auth::permition()->edit_item != 1){
             return "0";
         }
 
