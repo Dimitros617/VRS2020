@@ -68,6 +68,16 @@
                             </a>
                         </div>
 
+                        @if(Auth::permition()->new_user)
+                            <div class="buttonsDivItem">
+                                <a href="/permitions">
+                                    <button class="buttonsDivItem btn-primary" type="button">
+                                        Uživatelská oprávnění
+                                    </button>
+                                </a>
+                            </div>
+                        @endif
+
                 </div>
 
             <br>

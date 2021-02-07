@@ -8,7 +8,7 @@
             </div>
 
             <div class="mb-4 text-sm text-gray-600">
-                {{ __('Forgot your passwordíček? No kurde. Just do it, emailík address and we will smith ti pošle na reset passwordíčku. Ale stejně jsi dylina, tak si zvol nový passwordíček 12345678') }}
+                {{ __('Zapomněli jste své heslo? Zadejte svou adresu a zašleme vám e-mail s instrukcemi k obnovení hesla.') }}
             </div>
 
             @if (session('status'))

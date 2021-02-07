@@ -19,12 +19,12 @@
                 @csrf
 
                 <div>
-                <!-- <x-jet-label for="email" value="{{ __('E-mail woe') }}" /> -->
+                <!-- <x-jet-label for="email" value="{{ __('E-mail nebo přezdívka') }}" /> -->
                     <x-jet-input id="email" class="block mt-3 w-full"  name="nick" placeholder="E-mail nebo přezdívka" :value="old('email')" required  autofocus />
                 </div>
 
                 <div class="mt-4 mb-4">
-                <!-- <x-jet-label for="password" value="{{ __('Passwordíček plz') }}" /> -->
+                <!-- <x-jet-label for="password" value="{{ __('Heslo') }}" /> -->
                     <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" placeholder="Heslo" required autocomplete="current-password" />
                 </div>
 
