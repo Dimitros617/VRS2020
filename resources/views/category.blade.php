@@ -92,10 +92,10 @@
                                     {{--                Pokud má item nastaveno availability na 1 zoobrazí se, pokud ne z nemožní se sním práce pro uživatel--}}
 
                                     @if($item->availability  == 1 )
-                                            <div class="item" itemId="{{$item->id}}">
+                                            <div class="item" itemId="{{$item->id}}" id="{{$item->id}}">
                                     @else
                                         @if($permition[0]->edit_item == 1)
-                                                        <div class="item hiddenItem ">
+                                                        <div class="item hiddenItem">
                                                 @else
                                                         <div class="item" hidden>
                                             @endif
@@ -288,8 +288,12 @@
                                                                 @endif
 
 
+                        </div>
                     </div>
-
+                </div>
+            </div>
+        </div>
+    </div>
 
 </x-app-layout>
 
