@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Výpůjční a rezervační systém</title>
+        <title>{{ __('Rental and reservation system') }}</title>
         <link rel="icon" href="{{ URL::asset('img/logo_icon_old3.png') }}">
 
         <!-- Fonts -->
@@ -14,8 +14,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-
+        <!-- TODO: Zvážit sloučení pomocí mix https://laravel.com/docs/8.x/mix -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
         <link rel="stylesheet" href="{{ URL::asset('css/auth.css') }}">

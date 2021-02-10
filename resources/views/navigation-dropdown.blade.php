@@ -4,7 +4,7 @@
 
     <div class=" messageBackground bg-white overflow-hidden shadow-xl rounded max-w-6xl mx-auto sm:px-6 lg:px-8" id="allMessages">
         <div class="d-flex justify-content-between messagesHeaderBox">
-            <div class="display-4 p-4 text-white"> Zprávy: </div>
+            <div class="display-4 p-4 text-white"> {{ __('Messages:') }} </div>
             <div class="spinner-border  text-vrs-yellow"  style="width: 3rem; height: 3rem; margin: auto;" id="messageLoading" role="status"></div>
             <div class="newMessageBox"><button type="button" class="btn btn-light text-20px" onclick="newMessage()">Nová zpráva</button></div>
         </div>
@@ -13,9 +13,9 @@
 
     <div class=" messageBackground bg-white overflow-hidden shadow-xl rounded max-w-6xl mx-auto sm:px-6 lg:px-8" id="newMessages" hidden>
         <div class="d-flex justify-content-between messagesHeaderBox">
-            <div class="display-4 p-4 text-white"> Nová zpráva: </div>
+            <div class="display-4 p-4 text-white"> {{ __('New Message:') }} </div>
             <div class="spinner-border  text-vrs-yellow"  style="width: 3rem; height: 3rem; margin: auto;" id="sendMessageLoading" role="status" hidden></div>
-            <div class="newMessageBox"><button type="button" class="btn btn-light text-20px" onclick="allMessage()">Moje zprávy</button></div>
+            <div class="newMessageBox"><button type="button" class="btn btn-light text-20px" onclick="allMessage()">{{ __('My Messages') }}</button></div>
         </div>
         <div id="messagesBox">
             <div class="autocomplete" >
@@ -164,7 +164,7 @@
 
                             <!-- Team Switcher -->
                             <div class="block px-4 py-2 text-xs text-gray-400">
-                                {{ __('Změnit roli') }}
+                                {{ __('Change Role') }}
                             </div>
 
                             @foreach (Auth::user()->allTeams() as $team)
@@ -181,7 +181,7 @@
                             <x-jet-dropdown-link href="{{ route('logout') }}"
                                                  onclick="event.preventDefault();
                                                             this.closest('form').submit();">
-                                {{ __('Odhlásit se') }}
+                                {{ __('Logout') }}
                             </x-jet-dropdown-link>
                         </form>
                     </x-slot>
@@ -220,7 +220,7 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                {{ __('Hlavní strana') }}
+                {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
         </div>
 
@@ -242,7 +242,7 @@
                 <!-- Account Management -->
                 <x-jet-responsive-nav-link href="{{ route('profile.show') }}"
                                            :active="request()->routeIs('profile.show')">
-                        {{ __('Nastavení') }}
+                        {{ __('Manage Account') }}
                 </x-jet-responsive-nav-link>
 
                 {{--                Přidané položkdy do menu a pozor musí se upravit 2x i pro mobilní verzi níže--}}
@@ -293,7 +293,7 @@
                     <x-jet-responsive-nav-link href="{{ route('logout') }}"
                                                onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                        {{ __('Odhlásit se') }}
+                        {{ __('Logout') }}
                     </x-jet-responsive-nav-link>
                 </form>
 

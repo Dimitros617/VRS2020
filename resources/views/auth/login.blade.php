@@ -19,38 +19,38 @@
                 @csrf
 
                 <div>
-                <!-- <x-jet-label for="email" value="{{ __('E-mail woe') }}" /> -->
-                    <x-jet-input id="email" class="block mt-3 w-full"  name="nick" placeholder="E-mail nebo přezdívka" :value="old('email')" required  autofocus />
+                <!-- <x-jet-label for="email" value="{{ __('Email') }}" /> -->
+                    <x-jet-input id="email" class="block mt-3 w-full"  name="nick" placeholder="{{ __('Email or nick') }}" :value="old('email')" required  autofocus />
                 </div>
 
                 <div class="mt-4 mb-4">
-                <!-- <x-jet-label for="password" value="{{ __('Passwordíček plz') }}" /> -->
-                    <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" placeholder="Heslo" required autocomplete="current-password" />
+                <!-- <x-jet-label for="password" value="{{ __('Password') }}" /> -->
+                    <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" placeholder="{{ __('Password') }}" required autocomplete="current-password" />
                 </div>
 
 {{--                <div class="mb-55px block mt-4">--}}
 {{--                    <label for="remember_me" class="flex items-center">--}}
 {{--                        <input id="remember_me" type="checkbox" class="form-checkbox" name="remember">--}}
-{{--                        <span class="ml-2 text-sm text-gray-600">{{ __('Zapamatovat si mě?') }}</span>--}}
+{{--                        <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>--}}
 {{--                    </label>--}}
 {{--                </div>--}}
 
                 <div class="flex items-center justify-end ">
                     <x-jet-button class="h6">
-                        {{ __('Přihlásit') }}
+                        {{ __('Login') }}
                     </x-jet-button>
                 </div>
 
                 <div class="flex items-center justify-end mt-4">
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}"">
-                    {{ __('Nemáte účet? Zaregistrujte se!') }}
+                    {{ __("Don't have an account? Sign up!") }}
                     </a>
                 </div>
 
                 <div class="flex items-center justify-end mt-1">
                     @if (Route::has('password.request'))
                         <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                            {{ __('Zapomenuté heslo') }}
+                            {{ __('Forgot your password?') }}
                         </a>
                     @endif
                 </div>

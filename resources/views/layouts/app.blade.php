@@ -33,6 +33,7 @@
 
 
     <!-- Javascript -->
+    <!-- TODO: Zvážit sloučení pomocí mix https://laravel.com/docs/8.x/mix -->
     <link href="http://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
@@ -44,8 +45,8 @@
     <script src="{{ URL::asset('js/main.js') }}"></script>
     <script src="{{ URL::asset('js/messages.js') }}"></script>
 
-
     <!-- Styles -->
+    <!-- TODO: Zvážit sloučení pomocí mix https://laravel.com/docs/8.x/mix -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/notification.css') }}">
@@ -60,12 +61,6 @@
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/bootstrap/css/bootstrap-grid.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/bootstrap/css/bootstrap-reboot.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/bootstrap/css/bootstrap-utilities.css') }}">
-
-
-
-
-
-
 
     @section('link')
         @livewireStyles

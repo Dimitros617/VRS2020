@@ -4,7 +4,7 @@
 <x-app-layout>
     <x-slot name="header">
 {{--        <h2 class="font-semibold text-xl text-gray-800 leading-tight">--}}
-{{--            {{ __('Hlavní strana') }}--}}
+{{--            {{ __('Dashboard') }}--}}
 {{--        </h2>--}}
     </x-slot>
     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -21,7 +21,7 @@
                                     @if(Auth::permition()->possibility_renting == 1)
                                         Nová výpůjčka
                                     @elseif(Auth::permition()->edit_item == 1 || Auth::permition()->return_verification == 1)
-                                        Kategorie
+                                        {{ __('Categories') }}
                                     @endif
                                 </button>
                             </a>
