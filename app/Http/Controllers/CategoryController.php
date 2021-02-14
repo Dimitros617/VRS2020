@@ -86,11 +86,12 @@ class CategoryController extends Controller
         }
 
         $category = new categories;
-        $category->name = 'Abecedně seřazená NOVÁ KATEGORIE';
         $category->description = 'Popisek kategorie';
         $check = $category->save();
+        $category->name = 'Abecedně seřazená NOVÁ KATEGORIE, id: ' . $category->id;
+        $check1 = $category->save();
 
-        return back()->withInput(array('saveCheck' => $check ? '1' : '0'));
+        return back()->withInput(array('saveCheck' => $check && $check1 ? '1' : '0'));
 
     }
 
