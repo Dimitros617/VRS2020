@@ -49,8 +49,10 @@ class LoansController extends Controller
         $borrow = new loans;
         $borrow->user = Auth::id();
         $borrow->item = $request->itemId;
-        $borrow->rent_from = $request->rent_from;
-        $borrow->rent_to = $request->rent_to;
+        $from = explode("-",$request->rent_from);
+        $borrow->rent_from = $from[2] ."-". $from[1] ."-". $from[0];
+        $to = explode("-",$request->rent_to);
+        $borrow->rent_to = $to[2] ."-". $to[1] ."-". $to[0];
         $check = $borrow->save();
 
         return $check;

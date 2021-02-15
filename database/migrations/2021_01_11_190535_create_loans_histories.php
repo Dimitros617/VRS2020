@@ -25,8 +25,8 @@ class CreateLoansHistories extends Migration
             $table->string('note');
             $table->string('place');
             $table->string('inventory_number');
-            $table->string('rent_from');
-            $table->string('rent_to');
+            $table->date('rent_from');
+            $table->date('rent_to');
             $table->timestamp('created');
 
 

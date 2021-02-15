@@ -14,8 +14,8 @@ class CreateLoans extends Migration
             $table->id();
             $table->unsignedBigInteger('user');
             $table->unsignedBigInteger('item');
-            $table->string('rent_from');
-            $table->string('rent_to');
+            $table->date('rent_from');
+            $table->date('rent_to');
             $table->tinyInteger('status')->default('1');
 
            $table->foreign('user')->references('id')->on('users');
