@@ -12,13 +12,15 @@ function saveItemData(ele, id, catId, availability){
     price = price.replace(",", ".");
     price = price.replace(/ /g, "");
 
+    let created_at = dataElements.querySelectorAll("div[name='created_at']")[0].innerHTML;
+
     ele.querySelectorAll("div[id='buttonText']")[0].setAttribute("hidden","");
     ele.querySelectorAll("div[id='buttonLoading']")[0].removeAttribute("hidden");
 
     $.ajax({
         method: "POST",
         url: '/item/' + id + '/saveItemData',
-        data: { _token: token, name: name, price: price, note: note, place: place, inventory_number: inventory_number, itemId: id, categoriesId: catId, availability: availability },
+        data: { _token: token, name: name, price: price, created_at: created_at, note: note, place: place, inventory_number: inventory_number, itemId: id, categoriesId: catId, availability: availability },
         success: function (response){
 
             ele.querySelectorAll("div[id='buttonText']")[0].removeAttribute("hidden");

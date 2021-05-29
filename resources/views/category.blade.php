@@ -114,8 +114,14 @@
                                                 <div class="itemDataDivRow">
                                                 {{-- Atribut for ponechan, nema vetsi smysl to prepisovat na price a sahat do css, kdyz zde nejsou inputy, ktere by se po kliku na label automaticky focusovaly. S divem to bohuzel nefunguje. --}}
                                                 <label class="title font-weight-bold" for="note">Cena:</label>
-                                                <div contenteditable class="note" id="price" value="{{$item->price}}" name="price"
+                                                <div contenteditable class="note" value="{{$item->price}}" name="price"
                                                        oninput="showButton(this)" required>{{ number_format($item->price, 2, ".", " ") }}
+                                                </div></div>
+
+                                                <div class="itemDataDivRow">
+                                                <label class="title font-weight-bold" for="note">Zavedeno dne:</label>
+                                                <div contenteditable class="note" value="{{$item->created_at}}" name="created_at"
+                                                       oninput="showButton(this)" required>{{ \Carbon\Carbon::parse($item->created_at)->format('j. n. Y') }}
                                                 </div></div>
                                                 @endif
 

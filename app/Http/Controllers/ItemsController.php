@@ -34,16 +34,21 @@ class ItemsController extends Controller
     function saveItem(Request $request)
     {
         Log::info('ItemsController:saveItem');
+        Log::info($request);
 
         if(Auth::permition()->edit_item != 1){
             return "0";
         }
 
+
+        $date = is_null($request->created_at) ? date("Y-m-d h:i:s", time()): date("Y-m-d h:i:s", strtotime($request->created_at));
+        Log::info($date);
         $item = items::find($request->itemId);
         $item->name = is_null($request->name) ? "": $request->name;
         $item->note = is_null($request->note) ? "": $request->note;
         $item->place = is_null($request->place) ? "": $request->place;
         $item->price = is_null($request->price) ? 0.00: $request->price;
+        $item->created_at = $date;
         $item->inventory_number = is_null($request->inventory_number) ? "": $request->inventory_number;
         $item->availability = is_null($request->availability) ? "0":  $request->availability;
         $check = $item->save();
