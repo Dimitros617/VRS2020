@@ -43,6 +43,7 @@ class ItemsController extends Controller
         $item->name = is_null($request->name) ? "": $request->name;
         $item->note = is_null($request->note) ? "": $request->note;
         $item->place = is_null($request->place) ? "": $request->place;
+        $item->price = is_null($request->price) ? 0.00: $request->price;
         $item->inventory_number = is_null($request->inventory_number) ? "": $request->inventory_number;
         $item->availability = is_null($request->availability) ? "0":  $request->availability;
         $check = $item->save();
@@ -80,8 +81,8 @@ class ItemsController extends Controller
         $loans = DB::table('loans')->where('item', $request->id)->count();
 
         if ($loans == 0) {
-            $check = DB::table('items')->where('id', $request->id)->delete();
-
+            //$check = DB::table('items')->where('id', $request->id)->delete();
+            $check = items::where('id', $request->id)->delete();        //add soft delete
             return  $check;
 
         } else {

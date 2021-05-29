@@ -8,13 +8,17 @@ function saveItemData(ele, id, catId, availability){
     let place = dataElements.querySelectorAll("div[name='place']")[0].innerHTML;
     let inventory_number = dataElements.querySelectorAll("div[name='inventory_number']")[0].innerHTML;
 
+    let price = dataElements.querySelectorAll("div[name='price']")[0].innerHTML;
+    price = price.replace(",", ".");
+    price = price.replace(/ /g, "");
+
     ele.querySelectorAll("div[id='buttonText']")[0].setAttribute("hidden","");
     ele.querySelectorAll("div[id='buttonLoading']")[0].removeAttribute("hidden");
 
     $.ajax({
         method: "POST",
         url: '/item/' + id + '/saveItemData',
-        data: { _token: token, name: name, note: note, place: place, inventory_number: inventory_number, itemId: id, categoriesId: catId, availability: availability },
+        data: { _token: token, name: name, price: price, note: note, place: place, inventory_number: inventory_number, itemId: id, categoriesId: catId, availability: availability },
         success: function (response){
 
             ele.querySelectorAll("div[id='buttonText']")[0].removeAttribute("hidden");
