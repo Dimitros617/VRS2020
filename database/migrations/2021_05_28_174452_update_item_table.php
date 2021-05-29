@@ -34,9 +34,7 @@ class UpdateItemTable extends Migration
             $table->dropForeign(['responsible_user_id']);
             $table->dropColumn('price');
             $table->dropColumn('responsible_user_id');
-            $table->dropColumn('created_at');
-            $table->dropColumn('updated_at');
-            $table->dropColumn('deleted_at');            
+            $table->dropSoftDeletes();           
         });
     }
 }
