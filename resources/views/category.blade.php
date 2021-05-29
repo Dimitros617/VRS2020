@@ -120,7 +120,7 @@
 
                                                 <div class="itemDataDivRow">
                                                 <label class="title font-weight-bold" for="note">Zavedeno dne:</label>
-                                                <div contenteditable class="note" value="{{$item->created_at}}" name="created_at"
+                                                <div contenteditable class="note" value="{{ strtotime($item->created_at) }}" name="created_at"
                                                        oninput="showButton(this)" required>{{ \Carbon\Carbon::parse($item->created_at)->format('j. n. Y') }}
                                                 </div></div>
                                                 @endif
