@@ -14,7 +14,7 @@ class UpdateItemTable extends Migration
     public function up()
     {
         Schema::table('items', function (Blueprint $table) {
-            $table->float('price', 8, 2)->after('place');
+            $table->float('price', 8, 2)->default(0.00)->after('place');
             $table->unsignedBigInteger('responsible_user_id')->nullable()->after('id');
             $table->timestamps();
             $table->softDeletes();
