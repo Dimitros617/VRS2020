@@ -68,7 +68,7 @@
                             </a>
                         </div>
 
-                        @if(Auth::permition()->new_user)
+                        @if(Auth::permition()->edit_permitions == 1)
                             <div class="buttonsDivItem">
                                 <a href="/permitions">
                                     <button class="buttonsDivItem btn-primary" type="button">
@@ -171,7 +171,7 @@
                             @if(Auth::permition()->new_user == 1 || Auth::permition()->return_verification == 1)Pro řešení vážnějšího problému využívejte jeho e-mail, zprávy v systému slouží spíše pro upozornění.
                                 @if(Auth::permition()->new_user == 1) Pro akutní problémy využijte telefonní číslo. @endif @endif
                             <br>
-                            Příchozí zprávy vidíte po kliku na obálku. Číslo u ní říká počet nepřečtených zpráv. I zde můžete po překliku na "Nová zpráva" poslat zprávu uživateli, stačí zadat jeho přezdívku. Je zde k dispozici i našeptávač.
+                            Příchozí zprávy vidíte po kliku na obálku. Číslo u ní říká počet nepřečtených zpráv. I zde můžete po překliku na "Nová zpráva" poslat uživateli zprávu, stačí zadat jeho přezdívku. Je zde k dispozici i našeptávač.
                             <br>
                         </div>
                     </div>
