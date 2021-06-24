@@ -82,7 +82,20 @@
                                 </div>
                             </div>
 
+                            @if( $permition[0]->edit_item == 1)
+                                <div class="">
+                                    <form action="{{'/item/addNewItem'}}" method="POST" class="addNewItem">
+                                        @csrf
+                                        <input type="text" class="d-none" name="category" value="{{$category->id}}">
 
+                                        <button type="submit" class="btn btn-light w-100 text-center align-middle mb-5 mt-4 pt-4 fw-bolder text-vrs-clight " onclick="document.getElementById('addNewItemSpinner').removeAttribute('hidden');document.getElementById('addNewItemText').setAttribute('hidden','');">
+                                            <span class="d-block w-100 ">Přidat novou položku</span>
+                                            <h1 id="addNewItemText" >&#43;</h1>
+                                            <div class="spinner-grow text-vrs-cyan mb-4 mt-4" id="addNewItemSpinner" hidden></div>
+                                        </button>
+                                    </form>
+                                </div>
+                            @endif
 
 
                             @if(sizeof($items) != 0)
@@ -282,27 +295,9 @@
                                                             <div id="alert{{$item->id}}"></div>
                                         </div>
                                         @endforeach
-                                            @else
-                                                <div class="emptyElementLoans">Nebylo zde nic nalezeno</div>
-                                            @endif
-
-                                                                @if( $permition[0]->edit_item == 1)
-                                                                    <div class="">
-                                                                    <form action="{{'/item/addNewItem'}}" method="POST" class="addNewItem">
-                                                                        @csrf
-                                                                        <input type="text" class="d-none" name="category" value="{{$category->id}}">
-
-                                                                        <button type="submit" class="btn btn-light w-100 text-center align-middle mb-5 mt-4 pt-4 fw-bolder text-vrs-clight " onclick="document.getElementById('addNewItemSpinner').removeAttribute('hidden');document.getElementById('addNewItemText').setAttribute('hidden','');">
-                                                                            <span class="d-block w-100 ">Přidat novou položku</span>
-                                                                            <h1 id="addNewItemText" >&#43;</h1>
-                                                                            <div class="spinner-grow text-vrs-cyan mb-4 mt-4" id="addNewItemSpinner" hidden></div>
-                                                                        </button>
-
-                                                                    </form>
-                                                                    </div>
-                                                                @endif
-
-
+                                    @else
+                                        <div class="emptyElementLoans">Nebylo zde nic nalezeno</div>
+                                    @endif
                         </div>
                     </div>
                 </div>

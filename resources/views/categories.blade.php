@@ -49,6 +49,21 @@
                             </div>
                         </div>
 
+            @if( $permition[0]->edit_item == 1)
+                <div class="item">
+                    <form action="{{'/categories/addNewCategory'}}" method="POST" class="addNewCategory">
+                        @csrf
+                        <button type="submit" class="btn btn-light w-100 text-center align-middle mb-2 mt-4 pt-4 fw-bolder text-vrs-clight " onclick="document.getElementById('addNewCategorySpinner').removeAttribute('hidden');document.getElementById('addNewCategoryText').setAttribute('hidden','');">
+                            <span class="d-block w-100 ">Přidat novou kategorii</span>
+                            <h1 id="addNewCategoryText" >&#43;</h1>
+                            <div class="spinner-grow text-vrs-cyan mb-4 mt-4" id="addNewCategorySpinner" hidden></div>
+                        </button>
+
+                    </form>
+                </div>
+            @endif
+
+
             @if(sizeof($categories) != 0)
                 <div class="list-group pb-4  " id="categoryList">
                     @for ($i = 0; $i < count($categories); $i++)
@@ -145,19 +160,6 @@
                 </div>
             @else
                 <div class="emptyElementLoans">Nebyly nalezeny žádné kategorie</div>
-            @endif
-            @if( $permition[0]->edit_item == 1)
-                <div class="item">
-                    <form action="{{'/categories/addNewCategory'}}" method="POST" class="addNewCategory">
-                        @csrf
-                        <button type="submit" class="btn btn-light w-100 text-center align-middle mb-2 mt-4 pt-4 fw-bolder text-vrs-clight " onclick="document.getElementById('addNewCategorySpinner').removeAttribute('hidden');document.getElementById('addNewCategoryText').setAttribute('hidden','');">
-                            <span class="d-block w-100 ">Přidat novou kategorii</span>
-                            <h1 id="addNewCategoryText" >&#43;</h1>
-                            <div class="spinner-grow text-vrs-cyan mb-4 mt-4" id="addNewCategorySpinner" hidden></div>
-                        </button>
-
-                    </form>
-                </div>
             @endif
 
         </div>
