@@ -8,6 +8,7 @@ use App\Models\items;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
+use DateTime;
 
 
 class ItemsController extends Controller
@@ -34,15 +35,19 @@ class ItemsController extends Controller
     function saveItem(Request $request)
     {
         Log::info('ItemsController:saveItem');
+        Log::info($request);
 
         if(Auth::permition()->edit_item != 1){
             return "0";
         }
+        
 
         $item = items::find($request->itemId);
         $item->name = is_null($request->name) ? "": $request->name;
         $item->note = is_null($request->note) ? "": $request->note;
         $item->place = is_null($request->place) ? "": $request->place;
+        $item->price = is_null($request->price) ? 0.00: $request->price;
+        $item->created_at = $date = is_null($request->created_at) ? date("Y-m-d H:i:s", time()): DateTime::createFromFormat("j. n. Y", $request->created_at)->format("Y-m-d H:i:s");
         $item->inventory_number = is_null($request->inventory_number) ? "": $request->inventory_number;
         $item->availability = is_null($request->availability) ? "0":  $request->availability;
         $check = $item->save();
@@ -80,8 +85,8 @@ class ItemsController extends Controller
         $loans = DB::table('loans')->where('item', $request->id)->count();
 
         if ($loans == 0) {
-            $check = DB::table('items')->where('id', $request->id)->delete();
-
+            //$check = DB::table('items')->where('id', $request->id)->delete();
+            $check = items::where('id', $request->id)->delete();        //add soft delete
             return  $check;
 
         } else {
