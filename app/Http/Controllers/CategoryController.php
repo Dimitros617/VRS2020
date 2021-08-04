@@ -38,12 +38,24 @@ class CategoryController extends Controller
 
         Log::info('CategoryControler:showItem');
 
-        $dataItems = DB::table('items')->where('categories', $name['id'])->get();
+        $dataItems = DB::table('items')->where('categories', $name['id'])->whereNull('deleted_at')->paginate(25);
         $dataLoans = DB::table('loans')->join('items', 'loans.item', '=', 'items.id')->where('categories', $name['id'])->select('loans.item', 'loans.rent_from', 'loans.rent_to')->get();
         $permition = DB::table('users')->join('permition', 'users.permition', '=', 'permition.id')->where('users.id', Auth::id())->select('permition.edit_item','permition.possibility_renting')->get();
 
-
         return view('category', ['category' => $name, 'items' => $dataItems, 'loans' => $dataLoans, 'permition' => $permition]);
+    }
+
+    
+    function showItemDetail(string $inv_num)
+    {
+        //Log::info('CategoryControler:showItem');
+
+        $dataItem = DB::table('items')->where('inventory_number', 'LIKE', $inv_num)->first();
+        $dataLoans = DB::table('loans')->where('item', $dataItem->id)->select('loans.item', 'loans.rent_from', 'loans.rent_to')->get();
+        $permition = DB::table('users')->join('permition', 'users.permition', '=', 'permition.id')->where('users.id', Auth::id())->select('permition.edit_item','permition.possibility_renting')->get();
+
+
+        return view('item-detail', ['item' => $dataItem, 'loans' => $dataLoans, 'permition' => $permition]);
 
     }
 

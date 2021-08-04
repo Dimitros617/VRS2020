@@ -31,7 +31,6 @@
                    </div>
                             {{--  Pokud má uživatel oprávnění upravovat itemy--}}
 
-
                             @if( $permition[0]->edit_item == 1)
                                 <form action="{{'/saveCategoryData'}}" method="POST" class="categoryData d-flow-root">
                                     @csrf
@@ -102,7 +101,7 @@
                                 <div class="data" id="data">
                                 @foreach($items as $item)
 
-                                    {{--                Pokud má item nastaveno availability na 1 zoobrazí se, pokud ne z nemožní se sním práce pro uživatel--}}
+                                    {{-- Pokud má item nastaveno availability na 1 zoobrazí se, pokud ne znemožní se sním práce pro uživatel --}}
 
                                     @if($item->availability  == 1 )
                                             <div class="item" itemId="{{$item->id}}" id="{{$item->id}}">
@@ -126,10 +125,11 @@
                                                 @if( $permition[0]->edit_item == 1)
                                                 <div class="itemDataDivRow">
                                                 {{-- Atribut for ponechan, nema vetsi smysl to prepisovat na price a sahat do css, kdyz zde nejsou inputy, ktere by se po kliku na label automaticky focusovaly. S divem to bohuzel nefunguje. --}}
-                                                <label class="title font-weight-bold" for="note">Cena:</label>
+                                                <label class="title font-weight-bold" for="note">Cena [Kč]:</label>
                                                 <div contenteditable class="note" value="{{$item->price}}" name="price"
                                                        oninput="showButton(this)" required>{{ number_format($item->price, 2, ".", " ") }}
-                                                </div></div>
+                                                </div>
+                                                </div>
 
                                                 <div class="itemDataDivRow">
                                                 <label class="title font-weight-bold" for="note">Zavedeno dne:</label>
@@ -215,7 +215,7 @@
                                                                autocomplete="off"
                                                                itemId="{{$item->id}}"
                                                                onchange="changeTo(this)"
-{{--                                                               onload="initDate(this)"--}}
+                                                        {{--onload="initDate(this)"--}}
                                                         required>
                                                     </div>
                                                 </div>
@@ -295,6 +295,7 @@
                                                             <div id="alert{{$item->id}}"></div>
                                         </div>
                                         @endforeach
+                                        {{ $items->links() }}
                                     @else
                                         <div class="emptyElementLoans">Nebylo zde nic nalezeno</div>
                                     @endif

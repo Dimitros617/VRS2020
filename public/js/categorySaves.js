@@ -37,6 +37,9 @@ function saveItemData(ele, id, catId, availability){
                 ele.querySelectorAll("div[id='buttonText']")[0].innerHTML = "Uložit změny";
             },1000,ele);
         },
+        error: function(response){
+            alert(response.responseText);
+        }
     });
 }
 

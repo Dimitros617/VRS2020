@@ -34,11 +34,12 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [DashboardCon
 Route::middleware(['auth:sanctum', 'verified'])->get('/loans',[LoansController::class,'showLoans'])->name('loans');
 Route::middleware(['auth:sanctum', 'verified', 'permition:return_verification'])->get('/all-loans',[LoansController::class,'showAllLoans']);
 
-Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting,return_verification,edit_item,OR'])->get('/item/{id:id}/activeLoans', [LoansController::class,'showItemLoans']);
+Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting,return_verification,edit_item,OR'])->get('/item/{id}/activeLoans', [LoansController::class,'showItemLoans']);
 Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting,return_verification,edit_item,OR'])->get('/categories/{id:id}/activeLoans', [LoansController::class,'showCategoryLoans']);
 
 Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting,return_verification,edit_item,OR'])->get('/categories', [CategoryController::class,'showCategories']);
 Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting,return_verification,edit_item,OR'])->get('/categories/{name:name}', [CategoryController::class,'showItem']) ->name('item');
+Route::middleware(['auth:sanctum', 'verified', 'permition:possibility_renting,return_verification,edit_item,OR'])->get('/item-detail/{inventory_number:inv_num}', [CategoryController::class,'showItemDetail']) ->name('item-detail');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/users', [ListUsersController::class,'showAllUsers']);
 Route::middleware(['auth:sanctum', 'verified', 'permition:new_user'])->get('/users/{id:id}', [ListUsersController::class,'showUser']);

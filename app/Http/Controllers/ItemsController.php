@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
 use DateTime;
-
+use Response;
 
 class ItemsController extends Controller
 {
@@ -40,9 +40,12 @@ class ItemsController extends Controller
         if(Auth::permition()->edit_item != 1){
             return "0";
         }
-        
-
+       
         $item = items::find($request->itemId);
+        if($item === null){
+            return 0;
+        }
+
         $item->name = is_null($request->name) ? "": $request->name;
         $item->note = is_null($request->note) ? "": $request->note;
         $item->place = is_null($request->place) ? "": $request->place;

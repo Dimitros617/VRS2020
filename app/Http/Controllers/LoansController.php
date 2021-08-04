@@ -120,17 +120,13 @@ class LoansController extends Controller
     }
 
 
-    function showItemLoans($id)
+    function showItemLoans(int $id)
     {
-
         Log::info('LoansController:showItemLoans');
-
-
-        $item = items::find($id);
+        $item = items::find($id);       
         $users = DB::table('loans')->join('users', 'loans.user', '=', 'users.id')->where('item', $id)->select('users.id', 'users.name', 'users.surname', 'loans.rent_from', 'loans.rent_to', 'loans.id as loanId', 'loans.status')->get();
 
         return view('item-status', ['item' => $item, 'users' => $users]);
-
     }
 
     function itemLoansReturn($id){
@@ -139,8 +135,6 @@ class LoansController extends Controller
 
         $status = 0;
         if(Auth::permition()->return_verification == 1){
-
-
             //$check = DB::table('loans')->where('id', $id)->delete();
             $check = $this->removeLoans(DB::table('loans')->where('id', $id)->get());
         }
