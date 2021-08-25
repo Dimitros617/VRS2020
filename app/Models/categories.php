@@ -11,9 +11,16 @@ class categories extends Model
 {
     use HasFactory;
     public bool $timestamps = false;
+    protected $table = "categories";
+    
+    public function department()
+    {
+        return $this->belongsTo(department::class, 'id');
+    }
 
-//    protected $table = 'kategorie'; // Definování, že tenhle kontroler bude pracovat s tabulkou v databázi pod tímto jménem
-
-
-
+    public function items()
+    {
+        return $this->hasMany(items::class, 'categories');
+    }
+    
 }

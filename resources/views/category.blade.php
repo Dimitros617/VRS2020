@@ -32,7 +32,7 @@
                             {{--  Pokud má uživatel oprávnění upravovat itemy--}}
 
                             @if( $permition[0]->edit_item == 1)
-                                <form action="{{'/saveCategoryData'}}" method="POST" class="categoryData d-flow-root">
+                                <form action="{{ route('save-category', ['short' => $short]) }}" method="POST" class="categoryData d-flow-root">
                                     @csrf
                                     <input type="number" value="{{$category['id']}}" name="categoryId" hidden>
                                     <input type="text" class="pageTitle" value="{{$category['name']}}" name="categoryNameOld"  hidden>
@@ -61,7 +61,7 @@
                                         <div class="card-body row no-gutters align-items-center h-4rem">
 
                                             <div class="col">
-                                                <input class="form-control-borderless mt--1" id="search" type="search" placeholder="Zadejte hledaný výraz">
+                                                <input class="form-control-borderless mt--1" id="search" type="search" request placeholder="Zadejte hledaný výraz">
 
                                             </div>
 
@@ -290,12 +290,9 @@
                                                     </div>
                                                 @endif
                                             </div>
-
-
                                                             <div id="alert{{$item->id}}"></div>
                                         </div>
                                         @endforeach
-                                        {{ $items->links() }}
                                     @else
                                         <div class="emptyElementLoans">Nebylo zde nic nalezeno</div>
                                     @endif

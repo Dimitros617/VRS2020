@@ -38,12 +38,13 @@ function itemFind(){
 
         for (let j = 0; j < items.length ; j++){
 
-            let item_name = items[j].getElementsByClassName("name").length != 0 ? items[j].getElementsByClassName("name")[0].value.toLowerCase(): "";
-            let note = items[j].getElementsByClassName("note").length != 0 ? items[j].getElementsByClassName("note")[0].value.toLowerCase(): "" ;
-            let place = items[j].getElementsByClassName("place").length != 0 ? items[j].getElementsByClassName("place")[0].value.toLowerCase(): "";
-            let inventory_number = items[j].getElementsByClassName("inventory_number").length != 0 ? items[j].getElementsByClassName("inventory_number")[0].value.toLowerCase(): "";
+            let item_name = items[j].getElementsByClassName("name").length != 0 ? items[j].getElementsByClassName("name")[0].innerHTML.toLowerCase(): "";
+            let note = items[j].getElementsByClassName("note").length != 0 ? items[j].getElementsByClassName("note")[0].innerHTML.toLowerCase(): "" ;
+            let place = items[j].getElementsByClassName("place").length != 0 ? items[j].getElementsByClassName("place")[0].innerHTML.toLowerCase(): "";
+            let inventory_number = items[j].getElementsByClassName("inventory_number").length != 0 ? items[j].getElementsByClassName("inventory_number")[0].innerHTML.toLowerCase(): "";
 
             if(item_name.includes(find_value) || note.includes(find_value) || place.includes(find_value) || inventory_number.includes(find_value) ){
+                continue;
             }else{
                 items[j].classList.add("vrs-d-none");
             }

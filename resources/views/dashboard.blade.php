@@ -16,7 +16,7 @@
 
                     @if(Auth::permition()->edit_item == 1 || Auth::permition()->return_verification == 1 || Auth::permition()->possibility_renting == 1)
                         <div class="buttonsDivItem">
-                            <a href="/categories">
+                            <a href="{{ route('departments') }}">
                                 <button class="buttonsDivItem btn-primary text-vrs-ylight " type="button">
                                     @if(Auth::permition()->possibility_renting == 1)
                                         Nová výpůjčka
