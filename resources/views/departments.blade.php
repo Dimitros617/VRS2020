@@ -57,7 +57,6 @@
                             <h1 id="addNewDepartmentText" >&#43;</h1>
                             <div class="spinner-grow text-vrs-cyan mb-4 mt-4" id="addNewDepartmentSpinner" hidden></div>
                         </button>
-
                     </form>
                 </div>
             @endif

@@ -73,7 +73,7 @@ Route::get('/getUserNames', [ListUsersController::class,'getUserNames']);
 Route::post('/{short}/saveCategoryData', [CategoryController::class,'saveCategory'])->name('save-category');
 Route::post('/categories/{id:id}/removeCategoryHard', [CategoryController::class,'removeCategoryHard']);
 Route::get('/categories/{id:id}/removeCategory', [CategoryController::class,'removeCategory']);
-Route::get('/categories/checkCategoryNameExist/{name?}', [CategoryController::class,'checkCategoryNameExist']);
+Route::get('/categories/checkCategoryNameExist/{department_id}/{name?}', [CategoryController::class,'checkCategoryNameExist']);
 Route::get('/categories/categoriesSort/{sort?}', [CategoryController::class,'categoriesSort']);
 Route::get('/categories/categoriesFind/{find?}', [CategoryController::class,'categoriesFind']);
 

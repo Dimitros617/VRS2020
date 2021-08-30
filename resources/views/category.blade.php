@@ -29,6 +29,9 @@
                 @endif
             @endif
                    </div>
+                        <div class="d-block">
+                            <a href="{{ route('show-department', ['short' => $short]) }}">< Zpět</a>
+                        </div>
                             {{--  Pokud má uživatel oprávnění upravovat itemy--}}
 
                             @if( $permition[0]->edit_item == 1)
@@ -37,9 +40,9 @@
                                     <input type="number" value="{{$category['id']}}" name="categoryId" hidden>
                                     <input type="text" class="pageTitle" value="{{$category['name']}}" name="categoryNameOld"  hidden>
 
-                                    <input type="text" class="pageTitle" value="{{$category['name']}}"
-                                           name="categoryName" onchange="categoryNameChange(this)" oninput="showButton(this)" required>
+                                    <input type="text" class="pageTitle" value="{{$category['name']}}"name="categoryName" onchange="categoryNameChange(this)" oninput="showButton(this)" required>
                                     <br>
+                                    <input type="hidden" id="departmentId" name="departmentId" value="{{$category['department_id']}}">
                                     <input type="text" name="categoryDescription" method="POST" id="hiddenTextArea" hidden>
                                     <div contenteditable class="vrs-h3 text-vrs-yellow w-100 text-center p-3" name="categoryDescription" method="POST"
                                               oninput="showButton(this); document.getElementById('hiddenTextArea').value = this.innerHTML">{{$category['description']}}</div>

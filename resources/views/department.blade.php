@@ -22,6 +22,9 @@
                             </div>
 
                         <div class="hlavicka">
+                            <div class="d-block">
+                                <a href="{{ route('departments') }}">< Zpět</a>
+                            </div>
                             <div>
                             @if( $permition[0]->edit_item == 1)
                                     <form action="{{ route('save-department', ['short' => $department['short']]) }}" method="POST" class="categoryData d-flow-root">
@@ -30,6 +33,7 @@
                                         <input type="text" class="pageTitle" value="{{$department['name']}}" name="departmentNameOld"  hidden>
                                         <input type="text" class="pageTitle mb-0 w-100 border-0" autocomplete="off" value="{{$department['name']}}" name="departmentName" onchange="categoryNameChange(this)" oninput="showButton(this)" required>
                                         <input type="text" name="departmentShort" method="POST" id="hiddenTextArea" hidden>
+                                        <input type="hidden" id="departmentId" value="{{$department['id']}}">
                                         <div contenteditable class="vrs-h3 text-vrs-yellow w-100 text-center p-3" name="departmentShort" method="POST" oninput="showButton(this); document.getElementById('hiddenTextArea').value = this.innerHTML">{{$department['short']}}</div>
                                         <input class="btn btn-primary float-end p-2 me-4-5 w-10rem" type="submit"  value="Uložit změny" hidden>
                                     </form>

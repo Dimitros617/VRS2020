@@ -1,9 +1,10 @@
 
 function categoryNameChange(ele) {
     let input_value = ele.value;
+    let department_id = $("#departmentId").val();
     if (input_value != window.categoryName) {
         $.ajax({
-            url: '/categories/checkCategoryNameExist/' + input_value,
+            url: '/categories/checkCategoryNameExist/'+ department_id +'/' + input_value,
             method: "GET",
             success: function (response) {
 

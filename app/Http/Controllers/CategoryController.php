@@ -36,19 +36,19 @@ class CategoryController extends Controller
 
     function showItem(string $short, categories $name)
     {
-        
         $department = department::where('short', 'LIKE', $short)->first();
         
         if($department === null){
             abort(404);
         }
         //Log::info('CategoryControler:showItem');
+        $data = categories::where('department_id', $department->id)->where('name', $name['name'])->first();
 
-        $dataItems = DB::table('items')->where('categories', $name['id'])->whereNull('deleted_at')->get();
-        $dataLoans = DB::table('loans')->join('items', 'loans.item', '=', 'items.id')->where('categories', $name['id'])->select('loans.item', 'loans.rent_from', 'loans.rent_to')->get();
+        $dataItems = DB::table('items')->where('categories', $data->id)->whereNull('deleted_at')->get();
+        $dataLoans = DB::table('loans')->join('items', 'loans.item', '=', 'items.id')->where('categories', $data->id)->select('loans.item', 'loans.rent_from', 'loans.rent_to')->get();
         $permition = DB::table('users')->join('permition', 'users.permition', '=', 'permition.id')->where('users.id', Auth::id())->select('permition.edit_item','permition.possibility_renting')->get();
 
-        return view('category', ['category' => $name, 'items' => $dataItems, 'loans' => $dataLoans, 'permition' => $permition, 'short' => $short]);
+        return view('category', ['category' => $data, 'items' => $dataItems, 'loans' => $dataLoans, 'permition' => $permition, 'short' => $short]);
     }
 
     
@@ -61,7 +61,7 @@ class CategoryController extends Controller
         $permition = DB::table('users')->join('permition', 'users.permition', '=', 'permition.id')->where('users.id', Auth::id())->select('permition.edit_item','permition.possibility_renting')->get();
 
 
-        return view('item-detail', ['item' => $dataItem, 'loans' => $dataLoans, 'permition' => $permition]);
+        return view('item-detail', ['item' => $dataItem, 'loans' => $dataLoans, 'permition' => $permitiona]);
 
     }
 
@@ -78,7 +78,7 @@ class CategoryController extends Controller
             return;
         }
 
-        if($this->checkCategoryNameExist($request->categoryName) == "true" && $request->categoryName != $request->categoryNameOld){
+        if($this->checkCategoryNameExist($request->departmentId, $request->categoryName) == "true" && $request->categoryName != $request->categoryNameOld){
             abort(409);
             return;
         }
@@ -161,11 +161,11 @@ class CategoryController extends Controller
 
     }
 
-    public function checkCategoryNameExist($name){
+    public function checkCategoryNameExist($department_id, $name){
 
-        Log::info('CategoryControler:checkCategoryNameExist');
+        //Log::info('CategoryControler:checkCategoryNameExist');
 
-        $data = DB::table('categories')->where('name', $name)->get();
+        $data = DB::table('categories')->where('name', $name)->where('department_id', $department_id)->get();
         return count($data) > 0 ? "true" : "false";
 
     }

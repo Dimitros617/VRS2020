@@ -158,6 +158,7 @@ class DepartmentController extends Controller
             }
             $category->delete();
         }
+        $department->delete();
         return redirect()->route('departments');
     }
 }
